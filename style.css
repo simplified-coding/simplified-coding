@@ -7,15 +7,32 @@ body {
 }
 
 #languages h2 {
-    padding-left: 1%;
-    padding-right: 1%;
-    color: white;
     background-color: black;
+    color: white;
 }
 
-#languages p {
+#languages {
+    background-color: blanchedalmond;
+}
+
+#languages h2, h3, p {
     padding-left: 1%;
     padding-right: 1%;
-    color: black;
-    background-color: antiquewhite;
+}
+
+#banner {
+    background-size: cover;
+    background-position: bottom center;
+    height: 200px;
+    width: 100%;
+}
+
+#banner-name {
+    border: solid 3px white;
+    position: relative;
+    top: 50px;
+    width: 400px;
+    margin: 0 auto;
+    color: bisque;
+    text-align: center;
 }
