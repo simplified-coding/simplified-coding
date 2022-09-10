@@ -1,0 +1,21 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: gray;
+}
+
+#languages h2 {
+    padding-left: 1%;
+    padding-right: 1%;
+    color: white;
+    background-color: black;
+}
+
+#languages p {
+    padding-left: 1%;
+    padding-right: 1%;
+    color: black;
+    background-color: antiquewhite;
+}
