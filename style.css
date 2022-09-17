@@ -1,23 +1,11 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Consolas, monaco, monospace;
 }
 
 body {
     background-color: gray;
-}
-
-#languages h2 {
-    background-color: black;
-    color: white;
-}
-
-#languages {
-    background-color: blanchedalmond;
-}
-
-#languages h2, h3, p {
-    padding-left: 1%;
-    padding-right: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #banner {
@@ -35,4 +23,55 @@ body {
     margin: 0 auto;
     color: bisque;
     text-align: center;
+}
+
+#python {
+    padding: 2%;
+    border: solid 3px rgb(115, 255, 0);
+    position: relative;
+    top: 50px;
+    width: 400px;
+    margin: 0 auto;
+    color: bisque;
+    text-align: center;
+}
+
+#html {
+    padding: 2%;
+    border: solid 3px rgb(253, 87, 11);
+    position: relative;
+    top: 50px;
+    width: 400px;
+    margin: 0 auto;
+    color: bisque;
+    text-align: center;
+}
+
+.header h2 {
+    background-color: black;
+    color: white;
+}
+
+.header {
+    background-color: blanchedalmond;
+}
+
+.header h2, h3, p {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#navigation {
+    position: center;
+}
+
+#navigation-text {
+    color: black;
+    position: center;
+}
+
+#copyright {
+    background-color: grey;
+    color: white;
+    border: solid 3px black
 }
