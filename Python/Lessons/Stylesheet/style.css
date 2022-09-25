@@ -39,6 +39,12 @@ body {
     padding-right: 1%;
 }
 
+.header iframe {
+    position: center;
+    padding-left: 1%;
+    padding-bottom: 2%;
+}
+
 #navigation {
     position: center;
 }
