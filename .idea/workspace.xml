@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="033057f6-e7c6-4887-b7f4-9b440362419e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Python/Lessons/lesson0.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Lessons/lesson0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/Lessons/lesson1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Lessons/lesson1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/Lessons/lesson2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Lessons/lesson2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/Lessons/lesson3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Lessons/lesson3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/Lessons/lesson4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Lessons/lesson4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="033057f6-e7c6-4887-b7f4-9b440362419e" name="Changes" comment="Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,8 +38,37 @@
       <updated>1666456813089</updated>
       <workItem from="1666456817942" duration="149000" />
       <workItem from="1666504035369" duration="2288000" />
-      <workItem from="1666531422587" duration="1303000" />
+      <workItem from="1666531422587" duration="1791000" />
     </task>
+    <task id="LOCAL-00001" summary="Added external resources">
+      <created>1666534157812</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534157812</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed spelling">
+      <created>1666534460424</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534460424</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed spacing">
+      <created>1666534477209</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534477209</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit">
+      <created>1666534492176</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534492176</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,5 +84,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added external resources" />
+    <MESSAGE value="Fixed spelling" />
+    <MESSAGE value="Fixed spacing" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
 </project>
