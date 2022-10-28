@@ -76,8 +76,16 @@ body {
     position: center;
 }
 
-#copyright {
+.box {
     background-color: grey;
     color: white;
     border: solid 3px black
+}
+
+#questions {
+    border-color: aqua;
+}
+
+#questions a {
+    color: greenyellow;
 }
