@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="033057f6-e7c6-4887-b7f4-9b440362419e" name="Changes" comment="Added questions section" />
+    <list default="true" id="033057f6-e7c6-4887-b7f4-9b440362419e" name="Changes" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/Lessons/lesson2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Lessons/lesson2.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +51,11 @@
       <workItem from="1666930322950" duration="25000" />
       <workItem from="1666930361823" duration="373000" />
       <workItem from="1666938405300" duration="2313000" />
+      <workItem from="1667027578351" duration="10000" />
+      <workItem from="1667223619574" duration="599000" />
+      <workItem from="1667397512873" duration="960000" />
+      <workItem from="1667398490453" duration="1189000" />
+      <workItem from="1667478006272" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Added external resources">
       <created>1666534157812</created>
