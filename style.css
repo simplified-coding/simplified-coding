@@ -8,6 +8,15 @@ body {
     margin-right: 5%;
 }
 
+#constructions p {
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 1em 0;
+    margin: 0;
+    text-align: center;
+}
+
 #banner {
     background-size: cover;
     background-position: bottom center;
