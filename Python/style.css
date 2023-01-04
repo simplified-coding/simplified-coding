@@ -1,0 +1,78 @@
+body {
+    font-family: Consolas, monaco, monospace;
+    background-color: gray;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h2 {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#banner {
+    background-size: cover;
+    background-position: bottom center;
+    height: 200px;
+    width: 100%;
+}
+
+#banner-name {
+    border: solid 3px white;
+    position: relative;
+    top: 50px;
+    width: 400px;
+    margin: 0 auto;
+    color: bisque;
+    text-align: center;
+}
+
+.content-table {
+    background-color: bisque;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 1.5;
+    min-width: 1000px;
+    min-height: 100px;
+}
+
+.content-table thead tr {
+    background-color: aqua;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content-table th
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid aqua;
+    text-align: center;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid aqua;
+}
+
+.content-table {
+    width: 100%;
+  }
+  
+.content-table {
+    height: 70px;
+  }
+
+.box {
+    background-color: grey;
+    color: white;
+    border: solid 3px black;
+
+}
