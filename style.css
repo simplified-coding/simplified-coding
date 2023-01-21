@@ -22,15 +22,10 @@ body{
     background-position: bottom center;
     height: 200px;
     width: 100%;
-}
-
-#banner-name {
-    border: solid 3px white;
     position: relative;
-    top: 50px;
+    top: 30px;
     width: 400px;
     margin: 0 auto;
-    color: bisque;
     text-align: center;
 }
 
