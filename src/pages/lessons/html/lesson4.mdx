@@ -1,0 +1,58 @@
+# Μάθημα 4ο: Πολυμέσα
+
+## `img` element
+
+Με το `img` Μπορούμε να εισάγουμε εικόνες στην ιστοσελίδα μας.
+
+### Παράδειγμα
+
+```
+<img src="https://raw.githubusercontent.com/simplified-coding/simplified-coding.github.io/main/Website%20Logo/cover.png" alt="Simplified Coding Logo">
+```
+
+Βλέπουμε ότι το `img` element έχει δύο attributes:
+- `src` το οποίο περιέχει το url της εικόνας που θέλουμε να εισάγουμε
+- `alt` το οποίο περιέχει το κείμενο που θα εμφανίζεται στην θέση της εικόνας αν δεν μπορεί να φορτωθεί η εικόνα
+
+## `video` element
+
+Με το `video` Μπορούμε να εισάγουμε βίντεο στην ιστοσελίδα μας.
+
+### Παράδειγμα
+
+```
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+```
+
+Βλέπουμε ότι το `video` element έχει πέντε attributes:
+- `width` το οποίο περιέχει το πλάτος του βίντεο
+- `height` το οποίο περιέχει το ύψος του βίντεο
+- `controls` το οποίο προσθέτει τα κουμπιά για τον έλεγχο του βίντεο
+- `src` το οποίο περιέχει το url του βίντεο που θέλουμε να εισάγουμε
+- `type` το οποίο περιέχει τον τύπο του βίντεο που θέλουμε να εισάγουμε
+
+Επιπλέον, βλέπουμε πως το `video` έχει και content (το κείμενο `Your browser does not support the video tag.`). 
+Αυτό το κείμενο θα εμφανίζεται αν ο browser δεν μπορεί να αναπαράγει το βίντεο.
+
+## `audio` element
+
+Με το `audio` Μπορούμε να εισάγουμε ήχο στην ιστοσελίδα μας.
+
+### Παράδειγμα
+
+```
+<audio controls>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+```
+
+Βλέπουμε ότι το `audio` element έχει τρία attributes:
+- `controls` το οποίο προσθέτει τα κουμπιά για τον έλεγχο του ήχου
+- `src` το οποίο περιέχει το url του ήχου που θέλουμε να εισάγουμε
+- `type` το οποίο περιέχει τον τύπο του ήχου που θέλουμε να εισάγουμε
+
+Επιπλέον, βλέπουμε πως και το `audio` έχει content, όπως το `video` (το κείμενο `Your browser does not support the audio element.`).
