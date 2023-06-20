@@ -2,9 +2,147 @@
 import Layout from "../../../layouts/Layout.astro";
 
 const { lang } = Astro.params;
+
+const content = (await Astro.glob("../../lessons/python/lesson_1.mdx"))[0];
 ---
 
 <Layout>
-    <h1>Editor</h1>
-    <p>{lang}</p>
+    <div class="parentEditor">
+        <div class="guide">
+            <content.Content />
+        </div>
+        <div class="editor" id="editor"></div>
+        <div class="console" data-bs-theme="dark">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button class="nav-link active" id="console-btn"
+                        >Console</button
+                    >
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="preview-btn">Preview</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-success m-1">Run</button>
+                </li>
+            </ul>
+            <div
+                id="console-div"
+                style="background-color: red; width:100%; height:100%"
+            >
+            </div>
+            <div
+                id="preview-div"
+                style="background-color: blue; width:100%; height:100%"
+                hidden
+            >
+            </div>
+        </div>
+    </div>
 </Layout>
+
+<script>
+    import { basicSetup } from "codemirror";
+    import { javascript } from "@codemirror/lang-javascript";
+    import { keymap, EditorView } from "@codemirror/view";
+    import { indentWithTab } from "@codemirror/commands";
+    import { oneDark } from "@codemirror/theme-one-dark";
+
+    // Tabs
+    const consoleBTN = document.getElementById("console-btn");
+    const previewBTN = document.getElementById("preview-btn");
+    const consoleDIV = document.getElementById("console-div");
+    const previewDIV = document.getElementById("preview-div");
+
+    consoleBTN?.addEventListener("click", () => {
+        if (consoleBTN.className.indexOf("nav-link active") == -1)
+            consoleBTN.className = consoleBTN.className.replace(
+                "nav-link",
+                "nav-link active"
+            );
+
+        if (previewBTN) {
+            previewBTN.className = previewBTN.className.replace(
+                "nav-link active",
+                "nav-link"
+            );
+        }
+
+        if (consoleDIV && previewDIV) {
+            consoleDIV.hidden = false;
+            previewDIV.hidden = true;
+        }
+    });
+
+    previewBTN?.addEventListener("click", () => {
+        if (previewBTN?.className.indexOf("nav-link active") == -1)
+            previewBTN.className = previewBTN.className.replace(
+                "nav-link",
+                "nav-link active"
+            );
+
+        if (consoleBTN) {
+            consoleBTN.className = consoleBTN.className.replace(
+                "nav-link active",
+                "nav-link"
+            );
+        }
+
+        if (consoleDIV && previewDIV) {
+            consoleDIV.hidden = true;
+            previewDIV.hidden = false;
+        }
+    });
+
+    // Editor
+    let editor = new EditorView({
+        extensions: [
+            basicSetup,
+            javascript(),
+            keymap.of([indentWithTab]),
+            oneDark,
+        ],
+        parent: document.querySelector("#editor") as Element,
+    });
+</script>
+
+<style>
+    .parentEditor {
+        display: flex;
+        height: 80vh;
+        width: 100%;
+        border: 1px solid #000;
+
+        background-color: #4b2265;
+    }
+
+    .guide {
+        flex-grow: 1;
+        resize: horizontal;
+        overflow: auto;
+        border: 2px solid #000;
+        width: 45%;
+
+        color: white;
+        background-color: #282f36;
+    }
+
+    .editor {
+        flex-grow: 3;
+        height: auto;
+        width: 100%;
+
+        resize: horizontal;
+        overflow: auto;
+    }
+
+    .console {
+        flex-grow: 1;
+        width: 25%;
+
+        resize: horizontal;
+        overflow: auto;
+
+        background-color: #282f36;
+    }
+</style>
