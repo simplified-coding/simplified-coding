@@ -1,6 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -27,5 +27,13 @@ import Footer from "../components/Footer.astro"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
     </body>
-    <Footer></Footer>
+    <div class="footer">
+        <Footer />
+    </div>
+
+    <style>
+        body {
+            background-color: #2b3035;
+        }
+    </style>
 </html>
