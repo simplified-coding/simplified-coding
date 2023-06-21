@@ -3,7 +3,24 @@ import Layout from "../../../layouts/Layout.astro";
 
 const { lang } = Astro.params;
 
-const content = (await Astro.glob("../../lessons/python/lesson_1.mdx"))[0];
+const pythonLessons = await Astro.glob("../../lessons/python/*.mdx");
+
+const getLessons = async (language: string): Promise<any> => {
+    switch (language) {
+        case "python":
+            return Astro.glob("../../lessons/python/*.mdx");
+        case "html":
+            return Astro.glob("../../lessons/html/*.mdx");
+        case "css":
+            return await Astro.glob("../../lessons/css/*.mdx");
+    }
+};
+
+const lessons = await getLessons(Astro.params.lang || "python");
+
+const content = lessons.filter((e: {frontmatter: any}) => {
+    return e.frontmatter.id == Astro.url.searchParams.get("lesson")
+})[0];
 ---
 
 <Layout>
@@ -44,6 +61,10 @@ const content = (await Astro.glob("../../lessons/python/lesson_1.mdx"))[0];
 <script>
     import { basicSetup } from "codemirror";
     import { javascript } from "@codemirror/lang-javascript";
+    import { python } from "@codemirror/lang-python";
+    import { html } from "@codemirror/lang-html";
+    import { css } from "@codemirror/lang-css";
+
     import { keymap, EditorView } from "@codemirror/view";
     import { indentWithTab } from "@codemirror/commands";
     import { oneDark } from "@codemirror/theme-one-dark";
@@ -94,11 +115,26 @@ const content = (await Astro.glob("../../lessons/python/lesson_1.mdx"))[0];
         }
     });
 
+    const decideLanguage = (lang: string): any => {
+        switch (lang) {
+            case "python":
+                return python();
+            case "javascript":
+                return javascript();
+            case "html":
+                return html();
+            case "css":
+                return css();
+            default:
+                return javascript();
+        }
+    };
+
     // Editor
     let editor = new EditorView({
         extensions: [
             basicSetup,
-            javascript(),
+            decideLanguage(location.pathname.split("/")[2]),
             keymap.of([indentWithTab]),
             oneDark,
         ],
