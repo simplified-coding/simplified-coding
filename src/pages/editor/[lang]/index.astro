@@ -51,7 +51,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             </div>
             <div
                 id="preview-div"
-                style="background-color: blue; width:100%; height:100%"
+                style="width:100%; height:100%; color:white"
                 hidden
             >
             </div>
@@ -70,6 +70,8 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     import { indentWithTab } from "@codemirror/commands";
     import { oneDark } from "@codemirror/theme-one-dark";
 
+    // URL
+    const language = location.pathname.split("/")[2];
     // Tabs
     const consoleBTN = document.getElementById("console-btn");
     const previewBTN = document.getElementById("preview-btn");
@@ -135,7 +137,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     let editor = new EditorView({
         extensions: [
             basicSetup,
-            decideLanguage(location.pathname.split("/")[2]),
+            decideLanguage(language),
             keymap.of([indentWithTab]),
             oneDark,
         ],
@@ -163,7 +165,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
 
     runButton?.addEventListener("click", () => {
         // If editor is in javascript language
-        if (location.pathname.split("/")[2] == "javascript") {
+        if (language == "javascript") {
             // Clear Function
             // @ts-expect-error
             console.logs = [];
@@ -180,6 +182,11 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             console.logs.forEach((e) => (consoleOutput += `> ${e[0]}\n`));
             if (consoleCode) {
                 consoleCode.innerText = consoleOutput;
+            }
+        } else if (language == "html") {
+            // If Editor HTML
+            if (previewDIV) {
+                previewDIV.innerHTML = editor.state.doc.toString();
             }
         }
     });
