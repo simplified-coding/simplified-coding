@@ -163,7 +163,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     const runButton = document.getElementById("run-btn");
     const consoleCode = document.getElementById("console-code");
 
-    runButton?.addEventListener("click", () => {
+    runButton?.addEventListener("click", async () => {
         // If editor is in javascript language
         if (language == "javascript") {
             // Clear Function
@@ -187,6 +187,23 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             // If Editor HTML
             if (previewDIV) {
                 previewDIV.innerHTML = editor.state.doc.toString();
+            }
+        } else if (language == "python") {
+            // If editor is python
+            const req = await fetch("https://python.simplifiedcoding.org/run", {
+                method: "POST",
+                body: JSON.stringify({
+                    data: btoa(editor.state.doc.toString()),
+                }),
+                headers: {
+                    "Content-type": "application/json",
+                },
+            });
+            const data = await req.json();
+
+            // Embed Console
+            if (consoleCode) {
+                consoleCode.innerText = data.console;
             }
         }
     });
