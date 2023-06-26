@@ -1,0 +1,13 @@
+---
+const { card_title, card_subtitle, card_link_href, card_link_text } =
+    Astro.params;
+---
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{card_title}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{card_subtitle}</h6>
+        <p class="card-text"><slot /></p>
+        <a href={card_link_href} class="card-link">{card_link_text}</a>
+    </div>
+</div>
