@@ -39,10 +39,13 @@ const content = lessons.filter((e: { frontmatter: any }) => {
                     >
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" id="preview-btn">Προεσκόπιση</button>
+                    <button class="nav-link" id="preview-btn"
+                        >Προεσκόπιση</button
+                    >
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-success m-1" id="run-btn">Τρέξε!</button
+                    <button class="btn btn-success m-1" id="run-btn"
+                        >Τρέξε!</button
                     >
                 </li>
             </ul>
@@ -72,7 +75,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
 
     // URL
     const language = location.pathname.split("/")[2];
-    
+
     // Tabs
     const consoleBTN = document.getElementById("console-btn");
     const previewBTN = document.getElementById("preview-btn");
@@ -216,8 +219,6 @@ const content = lessons.filter((e: { frontmatter: any }) => {
         height: 80vh;
         width: 100%;
         border: 1px solid #000;
-
-        background-color: #4b2265;
     }
 
     .guide {
