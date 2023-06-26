@@ -35,14 +35,17 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <button class="nav-link active" id="console-btn"
-                        >Console</button
+                        >Κονσόλα</button
                     >
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" id="preview-btn">Preview</button>
+                    <button class="nav-link" id="preview-btn"
+                        >Προεσκόπιση</button
+                    >
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-success m-1" id="run-btn">Run</button
+                    <button class="btn btn-success m-1" id="run-btn"
+                        >Τρέξε!</button
                     >
                 </li>
             </ul>
@@ -51,7 +54,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             </div>
             <div
                 id="preview-div"
-                style="background-color: blue; width:100%; height:100%"
+                style="width:100%; height:100%; color:white"
                 hidden
             >
             </div>
@@ -69,6 +72,9 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     import { keymap, EditorView } from "@codemirror/view";
     import { indentWithTab } from "@codemirror/commands";
     import { oneDark } from "@codemirror/theme-one-dark";
+
+    // URL
+    const language = location.pathname.split("/")[2];
 
     // Tabs
     const consoleBTN = document.getElementById("console-btn");
@@ -135,7 +141,7 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     let editor = new EditorView({
         extensions: [
             basicSetup,
-            decideLanguage(location.pathname.split("/")[2]),
+            decideLanguage(language),
             keymap.of([indentWithTab]),
             oneDark,
         ],
@@ -161,9 +167,9 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     const runButton = document.getElementById("run-btn");
     const consoleCode = document.getElementById("console-code");
 
-    runButton?.addEventListener("click", () => {
+    runButton?.addEventListener("click", async () => {
         // If editor is in javascript language
-        if (location.pathname.split("/")[2] == "javascript") {
+        if (language == "javascript") {
             // Clear Function
             // @ts-expect-error
             console.logs = [];
@@ -181,6 +187,28 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             if (consoleCode) {
                 consoleCode.innerText = consoleOutput;
             }
+        } else if (language == "html") {
+            // If Editor HTML
+            if (previewDIV) {
+                previewDIV.innerHTML = editor.state.doc.toString();
+            }
+        } else if (language == "python") {
+            // If editor is python
+            const req = await fetch("https://python.simplifiedcoding.org/run", {
+                method: "POST",
+                body: JSON.stringify({
+                    data: btoa(editor.state.doc.toString()),
+                }),
+                headers: {
+                    "Content-type": "application/json",
+                },
+            });
+            const data = await req.json();
+
+            // Embed Console
+            if (consoleCode) {
+                consoleCode.innerText = data.console;
+            }
         }
     });
 </script>
@@ -191,8 +219,6 @@ const content = lessons.filter((e: { frontmatter: any }) => {
         height: 80vh;
         width: 100%;
         border: 1px solid #000;
-
-        background-color: #4b2265;
     }
 
     .guide {
