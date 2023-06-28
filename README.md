@@ -1,55 +1,23 @@
-# Astro Starter Kit: Basics
+# This is the Simplified Coding website!
 
-```
-npm create astro@latest -- --template basics
-```
+Welcome! Here you'll find all the files for our website. Feel free to play around and make Simplified Coding yours!
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Where can I find the lessons?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+We keep our lessons in an MDX format. You can find them and `/src/pages/lessons/THE_LESSON_YOU_WANT`.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Is this under copyright?
 
+Simplified Coding is all about free software. You can use our software for free, which is under the GNU General Public License Version 3 (And above). We have stored it at `/LICENSE`
 
-## 🚀 Project Structure
+## I found a security issue! Where do I report it?
 
-Inside of your Astro project, you'll see the following folders and files:
+You can report all security vulnerabilities on GitHub. You can learn more about our security policy, which is at `SECURITY.md`.
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Cool! What is Simplified Coding... made of?
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Simplified Coding used to be more... Simple. The first version of the page was just plain HTML and CSS. Now we have evolved it and the base of our page is Astro. Also, our lessons are in MDX and we use Vercel to deploy changes to the site. We also use codemirror as our editor for the website and a custom API for Python.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Oh and... one more question. Why is your GitHub in English but the website in Greek?
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Well, we are all based in Greece and our goal is to bring coding to Greek students. English coding content is overwhelming so there is no point in making another coding source in English. We choose to use English in GitHub so everyone can see our work, even if they don't fully understand the content.
