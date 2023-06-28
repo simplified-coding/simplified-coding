@@ -1,6 +1,11 @@
 ---
-const { card_header, card_title, card_button_href, card_button_text } =
-    Astro.props;
+const {
+    card_header,
+    card_title,
+    card_button_href,
+    card_button_text,
+    card_button_visible = true,
+} = Astro.props;
 ---
 
 <div class="card">
@@ -11,7 +16,10 @@ const { card_header, card_title, card_button_href, card_button_text } =
             {card_title}
         </h5>
         <p class="card-text"><slot /></p>
-        <a href={card_button_href} class="btn btn-primary">{card_button_text}</a
+        <a
+            href={card_button_href}
+            class="btn btn-primary"
+            hidden={!card_button_visible}>{card_button_text}</a
         >
     </div>
 </div>
