@@ -1,0 +1,70 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const { lang } = Astro.params;
+
+const getLessons = async (language: string): Promise<any> => {
+    switch (language) {
+        case "python":
+            return Astro.glob("../../lessons/python/*.mdx");
+        case "html":
+            return Astro.glob("../../lessons/html/*.mdx");
+        case "css":
+            return Astro.glob("../../lessons/css/*.mdx");
+        case "javascript":
+            return Astro.glob("../../lessons/javascript/*.mdx");
+    }
+};
+
+const lessons = await getLessons(Astro.params.lang || "python");
+
+const content = lessons.filter((e: { frontmatter: any }) => {
+    return e.frontmatter.id == Astro.url.searchParams.get("lesson");
+})[0];
+---
+
+<Layout>
+    <div style="color: white;" id="viewLesson">
+        <div class="d-flex justify-content-center">
+            <div>
+                <div>
+                    <h1>
+                        Προεσκόπιση Μαθήματος - {
+                            Astro.params.lang?.toUpperCase()
+                        }
+                        <button class="btn btn-primary" id="print"
+                            >Εκτύπωση</button
+                        >
+                        <button class="btn btn-primary" id="save"
+                            >Κατέβασμα</button
+                        >
+                    </h1>
+                </div>
+                <div style="background-color: #282f36;">
+                    <content.Content />
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script>
+    const printBTN = document.getElementById("print");
+    const saveBTN = document.getElementById("save");
+
+    printBTN?.addEventListener("click", () => {
+        console.log("Opening print dialog");
+        window.print();
+    });
+
+    saveBTN?.addEventListener("click", () => {
+        const a = document.createElement("a");
+        a.download = "lesson.html";
+        a.href = window.URL.createObjectURL(
+            new Blob([document.getElementById("viewLesson")?.outerHTML || ""], {
+                type: "text/html",
+            })
+        );
+        a.click();
+    });
+</script>

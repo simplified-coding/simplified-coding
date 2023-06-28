@@ -1,5 +1,7 @@
 ---
 import CardHeader from "../Bootstrap/CardHeader.astro";
+
+const { button_visible = true } = Astro.props;
 ---
 
 <CardHeader
@@ -7,6 +9,7 @@ import CardHeader from "../Bootstrap/CardHeader.astro";
     card_title="CSS"
     card_button_text="Μάθε!"
     card_button_href="/lessons/css"
+    card_button_visible={button_visible}
     class="card_text"
 >
     <i class="fa-brands fa-css3" slot="pre-title"></i>

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
+    "@astrojs/vercel": "^3.5.1",
     "@codemirror/commands": "^6.2.4",
     "@codemirror/lang-css": "^6.2.0",
     "@codemirror/lang-html": "^6.4.4",
@@ -19,7 +20,7 @@
     "@codemirror/state": "^6.2.1",
     "@codemirror/theme-one-dark": "^6.1.2",
     "@codemirror/view": "^6.13.2",
-    "astro": "^2.6.4",
+    "astro": "^2.7.1",
     "codemirror": "^6.0.1"
   }
 }

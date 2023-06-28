@@ -1,0 +1,76 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import CardHeader from "../../../components/Bootstrap/CardHeader.astro";
+import PYTHON from "../../../components/Languages/PYTHON.astro";
+import HTML from "../../../components/Languages/HTML.astro";
+import CSS from "../../../components/Languages/CSS.astro";
+import JAVASCRIPT from "../../../components/Languages/JAVASCRIPT.astro";
+
+const getLessons = async (language: string): Promise<any> => {
+    switch (language) {
+        case "python":
+            return Astro.glob("../../lessons/python/*.mdx");
+        case "html":
+            return Astro.glob("../../lessons/html/*.mdx");
+        case "css":
+            return Astro.glob("../../lessons/css/*.mdx");
+        case "javascript":
+            return Astro.glob("../../lessons/javascript/*.mdx");
+    }
+};
+
+const lessons = await getLessons(Astro.params.lang || "python");
+---
+
+<Layout>
+    <div
+        class="d-flex justify-content-center p-4"
+        style="color: white"
+        data-bs-theme="dark"
+    >
+        <div>
+            <div>
+                <h1>
+                    Μαθήματα {(Astro.params.lang || "").toUpperCase()}
+                    <i
+                        class={`fa-brands fa-${(Astro.params.lang || "python")
+                            .replace("html", "html5")
+                            .replace("css", "css3")
+                            .replace("javascript", "js")}`}></i>
+                </h1>
+                <div>
+                    <div hidden={(Astro.params.lang || "") != "python"}>
+                        <PYTHON button_visible={false} />
+                    </div>
+                    <div hidden={(Astro.params.lang || "") != "html"}>
+                        <HTML button_visible={false} />
+                    </div>
+                    <div hidden={(Astro.params.lang || "") != "css"}>
+                        <CSS button_visible={false} />
+                    </div>
+                    <div hidden={(Astro.params.lang || "") != "javascript"}>
+                        <JAVASCRIPT button_visible={false} />
+                    </div>
+                </div>
+            </div>
+            <div>
+                {
+                    lessons.map((lesson: any) => (
+                        <div class="m-3">
+                            <CardHeader
+                                card_header="Μάθημα"
+                                card_title={lesson.frontmatter.title}
+                                card_button_text="Μάθε Τώρα!"
+                                card_button_href={`/editor/${
+                                    Astro.params.lang || ""
+                                }?lesson=${lesson.frontmatter.id}`}
+                            >
+                                {lesson.frontmatter.description}
+                            </CardHeader>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</Layout>
