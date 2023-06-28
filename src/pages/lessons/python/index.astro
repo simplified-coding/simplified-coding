@@ -1,0 +1,42 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PYTHON from "../../../components/Languages/PYTHON.astro";
+import CardHeader from "../../../components/Bootstrap/CardHeader.astro";
+
+const lessons = await Astro.glob("./*.mdx");
+---
+
+<Layout>
+    <div
+        class="d-flex justify-content-center p-4"
+        style="color: white"
+        data-bs-theme="dark"
+    >
+        <div>
+            <div>
+                <h1>
+                    Μαθήματα {Astro.url.pathname.split("/")[2].toUpperCase()}
+                </h1>
+                <PYTHON button_visible={false} />
+            </div>
+            <div>
+                {
+                    lessons.map((lesson) => (
+                        <div class="m-3">
+                            <CardHeader
+                                card_header="Μάθημα"
+                                card_title={lesson.frontmatter.title}
+                                card_button_text="Μάθε Τώρα!"
+                                card_button_href={`/editor/${
+                                    Astro.url.pathname.split("/")[2]
+                                }?lesson=${lesson.frontmatter.id}`}
+                            >
+                                {lesson.frontmatter.description}
+                            </CardHeader>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</Layout>
