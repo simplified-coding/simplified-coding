@@ -22,5 +22,10 @@
     "@codemirror/view": "^6.13.2",
     "astro": "^2.7.1",
     "codemirror": "^6.0.1"
-  }
+  },
+  "description": "Welcome! Here you'll find all the files for our website. Feel free to play around and make Simplified Coding yours!",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
