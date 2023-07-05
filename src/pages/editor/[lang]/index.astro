@@ -22,6 +22,15 @@ const content = lessons.filter((e: { frontmatter: any }) => {
 ---
 
 <Layout>
+    <div>
+        <link
+            rel="stylesheet"
+            href="https://pyscript.net/latest/pyscript.css"
+        />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    </div>
+
+    <py-script output="console-code" id="pyscript">print("HELLO")</py-script>
     <div class="parentEditor">
         <div class="guide">
             <content.Content />
@@ -189,7 +198,18 @@ const content = lessons.filter((e: { frontmatter: any }) => {
                 previewDIV.innerHTML = editor.state.doc.toString();
             }
         } else if (language == "python") {
+            // Clean console
+            if (consoleCode) {
+                consoleCode.innerText = "";
+                console.log(editor.state.doc.toString())
+            }
             // If editor is python
+            const pyscript = document.createElement("py-script");
+            pyscript.id = "py-exec";
+            pyscript.setAttribute("output", "console-code");
+            pyscript.innerText = editor.state.doc.toString();
+            document.body.appendChild(pyscript);
+            document.body.removeChild(pyscript);
         }
     });
 </script>
