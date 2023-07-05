@@ -1,8 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 
-const { lang } = Astro.params;
-
 const getLessons = async (language: string): Promise<any> => {
     switch (language) {
         case "python":
@@ -24,11 +22,20 @@ const content = lessons.filter((e: { frontmatter: any }) => {
 ---
 
 <Layout>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js" defer
+    ></script>
     <div class="parentEditor">
         <div class="guide">
             <content.Content />
         </div>
-        <div class="editor" id="editor"></div>
+        <div class="editor" id="editor">
+            <div id="loading-py" hidden>
+                <div class="spinner-border text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h1 class="text-info">Φόρτωση Python...</h1>
+            </div>
+        </div>
         <div class="console" data-bs-theme="dark">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -66,13 +73,23 @@ const content = lessons.filter((e: { frontmatter: any }) => {
     import { python } from "@codemirror/lang-python";
     import { html } from "@codemirror/lang-html";
     import { css } from "@codemirror/lang-css";
+    import { loadPyodide } from "pyodide";
 
     import { keymap, EditorView } from "@codemirror/view";
     import { indentWithTab } from "@codemirror/commands";
     import { oneDark } from "@codemirror/theme-one-dark";
 
+    const loadingPy = document.getElementById("loading-py");
+
     // URL
+    let py: any = null;
     const language = location.pathname.split("/")[2];
+
+    if (language == "python" && loadingPy) {
+        loadingPy.hidden = false;
+        py = await loadPyodide({ indexURL: "/pyodide" });
+        loadingPy.hidden = true;
+    }
 
     // Tabs
     const consoleBTN = document.getElementById("console-btn");
@@ -190,23 +207,16 @@ const content = lessons.filter((e: { frontmatter: any }) => {
             if (previewDIV) {
                 previewDIV.innerHTML = editor.state.doc.toString();
             }
-        } else if (language == "python") {
-            // If editor is python
-            const req = await fetch("https://python.simplifiedcoding.org/run", {
-                method: "POST",
-                body: JSON.stringify({
-                    data: btoa(editor.state.doc.toString()),
-                }),
-                headers: {
-                    "Content-type": "application/json",
-                },
-            });
-            const data = await req.json();
+        } else if (language == "python" && py && consoleCode) {// If editor is python, run python code
+            py.runPython(editor.state.doc.toString());
 
-            // Embed Console
-            if (consoleCode) {
-                consoleCode.innerText = data.console;
-            }
+            // Set Console Output
+            let consoleOutput = "";
+            // @ts-expect-error
+            console.logs = [];
+            // @ts-expect-error
+            console.logs.forEach((e) => (consoleOutput += `> ${e[0]}\n`));
+            consoleCode.innerText = consoleOutput;
         }
     });
 </script>
