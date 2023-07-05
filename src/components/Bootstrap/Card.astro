@@ -1,9 +1,14 @@
 ---
-const { card_title, card_subtitle, card_link_href, card_link_text } =
-    Astro.params;
+const {
+    card_title = "",
+    card_subtitle = "",
+    card_link_href = "",
+    card_link_text = "",
+    card_link_visible = true,
+} = Astro.props;
 ---
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="max-width: 40vw;">
     <div class="card-body">
         <h5 class="card-title card-bold">
             <slot name="pre-title" />
@@ -13,7 +18,9 @@ const { card_title, card_subtitle, card_link_href, card_link_text } =
             {card_subtitle}
         </h6>
         <p class="card-text"><slot /></p>
-        <a href={card_link_href} class="card-link">{card_link_text}</a>
+        <a href={card_link_href} class="card-link" hidden={!card_link_visible}
+            >{card_link_text}</a
+        >
     </div>
 </div>
 
