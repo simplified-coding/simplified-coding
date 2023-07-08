@@ -2,6 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Bootstrap/Card.astro";
 import CardImage from "../../components/Bootstrap/CardImage.astro";
+
+import OdyPFP from "../../assets/pfp/odysseus_pfp_rick_compress.jpg";
+import NikosPFP from "../../assets/pfp/nikos_pfp_roll_compress.jpg";
+import MariosPFP from "../../assets/pfp/marios_pfp_never_compress.jpg";
 ---
 
 <Layout>
@@ -65,9 +69,51 @@ import CardImage from "../../components/Bootstrap/CardImage.astro";
                 </div>
             </div>
         </div>
+    </div>
 
-        <div>
-            <CardImage card_title=""></CardImage>
+    <div
+        class="d-flex justify-content-center align-items-center m-5"
+        data-bs-theme="dark"
+    >
+        <div class="m-3">
+            <CardImage
+                card_title="Οδυσσέας Κηρυκόπουλος"
+                card_img={OdyPFP}
+                card_img_alt="profile picture"
+                card_button_visible={false}
+            >
+                Ο Οδυσσέας Αβραάμ Κηρυκόπουλος είναι ένας από τους Συν-Ιδρυτές
+                μας. Κατασκεύασε την πρώτη έκδοση της ιστοσελίδας του Simplified
+                Coding. Ανέπτυξε τις σειρές μαθημάτων Python, HTML, CSS και
+                Arduino.
+            </CardImage>
+        </div>
+        <div class="m-3">
+            <CardImage
+                card_title="Νικόλαος Τσίλας"
+                card_img={NikosPFP}
+                card_img_alt="profile picture"
+                card_button_visible={false}
+            >
+                Ο Νικόλαος Τσίλας, ένας από τους Συν-Ιδρυτές μας, ανέπτυξε και
+                αυτός την σειρά μαθημάτων στην Python και δημιουργούσε τις
+                παρουσιάσεις κάθε μαθήματος. Δημιούργησε, επιπλέον, την σειρά
+                της Arduino και επεξεργάζεται τα μαθήματα πριν δημοσιευθούν στην
+                ιστοσελίδα.
+            </CardImage>
+        </div>
+        <div class="m-3">
+            <CardImage
+                card_title="Μάριος Μήτσιος"
+                card_img={MariosPFP}
+                card_img_alt="profile picture"
+                card_button_visible={false}
+            >
+                Ο Μάριος Μήτσιος, το νεότερο μέλος της ομάδας μας αναπτύσει την
+                νέα ιστοσελίδα μας. Επιπλέον, δημιούργησε την σειρά μαθημάτων
+                για την γλώσσα προγραμματισμού της JavaScript και κατασκευάζει
+                το επίσημο Discord bot για τον server μας στο Discord.
+            </CardImage>
         </div>
     </div>
 
