@@ -1,57 +1,66 @@
 ---
 id: "lesson_1"
-title: "Βασική δομή της JS"
-description: "Βασική δομή της JS"
+title: "Βασική δομή της JS - Hello, world!"
+description: "Βασική δομή της JS - Hello, world!"
 ---
 
-# Μάθημα 1ο: Βασική δομή της JS
+import Task from "../../../components/Task.astro"
 
-## Σχόλια
+<h1 style="text-align: center;"> Μάθημα 1ο: Βασική δομή της JS - Hello, world!</h1>
+<p style="text-align: center;">Αυτό το μέρος του μαθήματος αφορά τον πυρήνα της JavaScript, την ίδια τη γλώσσα.</p>
 
-Τα σχόλια στην JS αρχίζουν με `// ΣΧΟΛΙΑ` 
+---
 
-### Παράδειγμα
+<h2 style="text-align: center;"> Η ```<script></script>``` tag</h2>
+Τα προγράμματα JavaScript μπορούν να εισαχθούν σχεδόν οπουδήποτε σε ένα έγγραφο HTML χρησιμοποιώντας την ετικέτα ```<script>```.  
+Για αυτό το μάθημα θα χρησιμοποιήσουμε τον ενσωματωμένο editor που βλέπετε στο κέντρο του παραθύρου.  
+Αυτο το editor λειτουργεί σαν μια ετικέτα* ```<script>```.  
+Για να "τρέξεις" το editor πάτα το κουμπί, Τρέξε!, που βρίσκεται στα αριστερά.  
 
-```js
-// ΣΧΟΛΙΟ
+π.χ
 ```
-
-```js
-/* 
-ΣΧΟΛΙΟ
-ΣΧΟΛΙΟ
-ΣΧΟΛΙΟ
-*/
-```
-
-## `<script>`
-
-Το `<script></script>` βρίσκετε στό τέλος κάθε `<body></body>`. Μέσα στο `<script></script>` μπορούμε να γράψουμε JavaScript
-
-### Παράδειγμα
-
-```html
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <title>JS Sample</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <script>
-            // JS ΕΔΏ
-        </script>
-    </body>
+
+<body>
+
+  <p>Πρίν...</p>
+
+  <script>
+    alert('Hello, world!');
+  </script>
+
+  <p>...Μετά</p>
+
+</body>
+
 </html>
 ```
 
-## Console.log
-Με το console.log μπορούμε να γράψουμε στο Web Console.
+---
 
-### Παράδειγμα
+<h2 style="text-align: center;">alert()</h2>
 
-```html
-<script>
-    console.log("Hello World")
-</script>
-```
+```alert('msg')``` δίνει εντολή στο πρόγραμμα περιήγησης να εμφανίσει ένα παράθυρο διαλόγου με ένα προαιρετικό μήνυμα, για αυτή την περίπτωση 'msg', και να περιμένει μέχρι ο χρήστης να κλείσει το παράθυρο διαλόγου.  
+[Περισσότερες Πληροφορίες (ΑΓΓΛΙΚΑ)](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
+  
+π.χ  
+```alert("Hello!")```
+
+---
+
+<h2 style="text-align: center;">console.log()</h2>
+Η μέθοδος ```console.log()``` εξάγει ένα μήνυμα στην κονσόλα ιστού ή στην κονσόλα των επεξεργαστών στα δεξιά. Το μήνυμα μπορεί να είναι ένα απλό αλφαριθμητικό (με προαιρετικές τιμές αντικατάστασης) ή μπορεί να είναι ένα ή περισσότερα αντικείμενα JavaScript.  
+[Περισσότερες Πληροφορίες (ΑΓΓΛΙΚΑ)](https://developer.mozilla.org/en-US/docs/Web/API/console/log)
+  
+π.χ  
+```console.log("Hello!")```
+
+---
+
+<Task id="1">Κάνε ένα alert που θα εμφανίζει, "Γεία σού"</Task>
+<Task id="2">Κάνε ένα console.log που θα εμφανίζει, "Γεία σού, χρήστη"</Task>
+
+---
+
+***ετικέτα = tag**

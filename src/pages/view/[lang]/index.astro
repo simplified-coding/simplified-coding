@@ -25,9 +25,9 @@ const content = lessons.filter((e: { frontmatter: any }) => {
 
 <Layout>
     <div style="color: white;" id="viewLesson">
-        <div class="d-flex justify-content-center">
+        <div>
             <div>
-                <div>
+                <div class="d-flex justify-content-center">
                     <h1>
                         Προεσκόπιση Μαθήματος - {
                             Astro.params.lang?.toUpperCase()
@@ -40,12 +40,15 @@ const content = lessons.filter((e: { frontmatter: any }) => {
                         >
                     </h1>
                 </div>
-                <div style="background-color: #282f36;">
-                    <content.Content />
+                <div class="d-flex justify-content-center">
+                    <div style="background-color: #282f36; max-width: 50%">
+                        <content.Content />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
 </Layout>
 
 <script>
