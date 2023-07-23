@@ -1,0 +1,19 @@
+---
+import CardHeader from "../Bootstrap/CardHeader.astro";
+
+const { button_visible = true } = Astro.props;
+---
+
+<CardHeader
+    card_header="Γλώσσα Προγραμματισμού"
+    card_title="Arduino"
+    card_button_text="Μάθε!"
+    card_button_href="/lessons/view/arduino"
+    card_button_visible={button_visible}
+    class="card_text"
+>
+    <i class="fa-brands fa-html5" slot="pre-title"></i>
+    Η Arduino είναι μια εταιρία που κατασκευάζει μικροελεγτές όπως το Arduino Uno,
+    και την γλώσσα προγραμματισμού Arduino, η οποία χρησιμοποιείτε για να προγραμματίσουμε έναν μικροελεγκτή.
+    Είναι το ιδανικό μέρος για να ξεκινήσετε με την ρομποτική.
+</CardHeader>
