@@ -1,21 +1,21 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import CardHeader from "../../../components/Bootstrap/CardHeader.astro";
-import PYTHON from "../../../components/Languages/PYTHON.astro";
-import HTML from "../../../components/Languages/HTML.astro";
-import CSS from "../../../components/Languages/CSS.astro";
-import JAVASCRIPT from "../../../components/Languages/JAVASCRIPT.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import CardHeader from "../../../../components/Bootstrap/CardHeader.astro";
+import PYTHON from "../../../../components/Languages/PYTHON.astro";
+import HTML from "../../../../components/Languages/HTML.astro";
+import CSS from "../../../../components/Languages/CSS.astro";
+import JAVASCRIPT from "../../../../components/Languages/JAVASCRIPT.astro";
 
 const getLessons = async (language: string): Promise<any> => {
     switch (language) {
         case "python":
-            return Astro.glob("../../lessons/python/*.mdx");
+            return Astro.glob("../../../lessons/python/*.mdx");
         case "html":
-            return Astro.glob("../../lessons/html/*.mdx");
+            return Astro.glob("../../../lessons/html/*.mdx");
         case "css":
-            return Astro.glob("../../lessons/css/*.mdx");
+            return Astro.glob("../../../lessons/css/*.mdx");
         case "javascript":
-            return Astro.glob("../../lessons/javascript/*.mdx");
+            return Astro.glob("../../../lessons/javascript/*.mdx");
     }
 };
 
