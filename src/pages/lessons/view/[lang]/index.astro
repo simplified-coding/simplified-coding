@@ -5,21 +5,15 @@ import PYTHON from "../../../../components/Languages/PYTHON.astro";
 import HTML from "../../../../components/Languages/HTML.astro";
 import CSS from "../../../../components/Languages/CSS.astro";
 import JAVASCRIPT from "../../../../components/Languages/JAVASCRIPT.astro";
+import ARDUINO from "../../../../components/Languages/ARDUINO.astro";
+import { getEntry } from "astro:content";
 
-const getLessons = async (language: string): Promise<any> => {
-    switch (language) {
-        case "python":
-            return Astro.glob("../../../lessons/python/*.mdx");
-        case "html":
-            return Astro.glob("../../../lessons/html/*.mdx");
-        case "css":
-            return Astro.glob("../../../lessons/css/*.mdx");
-        case "javascript":
-            return Astro.glob("../../../lessons/javascript/*.mdx");
-    }
-};
+// @ts-expect-error
+const entry = (await getEntry("lessons", Astro.params.lang || "javascript"))
+    .data;
 
-const lessons = await getLessons(Astro.params.lang || "python");
+const lessons = entry.data;
+const primaryLocation = entry.primaryLocation;
 ---
 
 <Layout>
@@ -51,6 +45,9 @@ const lessons = await getLessons(Astro.params.lang || "python");
                     <div hidden={(Astro.params.lang || "") != "javascript"}>
                         <JAVASCRIPT button_visible={false} />
                     </div>
+                    <div hidden={(Astro.params.lang || "") != "arduino"}>
+                        <ARDUINO button_visible={false} />
+                    </div>
                 </div>
             </div>
             <div>
@@ -59,13 +56,13 @@ const lessons = await getLessons(Astro.params.lang || "python");
                         <div style="display: inline-flex;" class="m-3">
                             <CardHeader
                                 card_header="Μάθημα"
-                                card_title={lesson.frontmatter.title}
+                                card_title={lesson.title}
                                 card_button_text="Μάθε Τώρα!"
-                                card_button_href={`/editor/${
+                                card_button_href={`/${primaryLocation}/${
                                     Astro.params.lang || ""
-                                }?lesson=${lesson.frontmatter.id}`}
+                                }?lesson=${lesson.slug}`}
                             >
-                                {lesson.frontmatter.description}
+                                {lesson.description}
                             </CardHeader>
                         </div>
                     ))
