@@ -5,6 +5,7 @@ import PYTHON from "../../../../components/Languages/PYTHON.astro";
 import HTML from "../../../../components/Languages/HTML.astro";
 import CSS from "../../../../components/Languages/CSS.astro";
 import JAVASCRIPT from "../../../../components/Languages/JAVASCRIPT.astro";
+import ARDUINO from "../../../../components/Languages/ARDUINO.astro";
 
 const getLessons = async (language: string): Promise<any> => {
     switch (language) {
@@ -16,6 +17,8 @@ const getLessons = async (language: string): Promise<any> => {
             return Astro.glob("../../../lessons/css/*.mdx");
         case "javascript":
             return Astro.glob("../../../lessons/javascript/*.mdx");
+        case "arduino":
+            return Astro.glob("../../../lessons/arduino/*.mdx");
     }
 };
 
@@ -50,6 +53,9 @@ const lessons = await getLessons(Astro.params.lang || "python");
                     </div>
                     <div hidden={(Astro.params.lang || "") != "javascript"}>
                         <JAVASCRIPT button_visible={false} />
+                    </div>
+                    <div hidden={(Astro.params.lang || "") != "arduino"}>
+                        <ARDUINO button_visible={false} />
                     </div>
                 </div>
             </div>
