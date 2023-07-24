@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "slug": "lesson_1",
+            "title": "Βασική δομή της HTML",
+            "description": "Βασική δομή της HTML"
+        },
+        {
+            "slug": "lesson_2",
+            "title": "Παράγραφοι, Τίτλοι, Links",
+            "description": "Παράγραφοι, Τίτλοι, Links"
+        },
+        {
+            "slug": "lesson_3",
+            "title": "Μορφοποίηση κειμένου HTML",
+            "description": "Μορφοποίηση κειμένου HTML"
+        },
+        {
+            "slug": "lesson_4",
+            "title": "Πολυμέσα",
+            "description": "Πολυμέσα"
+        },
+        {
+            "slug": "lesson_5",
+            "title": "Λίστες και Πίνακες",
+            "description": "Λίστες και Πίνακες"
+        },
+        {
+            "title": "Styling",
+            "description": "Styling"
+        }
+    ],
+    "primaryLocation": "editor"
+}

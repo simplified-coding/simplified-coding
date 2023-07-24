@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "slug": "lesson_1",
+            "title": "Βασική δομή της JS - Hello, world!",
+            "description": "Βασική δομή της JS - Hello, world!"
+        },
+        {
+            "slug": "lesson_2",
+            "title": "Βασική δομή της JS - Μέρος 2ο",
+            "description": "Βασική δομή της JS - Μέρος 2ο"
+        },
+        {
+            "slug": "lesson_3",
+            "title": "Τύποι δεδομένων της JS",
+            "description": "Τύποι δεδομένων της JS"
+        }
+    ],
+    "primaryLocation": "editor"
+}

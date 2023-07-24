@@ -73,9 +73,8 @@ import Layout from "../../../layouts/Layout.astro";
         const iframe = document.getElementById("if") as HTMLIFrameElement;
         const style = document.createElement("style");
         style.innerHTML = `
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         * {
-            color: white; font-family: 'Roboto', sans-serif;
+            color: white;
         }
         `;
         iframe.contentDocument?.body.appendChild(style);
