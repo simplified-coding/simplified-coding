@@ -10,64 +10,65 @@ import { getEntry } from "astro:content";
 
 // @ts-expect-error
 const entry = (await getEntry("lessons", Astro.params.lang || "javascript"))
-    .data;
+  .data;
 
 const lessons = entry.data;
 const primaryLocation = entry.primaryLocation;
 ---
 
 <Layout>
-    <div
-        class="d-flex justify-content-center p-4"
-        style="color: white"
-        data-bs-theme="dark"
-    >
+  <div
+    class="d-flex justify-content-center p-4"
+    style="color: white"
+    data-bs-theme="dark"
+  >
+    <div>
+      <div>
+        <h1>
+          Μαθήματα {(Astro.params.lang || "").toUpperCase()}
+          <i
+            class={`fa-brands fa-${(Astro.params.lang || "python")
+              .replace("html", "html5")
+              .replace("css", "css3")
+              .replace("javascript", "js")}`}></i>
+        </h1>
         <div>
-            <div>
-                <h1>
-                    Μαθήματα {(Astro.params.lang || "").toUpperCase()}
-                    <i
-                        class={`fa-brands fa-${(Astro.params.lang || "python")
-                            .replace("html", "html5")
-                            .replace("css", "css3")
-                            .replace("javascript", "js")}`}></i>
-                </h1>
-                <div>
-                    <div hidden={(Astro.params.lang || "") != "python"}>
-                        <PYTHON button_visible={false} />
-                    </div>
-                    <div hidden={(Astro.params.lang || "") != "html"}>
-                        <HTML button_visible={false} />
-                    </div>
-                    <div hidden={(Astro.params.lang || "") != "css"}>
-                        <CSS button_visible={false} />
-                    </div>
-                    <div hidden={(Astro.params.lang || "") != "javascript"}>
-                        <JAVASCRIPT button_visible={false} />
-                    </div>
-                    <div hidden={(Astro.params.lang || "") != "arduino"}>
-                        <ARDUINO button_visible={false} />
-                    </div>
-                </div>
-            </div>
-            <div>
-                {
-                    lessons.map((lesson: any) => (
-                        <div style="display: inline-flex;" class="m-3">
-                            <CardHeader
-                                card_header="Μάθημα"
-                                card_title={lesson.title}
-                                card_button_text="Μάθε Τώρα!"
-                                card_button_href={`/${primaryLocation}/${
-                                    Astro.params.lang || ""
-                                }?lesson=${lesson.slug}`}
-                            >
-                                {lesson.description}
-                            </CardHeader>
-                        </div>
-                    ))
-                }
-            </div>
+          <div hidden={(Astro.params.lang || "") != "python"}>
+            <PYTHON button_visible={false} />
+          </div>
+          <div hidden={(Astro.params.lang || "") != "html"}>
+            <HTML button_visible={false} />
+          </div>
+          <div hidden={(Astro.params.lang || "") != "css"}>
+            <CSS button_visible={false} />
+          </div>
+          <div hidden={(Astro.params.lang || "") != "javascript"}>
+            <JAVASCRIPT button_visible={false} />
+          </div>
+          <div hidden={(Astro.params.lang || "") != "arduino"}>
+            <ARDUINO button_visible={false} />
+          </div>
         </div>
+      </div>
+      <div>
+        {
+          lessons.map((lesson: any) => (
+            <div style="display: inline-flex;" class="m-3">
+              <CardHeader
+                card_style="width: 25vw; min-height: 13rem;"
+                card_header="Μάθημα"
+                card_title={lesson.title}
+                card_button_text="Μάθε Τώρα!"
+                card_button_href={`/${primaryLocation}/${
+                  Astro.params.lang || ""
+                }?lesson=${lesson.slug}`}
+              >
+                {lesson.description}
+              </CardHeader>
+            </div>
+          ))
+        }
+      </div>
     </div>
+  </div>
 </Layout>
