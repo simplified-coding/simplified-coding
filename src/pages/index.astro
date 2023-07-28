@@ -161,7 +161,6 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
         id="mbody-mobile"
         class="d-flex justify-content-center"
         style="color: white"
-        hidden
     >
         <div>
             <h1 class="text-center">
@@ -331,8 +330,11 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
 <script>
     const mbody = document.getElementById("mbody");
     const mbodyMobile = document.getElementById("mbody-mobile");
-    if (mbody && mbodyMobile && window.innerWidth < 700) {
-        mbody.hidden = true;
-        mbodyMobile.hidden = false;
+    if (mbody && mbodyMobile) {
+        if (window.innerWidth < 700) {
+            mbody.remove();
+        } else {
+            mbodyMobile.remove();
+        }
     }
 </script>
