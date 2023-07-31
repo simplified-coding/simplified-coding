@@ -24,6 +24,11 @@
             "slug": "lesson_5",
             "title": "Μετατροπές τύπων",
             "description": "Μετατροπές τύπων"
+        },
+        {
+            "slug": "lesson_6",
+            "title": "Βασικοί τελεστές, μαθηματικά",
+            "description": "Βασικοί τελεστές, μαθηματικά"
         }
     ],
     "primaryLocation": "editor"
