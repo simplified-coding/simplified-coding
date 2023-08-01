@@ -14,6 +14,21 @@
             "slug": "lesson_3",
             "title": "Τύποι δεδομένων της JS",
             "description": "Τύποι δεδομένων της JS"
+        },
+        {
+            "slug": "lesson_4",
+            "title": "Αλληλεπίδραση χρήστη",
+            "description": "Αλληλεπίδραση χρήστη"
+        },
+        {
+            "slug": "lesson_5",
+            "title": "Μετατροπές τύπων",
+            "description": "Μετατροπές τύπων"
+        },
+        {
+            "slug": "lesson_6",
+            "title": "Βασικοί τελεστές, μαθηματικά",
+            "description": "Βασικοί τελεστές, μαθηματικά"
         }
     ],
     "primaryLocation": "editor"
