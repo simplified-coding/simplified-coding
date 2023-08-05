@@ -16,7 +16,7 @@ You can report all security vulnerabilities on GitHub. You can learn more about 
 
 ## Cool! What is Simplified Coding... made of?
 
-Simplified Coding used to be more... Simple. The first version of the page was just plain HTML and CSS. Now we have evolved it and the base of our page is Astro. Also, our lessons are in MDX and we use Vercel to deploy changes to the site. We also use codemirror as our editor for the website and a custom API for Python.
+Simplified Coding used to be more... Simple. The first version of the website was just plain HTML and CSS. Now we have evolved it and the base of our page is Astro. Also, our lessons are in MDX, we use Bootstrap as a CSS framework, and we use Vercel to deploy changes to the site. We also use codemirror as our editor for the website and Pyodide for Python.
 
 ## Oh and... one more question. Why is your GitHub in English but the website in Greek?
 
