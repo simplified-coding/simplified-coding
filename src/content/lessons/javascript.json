@@ -29,6 +29,11 @@
             "slug": "lesson_6",
             "title": "Βασικοί τελεστές, μαθηματικά",
             "description": "Βασικοί τελεστές, μαθηματικά"
+        },
+        {
+            "slug": "lesson_7",
+            "title": "Συγκρίσεις",
+            "description": "Συγκρίσεις"
         }
     ],
     "primaryLocation": "editor"
