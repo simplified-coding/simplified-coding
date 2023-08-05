@@ -39,6 +39,11 @@
             "slug": "lesson_8",
             "title": "Λογικοί τελεστές",
             "description": "Λογικοί τελεστές"
+        },
+        {
+            "slug": "lesson_9",
+            "title": "Loops: while και for",
+            "description": "Loops: while και for"
         }
     ],
     "primaryLocation": "editor"
