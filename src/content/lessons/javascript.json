@@ -34,6 +34,11 @@
             "slug": "lesson_7",
             "title": "Συγκρίσεις",
             "description": "Συγκρίσεις"
+        },
+        {
+            "slug": "lesson_8",
+            "title": "Λογικοί τελεστές",
+            "description": "Λογικοί τελεστές"
         }
     ],
     "primaryLocation": "editor"
