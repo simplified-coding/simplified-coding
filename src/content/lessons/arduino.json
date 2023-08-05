@@ -3,32 +3,32 @@
         {
             "slug": "lesson_1",
             "title": "Εγκατάσταση του Arduino IDE",
-            "description": "Εγκατάσταση του Arduino IDE"
+            "description": "Εγκαταστήστε το Arduino IDE και αρχίστε τον προγραμματισμό"
         },
         {
             "slug": "lesson_2",
             "title": "Τα μέρη του Arduino, Jumper Wires και Breadboard",
-            "description": "Τα μέρη του Arduino, Jumper Wires και Breadboard"
+            "description": "Μάθετε από τι αποττελείτε ένα Arduino όπως και το πώς συνδέεται με το breadboard"
         },
         {
             "slug": "lesson_3",
             "title": "Αντιστάσεις, Δίοδοι και LEDs",
-            "description": "Αντιστάσεις, Δίοδοι και LEDs"
+            "description": "Πώς ανάβει ένα ledάκι; Μάθετε τώρα."
         },
         {
             "slug": "lesson_4",
             "title": "Κουμπιά & οθόνες",
-            "description": "Κουμπιά & οθόνες"
+            "description": "Προσθέστε οθόνη στο project σας και γίνετε αυτόνομει από την οθόνη του υπολογιστή σας."
         },
         {
             "slug": "lesson_5",
             "title": "Αισθητήρες",
-            "description": "Αισθητήρες"
+            "description": "Μάθετε τις πολλές δυνατότητες των αισθητήρων και το τι προσφέρουν στην κατασκευή σας."
         },
         {
             "slug": "lesson_6",
             "title": "Shields & Motors",
-            "description": "Shields & Motors"
+            "description": "Περάστε την κατασκευή σας στο επόμενο επίπεδο με shields και δώστε κίνηση στο robot σας με κινητήρες."
         }
     ],
     "primaryLocation": "view"
