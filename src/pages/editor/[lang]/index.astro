@@ -90,7 +90,7 @@ import Layout from "../../../layouts/Layout.astro";
     const loadPython = document.getElementById("loading-py");
     if (loadPython && language == "python") {
         loadPython.hidden = false;
-        py = await loadPyodide({ indexURL: "/pyodide" });
+        py = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/" });
         loadPython.hidden = true;
     }
 

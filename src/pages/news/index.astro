@@ -1,44 +1,39 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Bootstrap/Card.astro";
-import CardImage from "../../components/Bootstrap/CardImage.astro";
+import CardHeader from "../../components/Bootstrap/CardHeader.astro";
 ---
 
 <Layout>
+  <br /><br /><br />
+  <div class="d-flex justify-content-around" data-bs-theme="dark">
+    <CardHeader
+      card_header="News"
+      card_title="Newsletter"
+      card_subtitle="Newsletter"
+      card_button_text="Κάνε εγγραφή"
+      card_button_href="https://testwiz.xyz/quiz/sc_news"
+      card_button_visible={true}
+      card_style="width: 48rem;"
+    >
+      Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως, email
+      κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια μαθήματα, πριν
+      καν δημοσιευθούν στην ιστοσελίδα μας!<br />
+    </CardHeader>
 
-    <div class="d-flex justify-content-center" data-bs-theme="dark">
-        <div class="row">
-            <div class="col-6">
-                <Card
-                    card_title="Newsletter"
-                    card_subtitle="Newsletter"
-                    card_link_text="Κάνε εγγραφή"
-                    card_link_href="https://testwiz.xyz/quiz/sc_news"
-                    card_link_visible={true}
-                >
-                    Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
-                    email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια μαθήματα,
-                    πριν καν δημοσιευθούν στην ιστοσελίδα μας!
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-6">
-                <Card
-                    card_title="Discord"
-                    card_subtitle="Discord"
-                    card_link_text="Γίνε μέλος"
-                    card_link_href="https://testwiz.xyz/quiz/sc_news"
-                    card_link_visible={true}
-                >
-                    Γίνε μέλος στον Discord server μας για να πέρνεις νέες προσθήκες και βελτιώσεις της σελίδας μας αμέσως,
-                    να πέρνεις μέρος σε polls σχετικά με νέες λειτουργίες και σε giveaways!
-                    Επιπλέον, θα έχεις την δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.
-                </Card>
-            </div>
-        </div>
-
-    </div>
-
-
+    <CardHeader
+      card_header="News"
+      card_title="Discord"
+      card_subtitle="Discord"
+      card_button_text="Γίνε μέλος"
+      card_button_href="https://testwiz.xyz/quiz/sc_news"
+      card_button_visible={true}
+      card_style="width: 48rem;"
+    >
+      Γίνε μέλος στον Discord server μας για να πέρνεις νέες προσθήκες και
+      βελτιώσεις της σελίδας μας αμέσως, να πέρνεις μέρος σε polls σχετικά με
+      νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την δυνατότητα να
+      μιλήσεις με την ομάδα μας και με άλλους χρήστες.
+    </CardHeader>
+  </div>
+  <br /><br /><br />
 </Layout>
