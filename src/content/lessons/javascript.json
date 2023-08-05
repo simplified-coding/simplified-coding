@@ -44,6 +44,11 @@
             "slug": "lesson_9",
             "title": "Loops: while και for",
             "description": "Loops: while και for"
+        },
+        {
+            "slug": "lesson_10",
+            "title": "Η δήλωση switch",
+            "description": "Η δήλωση switch"
         }
     ],
     "primaryLocation": "editor"
