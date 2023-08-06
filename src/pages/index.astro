@@ -5,7 +5,7 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
 
 <Layout>
     <br /><br />
-    <div style="color: white" data-bs-theme="dark" id="mbody">
+    <div style="color: white" data-bs-theme="dark" id="doc-body">
         <div class="d-flex justify-content-center">
             <div>
                 <h1>
@@ -163,7 +163,7 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
         </div>
     </div>
     <div
-        id="mbody-mobile"
+        id="doc-body-mobile"
         class="d-flex justify-content-center"
         style="color: white"
     >
@@ -331,15 +331,3 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
     <br />
     <br />
 </Layout>
-
-<script>
-    const mbody = document.getElementById("mbody");
-    const mbodyMobile = document.getElementById("mbody-mobile");
-    if (mbody && mbodyMobile) {
-        if (window.innerWidth < 700) {
-            mbody.remove();
-        } else {
-            mbodyMobile.remove();
-        }
-    }
-</script>
