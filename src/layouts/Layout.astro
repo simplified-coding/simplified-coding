@@ -39,7 +39,11 @@ import "../assets/css/brands.css";
                     document.getElementById("doc-body-mobile")
                 ) {
                     console.log("[INFO] Mobile Page Found");
-                    if (window.innerWidth < 700) {
+                    if (
+                        /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(
+                            navigator.userAgent
+                        )
+                    ) {
                         console.log("[INFO] Switching to mobile page");
                         document.getElementById("doc-body")?.remove();
                     } else {
