@@ -29,6 +29,26 @@
             "slug": "lesson_6",
             "title": "Βασικοί τελεστές, μαθηματικά",
             "description": "Βασικοί τελεστές, μαθηματικά"
+        },
+        {
+            "slug": "lesson_7",
+            "title": "Συγκρίσεις",
+            "description": "Συγκρίσεις"
+        },
+        {
+            "slug": "lesson_8",
+            "title": "Λογικοί τελεστές",
+            "description": "Λογικοί τελεστές"
+        },
+        {
+            "slug": "lesson_9",
+            "title": "Loops: while και for",
+            "description": "Loops: while και for"
+        },
+        {
+            "slug": "lesson_10",
+            "title": "Η δήλωση switch",
+            "description": "Η δήλωση switch"
         }
     ],
     "primaryLocation": "editor"

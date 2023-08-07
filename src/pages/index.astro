@@ -5,7 +5,7 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
 
 <Layout>
     <br /><br />
-    <div style="color: white" data-bs-theme="dark" id="mbody">
+    <div style="color: white" data-bs-theme="dark" id="doc-body">
         <div class="d-flex justify-content-center">
             <div>
                 <h1>
@@ -17,10 +17,11 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
         </div>
         <div class="d-flex justify-content-start m-5">
             <div>
-                <h2>Ποια κατεύθυνση θα θέλατε να ακολουθήστε;</h2>
+                <h2>Ποια κατεύθυνση θα θέλατε να ακολουθήσετε;</h2>
                 <h5>
-                    Σας ενδιαφέρει η <strong>δημιουργεία ιστοσελίδων</strong>, 
-                    <strong>βασικές έννοιες προγραμματισμού</strong>
+                    Σας ενδιαφέρει η <strong>δημιουργία ιστοσελίδων</strong>, <strong
+                        >Βασικές έννοιες προγραμματισμού</strong
+                    >
                     ή ακομα και <strong>ρομποτική</strong>;
                 </h5>
                 <br />
@@ -177,7 +178,7 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
         </div>
     </div>
     <div
-        id="mbody-mobile"
+        id="doc-body-mobile"
         class="d-flex justify-content-center"
         style="color: white"
     >
@@ -209,9 +210,9 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
             <hr />
             <div>
                 <div class="m-3">
-                    <h2>Ποια κατεύθυνση θα θέλατε να ακολουθήστε;</h2>
+                    <h2>Ποια κατεύθυνση θα θέλατε να ακολουθήσετε;</h2>
                     <h5>
-                        Σας ενδιαφέρει η <strong>δημιουργεία ιστοσελίδων</strong
+                        Σας ενδιαφέρει η <strong>δημιουργία ιστοσελίδων</strong
                         >, <strong>Βασικές έννοιες προγραμματισμού</strong>
                         ή ακομα και <strong>ρομποτική</strong>;
                     </h5>
@@ -345,15 +346,3 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
     <br />
     <br />
 </Layout>
-
-<script>
-    const mbody = document.getElementById("mbody");
-    const mbodyMobile = document.getElementById("mbody-mobile");
-    if (mbody && mbodyMobile) {
-        if (window.innerWidth < 700) {
-            mbody.remove();
-        } else {
-            mbodyMobile.remove();
-        }
-    }
-</script>

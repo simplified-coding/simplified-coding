@@ -6,10 +6,11 @@ const {
     card_img = "",
     card_img_alt = "",
     card_button_visible = true,
+    card_style = "",
 } = Astro.props;
 ---
 
-<div class="card" style="width: 18rem;">
+<div class="card" style={card_style}>
     <img src={card_img} class="card-img-top" alt={card_img_alt} />
     <div class="card-body">
         <h5 class="card-title card-bold">
