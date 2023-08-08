@@ -1,0 +1,96 @@
+---
+---
+
+import Task from "../../../components/Task.astro";
+import Latex from "../../../components/Latex.astro";
+
+<h1 style="text-align: center;">Μάθημα 10ο: Η δήλωση "switch"</h1>
+
+---
+
+<h2 style="text-align: center;"> Γενικά </h2>
+
+Μια δήλωση `switch` μπορεί να αντικαταστήσει πολλαπλούς ελέγχους `if`.
+
+Παρέχει έναν πιο περιγραφικό τρόπο σύγκρισης μιας τιμής με πολλαπλές παραλλαγές.
+
+---
+
+<h2 style="text-align: center;"> Η σύνταξη </h2>
+
+Ο διακόπτης έχει ένα ή περισσότερα μπλοκ περιπτώσεων και μια προαιρετική προεπιλογή.
+
+Μοιάζει ως εξής:
+
+```js
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}
+```
+
+- Η τιμή του `x` ελέγχεται για αυστηρή ισότητα με την τιμή της πρώτης περίπτωσης (δηλαδή την τιμή1) και στη συνέχεια με τη δεύτερη (τιμή2) και ούτω καθεξής.
+- Εάν βρεθεί η ισότητα, η `switch` αρχίζει να εκτελεί τον κώδικα ξεκινώντας από την αντίστοιχη περίπτωση, μέχρι την πλησιέστερη διακοπή (ή μέχρι το τέλος της `switch`).
+- Αν δεν υπάρχει περίπτωση που να ταιριάζει, τότε εκτελείται ο προεπιλεγμένος κώδικας (αν υπάρχει).
+
+---
+
+<h2 style="text-align: center;"> Παράδειγμα </h2>
+
+```js
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert("Too small");
+    break;
+  case 4:
+    alert("Exactly!");
+    break;
+  case 5:
+    alert("Too big");
+    break;
+  default:
+    alert("I don't know such values");
+}
+```
+
+**Εάν δεν υπάρχει `break`, τότε η εκτέλεση συνεχίζεται με την επόμενη περίπτωση χωρίς ελέγχους.**
+
+Ένα παράδειγμα χωρίς `break`:
+
+```js
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert("Too small");
+  case 4:
+    alert("Exactly!");
+  case 5:
+    alert("Too big");
+  default:
+    alert("I don't know such values");
+}
+```
+
+Στο παραπάνω παράδειγμα θα δούμε τη διαδοχική εκτέλεση τριών `alert`:
+
+```js
+alert("Exactly!");
+alert("Too big");
+alert("I don't know such values");
+```
+
+---
+
+<h3 style="text-align: center;"> Ευχαριστούμε για την παρακολούθηση του μαθήματος. </h3>

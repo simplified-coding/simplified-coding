@@ -1,0 +1,170 @@
+---
+---
+
+<h1 style="text-align: center;"> Μάθημα 4 </h1>
+
+<h2 style="text-align: center;"> Αισθητήρες </h2>
+
+---
+
+<h2 style="text-align: center;"> Απαιτούμενα εξαρτήματα </h2>
+
+1. Arduino Uno
+    1. [Γνήσιο](https://grobotronics.com/arduino-uno-rev3.html)
+    2. [Κλώνος](https://grobotronics.com/funduino-uno-rev3.html)
+2. [Καλώδιο USB A-B](https://grobotronics.com/usb-2.0-a-b-1.8m.html)
+3. [Breadboard](https://grobotronics.com/breadboard-400-tie-point-white-half-size.html)
+4. Jumper Wires
+    1. [Male to Male](https://grobotronics.com/jumper-wires-15cm-male-to-male-pack-of-10.html)
+    2. [Female to Male](https://grobotronics.com/jumper-wires-15cm-female-to-male-pack-of-10.html)
+5. [Αισθητήρας υπερήχων](https://grobotronics.com/ultrasonic-sensor-ranging-detector-2-450cm-hy-srf05.html)
+
+---
+
+<h2 style="text-align: center;"> Αισθητήρες </h2>
+
+Οι αισθητήρες είναι στοιχεία που μας επιτρέπουν να επεκτείνουμε τη λειτουργικότητα του Arduino μας, 
+λειτουργούν ως συμπληρώματα ή αξεσουάρ. 
+Ένα Arduino δεν μπορεί να λάβει πληροφορίες από το περιβάλλον και να τις επεξεργαστεί. 
+Αν θέλουμε να συλλάβουμε πληροφορίες από έξω, πρέπει να χρησιμοποιήσουμε τους αισθητήρες.
+Οι πιο δημοφιλείς είναι οι: 
+* Αισθητήρας θερμοκρασίας
+* Αισθητήρας κίνησης
+* Αισθητήρας υγρασίας
+* Αισθητήρας αερίων
+* Αισθητήρας υπερήχων
+* Αισθητήρας φωτός
+Οι συγκεκριμένοι αισθητήρες έχουν γίνει δημοφιλείς διότι είτε είναι φιλικοί προς τους αρχάριους είτε γιατί έχουν να κάνουν με το ότι βρίσκουν πολλές εφαρμογές, όπως οι αισθητήρες για την μέτρηση περιβαλλοντικών συνθηκών.
+
+---
+
+<h2 style="text-align: center;"> Αισθητήρας Υπερήχων </h2>
+
+Οι αισθητήρες υπερήχων λειτουργούν με την ίδια αρχή που λειτουργούν τα ραντάρ και τα σόναρ. Εκτιμούν την απόσταση ενός στόχου λαμβάνοντας υπόψη τους την αντανάκλαση ενός ραδιοκύματος ή ενός ηχητικού σήματος πάνω στο στόχο.
+Δημιουργούν υψηλής συχνότητας κύματα και χρησιμοποιώντας το επιστρεφόμενο σήμα καθορίζουν την απόσταση ή ακόμα και την ταχύτητα του στόχου. Για να το επιτύχουν αυτό χρησιμοποιούν τον χρόνο που έκανε το σήμα για να καλύψει την απόσταση από τον αισθητήρα στο αντικείμενο και πίσω.
+
+---
+
+<h2 style="text-align: center;"> Σύνδεση αισθητήρα υπερήχων στο breadboard </h2>
+
+Για να συνδέσουμε τον αισθητήρα με το Arduino πρέπει:
+- Συνδέουμε την γείωση του αισθητήρα στην αντίστοιχη σειρά στο breadboard.
+- Συνδέουμε την τροφοδοσία του αισθητήρα στην αντίστοιχη σειρά στο breadboard.
+- Συνδέουμε το trigger του αισθητήρα σε ένα digital pin του arduino (εμείς το έχουμε το 13).
+- Συνδέουμε το echo του αισθητήρα σε ένα digital pin του arduino (εμείς το έχουμε το 12).
+- Συνδέουμε με καλώδια την γείωση και την τροφοδοσία του arduino στις αντίστοιχες σειρές στο breadboard.
+
+Ας δούμε την σύνδεση σε schematics:
+
+![Schematics](https://cloud-ffwyzjtpz-hack-club-bot.vercel.app/0mighty_turing-leelo__2_.png)
+
+---
+
+<h2 style="text-align: center;"> Κώδικας </h2>
+
+Για να μπορέσουμε να δούμε τις μετρήσεις του αισθητήρα υπερήχων,
+θα πρέπει να ανεβάσουμε έναν κώδικα στην συσκευή μας.
+Θα μπορέσουμε να δούμε τις μετρήσεις ήτε κατευθείαν στον υπολογιστή μας με το Serial Monitor,
+ήτε σε μια οθόνη LCD, όπως είδαμε στο προηγούμενο μάθημα.
+
+Ο κώδικας για χρήση με το Serial Monitor:
+
+```cpp
+int echoPin = 12; // Echo Pin
+int trigPin = 13; // Trigger Pin
+int maximumRange = 200; // Maximum range needed
+int minimumRange = 0; // Minimum range needed
+long duration, distance; // Duration used to calculate distance
+
+void setup() {
+
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+    Serial.begin(9600);
+
+}
+
+void loop() {
+
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+
+    duration = pulseIn(echoPin, HIGH);
+    distance = duration/58.2; //Υπολογισμός απόστασης (σε cm) βασιζόμενοι στην ταχύτητα του ήχου.
+
+    if (distance >= maximumRange || distance <= minimumRange){
+        Serial.println("Εκτός ορίων");
+        delay(100);
+    } else {
+        Serial.println(distance);
+        delay(50);
+    };
+
+    delay(50); //Καθυστέρηση 50ms πριν την επόμενη ανάγνωση
+
+}
+```
+
+Για να μπούμε στο Serial Monitor,
+επιλέγουμε το εικονίδιο,
+που βρίσκετε στην πάνω δεξιά γωνία του Arduino IDE.
+
+
+Ο κώδικας για χρήση με οθόνη LCD:
+
+```cpp
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+int echoPin = 12; // Echo Pin
+int trigPin = 13; // Trigger Pin
+int maximumRange = 200; // Maximum range needed
+int minimumRange = 0; // Minimum range needed
+long duration, distance; // Duration used to calculate distance
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);  // Set the LCD I2C address and dimensions
+
+void setup() {
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+    Serial.begin(9600);
+
+    lcd.begin(16, 2);  // Initialize the LCD
+    lcd.backlight();  // Turn on the backlight
+    lcd.print("Distance:");  // Display a static message on the LCD
+}
+
+void loop() {
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+
+    duration = pulseIn(echoPin, HIGH);
+    distance = duration / 58.2; // Calculate distance in cm based on the speed of sound.
+
+    if (distance >= maximumRange || distance <= minimumRange) {
+        lcd.setCursor(0, 1);  // Set the cursor position to the second line
+        lcd.print("Out of range");  // Display an out of range message on the LCD
+        Serial.println("Out of range");
+        delay(100);
+    } else {
+        lcd.setCursor(0, 1);  // Set the cursor position to the second line
+        lcd.print("          ");  // Clear the previous measurement on the LCD
+        lcd.setCursor(0, 1);  // Set the cursor position to the second line
+        lcd.print(distance);  // Display the distance on the LCD
+        Serial.println(distance);
+        delay(50);
+    }
+
+    delay(50); // Delay 50ms before the next reading
+}
+```
+
+---
+
+<h3 style="text-align: center;"> Ευχαριστούμε για την παρακολούθηση του μαθήματος. </h3>

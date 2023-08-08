@@ -1,0 +1,20 @@
+---
+import CardHeader from "../Bootstrap/CardHeader.astro";
+
+const { button_visible = true } = Astro.props;
+---
+
+<CardHeader
+    card_header="Γλώσσα Προγραμματισμού για Κατασκευή Ιστοσελίδων"
+    card_title="Javascript"
+    card_button_text="Μάθε!"
+    card_button_href="/lessons/view/javascript"
+    card_button_visible={button_visible}
+    class="card_text"
+>
+    <i class="fa-brands fa-js" slot="pre-title"></i>
+    Η JS είναι μια γλώσσα προγραμματισμού για δημιουργία ιστοσελίδων η οποία 
+    "συνεργάζεται" με την HTML και την CSS για ένα πολύ όμορφο αποτέλεσμα. 
+    Με την Javascript σου δείνετε η δυνατότητα να κάνεις την ιστοσελίδα 
+    σου διαδραστική, με πολλαπλές λειτουργείες και εφαρμογές.
+</CardHeader>

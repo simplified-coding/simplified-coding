@@ -1,0 +1,36 @@
+---
+const {
+    card_title = "",
+    card_subtitle = "",
+    card_link_href = "",
+    card_link_text = "",
+    card_link_visible = true,
+    card_style = "",
+} = Astro.props;
+---
+
+<div class="card" style={card_style}>
+    <div class="card-body">
+        <h5 class="card-title card-bold">
+            <slot name="pre-title" />
+            {card_title}
+        </h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary card-bold">
+            {card_subtitle}
+        </h6>
+        <p class="card-text"><slot /></p>
+        <a href={card_link_href} class="card-link" hidden={!card_link_visible}
+            >{card_link_text}</a
+        >
+    </div>
+</div>
+
+<style>
+    * {
+        font-family: "Roboto", sans-serif;
+    }
+
+    .card-bold {
+        font-weight: 700;
+    }
+</style>

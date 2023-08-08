@@ -1,0 +1,348 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardHeader from "../components/Bootstrap/CardHeader.astro";
+---
+
+<Layout>
+    <br /><br />
+    <div style="color: white" data-bs-theme="dark" id="doc-body">
+        <div class="d-flex justify-content-center">
+            <div>
+                <h1>
+                    Καλωσήρθατε στο <strong class="text-decoration-underline"
+                        >Simplified Coding</strong
+                    >
+                </h1>
+            </div>
+        </div>
+        <div class="d-flex justify-content-start m-5">
+            <div>
+                <h2>Ποια κατεύθυνση θα θέλατε να ακολουθήσετε;</h2>
+                <h5>
+                    Σας ενδιαφέρει η <strong>δημιουργία ιστοσελίδων</strong>, <strong
+                        >Βασικές έννοιες προγραμματισμού</strong
+                    >
+                    ή ακομα και <strong>ρομποτική</strong>;
+                </h5>
+                <br />
+                <div class="me-4">
+                    <div class="alert alert-success" role="alert">
+                        Κάνουμε <strong>GIVEAWAY</strong> ένα kit Arduino για τα
+                        μαθήματα ρομποτικής.<br />
+                        <a href="https://discord.gg/96zYntcJBe"
+                            ><strong
+                                >Μπείτε τώρα στο Discord για να λάβετε μέρος</strong
+                            ></a
+                        >
+                    </div>
+                </div>
+
+                <div>
+                    Ακολουθήστε μας και σε <strong>άλλες πλατφόρμες</strong>.
+                    <br />
+                    <div>
+                        <a href="https://github.com/simplified-coding"
+                            ><i
+                                class="fa-brands fa-square-github m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                        <a
+                            href="https://www.linkedin.com/company/simplified-coding"
+                            ><i
+                                class="fa-brands fa-linkedin m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                        <a href="https://discord.gg/SGudxrz22k"
+                            ><i
+                                class="fa-brands fa-discord m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                        <a href="https://twitter.com/simplifidcoding"
+                            ><i
+                                class="fa-brands fa-square-twitter m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                        <a href="https://www.youtube.com/@simplified-coding-gr"
+                            ><i
+                                class="fa-brands fa-youtube m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                        <a href="https://www.instagram.com/simplified.coding.gr/"
+                            ><i
+                                class="fa-brands fa-instagram m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                        <a href="https://www.tiktok.com/@simplified.coding"
+                            ><i
+                                class="fa-brands fa-tiktok m-1"
+                                style="font-size: 38px"></i></a
+                        >
+                    </div>
+                </div>
+                <br />
+
+                <iframe
+                    src="https://bank.hackclub.com/donations/start/simplified-coding"
+                    style="border:none;"
+                    name="donateFrame"
+                    scrolling="yes"
+                    frameborder="0"
+                    marginheight="0px"
+                    marginwidth="0px"
+                    height="60%"
+                    width="95%"
+                    allowfullscreen></iframe>
+            </div>
+            <div>
+                <CardHeader
+                    card_header="Κατεύθυνση"
+                    card_title="Δημιουργία Ιστοσελίδων"
+                    card_button_visible={false}
+                >
+                    Σας ενδιαφέρει η δημιουργία ιστοσελίδων;
+                    <br />
+                    Τότε θα χρειαστείτενα μάθετε <strong>HTML</strong>, <strong
+                        >CSS</strong
+                    > και <strong>Javascript</strong>.
+                    <br />
+                    Στο Simplified Coding σας παρέχουμε <strong
+                        >όλα τα εργαλεία</strong
+                    >
+                    που θα χρειαστείτε για να τα μάθετε.
+                    <br />
+                    Τι περιμένετε διαλέξτε την γλώσσα προγραμματισμού που θέλετε
+                    να αρχίσετε.
+                    <br />
+                    Η ομάδα του Simplified Coding <strong>προτείνει</strong> να αρχίσετε
+                    με
+                    <strong>HTML</strong>, και στην συνέχεια, <strong
+                        >CSS</strong
+                    > και <strong>Javascript</strong>.
+                    <div slot="btns">
+                        <a href="/lessons/view/html/" class="btn btn-primary"
+                            >Μάθε HTML για τον σχεδιασμό</a
+                        >
+                        <a href="/lessons/view/css/" class="btn btn-primary"
+                            >Μάθε CSS για την εμφάνιση</a
+                        >
+                        <a
+                            href="/lessons/view/javascript/"
+                            class="btn btn-primary"
+                            >Μάθε Javascript για να την κάνεις λειτουργική</a
+                        >
+                    </div>
+                </CardHeader>
+                <br />
+                <CardHeader
+                    card_header="Κατεύθυνση"
+                    card_title="Βασικές έννοιες προγραμματισμού"
+                    card_button_visible={false}
+                >
+                    Σας ενδιαφέρει να μάθετε μια γλώσσα που θα χρησιμεύσει στα
+                    πάντα;
+                    <br />
+                    Τότε θα χρειαστεί να μάθετε <strong>Python</strong>.
+                    <br />
+                    Στο Simplified Coding σας παρέχουμε <strong
+                        >το online editor μας</strong
+                    > που θα σας παρέχει την δυνατότητα να γράψετε κώδικα και να
+                    τον τρέξετε, χωρίς να χρειαστείτε να κατεβάσετε κάτι.
+                    <br />
+                    <div slot="btns">
+                        <a href="/lessons/view/python/" class="btn btn-primary"
+                            >Μάθε Python</a
+                        >
+                    </div>
+                </CardHeader>
+                <br />
+                <CardHeader
+                    card_header="Κατεύθυνση"
+                    card_title="Ρομποτική"
+                    card_button_visible={false}
+                >
+                    Σας ενδιαφέρει η <strong>ρομποτική</strong>.
+                    <br />
+                    Τότε θα χρειαστεί να μάθετε το <strong>Arduino</strong>.
+                    <br />
+                    Στο Simplified Coding σας παρέχουμε <strong
+                        >τα καλύτερα μας μαθήματα</strong
+                    > για να μάθετε ρομποτική.
+                    <br />
+                    <div slot="btns">
+                        <a href="/lessons/view/arduino/" class="btn btn-primary"
+                            >Μάθε Ρομποτική</a
+                        >
+                    </div>
+                </CardHeader>
+            </div>
+        </div>
+    </div>
+    <div
+        id="doc-body-mobile"
+        class="d-flex justify-content-center"
+        style="color: white"
+    >
+        <div>
+            <h1 class="text-center">
+                Καλωσήρθατε στο <strong class="text-decoration-underline"
+                    >Simplified Coding</strong
+                >
+            </h1>
+            <div class="m-4">
+                <div class="alert alert-warning" role="alert">
+                    Το <strong>editor</strong> του <strong
+                        >Simplified Coding</strong
+                    >, είναι κατασκευασμένο για υπολογιστές. Συγκεκριμένα για
+                    συσκευές που έχουν τουλάχιστον 700px
+                </div>
+            </div>
+            <div class="m-4">
+                <div class="alert alert-success" role="alert">
+                    Κάνουμε <strong>GIVEAWAY</strong> ένα kit Arduino για τα μαθήματα
+                    ρομποτικής.<br />
+                    <a href="https://discord.gg/96zYntcJBe"
+                        ><strong
+                            >Μπείτε τώρα στο Discord για να λάβετε μέρος</strong
+                        ></a
+                    >
+                </div>
+            </div>
+            <hr />
+            <div>
+                <div class="m-3">
+                    <h2>Ποια κατεύθυνση θα θέλατε να ακολουθήσετε;</h2>
+                    <h5>
+                        Σας ενδιαφέρει η <strong>δημιουργία ιστοσελίδων</strong
+                        >, <strong>Βασικές έννοιες προγραμματισμού</strong>
+                        ή ακομα και <strong>ρομποτική</strong>;
+                    </h5>
+                </div>
+                <br />
+                <div class="m-2" data-bs-theme="dark">
+                    <CardHeader
+                        card_header="Κατεύθυνση"
+                        card_title="Δημιουργία Ιστοσελίδων"
+                        card_button_visible={false}
+                    >
+                        Σας ενδιαφέρει η δημιουργία ιστοσελίδων;
+                        <br />
+                        Τότε θα χρειαστείτενα μάθετε <strong>HTML</strong>, <strong
+                            >CSS</strong
+                        > και <strong>Javascript</strong>.
+                        <br />
+                        Στο Simplified Coding σας παρέχουμε <strong
+                            >όλα τα εργαλεία</strong
+                        >
+                        που θα χρειαστείτε για να τα μάθετε.
+                        <br />
+                        Τι περιμένετε διαλέξτε την γλώσσα προγραμματισμού που θέλετε
+                        να αρχίσετε.
+                        <br />
+                        Η ομάδα του Simplified Coding <strong>προτείνει</strong>
+                        να αρχίσετε με
+                        <strong>HTML</strong>, και στην συνέχεια, <strong
+                            >CSS</strong
+                        > και <strong>Javascript</strong>.
+                        <div>
+                            <a
+                                href="/lessons/view/html/"
+                                class="btn btn-primary m-2"
+                                style="width: 50vw"
+                                >Μάθε HTML για τον σχεδιασμό</a
+                            >
+                            <a
+                                href="/lessons/view/css/"
+                                class="btn btn-primary m-2"
+                                style="width: 50vw">Μάθε CSS για την εμφάνιση</a
+                            >
+                            <a
+                                href="/lessons/view/javascript/"
+                                class="btn btn-primary m-2"
+                                style="width: 50vw"
+                                >Μάθε Javascript για να την κάνεις λειτουργική</a
+                            >
+                        </div>
+                    </CardHeader>
+                    <br />
+                    <CardHeader
+                        card_header="Κατεύθυνση"
+                        card_title="Βασικές έννοιες προγραμματισμού"
+                        card_button_visible={false}
+                    >
+                        Σας ενδιαφέρει να μάθετε μια γλώσσα που θα χρησιμεύσει
+                        στα πάντα;
+                        <br />
+                        Τότε θα χρειαστεί να μάθετε <strong>Python</strong>.
+                        <br />
+                        Στο Simplified Coding σας παρέχουμε <strong
+                            >το online editor μας</strong
+                        > που θα σας παρέχει την δυνατότητα να γράψετε κώδικα και
+                        να τον τρέξετε, χωρίς να χρειαστείτε να κατεβάσετε κάτι.
+                        <br />
+                        <div slot="btns">
+                            <a
+                                href="/lessons/view/python/"
+                                class="btn btn-primary">Μάθε Python</a
+                            >
+                        </div>
+                    </CardHeader>
+                    <br />
+                    <CardHeader
+                        card_header="Κατεύθυνση"
+                        card_title="Ρομποτική"
+                        card_button_visible={false}
+                    >
+                        Σας ενδιαφέρει η <strong>ρομποτική</strong>.
+                        <br />
+                        Τότε θα χρειαστεί να μάθετε το <strong>Arduino</strong>.
+                        <br />
+                        Στο Simplified Coding σας παρέχουμε <strong
+                            >τα καλύτερα μας μαθήματα</strong
+                        > για να μάθετε ρομποτική.
+                        <br />
+                        <div slot="btns">
+                            <a
+                                href="/lessons/view/arduino/"
+                                class="btn btn-primary">Μάθε Ρομποτική</a
+                            >
+                        </div>
+                    </CardHeader>
+                </div>
+            </div>
+            <div class="m-3">
+                Ακολουθήστε μας και σε <strong>άλλες πλατφόρμες</strong>.
+                <br />
+                <div>
+                    <a href="https://github.com/simplified-coding"
+                        ><i
+                            class="fa-brands fa-square-github m-1"
+                            style="font-size: 38px"></i></a
+                    >
+                    <a href="https://www.linkedin.com/company/simplified-coding"
+                        ><i
+                            class="fa-brands fa-linkedin m-1"
+                            style="font-size: 38px"></i></a
+                    >
+                    <a href="https://discord.gg/SGudxrz22k"
+                        ><i
+                            class="fa-brands fa-discord m-1"
+                            style="font-size: 38px"></i></a
+                    >
+                    <iframe
+                        src="https://bank.hackclub.com/donations/start/simplified-coding"
+                        style="border:none;"
+                        name="donateFrame"
+                        scrolling="yes"
+                        frameborder="0"
+                        marginheight="0px"
+                        marginwidth="0px"
+                        height="512px"
+                        width="100%"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</Layout>
