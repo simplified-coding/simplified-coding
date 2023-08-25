@@ -4,66 +4,75 @@ import CardHeader from "../../components/Bootstrap/CardHeader.astro";
 ---
 
 <Layout>
-    <br /><br /><br />
-    <div
-        class="d-flex justify-content-around"
-        data-bs-theme="dark"
-        id="doc-body"
-    >
-        <CardHeader
-            card_header="Newsletter"
-            card_title="Newsletter"
-            card_button_text="Κάνε εγγραφή"
-            card_button_href="https://links.simplifiedcoding.org/news"
-            card_button_visible={true}
-            card_style="width: 48rem;"
-        >
-            Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
-            email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια
-            μαθήματα, πριν καν δημοσιευθούν στην ιστοσελίδα μας!<br />
-        </CardHeader>
-
-        <CardHeader
-            card_header="Discord"
-            card_title="Discord"
-            card_button_text="Γίνε μέλος"
-            card_button_href="https://links.simplifiedcoding.org/discord"
-            card_button_visible={true}
-            card_style="width: 48rem;"
-        >
-            Γίνε μέλος στον Discord server μας για να πέρνεις νέες προσθήκες και
-            βελτιώσεις της σελίδας μας αμέσως, να πέρνεις μέρος σε polls σχετικά
-            με νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την
-            δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.
-        </CardHeader>
+  <br/><br/><br/>
+  <div
+    class="d-flex justify-content-around"
+    data-bs-theme="dark"
+    id="doc-body"
+  >
+    <div class="m-2">
+      <CardHeader
+        card_header="Newsletter"
+        card_title="Newsletter"
+        card_button_text="Κάνε εγγραφή"
+        card_button_href="https://links.simplifiedcoding.org/news"
+        card_button_visible={true}
+        card_style="max-width: 48rem;"
+      >
+        Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
+        email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια
+        μαθήματα, πριν καν δημοσιευθούν στην ιστοσελίδα μας!<br/>
+      </CardHeader>
     </div>
 
-    <div data-bs-theme="dark" id="doc-body-mobile">
-        <CardHeader
-            card_header="Newsletter"
-            card_title="Newsletter"
-            card_button_text="Κάνε εγγραφή"
-            card_button_href="https://testwiz.xyz/quiz/sc_news"
-            card_button_visible={true}
-        >
-            Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
-            email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια
-            μαθήματα, πριν καν δημοσιευθούν στην ιστοσελίδα μας!<br />
-        </CardHeader>
-        <br />
-
-        <CardHeader
-            card_header="Discord"
-            card_title="Discord"
-            card_button_text="Γίνε μέλος"
-            card_button_href="https://testwiz.xyz/quiz/sc_news"
-            card_button_visible={true}
-        >
-            Γίνε μέλος στον Discord server μας για να πέρνεις νέες προσθήκες και
-            βελτιώσεις της σελίδας μας αμέσως, να πέρνεις μέρος σε polls σχετικά
-            με νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την
-            δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.
-        </CardHeader>
+    <div class="m-2">
+      <CardHeader
+        card_header="Discord"
+        card_title="Discord"
+        card_button_text="Γίνε μέλος"
+        card_button_href="https://links.simplifiedcoding.org/discord"
+        card_button_visible={true}
+        card_style="max-width: 48rem;"
+      >
+        Γίνε μέλος στον Discord server μας για να πέρνεις νέες προσθήκες και
+        βελτιώσεις της σελίδας μας αμέσως, να πέρνεις μέρος σε polls σχετικά
+        με νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την
+        δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.<br>
+      </CardHeader>
     </div>
-    <br /><br /><br />
+  </div>
+
+  <div data-bs-theme="dark" id="doc-body-mobile" class="m-3">
+    <div>
+      <CardHeader
+        card_header="Newsletter"
+        card_title="Newsletter"
+        card_button_text="Κάνε εγγραφή"
+        card_button_href="https://testwiz.xyz/quiz/sc_news"
+        card_button_visible={true}
+      >
+        Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
+        email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια
+        μαθήματα, πριν καν δημοσιευθούν στην ιστοσελίδα μας!<br/>
+      </CardHeader>
+    </div>
+
+    <br/>
+
+    <div>
+      <CardHeader
+        card_header="Discord"
+        card_title="Discord"
+        card_button_text="Γίνε μέλος"
+        card_button_href="https://testwiz.xyz/quiz/sc_news"
+        card_button_visible={true}
+      >
+        Γίνε μέλος στον Discord server μας για να πέρνεις νέες προσθήκες και
+        βελτιώσεις της σελίδας μας αμέσως, να πέρνεις μέρος σε polls σχετικά
+        με νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την
+        δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.
+      </CardHeader>
+    </div>
+  </div>
+  <br/><br/><br/>
 </Layout>

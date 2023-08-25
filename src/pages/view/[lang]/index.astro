@@ -3,70 +3,72 @@ import Layout from "../../../layouts/Layout.astro";
 ---
 
 <Layout>
-    <div style="color: white;" id="viewLesson">
-        <div>
-            <div>
-                <div class="d-flex justify-content-center">
-                    <h1>
-                        Προεσκόπιση Μαθήματος - {
-                            Astro.params.lang?.toUpperCase()
-                        }
-                        <button class="btn btn-primary" id="print"
-                            >Εκτύπωση</button
-                        >
-                        <button class="btn btn-primary" id="save"
-                            >Κατέβασμα</button
-                        >
-                    </h1>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div
-                        style="background-color: #282f36; width: 60vw; height: 100vh"
-                    >
-                        <iframe
-                            src={`/lessons/${
-                                Astro.params.lang
-                            }/${Astro.url.searchParams.get("lesson")}`}
-                            width="100%"
-                            height="100%"
-                            id="if"></iframe>
-                    </div>
-                </div>
-            </div>
+  <div style="color: white;" id="viewLesson">
+    <div>
+      <div>
+        <div class="d-flex justify-content-center">
+          <h1>
+            Προεσκόπιση Μαθήματος - {
+            Astro.params.lang?.toUpperCase()
+          }
+            <button class="btn btn-primary" id="print"
+            >Εκτύπωση
+            </button
+            >
+            <button class="btn btn-primary" id="save"
+            >Κατέβασμα
+            </button
+            >
+          </h1>
         </div>
+        <div class="d-flex justify-content-center">
+          <div
+            style="background-color: #282f36; width: 60vw; height: 100vh"
+          >
+            <iframe
+              src={`/lessons/${
+                Astro.params.lang
+              }/${Astro.url.searchParams.get("lesson")}`}
+              width="100%"
+              height="100%"
+              id="if"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-    <br />
+  </div>
+  <br/>
 </Layout>
 
 <script>
-    const printBTN = document.getElementById("print");
-    const saveBTN = document.getElementById("save");
+  const printBTN = document.getElementById("print");
+  const saveBTN = document.getElementById("save");
 
-    // Set IFrame Style
-    window.onload = () => {
-        const iframe = document.getElementById("if") as HTMLIFrameElement;
-        const style = document.createElement("style");
-        style.innerHTML = `
+  // Set IFrame Style
+  window.onload = () => {
+    const iframe = document.getElementById("if") as HTMLIFrameElement;
+    const style = document.createElement("style");
+    style.innerHTML = `
         * {
             color: white;
         }
         `;
-        iframe.contentDocument?.body.appendChild(style);
-    };
+    iframe.contentDocument?.body.appendChild(style);
+  };
 
-    printBTN?.addEventListener("click", () => {
-        console.log("Opening print dialog");
-        window.print();
-    });
+  printBTN?.addEventListener("click", () => {
+    console.log("Opening print dialog");
+    window.print();
+  });
 
-    saveBTN?.addEventListener("click", () => {
-        const a = document.createElement("a");
-        a.download = "lesson.html";
-        a.href = window.URL.createObjectURL(
-            new Blob([document.getElementById("viewLesson")?.outerHTML || ""], {
-                type: "text/html",
-            })
-        );
-        a.click();
-    });
+  saveBTN?.addEventListener("click", () => {
+    const a = document.createElement("a");
+    a.download = "lesson.html";
+    a.href = window.URL.createObjectURL(
+      new Blob([document.getElementById("viewLesson")?.outerHTML || ""], {
+        type: "text/html",
+      })
+    );
+    a.click();
+  });
 </script>
