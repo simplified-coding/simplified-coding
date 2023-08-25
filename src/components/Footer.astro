@@ -3,7 +3,7 @@
 
 <div class="container" data-bs-theme="dark">
   <footer
-    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top"
   >
     <div class="col-md-8 d-flex align-items-center">
       <a
@@ -12,9 +12,9 @@
       >
       </a>
       <span class="mb-3 mb-md-0 text-body-secondary">
-        &copy; 2023 Simplified Coding <br />Το Simplified Coding είναι
+        &copy; 2023 Simplified Coding <br/>Το Simplified Coding είναι
         υποστηριζόμενο από το Hack Club (fiscally sponsored), μια μη
-        κερδοσκοπηκή οργάνωση στις ΗΠΑ. <br /> Το λογισμικό και η ιστοσελίδα υπάγετε
+        κερδοσκοπηκή οργάνωση στις ΗΠΑ. <br/> Το λογισμικό και η ιστοσελίδα υπάγετε
         στην GNU General Public License V3. Τα μαθήματα είναι υπό την άδεια Creative
         Commons Attribution Share Alike 4.0 International, και το υλολογισμικό υπό
         την άδεια CERN Open Hardware Licence Version 2 - Strongly Reciprocal.
@@ -29,7 +29,7 @@
               class="text-body-secondary"
               href="https://links.simplifiedcoding.org/license-gpl"
               target="_blank"
-              ><img class="bi" src="/icons/GPLv3.svg" width="100" /></a
+            ><img class="bi" src="/icons/GPLv3.svg" width="100"/></a
             >
           </li>
           <li class="ms-3">
@@ -37,7 +37,7 @@
               class="text-body-secondary"
               href="https://links.simplifiedcoding.org/license-cern"
               target="_blank"
-              ><img class="bi" src="/icons/cern.svg" width="48" /></a
+            ><img class="bi" src="/icons/cern.svg" width="48"/></a
             >
           </li>
           <li class="ms-3 align-items-center d-flex">
@@ -45,7 +45,7 @@
               class="text-body-secondary"
               href="https://links.simplifiedcoding.org/license-cc"
               target="_blank"
-              ><img class="bi" src="/icons/cc-by-sa.svg" width="124" /></a
+            ><img class="bi" src="/icons/cc-by-sa.svg" width="124"/></a
             >
           </li>
         </ul>
@@ -55,7 +55,7 @@
               class="text-body-secondary"
               href="https://links.simplifiedcoding.org/bank"
               target="_blank"
-              ><img class="bi" src="/icons/HCB_Logo.svg" width="48" /></a
+            ><img class="bi" src="/icons/HCB_Logo.svg" width="48"/></a
             >
           </li>
           <li class="ms-3 inline">
@@ -63,7 +63,7 @@
               class="text-body-secondary"
               href="https://hackclub.com"
               target="_blank"
-              ><img class="bi" src="/icons/HC_Logo.svg" width="48" /></a
+            ><img class="bi" src="/icons/HC_Logo.svg" width="48"/></a
             >
           </li>
           <li class="ms-1">
@@ -76,45 +76,53 @@
         <ul class="list-unstyled d-flex justify-content-center">
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/github"
-              ><i class="fa-brands fa-square-github m-1" style="font-size: 48px"
-              ></i></a
+            ><i class="fa-brands fa-square-github m-1 icons-social" style="font-size: 48px"
+            ></i></a
             >
           </li>
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/linkedin"
-              ><i class="fa-brands fa-linkedin m-1" style="font-size: 48px"
-              ></i></a
+            ><i class="fa-brands fa-linkedin m-1 icons-social" style="font-size: 48px"
+            ></i></a
             >
           </li>
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/twitter">
-              <i class="fa-brands fa-square-twitter m-1" style="font-size: 48px"
+              <i class="fa-brands fa-square-twitter m-1 icons-social" style="font-size: 48px"
               ></i>
             </a>
           </li>
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/discord"
-              ><i class="fa-brands fa-discord m-1" style="font-size: 48px"
-              ></i></a
+            ><i class="fa-brands fa-discord m-1 icons-social" style="font-size: 48px"
+            ></i></a
             >
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/youtube"
-              ><i class="fa-brands fa-youtube m-1" style="font-size: 48px"
+            ><i class="fa-brands fa-youtube m-1 icons-social" style="font-size: 48px"
             ></i></a
-          >      
+            >
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/instagram"
-              ><i class="fa-brands fa-instagram m-1" style="font-size: 48px"
-              ></i></a
+            ><i class="fa-brands fa-instagram m-1 icons-social" style="font-size: 48px"
+            ></i></a
             >
           <li class="ms-1">
             <a href="https://links.simplifiedcoding.org/tiktok"
-              ><i class="fa-brands fa-tiktok m-1" style="font-size: 48px"
-              ></i></a
-            >      
+            ><i class="fa-brands fa-tiktok m-1 icons-social" style="font-size: 48px"
+            ></i></a
+            >
           </li>
         </ul>
       </div>
     </div>
   </footer>
+  <script>
+    if (/iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(
+      navigator.userAgent
+    )) {
+      Array.from(document.getElementsByClassName("icons-social")).forEach(i => i.style = `font-size: ${Math.floor(window.innerWidth / 7) / 1.5}px`)
+    }
+
+  </script>
 </div>
