@@ -31,5 +31,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/katex": "^0.16.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplified-coding/simplified-coding.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simplified-coding/simplified-coding.github.io/issues"
+  },
+  "homepage": "https://github.com/simplified-coding/simplified-coding.github.io#readme"
 }
