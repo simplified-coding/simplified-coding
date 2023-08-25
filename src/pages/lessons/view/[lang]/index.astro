@@ -51,23 +51,44 @@ const primaryLocation = entry.primaryLocation;
         </div>
       </div>
       <div>
-        {
-          lessons.map((lesson: any) => (
-            <div style="display: inline-flex;" class="m-3">
-              <CardHeader
-                card_style="width: 25vw; min-height: 13rem;"
-                card_header="Μάθημα"
-                card_title={lesson.title}
-                card_button_text="Μάθε Τώρα!"
-                card_button_href={`/${primaryLocation}/${
-                  Astro.params.lang || ""
-                }?lesson=${lesson.slug}`}
-              >
-                {lesson.description}
-              </CardHeader>
-            </div>
-          ))
-        }
+        <div id="doc-body">
+          {
+            lessons.map((lesson: any) => (
+              <div style="display: inline-flex;" class="m-3">
+                <CardHeader
+                  card_style="width: 25vw; min-height: 13rem;"
+                  card_header="Μάθημα"
+                  card_title={lesson.title}
+                  card_button_text="Μάθε Τώρα!"
+                  card_button_href={`/${primaryLocation}/${
+                    Astro.params.lang || ""
+                  }?lesson=${lesson.slug}`}
+                >
+                  {lesson.description}
+                </CardHeader>
+              </div>
+            ))
+          }
+        </div>
+        <div id="doc-body-mobile">
+          {
+            lessons.map((lesson: any) => (
+              <div class="m-3">
+                <CardHeader
+                  card_style="min-height: 13rem;"
+                  card_header="Μάθημα"
+                  card_title={lesson.title}
+                  card_button_text="Μάθε Τώρα!"
+                  card_button_href={`/${primaryLocation}/${
+                    Astro.params.lang || ""
+                  }?lesson=${lesson.slug}`}
+                >
+                  {lesson.description}
+                </CardHeader>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>
