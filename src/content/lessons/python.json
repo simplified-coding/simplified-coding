@@ -1,50 +1,50 @@
 {
-    "data": [
-        {
-            "slug": "lesson_1",
-            "title": "Σχόλια, Print και Πράξεις",
-            "description": "Σχόλια, Print και Πράξεις"
-        },
-        {
-            "slug": "lesson_2",
-            "title": "Μεταβλητές",
-            "description": "Μεταβλητές"
-        },
-        {
-            "slug": "lesson_3",
-            "title": "If, Elif, Else και ποσοτικές σχέσεις",
-            "description": "If, Elif, Else και ποσοτικές σχέσεις"
-        },
-        {
-            "slug": "lesson_4",
-            "title": "Η σύνταξη, τύπωση και αλλαγή μίας λίστας. - Οι ιδιότητες μίας λίστας.",
-            "description": "Η σύνταξη, τύπωση και αλλαγή μίας λίστας. - Οι ιδιότητες μίας λίστας."
-        },
-        {
-            "slug": "lesson_5",
-            "title": "While, For και input",
-            "description": "While, For και input"
-        },
-        {
-            "slug": "lesson_6",
-            "title": "Functions (Συναρτήσεις)",
-            "description": "Functions (Συναρτήσεις)"
-        },
-        {
-            "slug": "lesson_7",
-            "title": "Tuples, if and for elements",
-            "description": "Tuples, if and for elements"
-        },
-        {
-            "slug": "lesson_8",
-            "title": "Dictionaries",
-            "description": "Dictionaries"
-        },
-        {
-            "slug": "lesson_9",
-            "title": "Libraries",
-            "description": "Libraries"
-        }
-    ],
-    "primaryLocation": "editor"
+  "data": [
+    {
+      "slug": "lesson_1",
+      "title": "Σχόλια, Print και Πράξεις",
+      "description": "Σχόλια, Print και Πράξεις"
+    },
+    {
+      "slug": "lesson_2",
+      "title": "Μεταβλητές",
+      "description": "Μεταβλητές"
+    },
+    {
+      "slug": "lesson_3",
+      "title": "If, Elif, Else και ποσοτικές σχέσεις",
+      "description": "If, Elif, Else και ποσοτικές σχέσεις"
+    },
+    {
+      "slug": "lesson_4",
+      "title": "Η σύνταξη, τύπωση και αλλαγή μίας λίστας. - Οι ιδιότητες μίας λίστας.",
+      "description": "Η σύνταξη, τύπωση και αλλαγή μίας λίστας. - Οι ιδιότητες μίας λίστας."
+    },
+    {
+      "slug": "lesson_5",
+      "title": "While, For και input",
+      "description": "While, For και input"
+    },
+    {
+      "slug": "lesson_6",
+      "title": "Functions (Συναρτήσεις)",
+      "description": "Functions (Συναρτήσεις)"
+    },
+    {
+      "slug": "lesson_7",
+      "title": "Tuples, if and for elements",
+      "description": "Tuples, if and for elements"
+    },
+    {
+      "slug": "lesson_8",
+      "title": "Dictionaries",
+      "description": "Dictionaries"
+    },
+    {
+      "slug": "lesson_9",
+      "title": "Libraries",
+      "description": "Libraries"
+    }
+  ],
+  "primaryLocation": "editor"
 }

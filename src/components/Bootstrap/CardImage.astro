@@ -1,29 +1,31 @@
 ---
 const {
-    card_title = "",
-    card_button_text = "",
-    card_button_href = "",
-    card_img = "",
-    card_img_alt = "",
-    card_button_visible = true,
-    card_style = "",
+  card_title = "",
+  card_button_text = "",
+  card_button_href = "",
+  card_img = "",
+  card_img_alt = "",
+  card_button_visible = true,
+  card_style = "",
 } = Astro.props;
 ---
 
 <div class="card" style={card_style}>
-    <img src={card_img} class="card-img-top" alt={card_img_alt} />
-    <div class="card-body">
-        <h5 class="card-title card-bold">
-            <slot name="pre-title" />
-            {card_title}
-        </h5>
-        <p class="card-text"><slot /></p>
-        <a
-            href={card_button_href}
-            class="btn btn-primary"
-            hidden={!card_button_visible}>{card_button_text}</a
-        >
-    </div>
+  <img src={card_img} class="card-img-top" alt={card_img_alt}/>
+  <div class="card-body">
+    <h5 class="card-title card-bold">
+      <slot name="pre-title"/>
+      {card_title}
+    </h5>
+    <p class="card-text">
+      <slot/>
+    </p>
+    <a
+      href={card_button_href}
+      class="btn btn-primary"
+      hidden={!card_button_visible}>{card_button_text}</a
+    >
+  </div>
 </div>
 
 <style>

@@ -13,25 +13,27 @@ const {
   <div class="card-header card-bold">{card_header}</div>
   <div class="card-body">
     <h5 class="card-title card-bold">
-      <slot name="pre-title" />
+      <slot name="pre-title"/>
       {card_title}
     </h5>
-    <p class="card-text"><slot /></p>
+    <p class="card-text">
+      <slot/>
+    </p>
     <a
       href={card_button_href}
       class="btn btn-primary"
       hidden={!card_button_visible}>{card_button_text}</a
     >
-    <slot name="btns" />
+    <slot name="btns"/>
   </div>
 </div>
 
 <style>
-  * {
-    font-family: "Roboto", sans-serif;
-  }
+    * {
+        font-family: "Roboto", sans-serif;
+    }
 
-  .card-bold {
-    font-weight: 700;
-  }
+    .card-bold {
+        font-weight: 700;
+    }
 </style>
