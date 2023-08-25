@@ -1,45 +1,45 @@
 {
-    "data": [
-        {
-            "slug": "lesson_1",
-            "title": "Σύνδεση CSS με HTML και βασικό συντακτικό CSS",
-            "description": "Σύνδεση CSS με HTML και βασικό συντακτικό CSS"
-        },
-        {
-            "slug": "lesson_2",
-            "title": "Χρώμα",
-            "description": "Χρώμα"
-        },
-        {
-            "slug": "lesson_3",
-            "title": "Υπόβαθρο",
-            "description": "Υπόβαθρο"
-        },
-        {
-            "slug": "lesson_4",
-            "title": "Περιγράμματα",
-            "description": "Περιγράμματα"
-        },
-        {
-            "slug": "lesson_5",
-            "title": "Padding, Margins και Ύψος/Πλάτος",
-            "description": "Padding, Margins και Ύψος/Πλάτος"
-        },
-        {
-            "slug": "lesson_6",
-            "title": "Box Model",
-            "description": "Box Model"
-        },
-        {
-            "slug": "lesson_7",
-            "title": "Κείμενο, Γραμματοσειρά και Σύνδεσμοι",
-            "description": "Κείμενο, Γραμματοσειρά και Σύνδεσμοι"
-        },
-        {
-            "slug": "lesson_8",
-            "title": "Λίστες και Πίνακες",
-            "description": "Λίστες και Πίνακες"
-        }
-    ],
-    "primaryLocation": "editor"
+  "data": [
+    {
+      "slug": "lesson_1",
+      "title": "Σύνδεση CSS με HTML και βασικό συντακτικό CSS",
+      "description": "Σύνδεση CSS με HTML και βασικό συντακτικό CSS"
+    },
+    {
+      "slug": "lesson_2",
+      "title": "Χρώμα",
+      "description": "Χρώμα"
+    },
+    {
+      "slug": "lesson_3",
+      "title": "Υπόβαθρο",
+      "description": "Υπόβαθρο"
+    },
+    {
+      "slug": "lesson_4",
+      "title": "Περιγράμματα",
+      "description": "Περιγράμματα"
+    },
+    {
+      "slug": "lesson_5",
+      "title": "Padding, Margins και Ύψος/Πλάτος",
+      "description": "Padding, Margins και Ύψος/Πλάτος"
+    },
+    {
+      "slug": "lesson_6",
+      "title": "Box Model",
+      "description": "Box Model"
+    },
+    {
+      "slug": "lesson_7",
+      "title": "Κείμενο, Γραμματοσειρά και Σύνδεσμοι",
+      "description": "Κείμενο, Γραμματοσειρά και Σύνδεσμοι"
+    },
+    {
+      "slug": "lesson_8",
+      "title": "Λίστες και Πίνακες",
+      "description": "Λίστες και Πίνακες"
+    }
+  ],
+  "primaryLocation": "editor"
 }

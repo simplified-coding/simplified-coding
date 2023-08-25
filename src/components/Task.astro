@@ -1,5 +1,5 @@
 ---
-const { id } = Astro.props;
+const {id} = Astro.props;
 ---
 
 <div class="accordion m-3" id={`optionalTask-${id}`} data-bs-theme="dark">
@@ -21,7 +21,9 @@ const { id } = Astro.props;
       aria-labelledby={`heading-${id}`}
       data-bs-parent={`#optionalTask-${id}`}
     >
-      <div class="accordion-body"><slot /></div>
+      <div class="accordion-body">
+        <slot/>
+      </div>
     </div>
   </div>
 </div>

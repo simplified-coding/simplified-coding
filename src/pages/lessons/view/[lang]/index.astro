@@ -6,7 +6,7 @@ import HTML from "../../../../components/Languages/HTML.astro";
 import CSS from "../../../../components/Languages/CSS.astro";
 import JAVASCRIPT from "../../../../components/Languages/JAVASCRIPT.astro";
 import ARDUINO from "../../../../components/Languages/ARDUINO.astro";
-import { getEntry } from "astro:content";
+import {getEntry} from "astro:content";
 
 // @ts-expect-error
 const entry = (await getEntry("lessons", Astro.params.lang || "javascript"))
@@ -34,19 +34,19 @@ const primaryLocation = entry.primaryLocation;
         </h1>
         <div>
           <div hidden={(Astro.params.lang || "") != "python"}>
-            <PYTHON button_visible={false} />
+            <PYTHON button_visible={false}/>
           </div>
           <div hidden={(Astro.params.lang || "") != "html"}>
-            <HTML button_visible={false} />
+            <HTML button_visible={false}/>
           </div>
           <div hidden={(Astro.params.lang || "") != "css"}>
-            <CSS button_visible={false} />
+            <CSS button_visible={false}/>
           </div>
           <div hidden={(Astro.params.lang || "") != "javascript"}>
-            <JAVASCRIPT button_visible={false} />
+            <JAVASCRIPT button_visible={false}/>
           </div>
           <div hidden={(Astro.params.lang || "") != "arduino"}>
-            <ARDUINO button_visible={false} />
+            <ARDUINO button_visible={false}/>
           </div>
         </div>
       </div>
