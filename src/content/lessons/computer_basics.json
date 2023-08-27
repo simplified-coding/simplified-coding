@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "slug": "lesson_1",
+      "title": "",
+      "description": ""
+    },
+    {
+      "slug": "lesson_2",
+      "title": "",
+      "description": ""
+    },
+    {
+      "slug": "lesson_3",
+      "title": "",
+      "description": ""
+    }
+  ],
+  "primaryLocation": "view"
+}
