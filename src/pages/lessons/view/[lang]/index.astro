@@ -1,16 +1,13 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
 import CardHeader from "../../../../components/Bootstrap/CardHeader.astro";
-import PYTHON from "../../../../components/Languages/PYTHON.astro";
-import HTML from "../../../../components/Languages/HTML.astro";
-import CSS from "../../../../components/Languages/CSS.astro";
-import JAVASCRIPT from "../../../../components/Languages/JAVASCRIPT.astro";
-import ARDUINO from "../../../../components/Languages/ARDUINO.astro";
 import {getEntry} from "astro:content";
+import Language from "../../../../components/Languages/Language.astro";
 
 // @ts-expect-error
 const entry = (await getEntry("lessons", Astro.params.lang || "javascript"))
   .data;
+const course = (await getEntry('lessons', 'courses')).data.courses.filter(c => c.slug == Astro.params.lang)[0]
 
 const lessons = entry.data;
 const primaryLocation = entry.primaryLocation;
@@ -27,26 +24,11 @@ const primaryLocation = entry.primaryLocation;
         <h1>
           Μαθήματα {(Astro.params.lang || "").toUpperCase()}
           <i
-            class={`fa-brands fa-${(Astro.params.lang || "python")
-              .replace("html", "html5")
-              .replace("css", "css3")
-              .replace("javascript", "js")}`}></i>
+            class={`fa-brands fa-${course.icon}`}></i>
         </h1>
         <div>
-          <div hidden={(Astro.params.lang || "") != "python"}>
-            <PYTHON button_visible={false}/>
-          </div>
-          <div hidden={(Astro.params.lang || "") != "html"}>
-            <HTML button_visible={false}/>
-          </div>
-          <div hidden={(Astro.params.lang || "") != "css"}>
-            <CSS button_visible={false}/>
-          </div>
-          <div hidden={(Astro.params.lang || "") != "javascript"}>
-            <JAVASCRIPT button_visible={false}/>
-          </div>
-          <div hidden={(Astro.params.lang || "") != "arduino"}>
-            <ARDUINO button_visible={false}/>
+          <div>
+            <Language data={course}></Language>
           </div>
         </div>
       </div>

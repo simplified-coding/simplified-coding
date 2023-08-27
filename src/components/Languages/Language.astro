@@ -1,0 +1,17 @@
+---
+import CardHeader from "../Bootstrap/CardHeader.astro";
+
+const {button_visible = true, data} = Astro.props;
+---
+
+<CardHeader
+  card_header={data.header}
+  card_title={data.language}
+  card_button_text="Μάθε!"
+  card_button_href={`/lessons/view/${data.slug}`}
+  card_button_visible={button_visible}
+  class="card_text"
+>
+  <i class={`fa-brands fa-${data.icon}`} slot="pre-title"></i>
+  {data.description}
+</CardHeader>
