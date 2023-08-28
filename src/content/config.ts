@@ -29,7 +29,7 @@ export const collections = {
     'arduino': lessonCollection,
     'css': lessonCollection,
     'html': lessonCollection,
-    'javascript': lessonCollection,
+    'js': lessonCollection,
     'python': lessonCollection,
     'courses': courseCollection,
     'type': "data"
