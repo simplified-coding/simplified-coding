@@ -1,35 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import CardHeader from "../../components/Bootstrap/CardHeader.astro";
-import PYTHON from "../../components/Languages/PYTHON.astro";
-import HTML from "../../components/Languages/HTML.astro";
-import CSS from "../../components/Languages/CSS.astro";
-import JAVASCRIPT from "../../components/Languages/JAVASCRIPT.astro";
-import ARDUINO from "../../components/Languages/ARDUINO.astro";
-import {getCollection} from "astro:content";
+
+import {getEntry} from "astro:content";
+import Language from "../../components/Languages/Language.astro";
+
+const courses = (await getEntry('lessons', 'courses')).data.courses;
 ---
 
 <Layout>
   <br/>
   <div class="m-3" data-bs-theme="dark">
     <div class="d-flex justify-content-center align-items-center">
-      <h1 class="text">Οι γλώσσες προγραμματισμού που διδάσκουμε:</h1>
+      <h1 class="text">Οι γλωσσες προγραμματισμού που διδάσκουμε:</h1>
     </div>
-    <div class="m-5">
-      <PYTHON/>
-    </div>
-    <div class="m-5">
-      <HTML/>
-    </div>
-    <div class="m-5">
-      <CSS/>
-    </div>
-    <div class="m-5">
-      <JAVASCRIPT/>
-    </div>
-    <div class="m-5">
-      <ARDUINO/>
-    </div>
+    {courses.map(c =>
+      <div class="m-5">
+        <Language data={c}></Language>
+      </div>)}
   </div>
   <br/>
 </Layout>
