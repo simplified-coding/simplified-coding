@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CardHeader from "../components/Bootstrap/CardHeader.astro";
+import RoadMap from "../assets/RoadMap.svg"
 ---
 
 <Layout>
@@ -17,6 +17,24 @@ import CardHeader from "../components/Bootstrap/CardHeader.astro";
   <br/>
   <div id="doc-body"></div>
   <div id="doc-body-mobile"></div>
+  <div class="d-flex justify-content-center">
+    <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
+      <embed id="demo-tiger" type="image/svg+xml" style="width: inherit; height: inherit; border:1px solid black; "
+             src={RoadMap}/>
+    </div>
+  </div>
   <br/>
   <br/>
+
+  <script>
+    import svgPanZoom from "svg-pan-zoom"
+
+    window.onload = function () {
+      svgPanZoom('#demo-tiger', {
+        zoomEnabled: true,
+        controlIconsEnabled: true,
+        mouseWheelZoomEnabled: false
+      });
+    };
+  </script>
 </Layout>
