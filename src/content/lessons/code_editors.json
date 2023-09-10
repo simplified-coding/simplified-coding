@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "slug": "lesson_1",
+      "title": "Εισαγωγή στους Code Editors (Επεξεργαστές Κώδικα) και Integrated Development Environments (IDEs) (Ενσωματωμένα Περιβάλλοντα Ανάπτυξης)",
+      "description": "Εισαγωγή στους Code Editors (Επεξεργαστές Κώδικα) και Integrated Development Environments (IDEs) (Ενσωματωμένα Περιβάλλοντα Ανάπτυξης)"
+    },
+    {
+      "slug": "lesson_2",
+      "title": "Online Code Editors (Διαδικτυακοί Επεξεργαστές Κώδικα)",
+      "description": "Online Code Editors (Διαδικτυακοί Επεξεργαστές Κώδικα)"
+    },
+    {
+      "slug": "lesson_3",
+      "title": "Local Code Editors and IDEs (Τοπικοί Επεξεργαστές Κώδικα και Ενσωματωμένα Περιβάλλοντα Ανάπτυξης)",
+      "description": "Local Code Editors and IDEs (Τοπικοί Επεξεργαστές Κώδικα και Ενσωματωμένα Περιβάλλοντα Ανάπτυξης)"
+    }
+  ],
+  "primaryLocation": "view"
+}
