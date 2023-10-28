@@ -3,75 +3,70 @@
 
 <h1 style="text-align: center;"> Μάθημα 5 </h1>
 
-<h2 style="text-align: center;"> Λίστες και Πίνακες </h2>
+<h2 style="text-align: center;"> Πολυμέσα </h2>
 
 ---
 
-<h2 style="text-align: center;"> Λίστες </h2>
+<h2 style="text-align: center;"> `img` element </h2>
 
-Στην HTML έχουμε 2 είδη λίστας.
-
-* Μη οργανωμένη λίστα (Unordered list)
-* Οργανωμένη λίστα (Ordered list)
-
-<h3 style="text-align: left;"> Unordered list </h3>
-
-Η μη οργανωμένη λίστα δημιουργείται με την χρήση της ετικέτας ```<ul>``` και των ετικετών ```<li>``` για κάθε στοιχείο της λίστας.
-
-```html
-<ul>
-  <li>Στοιχείο 1</li>
-  <li>Στοιχείο 2</li>
-  <li>Στοιχείο 3</li>
-</ul>
-```
-
-<h3 style="text-align: left;"> Ordered list </h3>
-
-Η οργανωμένη λίστα δημιουργείται με την χρήση της ετικέτας ```<ol>``` και των ετικετών ```<li>``` για κάθε στοιχείο της λίστας.
-
-```html
-<ol>
-  <li>Στοιχείο 1</li>
-  <li>Στοιχείο 2</li>
-  <li>Στοιχείο 3</li>
-</ol>
-```
-
----
-
-<h2 style="text-align: center;"> Πίνακες (Tables) </h2>
-
-Ένας πίνακας στην HTML αποτελείτε από:
-* Γραμμές (= rows ή tr) 
-* Στήλες (= columns ή th)
-* Δεδομένα (= table data ή td)
-
-Ένας πίνακας ξεκινά με το ```<table>```. 
-Επιπλέον, βάζουμε το ```<tr>``` για τις γραμμές του πίνακα και το ```<th>``` για τις στήλες του πίνακα.
-Τέλος, προσθέτουμε ```<td>``` για να προσθέσουμε δεδομένα στον πίνακα.
+Με το ```img``` μπορούμε να εισάγουμε εικόνες στην ιστοσελίδα μας.
 
 Παράδειγμα:
 
 ```html
-<table>
-  <tr>
-    <th>Όνομα</th>
-    <th>Ηλικία</th>
-    <th>Πόλη</th>
-  </tr>
-  <tr>
-    <td>Γιάννης</td>
-    <td>25</td>
-    <td>Αθήνα</td>
-  </tr>
-  <tr>
-    <td>Μαρία</td>
-    <td>30</td>
-    <td>Θεσσαλονίκη</td>
-  </tr>
-</table>
+<img src="https://raw.githubusercontent.com/simplified-coding/simplified-coding.github.io/main/Website%20Logo/cover.png" alt="Simplified Coding Logo">
 ```
+
+Βλέπουμε ότι το `img` element έχει δύο attributes:
+- ```src``` το οποίο περιέχει το url της εικόνας που θέλουμε να εισάγουμε
+- ```alt``` το οποίο περιέχει το κείμενο που θα εμφανίζεται στη θέση της εικόνας αν δεν μπορεί να φορτωθεί η εικόνα
+
+---
+
+<h2 style="text-align: center;"> `video` element </h2>
+
+Με το ```video``` μπορούμε να εισάγουμε βίντεο στην ιστοσελίδα μας.
+
+Παράδειγμα:
+
+```html
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+```
+
+Βλέπουμε ότι το `video` element έχει πέντε attributes:
+- ```width``` το οποίο περιέχει το πλάτος του βίντεο
+- ```height``` το οποίο περιέχει το ύψος του βίντεο
+- ```controls``` το οποίο προσθέτει τα κουμπιά για τον έλεγχο του βίντεο
+- ```src``` το οποίο περιέχει το url του βίντεο που θέλουμε να εισάγουμε
+- ```type``` το οποίο περιέχει τον τύπο του βίντεο που θέλουμε να εισάγουμε
+
+Επιπλέον, βλέπουμε πως το ```video``` έχει και content (το κείμενο `Your browser does not support the video tag.`). 
+Αυτό το κείμενο θα εμφανίζεται αν ο browser δεν μπορεί να αναπαράγει το βίντεο.
+
+---
+
+<h2 style="text-align: center;"> `audio` element </h2>
+
+Με το ```audio``` Μπορούμε να εισάγουμε ήχο στην ιστοσελίδα μας.
+
+Παράδειγμα:
+
+```html
+<audio controls>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+```
+
+Βλέπουμε ότι το ```audio``` element έχει τρία attributes:
+- ```controls``` το οποίο προσθέτει τα κουμπιά για τον έλεγχο του ήχου
+- ```src``` το οποίο περιέχει το url του ήχου που θέλουμε να εισάγουμε
+- ```type``` το οποίο περιέχει τον τύπο του ήχου που θέλουμε να εισάγουμε
+
+Επιπλέον, βλέπουμε πως και το ```audio``` έχει content, όπως το ```video``` (το κείμενο `Your browser does not support the audio element.`).
 
 ---
 
