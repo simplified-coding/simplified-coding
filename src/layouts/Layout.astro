@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../assets/css/fontawesome.min.css";
 import "../assets/css/brands.css";
+import "../assets/css/solid.css";
 ---
 
 <!DOCTYPE html>
@@ -49,12 +50,23 @@ import "../assets/css/brands.css";
     console.log("[INFO] Mobile Page 404!");
   }
 
+  document.getElementById("layout-scroll").hidden = true;
   document.getElementById("layout-body").hidden = false;
 </script>
 
 <div style="background-color: #4b2265;">
   <div id="layout-body" hidden>
     <slot/>
+  </div>
+  <div id="layout-scroll" style="color: white;">
+    <div class="d-flex justify-content-center">
+      <div class="mx-2">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Please Wait / Παρακαλούμε Περιμένετε...</span>
+        </div>
+      </div>
+      <h2 class="d-inline mx-2">Please Wait / Παρακαλούμε Περιμένετε...</h2>
+    </div>
   </div>
 </div>
 
