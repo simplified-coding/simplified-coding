@@ -156,7 +156,7 @@ import Layout from "../../../layouts/Layout.astro";
     switch (lang) {
       case "python":
         return python();
-      case "javascript":
+      case "js":
         return javascript();
       case "html":
         return html();
@@ -226,8 +226,8 @@ import Layout from "../../../layouts/Layout.astro";
 
   // On run
   runButton?.addEventListener("click", async () => {
-    // If editor is in javascript language
-    if (language == "javascript") {
+    // If editor is in js language
+    if (language == "js") {
       // Clear Function
       // @ts-expect-error
       console.logs = [];
