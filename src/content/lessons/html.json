@@ -7,25 +7,31 @@
     },
     {
       "slug": "lesson_2",
-      "title": "Παράγραφοι, Τίτλοι, Links",
-      "description": "Παράγραφοι, Τίτλοι, Links"
+      "title": "Head",
+      "description": "Head"
     },
     {
       "slug": "lesson_3",
+      "title": "Body",
+      "description": "Body"
+    },
+    {
+      "slug": "lesson_4",
       "title": "Μορφοποίηση κειμένου HTML",
       "description": "Μορφοποίηση κειμένου HTML"
     },
     {
-      "slug": "lesson_4",
+      "slug": "lesson_5",
       "title": "Πολυμέσα",
       "description": "Πολυμέσα"
     },
     {
-      "slug": "lesson_5",
+      "slug": "lesson_6",
       "title": "Λίστες και Πίνακες",
       "description": "Λίστες και Πίνακες"
     },
     {
+      "slug": "lesson_7",
       "title": "Styling",
       "description": "Styling"
     }
