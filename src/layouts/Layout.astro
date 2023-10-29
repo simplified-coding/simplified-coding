@@ -29,6 +29,10 @@ import "../assets/css/solid.css";
 
 <body>
 <script>
+  import {cookiesEnabled, getCookie, getCookies, hasCookie, revalidateCookies, setCookie} from "../lib/cookie";
+  import {getEntry} from "astro:content";
+  import {refreshLessons} from "../lib/lessonTracking";
+
   if (
     document.getElementById("doc-body") &&
     document.getElementById("doc-body-mobile")
@@ -52,6 +56,15 @@ import "../assets/css/solid.css";
 
   document.getElementById("layout-scroll").hidden = true;
   document.getElementById("layout-body").hidden = false;
+
+  if (!hasCookie("accepted")) {
+    setCookie("accepted", "true")
+  } else {
+    if (cookiesEnabled()) {
+      refreshLessons()
+      revalidateCookies()
+    }
+  }
 </script>
 
 <div style="background-color: #4b2265;">

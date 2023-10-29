@@ -5,7 +5,7 @@ import {getEntry} from "astro:content";
 import Language from "../../../../components/Languages/Language.astro";
 
 // @ts-expect-error
-const entry = (await getEntry("lessons", Astro.params.lang || "javascript"))
+const entry = (await getEntry("lessons", Astro.params.lang || "js"))
   .data;
 const course = (await getEntry('lessons', 'courses')).data.courses.filter(c => c.slug == Astro.params.lang)[0]
 
