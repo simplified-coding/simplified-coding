@@ -88,5 +88,6 @@ export const refreshLessons = async () => {
     }
   })
 
+  console.log("Refreshing lesson cookies")
   setCookie("tracking", JSON.stringify(data))
 }
