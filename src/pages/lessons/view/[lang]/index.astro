@@ -1,77 +1,88 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
 import CardHeader from "../../../../components/Bootstrap/CardHeader.astro";
-import {getEntry} from "astro:content";
+import { getEntry } from "astro:content";
 import Language from "../../../../components/Languages/Language.astro";
 
 // @ts-expect-error
-const entry = (await getEntry("lessons", Astro.params.lang || "js"))
-  .data;
-const course = (await getEntry('lessons', 'courses')).data.courses.filter(c => c.slug == Astro.params.lang)[0]
+const entry = (await getEntry("lessons", Astro.params.lang || "js")).data;
+const course = (await getEntry("lessons", "courses")).data.courses.filter(
+    (c) => c.slug == Astro.params.lang
+)[0];
 
 const lessons = entry.data;
-const primaryLocation = entry.primaryLocation;
 ---
 
 <Layout>
-  <div
-    class="d-flex justify-content-center p-4"
-    style="color: white"
-    data-bs-theme="dark"
-  >
-    <div>
-      <div>
-        <h1>
-          Μαθήματα {(Astro.params.lang || "").toUpperCase()}
-          <i
-            class={`fa-brands fa-${course.icon}`}></i>
-        </h1>
+    <div
+        class="d-flex justify-content-center p-4"
+        style="color: white"
+        data-bs-theme="dark"
+    >
         <div>
-          <div>
-            <Language data={course}></Language>
-          </div>
+            <div>
+                <h1>
+                    Μαθήματα {(Astro.params.lang || "").toUpperCase()}
+                    <i class={`fa-brands fa-${course.icon}`}></i>
+                </h1>
+                <div>
+                    <div>
+                        <Language data={course} button_visible={false} />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="doc-body">
+                    {
+                        lessons.map((lesson: any) => (
+                            <div style="display: inline-flex;" class="m-3">
+                                <CardHeader
+                                    card_style="width: 25vw; min-height: 13rem;"
+                                    card_header="Μάθημα"
+                                    card_title={lesson.title}
+                                    card_button_text="Δίαβασε!"
+                                    card_button_href={`/view/${
+                                        Astro.params.lang || ""
+                                    }?lesson=${lesson.slug}`}
+                                >
+                                    {lesson.description}
+                                    <div slot="btns" style="display: inline;">
+                                        <a
+                                            href={`/editor/${
+                                                Astro.params.lang || ""
+                                            }?lesson=${lesson.slug}`}
+                                            class="btn btn-primary"
+                                            hidden={course.viewOnly != false}
+                                        >
+                                            Μάθε!
+                                        </a>
+                                    </div>
+                                </CardHeader>
+                            </div>
+                        ))
+                    }
+                </div>
+                <!-- <div id="doc-body-mobile">
+                    {
+                        lessons.map((lesson: any) => (
+                            <div class="m-3">
+                                <CardHeader
+                                    card_style="min-height: 13rem;"
+                                    card_header="Μάθημα"
+                                    card_title={lesson.title}
+                                    card_button_text="Μάθε!"
+                                    card_button_href="#"
+                                >
+                                    {lesson.description}
+                                    <div slot="btns">
+                                        <h1>ΔΙΑΒΑΣΕ</h1>
+                                    </div>
+                                </CardHeader>
+                            </div>
+                        ))
+                    }
+                </div> -->
+            </div>
         </div>
-      </div>
-      <div>
-        <div id="doc-body">
-          {
-            lessons.map((lesson: any) => (
-              <div style="display: inline-flex;" class="m-3">
-                <CardHeader
-                  card_style="width: 25vw; min-height: 13rem;"
-                  card_header="Μάθημα"
-                  card_title={lesson.title}
-                  card_button_text="Μάθε Τώρα!"
-                  card_button_href={`/${primaryLocation}/${
-                    Astro.params.lang || ""
-                  }?lesson=${lesson.slug}`}
-                >
-                  {lesson.description}
-                </CardHeader>
-              </div>
-            ))
-          }
-        </div>
-        <div id="doc-body-mobile">
-          {
-            lessons.map((lesson: any) => (
-              <div class="m-3">
-                <CardHeader
-                  card_style="min-height: 13rem;"
-                  card_header="Μάθημα"
-                  card_title={lesson.title}
-                  card_button_text="Μάθε Τώρα!"
-                  card_button_href={`/${primaryLocation}/${
-                    Astro.params.lang || ""
-                  }?lesson=${lesson.slug}`}
-                >
-                  {lesson.description}
-                </CardHeader>
-              </div>
-            ))
-          }
-        </div>
-      </div>
     </div>
-  </div>
 </Layout>

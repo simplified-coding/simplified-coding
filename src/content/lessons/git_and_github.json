@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "slug": "lesson_1",
+      "title": "Εισαγωγή στο Git & GitHub",
+      "description": "Εισαγωγή στο Git & GitHub"
+    },
+    {
+      "slug": "lesson_2",
+      "title": "Βασικές Εντολές στο Git",
+      "description": "Βασικές Εντολές στο Git"
+    },
+    {
+      "slug": "lesson_3",
+      "title": "Branching και Merging",
+      "description": "Branching και Merging"
+    }
+  ]
+}
