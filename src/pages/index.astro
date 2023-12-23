@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RoadMap from "../assets/RoadMap.svg"
+import {getEntry} from "astro:content";
+
+const courses = (await getEntry("lessons", "courses")).data.courses.map(c => c.slug)
 ---
 
 <Layout>
@@ -19,8 +22,8 @@ import RoadMap from "../assets/RoadMap.svg"
   <div id="doc-body-mobile"></div>
   <div class="d-flex justify-content-center">
     <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
-      <embed id="demo-tiger" type="image/svg+xml" style="width: inherit; height: inherit; border:1px solid black; "
-             src={RoadMap}/>
+      <object id="svg-roadmap" type="image/svg+xml" style="width: inherit; height: inherit; border:1px solid black; "
+              data={RoadMap}/>
     </div>
   </div>
   <br/>
@@ -29,12 +32,32 @@ import RoadMap from "../assets/RoadMap.svg"
   <script>
     import svgPanZoom from "svg-pan-zoom"
 
-    window.onload = function () {
-      svgPanZoom('#demo-tiger', {
+    window.trigger = function () {
+      svgPanZoom('#svg-roadmap', {
         zoomEnabled: true,
         controlIconsEnabled: true,
         mouseWheelZoomEnabled: false
       });
     };
+  </script>
+
+  <script data-courses={JSON.stringify(courses)} id="svg">
+
+
+    function goToCourse(course) {
+      window.location.pathname = `/lessons/view/${course}`
+    }
+
+    window.onload = () => {
+      window.trigger()
+
+      JSON.parse(document.getElementById("svg").getAttribute("data-courses")).forEach(c => {
+        console.log(c)
+        document.getElementById("svg-roadmap").contentDocument.children[0].getElementById(`svg-${c}-completed`).style = "display: none"
+
+        document.getElementById("svg-roadmap").contentDocument.children[0].getElementById(`svg-${c}`).onclick = () => goToCourse(c)
+        document.getElementById("svg-roadmap").contentDocument.children[0].getElementById(`svg-${c}-text`).onclick = () => goToCourse(c)
+      })
+    }
   </script>
 </Layout>
