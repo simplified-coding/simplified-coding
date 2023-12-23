@@ -6,13 +6,14 @@ const {
   card_button_text = "",
   card_button_visible = true,
   card_style = "",
+  card_id = ""
 } = Astro.props;
 ---
 
-<div class="card" style={card_style}>
-  <div class="card-header card-bold">{card_header}</div>
-  <div class="card-body">
-    <h5 class="card-title card-bold">
+<div class="card" style={card_style} id={card_id}>
+  <div class="card-header card-bold" id={`${card_id}-header`}>{card_header}</div>
+  <div class="card-body" id={`${card_id}-body`}>
+    <h5 class="card-title card-bold" id={`${card_id}-title`}>
       <slot name="pre-title"/>
       {card_title}
     </h5>
