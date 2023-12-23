@@ -59,126 +59,127 @@ import Layout from "../../../layouts/Layout.astro";
 </Layout>
 
 <script>
-  import { basicSetup } from "codemirror";
-    import { javascript } from "@codemirror/lang-javascript";
-    import { python } from "@codemirror/lang-python";
-    import { html } from "@codemirror/lang-html";
-    import { css } from "@codemirror/lang-css";
-    import { loadPyodide } from "pyodide";
+  import {basicSetup} from "codemirror";
+  import {javascript} from "@codemirror/lang-javascript";
+  import {python} from "@codemirror/lang-python";
+  import {html} from "@codemirror/lang-html";
+  import {css} from "@codemirror/lang-css";
+  import {loadPyodide} from "pyodide";
 
-    import { keymap, EditorView } from "@codemirror/view";
-    import { indentWithTab } from "@codemirror/commands";
-    import { oneDark } from "@codemirror/theme-one-dark";
-    import { EditorState, Text } from "@codemirror/state";
+  import {keymap, EditorView} from "@codemirror/view";
+  import {indentWithTab} from "@codemirror/commands";
+  import {oneDark} from "@codemirror/theme-one-dark";
+  import {EditorState, Text} from "@codemirror/state";
+  import {addCurrentLesson} from "../../../lib/lessonTracking";
 
-    // Set IFrame Style
-    window.onload = () => {
-      const iframe = document.getElementById("if") as HTMLIFrameElement;
-      const style = document.createElement("style");
-      style.innerHTML = `
+  // Set IFrame Style
+  window.onload = () => {
+    const iframe = document.getElementById("if") as HTMLIFrameElement;
+    const style = document.createElement("style");
+    style.innerHTML = `
         * {
             color: white;
         }
         `;
-      iframe.contentDocument?.body.appendChild(style);
-      };
+    iframe.contentDocument?.body.appendChild(style);
+  };
 
-    // Pyodide
-    let py: any = null;
+  // Pyodide
+  let py: any = null;
 
-    // URL
-    const language = location.pathname.split("/")[2];
+  // URL
+  const language = location.pathname.split("/")[2];
 
-    // Load Pyodide
-    const loadPython = document.getElementById("loading-py");
-    if (loadPython && language == "python") {
-      loadPython.hidden = false;
-      py = await loadPyodide({indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"});
-      loadPython.hidden = true;
+  // Load Pyodide
+  const loadPython = document.getElementById("loading-py");
+  if (loadPython && language == "python") {
+    loadPython.hidden = false;
+    py = await loadPyodide({indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"});
+    loadPython.hidden = true;
+  }
+
+  // Tabs
+  const consoleBTN = document.getElementById(
+    "console-btn"
+  ) as HTMLButtonElement;
+  const previewBTN = document.getElementById(
+    "preview-btn"
+  ) as HTMLButtonElement;
+  const consoleDIV = document.getElementById("console-div") as HTMLDivElement;
+  const previewDIV = document.getElementById("preview-div") as HTMLDivElement;
+  const previewIFrame = document.getElementById(
+    "preview-if"
+  ) as HTMLIFrameElement;
+
+  consoleBTN?.addEventListener("click", () => {
+    if (consoleBTN.className.indexOf("nav-link active") == -1)
+      consoleBTN.className = consoleBTN.className.replace(
+        "nav-link",
+        "nav-link active"
+      );
+
+    if (previewBTN) {
+      previewBTN.className = previewBTN.className.replace(
+        "nav-link active",
+        "nav-link"
+      );
     }
 
-    // Tabs
-    const consoleBTN = document.getElementById(
-      "console-btn"
-      ) as HTMLButtonElement;
-    const previewBTN = document.getElementById(
-      "preview-btn"
-      ) as HTMLButtonElement;
-    const consoleDIV = document.getElementById("console-div") as HTMLDivElement;
-    const previewDIV = document.getElementById("preview-div") as HTMLDivElement;
-    const previewIFrame = document.getElementById(
-      "preview-if"
-      ) as HTMLIFrameElement;
+    if (consoleDIV && previewDIV) {
+      consoleDIV.hidden = false;
+      previewDIV.hidden = true;
+    }
+  });
 
-    consoleBTN?.addEventListener("click", () => {
-      if (consoleBTN.className.indexOf("nav-link active") == -1)
-        consoleBTN.className = consoleBTN.className.replace(
-          "nav-link",
-          "nav-link active"
-        );
+  previewBTN?.addEventListener("click", () => {
+    if (previewBTN?.className.indexOf("nav-link active") == -1)
+      previewBTN.className = previewBTN.className.replace(
+        "nav-link",
+        "nav-link active"
+      );
 
-      if (previewBTN) {
-        previewBTN.className = previewBTN.className.replace(
-          "nav-link active",
-          "nav-link"
-        );
-      }
+    if (consoleBTN) {
+      consoleBTN.className = consoleBTN.className.replace(
+        "nav-link active",
+        "nav-link"
+      );
+    }
 
-      if (consoleDIV && previewDIV) {
-        consoleDIV.hidden = false;
-        previewDIV.hidden = true;
-      }
-    });
+    if (consoleDIV && previewDIV) {
+      consoleDIV.hidden = true;
+      previewDIV.hidden = false;
+    }
+  });
 
-    previewBTN?.addEventListener("click", () => {
-      if (previewBTN?.className.indexOf("nav-link active") == -1)
-        previewBTN.className = previewBTN.className.replace(
-          "nav-link",
-          "nav-link active"
-        );
+  // Decide Autocomplete
+  const decideLanguage = (lang: string): any => {
+    switch (lang) {
+      case "python":
+        return python();
+      case "js":
+        return javascript();
+      case "html":
+        return html();
+      case "css":
+        return html();
+      default:
+        return javascript();
+    }
+  };
 
-      if (consoleBTN) {
-        consoleBTN.className = consoleBTN.className.replace(
-          "nav-link active",
-          "nav-link"
-        );
-      }
-
-      if (consoleDIV && previewDIV) {
-        consoleDIV.hidden = true;
-        previewDIV.hidden = false;
-      }
-    });
-
-    // Decide Autocomplete
-    const decideLanguage = (lang: string): any => {
-      switch (lang) {
-        case "python":
-          return python();
-        case "javascript":
-          return javascript();
-        case "html":
-          return html();
-        case "css":
-          return html();
-        default:
-          return javascript();
-        }
-      };
-
-    const templatePerLanguage = (lang: string): string => {
-      switch (lang) {
-        case "python":
-          return `print('Hello, World!')`;
-        case "html":
-          return `<!DOCTYPE html>
+  const templatePerLanguage = (lang: string): string => {
+    switch (lang) {
+      case "python":
+        return `print('Hello, World!')`;
+      case "html":
+        return `<!DOCTYPE html>
 <html>
   <body>
       <!-- ΚΩΔΙΚΑΣ ΕΔΩ -->
   </body>
 </html>`;
-        case "css":
-          return `<!DOCTYPE html>
+      case "css":
+        return `<!DOCTYPE html>
 <html>
   <body>
     <!-- ΚΩΔΙΚΑΣ ΕΔΩ -->
@@ -187,82 +188,84 @@ import Layout from "../../../layouts/Layout.astro";
     </style>
   </body>
 </html>`;
-        default:
-          return `console.log("Hello, World!")`;
-        }
-      };
+      default:
+        return `console.log("Hello, World!")`;
+    }
+  };
 
-    // Editor
-    let editor = new EditorView({
-      extensions: [
-        basicSetup,
-        decideLanguage(language),
-        keymap.of([indentWithTab]),
-        oneDark,
-        ],
-      parent: document.querySelector("#editor") as Element,
-      doc: templatePerLanguage(language),
-      });
+  // Editor
+  let editor = new EditorView({
+    extensions: [
+      basicSetup,
+      decideLanguage(language),
+      keymap.of([indentWithTab]),
+      oneDark,
+    ],
+    parent: document.querySelector("#editor") as Element,
+    doc: templatePerLanguage(language),
+  });
 
-    // Inject Custom Console Log
+  // Inject Custom Console Log
+  // @ts-expect-error
+  console.stdlog = console.log.bind(console);
+
+  // @ts-expect-error
+  console.logs = [];
+
+  console.log = function () {
     // @ts-expect-error
-    console.stdlog = console.log.bind(console);
+    console.logs.push(Array.from(arguments));
 
     // @ts-expect-error
-    console.logs = [];
+    console.stdlog.apply(console, arguments);
+  };
 
-    console.log = function () {
+  // Run Console
+  const runButton = document.getElementById("run-btn");
+  const consoleCode = document.getElementById("console-code");
+
+  // On run
+  runButton?.addEventListener("click", async () => {
+    // If editor is in js language
+    if (language == "js") {
+      // Clear Function
       // @ts-expect-error
-      console.logs.push(Array.from(arguments));
+      console.logs = [];
 
+      // Run Function with Editor Code
+      const f = new Function(editor.state.doc.toString());
+      f();
+
+      // Clear Console Output
+      let consoleOutput = "";
+
+      // Set Console Output
       // @ts-expect-error
-      console.stdlog.apply(console, arguments);
-      };
-
-    // Run Console
-    const runButton = document.getElementById("run-btn");
-    const consoleCode = document.getElementById("console-code");
-
-    // On run
-    runButton?.addEventListener("click", async () => {
-      // If editor is in javascript language
-      if (language == "javascript") {
-        // Clear Function
-        // @ts-expect-error
-        console.logs = [];
-
-        // Run Function with Editor Code
-        const f = new Function(editor.state.doc.toString());
-        f();
-
-        // Clear Console Output
-        let consoleOutput = "";
-
-        // Set Console Output
-        // @ts-expect-error
-        console.logs.forEach((e) => (consoleOutput += `> ${e[0]}\n`));
-        if (consoleCode) {
-          consoleCode.innerText = consoleOutput;
-        }
-      } else if (language == "html" || language == "css") {
-        if (previewIFrame && previewIFrame.contentDocument) {
-          previewIFrame.contentDocument.body.innerHTML =
-            editor.state.doc.toString();
-        }
-      } else if (language == "python" && py && consoleCode) {
-        // If editor is python, run python code
-        // @ts-expect-error
-        console.logs = [];
-        // Set Console Output
-        let consoleOutput = "";
-
-        py.runPython(editor.state.doc.toString());
-
-        // @ts-expect-error
-        console.logs.forEach((e) => (consoleOutput += `> ${e[0]}\n`));
+      console.logs.forEach((e) => (consoleOutput += `> ${e[0]}\n`));
+      if (consoleCode) {
         consoleCode.innerText = consoleOutput;
       }
-    });
+    } else if (language == "html" || language == "css") {
+      if (previewIFrame && previewIFrame.contentDocument) {
+        previewIFrame.contentDocument.body.innerHTML =
+          editor.state.doc.toString();
+      }
+    } else if (language == "python" && py && consoleCode) {
+      // If editor is python, run python code
+      // @ts-expect-error
+      console.logs = [];
+      // Set Console Output
+      let consoleOutput = "";
+
+      py.runPython(editor.state.doc.toString());
+
+      // @ts-expect-error
+      console.logs.forEach((e) => (consoleOutput += `> ${e[0]}\n`));
+      consoleCode.innerText = consoleOutput;
+    }
+  });
+
+  addCurrentLesson()
 </script>
 
 <style>
