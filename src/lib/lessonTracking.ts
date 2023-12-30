@@ -29,7 +29,7 @@ export const addLesson = async () => {
 
 export const checkCompletion = async () => {
   const course = location.pathname.split('/')[2]
-  const trackingCompleted: any = JSON.parse(localStorage.getItem("lessons") || "[]")
+  const trackingCompleted: any = JSON.parse(localStorage.getItem("completed") || "[]")
   const trackingLessons: [] = JSON.parse(localStorage.getItem(course) || "[]")
   const courseData: any = (await getEntry("lessons", course))
 
