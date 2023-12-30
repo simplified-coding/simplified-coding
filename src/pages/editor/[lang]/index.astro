@@ -63,14 +63,12 @@ import Layout from "../../../layouts/Layout.astro";
   import {javascript} from "@codemirror/lang-javascript";
   import {python} from "@codemirror/lang-python";
   import {html} from "@codemirror/lang-html";
-  import {css} from "@codemirror/lang-css";
   import {loadPyodide} from "pyodide";
 
   import {keymap, EditorView} from "@codemirror/view";
   import {indentWithTab} from "@codemirror/commands";
   import {oneDark} from "@codemirror/theme-one-dark";
-  import {EditorState, Text} from "@codemirror/state";
-  import {addCurrentLesson} from "../../../lib/lessonTracking";
+  import {addLesson} from "../../../lib/lessonTracking";
 
   // Set IFrame Style
   window.onload = () => {
@@ -265,7 +263,7 @@ import Layout from "../../../layouts/Layout.astro";
     }
   });
 
-  addCurrentLesson()
+  addLesson()
 </script>
 
 <style>

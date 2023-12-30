@@ -41,9 +41,8 @@ import Layout from "../../../layouts/Layout.astro";
 </Layout>
 
 <script>
-  import {getCookie, setCookie} from "../../../lib/cookie";
   import {
-    addCurrentLesson,
+    addLesson,
   } from "../../../lib/lessonTracking";
 
   const printBTN = document.getElementById("print");
@@ -78,4 +77,6 @@ import Layout from "../../../layouts/Layout.astro";
     );
     a.click();
   });
+
+  addLesson()
 </script>
