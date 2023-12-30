@@ -1,9 +1,9 @@
 import {getEntry} from "astro:content";
 
 export const refreshLessons = async () => {
-  let data = (await getEntry("lessons", "courses")).data.courses.map((c: { slug: string }) => {
-    c.slug
-  })
+  let data: any = [];
+
+  (await getEntry("lessons", "courses")).data.courses.map((c: { slug: string }) => data.push(c.slug))
 
   localStorage.setItem("lessons", JSON.stringify(data))
 }
@@ -29,15 +29,15 @@ export const addLesson = async () => {
 
 export const checkCompletion = async () => {
   const course = location.pathname.split('/')[2]
-  const trackingCompleted: any = JSON.parse(localStorage.getItem("tracking-completed") || "")
-  const trackingLessons: [] = JSON.parse(localStorage.getItem("tracking-lessons") || "")[course]
-  const courseData = (await getEntry("lessons", course))
+  const trackingCompleted: any = JSON.parse(localStorage.getItem("lessons") || "")
+  const trackingLessons: [] = JSON.parse(localStorage.getItem(course) || "")
+  const courseData: any = (await getEntry("lessons", course))
 
   if (trackingLessons.length === courseData?.data.data.length) {
     if (trackingCompleted.indexOf(course) === -1) {
       trackingCompleted.push(course)
     }
   }
-
-  localStorage.setItem("tracking-completed", JSON.stringify(trackingCompleted))
+  
+  localStorage.setItem("completed", JSON.stringify(trackingCompleted))
 }
