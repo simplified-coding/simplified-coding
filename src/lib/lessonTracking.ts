@@ -23,13 +23,11 @@ export const refreshLessons = async () => {
 }
 
 export const addLesson = async () => {
-  const data = JSON.parse(localStorage.getItem("tracking-lessons") || "{}")
-
-  if (data[location.pathname.split('/')[2]].indexOf(new URLSearchParams(location.search).get("lesson")) === -1) {
-    data[location.pathname.split('/')[2]].push(new URLSearchParams(location.search).get("lesson"))
+  if (localStorage.getItem(location.pathname.split('/')[2])) {
+    localStorage.setItem(location.pathname.split('/')[2], JSON.stringify(JSON.parse(localStorage.getItem(location.pathname.split('/')[2])).push(new URLSearchParams(location.search).get("lesson"))))
+  } else {
+    localStorage.setItem(location.pathname.split('/')[2], JSON.stringify([new URLSearchParams(location.search).get("lesson")]))
   }
-
-  localStorage.setItem("tracking-lessons", JSON.stringify(data))
   await checkCompletion()
 }
 
