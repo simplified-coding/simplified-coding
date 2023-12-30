@@ -29,8 +29,8 @@ export const addLesson = async () => {
 
 export const checkCompletion = async () => {
   const course = location.pathname.split('/')[2]
-  const trackingCompleted: any = JSON.parse(localStorage.getItem("lessons") || "")
-  const trackingLessons: [] = JSON.parse(localStorage.getItem(course) || "")
+  const trackingCompleted: any = JSON.parse(localStorage.getItem("lessons") || "[]")
+  const trackingLessons: [] = JSON.parse(localStorage.getItem(course) || "[]")
   const courseData: any = (await getEntry("lessons", course))
 
   if (trackingLessons.length === courseData?.data.data.length) {
@@ -38,6 +38,6 @@ export const checkCompletion = async () => {
       trackingCompleted.push(course)
     }
   }
-  
+
   localStorage.setItem("completed", JSON.stringify(trackingCompleted))
 }
