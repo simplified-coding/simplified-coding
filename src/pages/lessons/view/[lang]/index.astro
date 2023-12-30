@@ -76,7 +76,7 @@ const lessons = entry.data;
   <script data-lesson-length={lessons.length}>
     let progressBar = document.getElementById("progress-bar")
     const lessonLength = parseInt(document.currentScript.getAttribute("data-lesson-length"))
-    const tracking = JSON.parse(document.cookie.split(';').filter((c) => c.trim().startsWith("tracking-lessons"))[0].split('=')[1])
+    const tracking = JSON.parse(localStorage.getItem("tracking-lessons"))
 
     const currentCourse = location.pathname.split("/")[3]
     const percentage = (tracking[currentCourse].length / lessonLength) * 100

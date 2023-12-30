@@ -1,11 +1,11 @@
-import {getCookie, hasCookie, setCookie} from "./cookie";
+import {setCookie} from "./cookie";
 import {getEntry} from "astro:content";
 
 export const refreshLessons = async () => {
   let data: any = {}
 
-  if (hasCookie("tracking-lessons")) {
-    data = JSON.parse(getCookie("tracking-lessons"))
+  if (localStorage.getItem("tracking-lessons")) {
+    data = JSON.parse(localStorage.getItem("tracking-lessons") || "{}")
   }
 
   (await getEntry("lessons", "courses")).data.courses.map((c: { slug: string }) => {
@@ -15,15 +15,15 @@ export const refreshLessons = async () => {
   })
 
   console.log("[INFO] Lesson Cookies Refreshed")
-  setCookie("tracking-lessons", JSON.stringify(data))
+  localStorage.setItem("tracking-lessons", JSON.stringify(data))
 
-  if (!hasCookie("tracking-completed")) {
-    setCookie("tracking-completed", "[]")
+  if (localStorage.getItem("tracking-completed") == null) {
+    localStorage.setItem("tracking-completed", JSON.stringify("[]"))
   }
 }
 
 export const addLesson = async () => {
-  const data = JSON.parse(getCookie("tracking-lessons"))
+  const data = JSON.parse(localStorage.getItem("tracking-lessons") || "{}")
 
   if (data[location.pathname.split('/')[2]].indexOf(new URLSearchParams(location.search).get("lesson")) === -1) {
     data[location.pathname.split('/')[2]].push(new URLSearchParams(location.search).get("lesson"))
@@ -35,8 +35,8 @@ export const addLesson = async () => {
 
 export const checkCompletion = async () => {
   const course = location.pathname.split('/')[2]
-  const trackingCompleted: any = JSON.parse(getCookie("tracking-completed"))
-  const trackingLessons: [] = JSON.parse(getCookie("tracking-lessons"))[course]
+  const trackingCompleted: any = JSON.parse(localStorage.getItem("tracking-completed") || "")
+  const trackingLessons: [] = JSON.parse(localStorage.getItem("tracking-lessons") || "")[course]
   const courseData = (await getEntry("lessons", course))
 
   if (trackingLessons.length === courseData?.data.data.length) {
@@ -45,5 +45,5 @@ export const checkCompletion = async () => {
     }
   }
 
-  setCookie("tracking-completed", JSON.stringify(trackingCompleted))
+  localStorage.setItem("tracking-completed", JSON.stringify(trackingCompleted))
 }
