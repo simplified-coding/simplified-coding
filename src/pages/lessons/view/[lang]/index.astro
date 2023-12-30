@@ -76,15 +76,14 @@ const lessons = entry.data;
   <script data-lesson-length={lessons.length}>
     let progressBar = document.getElementById("progress-bar")
     const lessonLength = parseInt(document.currentScript.getAttribute("data-lesson-length"))
-    const tracking = JSON.parse(localStorage.getItem("tracking-lessons"))
 
     const currentCourse = location.pathname.split("/")[3]
-    const percentage = (tracking[currentCourse].length / lessonLength) * 100
+    const percentage = (JSON.parse(localStorage.getItem(currentCourse)).length / lessonLength) * 100
 
     progressBar.style.width = percentage + "%"
-    progressBar.innerText = `${Math.round(percentage)}% - ${tracking[currentCourse].length}/${lessonLength} Completed`
+    progressBar.innerText = `${Math.round(percentage)}% - ${JSON.parse(localStorage.getItem(currentCourse)).length}/${lessonLength} Completed`
 
-    tracking[currentCourse].forEach(course => {
+    JSON.parse(localStorage.getItem(currentCourse)).forEach(course => {
       document.getElementById(`${course}-header`).innerText = document.getElementById(`${course}-header`).innerText + " - [✅]"
     })
   </script>
