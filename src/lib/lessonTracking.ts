@@ -10,6 +10,7 @@ export const refreshLessons = async () => {
 
   (await getEntry("lessons", "courses")).data.courses.map((c: { slug: string }) => {
     if (!data.hasOwnProperty(c.slug)) {
+      console.log(`Adding ${c.slug}`)
       data[c.slug] = []
     }
   })
