@@ -29,10 +29,8 @@ export const addLesson = async () => {
     data[location.pathname.split('/')[2]].push(new URLSearchParams(location.search).get("lesson"))
   }
 
-  setInterval(async () => {
-    setCookie("tracking-lessons", JSON.stringify(data))
-    await checkCompletion()
-  }, 1000)
+  localStorage.setItem("tracking-lessons", JSON.stringify(data))
+  await checkCompletion()
 }
 
 export const checkCompletion = async () => {
@@ -47,7 +45,5 @@ export const checkCompletion = async () => {
     }
   }
 
-  setInterval(() => {
-    localStorage.setItem("tracking-completed", JSON.stringify(trackingCompleted))
-  }, 1000)
+  localStorage.setItem("tracking-completed", JSON.stringify(trackingCompleted))
 }
