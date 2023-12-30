@@ -39,23 +39,23 @@ export const addCurrentLesson = async () => {
 }
 
 export const unmarkCourseCompleted = (course: string) => {
-  let tracking = JSON.parse(getCookie("tracking"))
+  let completed = JSON.parse(getCookie("completed"))
 
-  tracking.completed.filter((element: string) => element != course)
+  completed.filter((element: string) => element != course)
 
-  console.log(`Cookie completed is now: ${tracking.completed}`)
-  setCookie("tracking", JSON.stringify(tracking))
+  console.log(`Cookie completed is now: ${completed}`)
+  setCookie("completed", JSON.stringify(completed))
 }
 
 export const markCourseCompleted = (course: string) => {
-  let tracking = JSON.parse(getCookie("tracking"))
+  let completed = JSON.parse(getCookie("completed"))
 
-  if (tracking.completed.indexOf(course) == -1) {
-    tracking.completed.push(course)
+  if (completed.indexOf(course) == -1) {
+    completed.push(course)
   }
 
-  console.log(`Cookie completed is now: ${tracking.completed}`)
-  setCookie("tracking", JSON.stringify(tracking))
+  console.log(`Cookie completed is now: ${completed}`)
+  setCookie("completed", JSON.stringify(completed))
 }
 
 export const isCourseCompleted = async (course: string) => {
@@ -73,8 +73,7 @@ export const isCourseCompleted = async (course: string) => {
 }
 
 export const refreshLessons = async () => {
-  let data: { completed: Array<string>, lessons: any } = {
-    completed: [],
+  let data: { lessons: any } = {
     lessons: {}
   };
 
