@@ -24,7 +24,7 @@ export const refreshLessons = async () => {
 
 export const addLesson = async () => {
   if (localStorage.getItem(location.pathname.split('/')[2])) {
-    localStorage.setItem(location.pathname.split('/')[2], JSON.stringify(JSON.parse(localStorage.getItem(location.pathname.split('/')[2])).push(new URLSearchParams(location.search).get("lesson"))))
+    localStorage.setItem(location.pathname.split('/')[2], JSON.stringify((JSON.parse(localStorage.getItem(location.pathname.split('/')[2]))).push(new URLSearchParams(location.search).get("lesson"))))
   } else {
     localStorage.setItem(location.pathname.split('/')[2], JSON.stringify([new URLSearchParams(location.search).get("lesson")]))
   }
