@@ -1,4 +1,3 @@
-import {setCookie} from "./cookie";
 import {getEntry} from "astro:content";
 
 export const refreshLessons = async () => {
@@ -23,10 +22,16 @@ export const refreshLessons = async () => {
 }
 
 export const addLesson = async () => {
-  if (localStorage.getItem(location.pathname.split('/')[2])) {
-    localStorage.setItem(location.pathname.split('/')[2], JSON.stringify((JSON.parse(localStorage.getItem(location.pathname.split('/')[2]))).push(new URLSearchParams(location.search).get("lesson"))))
+  const course = location.pathname.split('/')[2]
+  const lesson = new URLSearchParams(location.search).get("lesson")
+
+  const item = localStorage.getItem(course)
+  if (item) {
+    const data: Array<string> = JSON.parse(item || "[]")
+    data.push(lesson || "")
+    localStorage.setItem(course, JSON.stringify(data))
   } else {
-    localStorage.setItem(location.pathname.split('/')[2], JSON.stringify([new URLSearchParams(location.search).get("lesson")]))
+    localStorage.setItem(course, JSON.stringify([lesson]))
   }
   await checkCompletion()
 }
