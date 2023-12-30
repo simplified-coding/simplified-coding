@@ -3,21 +3,17 @@ export const getCookies = () => {
 }
 
 export const getCookie = (cookieName: string) => {
-  // return document.cookie.split(';').filter((c) => c.trim().startsWith(cookieName))[0].split('=')[1]
-  return localStorage.getItem(cookieName)
+  return document.cookie.split(';').filter((c) => c.trim().startsWith(cookieName))[0].split('=')[1]
 }
 export const setCookie = (cookieName: string, cookieValue: string) => {
-  // return document.cookie = `${cookieName}=${cookieValue};samesite=lax;max-age=15778476;domain=simplifiedcoding.org;secure`
-  return localStorage.setItem(cookieName, cookieValue)
+  return document.cookie = `${cookieName}=${cookieValue};samesite=lax;max-age=15778476;domain=simplifiedcoding.org;secure`
 }
 export const deleteCookie = (cookieName: string) => {
-  // setCookie(cookieName, "")
-  localStorage.removeItem(cookieName)
+  setCookie(cookieName, "")
 }
 
 export const hasCookie = (cookieName: string) => {
-  // return getCookies().filter(c => c == cookieName).length > 0
-  return localStorage.getItem(cookieName) != null
+  return getCookies().filter(c => c == cookieName).length > 0
 }
 
 export const revalidateCookies = () => {
