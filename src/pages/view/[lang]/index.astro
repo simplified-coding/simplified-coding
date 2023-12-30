@@ -58,6 +58,8 @@ import Layout from "../../../layouts/Layout.astro";
         }
         `;
     iframe.contentDocument?.body.appendChild(style);
+
+    addCurrentLesson()
   };
 
   printBTN?.addEventListener("click", () => {

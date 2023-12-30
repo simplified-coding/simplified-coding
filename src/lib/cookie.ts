@@ -5,7 +5,8 @@ export const getCookie = (cookieName: string) => {
   return document.cookie.split(';').filter((c) => c.trim().startsWith(cookieName))[0].split('=')[1]
 }
 export const setCookie = (cookieName: string, cookieValue: string) => {
-  return document.cookie = `${cookieName}=${cookieValue};samesite=lax;max-age=15778476;path=/;secure`
+  console.log(`${cookieName}=${cookieValue};samesite=lax;max-age=15778476;domain=simplifiedcoding.org;secure`)
+  return document.cookie = `${cookieName}=${cookieValue};samesite=lax;max-age=15778476;domain=simplifiedcoding.org;secure`
 }
 export const deleteCookie = (cookieName: string) => {
   setCookie(cookieName, "")
