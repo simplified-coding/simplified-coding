@@ -59,6 +59,8 @@ import Layout from "../../../layouts/Layout.astro";
         }
         `;
     iframe.contentDocument?.body.appendChild(style);
+
+    addCurrentLesson()
   };
 
   printBTN?.addEventListener("click", () => {
@@ -76,6 +78,4 @@ import Layout from "../../../layouts/Layout.astro";
     );
     a.click();
   });
-
-  addCurrentLesson()
 </script>
