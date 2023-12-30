@@ -69,26 +69,6 @@ const lessons = entry.data;
             ))
           }
         </div>
-        <!-- <div id="doc-body-mobile">
-            {
-                lessons.map((lesson: any) => (
-                    <div class="m-3">
-                        <CardHeader
-                            card_style="min-height: 13rem;"
-                            card_header="Μάθημα"
-                            card_title={lesson.title}
-                            card_button_text="Μάθε!"
-                            card_button_href="#"
-                        >
-                            {lesson.description}
-                            <div slot="btns">
-                                <h1>ΔΙΑΒΑΣΕ</h1>
-                            </div>
-                        </CardHeader>
-                    </div>
-                ))
-            }
-        </div> -->
       </div>
     </div>
   </div>
@@ -96,7 +76,7 @@ const lessons = entry.data;
   <script data-lesson-length={lessons.length}>
     let progressBar = document.getElementById("progress-bar")
     const lessonLength = parseInt(document.currentScript.getAttribute("data-lesson-length"))
-    const tracking = JSON.parse(document.cookie.split(';').filter((c) => c.trim().startsWith("tracking"))[0].split('=')[1]).lessons
+    const tracking = JSON.parse(document.cookie.split(';').filter((c) => c.trim().startsWith("tracking-lessons"))[0].split('=')[1])
 
     const currentCourse = location.pathname.split("/")[3]
     const percentage = (tracking[currentCourse].length / lessonLength) * 100
