@@ -20,6 +20,7 @@
     "@codemirror/state": "^6.2.1",
     "@codemirror/theme-one-dark": "^6.1.2",
     "@codemirror/view": "^6.13.2",
+    "svg-pan-zoom": "^3.6.1"
     "astro": "^2.7.1",
     "codemirror": "^6.0.1",
     "katex": "^0.16.8",
