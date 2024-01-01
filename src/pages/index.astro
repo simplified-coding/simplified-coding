@@ -20,14 +20,14 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(c => c.s
     </div>
   </div>
   <br/>
-  <div class="d-flex justify-content-center" style="color: white; padding-left: 50px; padding-right: 50px">
+  <div class="d-flex justify-content-center" style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px">
     <div>
-      <h5>
+      <p>
         Καλωσορίσατε στο Simplified Coding. Εαν δεν ξέρετε με πιο μάθημα θέλετε να ξεκινήσετε,
         μπορείτε να ακολουθήσετε τον χάρτη μας που θα σας βοηθήσει να επιλέξετε το κατάλληλο μάθημα για εσάς.
         Μπορείτε επιπλέον να διαλέξετε μια από τις τρείς κατευθύνσεις που προσφέρουμε,
         αφού ολοκληρώσετε τα βασικά μας μαθήματα.
-      </h5>
+      </p>
     </div>
   </div>
   <br/>
@@ -36,7 +36,8 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(c => c.s
   <div class="d-flex justify-content-center">
     <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
       <object id="svg-roadmap" type="image/svg+xml" style="width: inherit; height: inherit; border:1px solid black; "
-              data={RoadMap}/>
+              data={RoadMap} aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding,
+              μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε" />
     </div>
   </div>
   <br/>
