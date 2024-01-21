@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+//
+// SPDX-License-Identifier: GPL-3.0-only
+
 import {defineCollection, z} from "astro:content";
 
 const lessonCollection = defineCollection({

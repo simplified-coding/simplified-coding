@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 <project version="4">
   <component name="TypeScriptCompiler">
     <option name="versionType" value="EMBEDDED" />
