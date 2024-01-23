@@ -24,6 +24,11 @@
       "slug": "lesson_5",
       "title": "Δήλωση εναλλαγής (switch)",
       "description": "switch, case και default"
+    },
+    {
+      "slug": "lesson_6",
+      "title": "While loops",
+      "description": "While και do while loops"
     }
   ]
 }
