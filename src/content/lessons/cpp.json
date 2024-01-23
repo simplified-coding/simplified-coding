@@ -19,6 +19,11 @@
       "slug": "lesson_4",
       "title": "Συνθήκες",
       "description": "Συνθήκες if, else και else if"
+    },
+    {
+      "slug": "lesson_5",
+      "title": "Δήλωση εναλλαγής (switch)",
+      "description": "switch, case και default"
     }
   ]
 }
