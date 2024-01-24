@@ -34,6 +34,11 @@
       "slug": "lesson_7",
       "title": "For loops",
       "description": "For loops"
+    },
+    {
+      "slug": "lesson_8",
+      "title": "Πίνακες (Arrays)",
+      "description": "Δήλωση πίνακα, Δήλωση πίνακα και χωρίς αριθμό στοιχείων, Πρόσβαση στοιχείων πίνακα, Αλλαγή στοιχείων πίνακα"
     }
   ]
 }
