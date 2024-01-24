@@ -1,0 +1,124 @@
+# Μάθημα 9: Δομές (Structures)
+
+Οι δομές στη C++ είναι ένας τρόπος για να ομαδοποιούμε μεταβλητές που έχουν σχέση μεταξύ τους.
+Κάθε μεταβλητή είναι ένα μέλος της δομής.
+
+## Δήλωση δομής
+
+Η δήλωση μιας δομής γίνεται με την εντολή `struct`.
+Μέσα στα άγκιστρα δηλώνουμε μεταβλητές που θα είναι μέλη της δομής.
+Έξω από τα άγκιστρα της δομής, δημιουργούμε έναν μεταβλητή για αυτήν.
+
+### Παράδειγμα
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    struct {
+        string name;
+        int age;
+    } information;
+
+    return 0;
+}
+```
+
+## Πρόσβαση στα μέλη μιας δομής
+
+Για να έχουμε πρόσβαση στα μέλη μιας δομής γράφουμε τη μεταβλητή της δομής και το όνομα του μέλους.
+
+### Παράδειγμα
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    struct {
+        string name;
+        int age;
+    } information;
+
+    information.name = "Μάριος";
+    information.age = 15;
+
+    cout << "Όνομα: " << information.name << endl;
+    cout << "Ηλικία: " << information.age << endl;
+
+    return 0;
+}
+```
+
+## Πολλαπλές μεταβλητές δομής
+
+Μπορούμε να δημιουργήσουμε πολλαπλές μεταβλητές δομής με την ίδια δομή.
+Έτσι, με το παράδειγμα, μπορούμε να έχουμε πολλούς ανθρώπους με το ίδιο όνομα και ηλικία.
+
+### Παράδειγμα
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    struct {
+        string name;
+        int age;
+    } information1, information2;
+
+    information1.name = "Μάριος";
+    information1.age = 15;
+
+    information2.name = "Φωτεινή";
+    information2.age = 57;
+
+    cout << "Όνομα: " << information1.name << endl;
+    cout << "Ηλικία: " << information1.age << endl;
+
+    cout << "Όνομα: " << information2.name << endl;
+    cout << "Ηλικία: " << information2.age << endl;
+
+    return 0;
+}
+```
+
+## Δομές με όνομα
+
+Μπορούμε να δημιουργήσουμε μια δομή με όνομα.
+Έτσι, μπορούμε να δημιουργήσουμε πολλαπλές μεταβλητές δομής με το ίδιο όνομα.
+
+### Παράδειγμα
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    struct information {
+        string name;
+        int age;
+    };
+
+    information information1, information2;
+
+    information1.name = "Μάριος";
+    information1.age = 15;
+
+    information2.name = "Φωτεινή";
+    information2.age = 57;
+
+    cout << "Όνομα: " << information1.name << endl;
+    cout << "Ηλικία: " << information1.age << endl;
+
+    cout << "Όνομα: " << information2.name << endl;
+    cout << "Ηλικία: " << information2.age << endl;
+
+    return 0;
+}
+```
