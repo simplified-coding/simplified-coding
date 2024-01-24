@@ -29,6 +29,11 @@
       "slug": "lesson_6",
       "title": "While loops",
       "description": "While και do while loops"
+    },
+    {
+      "slug": "lesson_7",
+      "title": "For loops",
+      "description": "For loops"
     }
   ]
 }
