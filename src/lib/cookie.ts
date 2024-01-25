@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+//
+// SPDX-License-Identifier: GPL-3.0-only
+
 export const getCookies = () => {
   return document.cookie.split(';').map(c => c.trim().split('=')[0])
 }

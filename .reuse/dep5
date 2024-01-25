@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Simplified Coding
+Upstream-Contact: The Simplified Coding Team <main@simplifiedcoding.org>
+Source: simplifiedcoding.org
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # This is the Simplified Coding website!
 
 Welcome! Here you'll find all the files for our website. Feel free to play around and make Simplified Coding yours!

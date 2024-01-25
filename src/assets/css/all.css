@@ -1,8 +1,9 @@
-/*!
- * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2023 Fonticons, Inc.
+/*
+ * SPDX-FileCopyrightText: 2024 Font Awesome by Dave Gandy - http://fontawesome.io
+ *
+ * SPDX-License-Identifier: OFL-1.1
  */
+
 .fa {
     font-family: var(--fa-style-family, "Font Awesome 6 Free");
     font-weight: var(--fa-style, 900);
