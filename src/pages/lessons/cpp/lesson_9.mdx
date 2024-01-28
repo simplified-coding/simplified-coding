@@ -1,15 +1,22 @@
-# Μάθημα 9: Δομές (Structures)
+---
+---
+
+<h1 style="text-align: center;"> Μάθημα 9 </h1>
+
+<h2 style="text-align: center;"> Δομές (Structures) </h2>
+
+---
 
 Οι δομές στη C++ είναι ένας τρόπος για να ομαδοποιούμε μεταβλητές που έχουν σχέση μεταξύ τους.
 Κάθε μεταβλητή είναι ένα μέλος της δομής.
 
-## Δήλωση δομής
+<h2 style="text-align: center;"> Δήλωση δομής </h2>
 
 Η δήλωση μιας δομής γίνεται με την εντολή `struct`.
 Μέσα στα άγκιστρα δηλώνουμε μεταβλητές που θα είναι μέλη της δομής.
-Έξω από τα άγκιστρα της δομής, δημιουργούμε έναν μεταβλητή για αυτήν.
+Έξω από τα άγκιστρα της δομής, δημιουργούμε μία μεταβλητή για αυτήν.
 
-### Παράδειγμα
+Παράδειγμα:
 
 ```cpp
 #include <iostream>
@@ -26,11 +33,13 @@ int main() {
 }
 ```
 
-## Πρόσβαση στα μέλη μιας δομής
+---
+
+<h2 style="text-align: center;"> Πρόσβαση στα μέλη μιας δομής </h2>
 
 Για να έχουμε πρόσβαση στα μέλη μιας δομής γράφουμε τη μεταβλητή της δομής και το όνομα του μέλους.
 
-### Παράδειγμα
+Παράδειγμα:
 
 ```cpp
 #include <iostream>
@@ -44,7 +53,7 @@ int main() {
     } information;
 
     information.name = "Μάριος";
-    information.age = 15;
+    information.age = 16;
 
     cout << "Όνομα: " << information.name << endl;
     cout << "Ηλικία: " << information.age << endl;
@@ -53,12 +62,14 @@ int main() {
 }
 ```
 
-## Πολλαπλές μεταβλητές δομής
+---
+
+<h2 style="text-align: center;"> Πολλαπλές μεταβλητές δομής </h2>
 
 Μπορούμε να δημιουργήσουμε πολλαπλές μεταβλητές δομής με την ίδια δομή.
 Έτσι, με το παράδειγμα, μπορούμε να έχουμε πολλούς ανθρώπους με το ίδιο όνομα και ηλικία.
 
-### Παράδειγμα
+Παράδειγμα:
 
 ```cpp
 #include <iostream>
@@ -72,10 +83,10 @@ int main() {
     } information1, information2;
 
     information1.name = "Μάριος";
-    information1.age = 15;
+    information1.age = 16;
 
     information2.name = "Φωτεινή";
-    information2.age = 57;
+    information2.age = 42;
 
     cout << "Όνομα: " << information1.name << endl;
     cout << "Ηλικία: " << information1.age << endl;
@@ -87,12 +98,14 @@ int main() {
 }
 ```
 
-## Δομές με όνομα
+---
+
+<h2 style="text-align: center;"> Δομές με όνομα </h2>
 
 Μπορούμε να δημιουργήσουμε μια δομή με όνομα.
 Έτσι, μπορούμε να δημιουργήσουμε πολλαπλές μεταβλητές δομής με το ίδιο όνομα.
 
-### Παράδειγμα
+Παράδειγμα:
 
 ```cpp
 #include <iostream>
@@ -108,10 +121,10 @@ int main() {
     information information1, information2;
 
     information1.name = "Μάριος";
-    information1.age = 15;
+    information1.age = 16;
 
     information2.name = "Φωτεινή";
-    information2.age = 57;
+    information2.age = 42;
 
     cout << "Όνομα: " << information1.name << endl;
     cout << "Ηλικία: " << information1.age << endl;
@@ -122,3 +135,7 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+<h3 style="text-align: center;"> Ευχαριστούμε για την παρακολούθηση του μαθήματος. </h3>
