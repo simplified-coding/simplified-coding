@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "slug": "lesson_1",
+      "title": "Βασικές λειτουργίες της C++",
+      "description": "Βασική σύνταξη, Σχόλια και Εκτύπωση στην οθόνη"
+    },
+    {
+      "slug": "lesson_2",
+      "title": "Μαθηματικά στην C++",
+      "description": "Πράξεις, Τελεστές σύγκρισης, Λογικοί τελεστές και μαθηματικές συναρτήσεις"
+    },
+    {
+      "slug": "lesson_3",
+      "title": "Μεταβλητές",
+      "description": "Τύποι Δεδομένων, Ορισμός μεταβλητής και Λειτουργίες μεταβλητών"
+    },
+    {
+      "slug": "lesson_4",
+      "title": "Συνθήκες",
+      "description": "Συνθήκες if, else και else if"
+    },
+    {
+      "slug": "lesson_5",
+      "title": "Δήλωση εναλλαγής (switch)",
+      "description": "switch, case και default"
+    },
+    {
+      "slug": "lesson_6",
+      "title": "While loops",
+      "description": "While και do while loops"
+    },
+    {
+      "slug": "lesson_7",
+      "title": "For loops",
+      "description": "For loops"
+    },
+    {
+      "slug": "lesson_8",
+      "title": "Πίνακες (Arrays)",
+      "description": "Δήλωση πίνακα, Δήλωση πίνακα και χωρίς αριθμό στοιχείων, Πρόσβαση στοιχείων πίνακα, Αλλαγή στοιχείων πίνακα"
+    },
+    {
+      "slug": "lesson_9",
+      "title": "Δομές",
+      "description": "Δήλωση δομής, Πρόσβαση στα μέλη μιας δομής, Πολλαπλές μεταβλητές δομής, Δομές με όνομα"
+    },
+    {
+      "slug": "lesson_10",
+      "title": "Παραπομπές και δείκτες",
+      "description": "Δείκτες, Παραπομπές, Διεύθυνση μνήμης"
+    },
+    {
+      "slug": "lesson_11",
+      "title": "Συναρτήσεις",
+      "description": "Δημιουργία συνάρτησης, Κλήση συνάρτησης"
+    }
+  ]
+}
