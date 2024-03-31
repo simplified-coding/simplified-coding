@@ -1,19 +1,18 @@
-<!--
-SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
-
-SPDX-License-Identifier: GPL-3.0-only
--->
-
 ---
 import Layout from "../layouts/Layout.astro";
 import RoadMap from "../assets/RoadMap.svg";
 import { getEntry } from "astro:content";
 
 const courses = (await getEntry("lessons", "courses")).data.courses.map(
-  (c) => c.slug
+    (c) => c.slug
 );
 ---
 
+<!--
+SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+
+SPDX-License-Identifier: GPL-3.0-only
+-->
 <Layout>
     <br />
     <div class="d-flex justify-content-center" style="color: white">
@@ -23,11 +22,11 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(
     </div>
     <br />
     <div
-      class="d-flex justify-content-center"
-      style="color: white; padding-left: 50px; padding-right: 50px"
+        class="d-flex justify-content-center"
+        style="color: white; padding-left: 50px; padding-right: 50px"
     >
         <div
-          class="p-3 text-warning-emphasis bg-warning border-warning rounded-3"
+            class="p-3 text-warning-emphasis bg-warning border-warning rounded-3"
         >
             Αγαπητοί χρήστες, ο χάρτης μας δυστυχώς δεν λειτουργεί σε browser
             βασισμένοι σε Chromium (π.χ. Chrome, Edge, Brave, Opera).
@@ -35,14 +34,14 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(
             Η ομάδα του Simplified Coding εργάζεται για να διορθώσει το πρόβλημα
             όσο το δυνατόν συντομότερα.
             <br />
-            Μπορείτε να επιλέξετε ένα από τα μαθήματα μας από την επιλογή
-            "Μαθήματα" στο μενού.
+            Μπορείτε να επιλέξετε ένα από τα μαθήματα μας από την επιλογή "Μαθήματα"
+            στο μενού.
         </div>
     </div>
     <br />
     <div
-      class="d-flex justify-content-center"
-      style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px"
+        class="d-flex justify-content-center"
+        style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px"
     >
         <div>
             <p>
@@ -60,11 +59,11 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(
     <div class="d-flex justify-content-center">
         <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
             <object
-              id="svg-roadmap"
-              type="image/svg+xml"
-              style="width: inherit; height: inherit; border:1px solid black; "
-              data={RoadMap}
-              aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding, μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε"
+                id="svg-roadmap"
+                type="image/svg+xml"
+                style="width: inherit; height: inherit; border:1px solid black; "
+                data={RoadMap}
+                aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding, μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε"
             ></object>
         </div>
     </div>
@@ -74,7 +73,7 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(
     <script>
         import svgPanZoom from "svg-pan-zoom";
 
-        window.onload = () => {
+        const installZoom = () => {
             svgPanZoom("#svg-roadmap", {
                 zoomEnabled: true,
                 controlIconsEnabled: true,
@@ -82,6 +81,10 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(
             });
 
             window.meta();
+        };
+
+        window.onload = () => {
+            setTimeout(installZoom, 2500);
         };
     </script>
 
@@ -92,25 +95,25 @@ const courses = (await getEntry("lessons", "courses")).data.courses.map(
 
         window.meta = () => {
             JSON.parse(
-              document.getElementById("svg").getAttribute("data-courses")
+                document.getElementById("svg").getAttribute("data-courses")
             ).forEach((c) => {
                 console.log(c);
                 document
-                  .getElementById("svg-roadmap")
-                  .contentDocument.children[0].getElementById(
-                  `svg-${c}-completed`
-                ).style = "display: none";
+                    .getElementById("svg-roadmap")
+                    .contentDocument.children[0].getElementById(
+                        `svg-${c}-completed`
+                    ).style = "display: none";
 
                 document
-                  .getElementById("svg-roadmap")
-                  .contentDocument.children[0].getElementById(
-                  `svg-${c}`
-                ).onclick = () => goToCourse(c);
+                    .getElementById("svg-roadmap")
+                    .contentDocument.children[0].getElementById(
+                        `svg-${c}`
+                    ).onclick = () => goToCourse(c);
                 document
-                  .getElementById("svg-roadmap")
-                  .contentDocument.children[0].getElementById(
-                  `svg-${c}-text`
-                ).onclick = () => goToCourse(c);
+                    .getElementById("svg-roadmap")
+                    .contentDocument.children[0].getElementById(
+                        `svg-${c}-text`
+                    ).onclick = () => goToCourse(c);
             });
         };
     </script>
