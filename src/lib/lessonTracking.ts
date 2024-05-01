@@ -31,6 +31,15 @@ export const addLesson = async () => {
   await checkCompletion()
 }
 
+export const removeLesson = (course: string, lesson: string) => {
+  const item = localStorage.getItem(course)
+
+  if (item) {
+    let data: Array<string> = JSON.parse(item || "[]")
+    data = data.filter(v => v != lesson)
+    localStorage.setItem(course, JSON.stringify(data))
+  }
+}
 export const checkCompletion = async () => {
   const course = location.pathname.split('/')[2]
   const trackingCompleted: any = JSON.parse(localStorage.getItem("completed") || "[]")

@@ -1,24 +1,24 @@
-<!--
-SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
-
-SPDX-License-Identifier: GPL-3.0-only
--->
-
 ---
 import Layout from "../../../../layouts/Layout.astro";
 import CardHeader from "../../../../components/Bootstrap/CardHeader.astro";
 import {getEntry} from "astro:content";
 import Language from "../../../../components/Languages/Language.astro";
+import LessonBar from "../../../../components/LessonBar.astro";
 
 // @ts-expect-error
 const entry = (await getEntry("lessons", Astro.params.lang || "js")).data;
 const course = (await getEntry("lessons", "courses")).data.courses.filter(
-  (c) => c.slug == Astro.params.lang
+  (c: any) => c.slug == Astro.params.lang
 )[0];
 
 const lessons = entry.data;
 ---
 
+<!--
+SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+
+SPDX-License-Identifier: GPL-3.0-only
+-->
 <Layout>
   <div
     class="d-flex justify-content-center p-4"
@@ -28,69 +28,76 @@ const lessons = entry.data;
     <div>
       <div>
         <h1>
-          Μαθήματα {(Astro.params.lang || "").toUpperCase()}
-          <i class={`fa-brands fa-${course.icon}`}></i>
+          Μαθήματα {course.language}
+          <i class={`${course.icon}`}></i>
         </h1>
         <div>
           <div>
             <Language data={course} button_visible={false}>
-              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-                   aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0" id="progress-bar">0% - 0/0 Completed</div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Example with label"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 0"
+                  id="progress-bar"
+                >
+                  0% - 0/0 Completed
+                </div>
               </div>
             </Language>
-
           </div>
         </div>
       </div>
+      <br/>
       <div>
-        <div id="doc-body">
-          {
-            lessons.map((lesson: any) => (
-              <div style="display: inline-flex;" class="m-3">
-                <CardHeader
-                  card_style="width: 25vw; min-height: 13rem;"
-                  card_header="Μάθημα"
-                  card_id={lesson.slug}
-                  card_title={lesson.title}
-                  card_button_text="Δίαβασε!"
-                  card_button_href={`/view/${
-                    Astro.params.lang || ""
-                  }?lesson=${lesson.slug}`}
-                >
-                  {lesson.description} {}
-                  <div slot="btns" style="display: inline;">
-                    <a
-                      href={`/editor/${
-                        Astro.params.lang || ""
-                      }?lesson=${lesson.slug}`}
-                      class="btn btn-primary"
-                      hidden={course.viewOnly != false}
-                    >
-                      Μάθε!
-                    </a>
-                  </div>
-                </CardHeader>
-              </div>
-            ))
-          }
-        </div>
+        {
+          lessons.map((lesson) => <LessonBar lesson={lesson} course={course}/>)
+        }
       </div>
     </div>
   </div>
 
-  <script data-lesson-length={lessons.length}>
-    let progressBar = document.getElementById("progress-bar")
-    const lessonLength = parseInt(document.currentScript.getAttribute("data-lesson-length"))
-
-    const currentCourse = location.pathname.split("/")[3]
-    const percentage = (JSON.parse(localStorage.getItem(currentCourse)).length / lessonLength) * 100
-
-    progressBar.style.width = percentage + "%"
-    progressBar.innerText = `${Math.round(percentage)}% - ${JSON.parse(localStorage.getItem(currentCourse)).length}/${lessonLength} Completed`
-
-    JSON.parse(localStorage.getItem(currentCourse)).forEach(course => {
-      document.getElementById(`${course}-header`).innerText = document.getElementById(`${course}-header`).innerText + " - [✅]"
-    })
-  </script>
 </Layout>
+
+<script data-lesson-length={lessons.length}>
+  let progressBar = document.getElementById("progress-bar");
+  const lessonLength = parseInt(
+    document.currentScript.getAttribute("data-lesson-length")
+  );
+
+  const currentCourse = location.pathname.split("/")[3];
+  const percentage =
+    (JSON.parse(localStorage.getItem(currentCourse)).length /
+      lessonLength) *
+    100;
+
+  progressBar.style.width = percentage + "%";
+  progressBar.innerText = `${Math.round(percentage)}% - ${
+    JSON.parse(localStorage.getItem(currentCourse)).length
+  }/${lessonLength} Completed`;
+
+  JSON.parse(localStorage.getItem(currentCourse)).forEach((course) => {
+    document.getElementById(`${course}-status`).innerHTML = document
+      .getElementById(`${course}-status`)
+      .innerHTML += "✅"
+  });
+
+</script>
+
+<script>
+  import {removeLesson} from "../../../../lib/lessonTracking";
+
+  const elements = document.getElementsByClassName("undo-completed-lesson") as HTMLCollectionOf<HTMLButtonElement>
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", () => {
+      removeLesson(elements[i].dataset.course, elements[i].dataset.lesson)
+      window.location.reload()
+    })
+  }
+</script>
