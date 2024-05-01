@@ -1,9 +1,10 @@
 ---
+import {removeLesson} from "../lib/lessonTracking";
 interface Props {
   lesson: {
     slug: string, title: string, description: string
   };
-  course: {viewOnly: boolean}
+  course: {viewOnly: boolean, slug: string}
 }
 
 const {lesson, course} = Astro.props
@@ -50,8 +51,13 @@ SPDX-License-Identifier: GPL-3.0-only
       >
         Άρχισε (με τον editor)
       </button>
+
       <button class="btn btn-info my-4" disabled>
         Aσκησεις
+      </button>
+
+      <button class="btn btn-danger my-4 undo-completed-lesson" data-lesson={lesson.slug} data-course={course.slug}>
+        Αναίρεση Ολοκλήρωσης Μαθήματος
       </button>
     </div>
   </div>
