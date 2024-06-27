@@ -20,12 +20,6 @@ import "../assets/css/solid.css";
   <meta name="viewport" content="width=device-width"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
   <meta name="generator" content={Astro.generator}/>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-    crossorigin="anonymous"
-  />
   <title>Simplified Coding</title>
 </head>
 
@@ -73,26 +67,21 @@ import "../assets/css/solid.css";
   }
 </script>
 
-<div style="background-color: #4b2265;">
+<div class="bg-sc-background">
   <div id="layout-body" hidden>
     <slot/>
   </div>
-  <div id="layout-scroll" style="color: white;">
-    <div class="d-flex justify-content-center">
+  <div id="layout-scroll" class="text-white">
+    <div class="flex justify-center">
       <div class="mx-2">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Please Wait / Παρακαλούμε Περιμένετε...</span>
-        </div>
+        <!-- BOOTSTRAP SCROLLER <div class="spinner-border" role="status">
+          <span class="hidden">Please Wait / Παρακαλούμε Περιμένετε...</span>
+        </div> -->
       </div>
-      <h2 class="d-inline mx-2">Please Wait / Παρακαλούμε Περιμένετε...</h2>
+      <h2 class="inline mx-2">Please Wait / Παρακαλούμε Περιμένετε...</h2>
     </div>
   </div>
 </div>
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-  crossorigin="anonymous"></script>
 
 </body>
 
