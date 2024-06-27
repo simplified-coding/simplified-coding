@@ -2,80 +2,111 @@
 import Layout from "../../../layouts/Layout.astro";
 ---
 
+<!--
+SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+
+SPDX-License-Identifier: GPL-3.0-only
+-->
 <Layout>
-  <div style="color: white;" id="viewLesson">
-    <div>
-      <div>
-        <div class="d-flex justify-content-center">
-          <h1>
-            Προεσκόπιση Μαθήματος - {
-            Astro.params.lang?.toUpperCase()
-          }
-            <button class="btn btn-primary" id="print"
-            >Εκτύπωση
-            </button
-            >
-            <button class="btn btn-primary" id="save"
-            >Κατέβασμα
-            </button
-            >
-          </h1>
+    <div style="color: white;" id="viewLesson">
+        <div>
+            <div>
+                <div class="d-flex justify-content-center">
+                    <h1>
+                        Προεσκόπιση Μαθήματος - {
+                            Astro.params.lang?.toUpperCase()
+                        }
+                        <button class="btn btn-primary" style="padding: 0.7rem 0.5rem 0.7rem 0.5rem" id="print"
+                            >Εκτύπωση
+                        </button>
+                        <button class="btn btn-primary" style="padding: 0.7rem 0.5rem 0.7rem 0.5rem" id="save"
+                            >Κατέβασμα MD
+                        </button>
+                        <button class="btn btn-primary" style="padding: 0.7rem 0.5rem 0.7rem 0.5rem" id="save-docx"
+                            >Κατέβασμα DOCX
+                        </button>
+                    </h1>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div
+                        style="background-color: #282f36; width: 60vw; height: 100vh"
+                    >
+                        <iframe
+                            src={`/lessons/${
+                                Astro.params.lang
+                            }/${Astro.url.searchParams.get("lesson")}`}
+                            width="100%"
+                            height="100%"
+                            id="if"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="d-flex justify-content-center">
-          <div
-            style="background-color: #282f36; width: 60vw; height: 100vh"
-          >
-            <iframe
-              src={`/lessons/${
-                Astro.params.lang
-              }/${Astro.url.searchParams.get("lesson")}`}
-              width="100%"
-              height="100%"
-              id="if"></iframe>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <br/>
+    <br />
 </Layout>
 
 <script>
-  import {getCookie, setCookie} from "../../../lib/cookie";
-  import {
-    addCurrentLesson,
-  } from "../../../lib/lessonTracking";
+    import { addLesson } from "../../../lib/lessonTracking";
+    import { unified } from "unified";
+    import markdown from "remark-parse";
+    import docx from "remark-docx";
+    import { stripHtml } from "string-strip-html";
 
-  const printBTN = document.getElementById("print");
-  const saveBTN = document.getElementById("save");
+    const printBTN = document.getElementById("print");
+    const saveBTN = document.getElementById("save");
+    const saveDOCX = document.getElementById("save-docx");
 
-  // Set IFrame Style
-  window.onload = () => {
-    const iframe = document.getElementById("if") as HTMLIFrameElement;
-    const style = document.createElement("style");
-    style.innerHTML = `
+    // Set IFrame Style
+    window.onload = () => {
+        const iframe = document.getElementById("if") as HTMLIFrameElement;
+        const style = document.createElement("style");
+        style.innerHTML = `
         * {
             color: white;
         }
         `;
-    iframe.contentDocument?.body.appendChild(style);
-  };
+        iframe.contentDocument?.body.appendChild(style);
+    };
 
-  printBTN?.addEventListener("click", () => {
-    console.log("Opening print dialog");
-    window.print();
-  });
+    printBTN?.addEventListener("click", () => {
+        const iframe = document.getElementById("if") as HTMLIFrameElement;
+        iframe.contentWindow?.print();
+    });
 
-  saveBTN?.addEventListener("click", () => {
-    const a = document.createElement("a");
-    a.download = "lesson.html";
-    a.href = window.URL.createObjectURL(
-      new Blob([document.getElementById("viewLesson")?.outerHTML || ""], {
-        type: "text/html",
-      })
-    );
-    a.click();
-  });
+    saveBTN?.addEventListener("click", () => {
+        const course = location.pathname.split("/")[2];
+        const lesson = new URLSearchParams(location.search).get("lesson");
 
-  addCurrentLesson()
+        const a = document.createElement("a");
+        a.download = `${course}-${lesson}.md`;
+        a.href = window.URL.createObjectURL(
+            new Blob(
+                [
+                    `https://raw.githubusercontent.com/simplified-coding/simplified-coding/main/src/pages/lessons/${course}/${lesson}.mdx`,
+                ],
+                {
+                    type: "text/markdown",
+                }
+            )
+        );
+        a.click();
+    });
+
+    saveDOCX?.addEventListener("click", async () => {
+        const course = location.pathname.split("/")[2];
+        const lesson = new URLSearchParams(location.search).get("lesson");
+        const proc = unified().use(markdown).use(docx, { output: "blob" });
+        const text = await fetch(
+            `https://raw.githubusercontent.com/simplified-coding/simplified-coding/main/src/pages/lessons/${course}/${lesson}.mdx`
+        ).then((d) => d.text());
+
+        const doc = await proc.process(stripHtml(text).result);
+        const a = document.createElement("a");
+        a.download = `${course}-${lesson}.docx`;
+        a.href = window.URL.createObjectURL((await doc.result) as Blob);
+        a.click();
+    });
+
+    addLesson();
 </script>

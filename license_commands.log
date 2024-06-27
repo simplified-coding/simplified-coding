@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# FOR ASTRO
+reuse annotate --license "GPL-3.0-only" --copyright "The Simplified Coding Team <main@simplifiedcoding.org>" --recursive --fallback-dot-license --skip-existing --style html *.astro
+
+# FOR HARDWARE
+reuse annotate --license "CERN-OHL-S-2.0" --copyright "The Simplified Coding Team <main@simplifiedcoding.org>" --recursive --fallback-dot-license --skip-existing *.mdx
+
+# FOR COURSE
+reuse annotate --license "CC-BY-NC-SA-4.0" --copyright "The Simplified Coding Team <main@simplifiedcoding.org>" --recursive --fallback-dot-license --skip-existing *.mdx
+
+# FOR FONTAWESOME
+reuse annotate --license "OFL-1.1" --copyright "Font Awesome by Dave Gandy - http://fontawesome.io" --recursive --fallback-dot-license --skip-existing *.css
+
+# FOR CONFIG
+reuse annotate --license "CC0-1.0" --copyright "The Simplified Coding Team <main@simplifiedcoding.org>" --recursive --fallback-dot-license --skip-existing .gitignore
+
+# FOR ANYTHING ELSE
+reuse annotate --license "GPL-3.0-only" --copyright "The Simplified Coding Team <main@simplifiedcoding.org>" --recursive --fallback-dot-license --skip-existing *
