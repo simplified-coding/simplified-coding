@@ -11,13 +11,12 @@ SPDX-License-Identifier: GPL-3.0-only
   <div class="container-fluid">
     <a class="navbar-brand" href="/" aria-label="Simplified Coding">
       <img
-        src="/favicon.png"
+        src="/Brand/cover.png"
         alt="Logo"
-        width="30"
-        height="30"
+        width="218.75"
+        height="90"
         class="d-inline-block align-text-top"
       />
-      Simplified Coding
     </a>
     <button
       class="navbar-toggler"
@@ -35,41 +34,84 @@ SPDX-License-Identifier: GPL-3.0-only
 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">
+            <i class="fa-regular fa-house"></i>
             <p style="display:inline-block;" >
               Αρχική
-              <i class="fa-regular fa-house" ></i>
             </p>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/lessons">
+            <i class="fa-regular fa-book"></i>
             <p style="display:inline-block;" >
               Μαθήματα
-              <i class="fa-regular fa-book"></i>
             </p>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/news">
+            <i class="fa-regular fa-newspaper"></i>
             <p style="display:inline-block;" >
               Newsletter
-              <i class="fa-regular fa-newspaper"></i>
             </p>
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/about">
+            <i class="fa-regular fa-circle-info"></i>
             <p style="display:inline-block;" >
               Σχετικά για εμάς
-              <i class="fa-regular fa-circle-info"></i>
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <p style="display:inline-block;" >
+              Hackolympia
             </p>
           </a>
         </li>
 
       </ul>
+      <div class="animation start-home"></div>
+      <style>
+        .nav-item {
+          margin-left: 2.2rem;
+          margin-right: 2.2rem;
+          font-size: 24px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+
+          .nav-item .animation {
+            height: 100%;
+            top: 0;
+            z-index: 0;
+            transition: all .5s ease 0s;
+            border-radius: 8px;
+          }
+          a:nth-child(1) {
+            width: 200px;
+          }
+          a:nth-child(2) {
+            width: 200px;
+          }
+          a:nth-child(3) {
+            width: 200px;
+          }
+          a:nth-child(4) {
+            width: 200px;
+          }
+          a:nth-child(5) {
+            width: 200px;
+          }
+
+      </style>
     </div>
   </div>
 </nav>
