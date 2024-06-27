@@ -15,14 +15,13 @@ SPDX-License-Identifier: GPL-3.0-only
 -->
 <Layout>
     <br />
-    <div class="d-flex justify-content-center" style="color: white">
+    <div class="flex justify-center text-white text-4xl font-semibold">
         <div>
             <h1>Simplified Coding</h1>
         </div>
     </div>
     <div
-        class="d-flex justify-content-center"
-        style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px"
+        class="flex justify-center text-white px-[50px] text-lg text-center"
     >
         <div>
             <p>
@@ -37,13 +36,13 @@ SPDX-License-Identifier: GPL-3.0-only
     <br />
     <div id="doc-body"></div>
     <div id="doc-body-mobile"></div>
-    <div class="d-flex justify-content-center">
-        <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
+    <div class="flex justify-center">
+        <div class="bg-sc-roadmap width-[60vw] height-[80vh]">
             <object
                 id="svg-roadmap"
                 type="image/svg+xml"
-                style="width: inherit; height: inherit; border:1px solid black; "
-                data={RoadMap}
+                style="width: inherit; height: inherit; border:1px solid black;"
+                data={RoadMap.src}
                 aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding, μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε"
             ></object>
         </div>

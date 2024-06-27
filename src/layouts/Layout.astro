@@ -13,19 +13,13 @@ import "../assets/css/solid.css";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-neutral-800">
 <head>
   <meta charset="UTF-8"/>
   <meta name="description" content="Astro description"/>
   <meta name="viewport" content="width=device-width"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
   <meta name="generator" content={Astro.generator}/>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-    crossorigin="anonymous"
-  />
   <title>Simplified Coding</title>
 </head>
 
@@ -34,66 +28,60 @@ import "../assets/css/solid.css";
 </div>
 
 <body>
-<script>
-  import {cookiesEnabled, getCookie, hasCookie, revalidateCookies, setCookie} from "../lib/cookie";
-  import {getEntry} from "astro:content";
-  import {refreshLessons} from "../lib/lessonTracking";
+  <script>
+    import {cookiesEnabled, getCookie, hasCookie, revalidateCookies, setCookie} from "../lib/cookie";
+    import {getEntry} from "astro:content";
+    import {refreshLessons} from "../lib/lessonTracking";
 
-  if (
-    document.getElementById("doc-body") &&
-    document.getElementById("doc-body-mobile")
-  ) {
-    console.log("[INFO] Mobile Page Found");
     if (
-      /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(
-        navigator.userAgent
-      )
+      document.getElementById("doc-body") &&
+      document.getElementById("doc-body-mobile")
     ) {
-      console.log("[INFO] Switching to mobile page");
-      document.getElementById("doc-body")?.remove();
+      console.log("[INFO] Mobile Page Found");
+      if (
+        /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(
+          navigator.userAgent
+        )
+      ) {
+        console.log("[INFO] Switching to mobile page");
+        document.getElementById("doc-body")?.remove();
+      } else {
+        console.log("[INFO] Switching to desktop page");
+        document.getElementById("doc-body-mobile")?.remove();
+      }
+
     } else {
-      console.log("[INFO] Switching to desktop page");
-      document.getElementById("doc-body-mobile")?.remove();
+      console.log("[INFO] Mobile Page 404!");
     }
 
-  } else {
-    console.log("[INFO] Mobile Page 404!");
-  }
+    document.getElementById("layout-scroll").hidden = true;
+    document.getElementById("layout-body").hidden = false;
 
-  document.getElementById("layout-scroll").hidden = true;
-  document.getElementById("layout-body").hidden = false;
-
-  if (!hasCookie("accepted")) {
-    setCookie("accepted", "true")
-  } else {
-    if (cookiesEnabled()) {
-      refreshLessons()
-      revalidateCookies()
+    if (!hasCookie("accepted")) {
+      setCookie("accepted", "true")
+    } else {
+      if (cookiesEnabled()) {
+        refreshLessons()
+        revalidateCookies()
+      }
     }
-  }
-</script>
+  </script>
 
-<div style="background-color: #4b2265;">
-  <div id="layout-body" hidden>
-    <slot/>
-  </div>
-  <div id="layout-scroll" style="color: white;">
-    <div class="d-flex justify-content-center">
-      <div class="mx-2">
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Please Wait / Παρακαλούμε Περιμένετε...</span>
+  <div class="bg-sc-background">
+    <div id="layout-body" hidden>
+      <slot/>
+    </div>
+    <div id="layout-scroll" class="text-white">
+      <div class="flex justify-center">
+        <div class="mx-2">
+          <!-- BOOTSTRAP SCROLLER<div class="spinner-border" role="status">
+            <span class="hidden">Please Wait / Παρακαλούμε Περιμένετε...</span>
+          </div> -->
         </div>
+        <h2 class="inline mx-2">Please Wait / Παρακαλούμε Περιμένετε...</h2>
       </div>
-      <h2 class="d-inline mx-2">Please Wait / Παρακαλούμε Περιμένετε...</h2>
     </div>
   </div>
-</div>
-
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-  crossorigin="anonymous"></script>
-
 </body>
 
 <div class="footer">
@@ -102,9 +90,5 @@ import "../assets/css/solid.css";
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,700;1,900&display=swap");
-
-    body {
-        background-color: #2b3035;
-    }
 </style>
 </html>
