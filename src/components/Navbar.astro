@@ -32,7 +32,7 @@ SPDX-License-Identifier: GPL-3.0-only
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item" id="item-1">
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">
             <i class="fa-regular fa-house"></i>
             <p style="display:inline-block;" >
@@ -41,7 +41,7 @@ SPDX-License-Identifier: GPL-3.0-only
           </a>
         </li>
 
-        <li class="nav-item" id="item-2">
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/lessons">
             <i class="fa-regular fa-book"></i>
             <p style="display:inline-block;" >
@@ -50,7 +50,7 @@ SPDX-License-Identifier: GPL-3.0-only
           </a>
         </li>
 
-        <li class="nav-item" id="item-3">
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/news">
             <i class="fa-regular fa-newspaper"></i>
             <p style="display:inline-block;" >
@@ -59,7 +59,7 @@ SPDX-License-Identifier: GPL-3.0-only
           </a>
         </li>
 
-        <li class="nav-item" id="item-4">
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/about">
             <i class="fa-regular fa-circle-info"></i>
             <p style="display:inline-block;" >
@@ -68,7 +68,16 @@ SPDX-License-Identifier: GPL-3.0-only
           </a>
         </li>
 
-        <li class="nav-item" id="item-5">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <p style="display:inline-block;" >
+              Δωρεά
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/">
             <i class="fa-solid fa-chalkboard-user"></i>
             <p style="display:inline-block;" >
@@ -78,14 +87,21 @@ SPDX-License-Identifier: GPL-3.0-only
         </li>
 
       </ul>
-      <div class="animation start-home"></div>
       <style>
         .nav-item {
-          margin-left: 2.2rem;
-          margin-right: 2.2rem;
-          font-size: 24px;
-          font-weight: 600;
+          margin-left: 1.5rem;
+          margin-right: 1.5rem;
           margin-top: 10px;
+          font-size: 22px;
+          font-weight: 600;
+          border-radius: 10px;
+        }
+        .nav-item:hover {
+          background-color: gray;
+          opacity: .8;
+          background-size: 3vw;
+          border-radius: 15px;
+          transition: all 0.5s ease-in;
         }
       </style>
     </div>
