@@ -1,0 +1,52 @@
+<!--
+SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+
+SPDX-License-Identifier: GPL-3.0-only
+-->
+
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Bootstrap/Card.astro";
+---
+
+<Layout>
+  <div id="doc-body">
+    <div>
+      <br/>
+
+      <div class="d-flex justify-content-center" style="color: white">
+        <h1> Hackolympia </h1>
+      </div>
+
+      <br/>
+      <br/>
+
+      <div class="p-2 d-flex justify-content-center" data-bs-theme="dark">
+        <div class="row">
+          <div class="col-6">
+            <Card
+              card_title="Συνδεθείτε στον discord server μας:"
+              card_link_visible={false}
+            >
+              
+            </Card>
+          </div>
+
+          <div class="col-6">
+            <Card
+              card_title="Τι είναι το hackolympia?"
+              card_link_visible={false}
+            >
+             
+            <br/><br/>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spacing for footer -->
+  <br/>
+  <br/>
+</Layout>
