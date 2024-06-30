@@ -10,6 +10,7 @@ import Footer from "../components/Footer.astro";
 import "../assets/css/fontawesome.min.css";
 import "../assets/css/brands.css";
 import "../assets/css/solid.css";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!DOCTYPE html>
@@ -21,9 +22,11 @@ import "../assets/css/solid.css";
   <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
   <meta name="generator" content={Astro.generator}/>
   <title>Simplified Coding</title>
+
+  <ViewTransitions></ViewTransitions>
 </head>
 
-<div>
+<div transition:persist="">
   <Navbar/>
 </div>
 
@@ -33,29 +36,31 @@ import "../assets/css/solid.css";
     import {getEntry} from "astro:content";
     import {refreshLessons} from "../lib/lessonTracking";
 
-    if (
-      document.getElementById("doc-body") &&
-      document.getElementById("doc-body-mobile")
-    ) {
-      console.log("[INFO] Mobile Page Found");
+    document.addEventListener("astro:page-load", () => {
       if (
-        /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(
-          navigator.userAgent
-        )
+        document.getElementById("doc-body") &&
+        document.getElementById("doc-body-mobile")
       ) {
-        console.log("[INFO] Switching to mobile page");
-        document.getElementById("doc-body")?.remove();
+        console.log("[INFO] Mobile Page Found");
+        if (
+          /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(
+            navigator.userAgent
+          )
+        ) {
+          console.log("[INFO] Switching to mobile page");
+          document.getElementById("doc-body")?.remove();
+        } else {
+          console.log("[INFO] Switching to desktop page");
+          document.getElementById("doc-body-mobile")?.remove();
+        }
+
       } else {
-        console.log("[INFO] Switching to desktop page");
-        document.getElementById("doc-body-mobile")?.remove();
+        console.log("[INFO] Mobile Page 404!");
       }
-
-    } else {
-      console.log("[INFO] Mobile Page 404!");
-    }
-
-    document.getElementById("layout-scroll").hidden = true;
-    document.getElementById("layout-body").hidden = false;
+      
+      document.getElementById("layout-scroll").hidden = true;
+      document.getElementById("layout-body").hidden = false;
+    })
 
     if (!hasCookie("accepted")) {
       setCookie("accepted", "true")
@@ -67,16 +72,17 @@ import "../assets/css/solid.css";
     }
   </script>
 
-  <div class="bg-sc-background">
+  <div class="bg-sc-background" transition:animate="slide">
     <div id="layout-body" hidden>
       <slot/>
     </div>
-    <div id="layout-scroll" class="text-white">
+    <div id="layout-scroll" class="text-white animate-pulse">
       <div class="flex justify-center">
         <div class="mx-2">
-          <!-- BOOTSTRAP SCROLLER<div class="spinner-border" role="status">
-            <span class="hidden">Please Wait / Παρακαλούμε Περιμένετε...</span>
-          </div> -->
+          <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
         </div>
         <h2 class="inline mx-2">Please Wait / Παρακαλούμε Περιμένετε...</h2>
       </div>
