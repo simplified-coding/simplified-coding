@@ -11,7 +11,8 @@ export default {
 				"sc-purple": "#442C80",
 				"sc-purple-light": "#737fD5",
 				"sc-background": "#4B2265",
-				"sc-roadmap": "#A46AC9"
+				"sc-roadmap": "#A46AC9",
+				"sc-navbar": "#9fA1A4"
 			}
 		},
 	},
