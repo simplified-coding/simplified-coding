@@ -2,9 +2,38 @@
 let { href, icon } = Astro.props
 ---
 
-<li class="mx-20 my-[1.65rem] text-sc-navbar text-lg font-semibold">
+<li class="m-6 my-[1.65rem] text-sc-navbar text-2xl font-bold nav-link nav-link-ltr">
     <i class={icon}></i>
-    <a class="hover:underline" href={href}>
+    <a href={href}>
         <slot></slot>
     </a>
 </li>
+<style>
+    .nav-link {
+    padding: 20px 0px;
+    margin: 0px 20px;
+    position: relative;
+    opacity: 0.75;
+    }
+
+  .nav-link:hover {
+    opacity: 1;
+  }
+
+  .nav-link::before {
+    transition: 500ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #9fa1a4;
+  }
+
+  .nav-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+  }
+
+  .nav-link-ltr:hover::before {
+    width: 100%;
+  }
+</style>
