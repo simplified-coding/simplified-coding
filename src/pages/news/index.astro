@@ -11,73 +11,50 @@ import CardHeader from "../../components/Bootstrap/CardHeader.astro";
 
 <Layout>
   <br/><br/><br/>
-  <div
-    class="d-flex justify-content-around"
-    data-bs-theme="dark"
-    id="doc-body"
-  >
-    <div class="m-2">
-      <CardHeader
-        card_header="Newsletter"
-        card_title="Newsletter"
-        card_button_text="Κάνε εγγραφή"
-        card_button_href="https://links.simplifiedcoding.org/news"
-        card_button_visible={true}
-        card_style="max-width: 48rem;"
-      >
-        Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
-        email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια
-        μαθήματα, πριν καν δημοσιευθούν στην ιστοσελίδα μας!<br/>
-      </CardHeader>
+  <div class="flex justify-between" id="doc-body">
+
+    <div class="max-w-2xl text-slate-300 bg-sc-purple rounded-md px-5 font-bold text-2xl mx-20">
+      <br/>
+        Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε αποκλειστικά προνόμια.
+        Αρχικά, όλα τα εγγεγραμένα μέλοι στο newsletter μας θα λαμβάνουν e-mail κάθε
+        3 μήνες με όλες τι αλλαγές που έγιναν αυτή την περίοδο πριν από την ανακόινωση 
+        ή παρουσίασή τους στο simplified.org. Ακόμα θα έχουν πρόσβαση σε beta versions 
+        από νέες σελίδες, νέα features και ιδέες για την ιστοσελίδα μας. <br/><br/><br/>
+        <a href="https://tally.so/r/mOGayM" target="_blank"> <button class="text-slate-300 hover:text-slate-500 bg-sc-purple-light hover:bg-vi rounded-md px-5 py-3 font-bold text-2xl mx-44"> Εγγράψου εδώ!! </button> </a>
     </div>
 
-    <div class="m-2">
-      <CardHeader
-        card_header="Discord"
-        card_title="Discord"
-        card_button_text="Γίνε μέλος"
-        card_button_href="https://links.simplifiedcoding.org/discord"
-        card_button_visible={true}
-        card_style="max-width: 48rem;"
-      >
-        Γίνε μέλος στον Discord server μας για να παίρνεις νέες προσθήκες και
-        βελτιώσεις της σελίδας μας αμέσως, να παίρνεις μέρος σε polls σχετικά
-        με νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την
-        δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.<br>
-      </CardHeader>
+    <div class="max-w-2xl text-slate-300 bg-sc-purple rounded-md px-5 py-3 font-bold text-2xl mx-20">
+      <br/>
+        Γίνε μέλος στον Discord server μας για να μαθάινεις τα πάντα πριν από όλους.
+        Μπαίνοντας στον discord server μας, μπορείς να μιήσεις με την εμάς αλλά και αλλους χρήστες
+        παίρνοντας μέρος και σε συζητήσεις γύρω από προσθήκες στην ιστοσελίδα. Πέρα απο τις συζητήσεις
+        μπορείς να παίρνεις μέρος και σε polls αποφασίζοντας τι θα προτιμούσες να προσθέσουμε στις ιστοσελίδα
+        και τι δεν θα σου άρεσε. Τέλος τα μέλη στον discord server μας θα παίρνουν μέρος σε giveaways.<br/><br/>
+        <a href="https://tally.so/r/mOGayM" target="_blank"> <button class="text-slate-300 hover:text-slate-500 bg-sc-purple-light hover:bg-violet-400 rounded-md px-5 py-3 font-bold text-2xl mx-44"> Συνδέσου από εδώ!! </button> </a>
     </div>
   </div>
 
-  <div data-bs-theme="dark" id="doc-body-mobile" class="m-3">
-    <div>
-      <CardHeader
-        card_header="Newsletter"
-        card_title="Newsletter"
-        card_button_text="Κάνε εγγραφή"
-        card_button_href="https://testwiz.xyz/quiz/sc_news"
-        card_button_visible={true}
-      >
-        Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε προνόμια όπως,
-        email κάθε 3 μήνες με όλα τα νέα μας και πρόσβαση σε καινούργια
-        μαθήματα, πριν καν δημοσιευθούν στην ιστοσελίδα μας!<br/>
-      </CardHeader>
+  <div class="flex justify-between" id="doc-body-mobile">
+    <div class="max-w-2xl text-slate-300 bg-sc-purple rounded-md px-5 font-bold text-2xl mx-20">
+      <br/>
+      Κάνε εγγραφή σήμερα στο newsletter μας και απόλαυσε αποκλειστικά προνόμια.
+      Αρχικά, όλα τα εγγεγραμένα μέλοι στο newsletter μας θα λαμβάνουν e-mail κάθε
+      3 μήνες με όλες τι αλλαγές που έγιναν αυτή την περίοδο πριν από την ανακόινωση 
+      ή παρουσίασή τους στο simplified.org. Ακόμα θα έχουν πρόσβαση σε beta versions 
+      από νέες σελίδες, νέα features και ιδέες για την ιστοσελίδα μας. <br/><br/><br/>
+      <a href="https://tally.so/r/mOGayM" target="_blank"> <button class="text-slate-300 hover:text-slate-500 bg-sc-purple-light hover:bg-vi rounded-md px-5 py-3 font-bold text-2xl mx-44"> Εγγράψου εδώ!! </button> </a>
     </div>
 
     <br/>
 
-    <div>
-      <CardHeader
-        card_header="Discord"
-        card_title="Discord"
-        card_button_text="Γίνε μέλος"
-        card_button_href="https://testwiz.xyz/quiz/sc_news"
-        card_button_visible={true}
-      >
-        Γίνε μέλος στον Discord server μας για να παίρνεις νέες προσθήκες και
-        βελτιώσεις της σελίδας μας αμέσως, να παίρνεις μέρος σε polls σχετικά
-        με νέες λειτουργίες και σε giveaways! Επιπλέον, θα έχεις την
-        δυνατότητα να μιλήσεις με την ομάδα μας και με άλλους χρήστες.
-      </CardHeader>
+    <div class="max-w-2xl text-slate-300 bg-sc-purple rounded-md px-5 py-3 font-bold text-2xl mx-20">
+      <br/>
+      Γίνε μέλος στον Discord server μας για να μαθάινεις τα πάντα πριν από όλους.
+      Μπαίνοντας στον discord server μας, μπορείς να μιήσεις με την εμάς αλλά και αλλους χρήστες
+      παίρνοντας μέρος και σε συζητήσεις γύρω από προσθήκες στην ιστοσελίδα. Πέρα απο τις συζητήσεις
+      μπορείς να παίρνεις μέρος και σε polls αποφασίζοντας τι θα προτιμούσες να προσθέσουμε στις ιστοσελίδα
+      και τι δεν θα σου άρεσε. Τέλος τα μέλη στον discord server μας θα παίρνουν μέρος σε giveaways.<br/><br/>
+      <a href="https://tally.so/r/mOGayM" target="_blank"> <button class="text-slate-300 hover:text-slate-500 bg-sc-purple-light hover:bg-violet-400 rounded-md px-5 py-3 font-bold text-2xl mx-44"> Συνδέσου από εδώ!! </button> </a>
     </div>
   </div>
   <br/><br/><br/>
