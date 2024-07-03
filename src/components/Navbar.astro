@@ -69,7 +69,7 @@ SPDX-License-Identifier: GPL-3.0-only
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/">
+          <a class="nav-link" aria-current="page" href="/donations">
             <i class="fa-solid fa-hand-holding-heart"></i>
             <p style="display:inline-block;" >
               Δωρεά
@@ -80,7 +80,7 @@ SPDX-License-Identifier: GPL-3.0-only
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/hackolympia">
             <i class="fa-solid fa-chalkboard-user"></i>
-            <p style="display:inline-block;" >
+            <p style="display:inline-block;">
               Hackolympia
             </p>
           </a>
@@ -92,16 +92,22 @@ SPDX-License-Identifier: GPL-3.0-only
           margin-left: 1.6rem;
           margin-right: 1.6rem;
           margin-top: 10px;
-          font-size: 22px;
-          font-weight: 600;
+          font-size: 26px;
+          font-weight: 700;
           border-radius: 10px;
         }
-        .nav-item:hover {
-          background-color: gray;
-          opacity: .8;
-          background-size: 3vw;
-          border-radius: 15px;
-          transition: all 0.5s ease-in;
+        .nav-item::before {
+          transition: 500ms;
+          height: 5px;
+          content: "";
+          position: absolute;
+          background-color: #9fa1a4;
+          width: 0%;
+          bottom: 10px;
+        }
+
+        .nav-item:hover::before {
+          width: 100%;
         }
       </style>
     </div>
