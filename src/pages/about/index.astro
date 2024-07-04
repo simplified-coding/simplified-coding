@@ -15,20 +15,18 @@ import Card from "../../components/Bootstrap/Card.astro";
       <br/>
 
       <div class="d-flex justify-content-center" style="color: white">
-        <h1>Σχετικά με εμάς</h1>
+       <h1 class="font-semibold text-center text-6xl text-sc-purple-light"> Σχετικά με εμάς </h1>
       </div>
 
       <br/>
       <br/>
 
         <table>
-
           <tbody>
-
             <tr>
-
               <td>
-                <div class="mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
+                <div class="mx-16 my-8 text-lg font-normal bg-violet-700 px-4 py-3 rounded-2xl max-w-4xl">
+                  <h2 class="font-semibold text-center text-3xl"> Ποιοί είμαστε? </h2>
                   <br/>
                     Το Simplified Coding είναι μια ιστοσελίδα εκμάθησης
                     προγραμματισμού στα Ελληνικά, εντελώς δωρεάν, χωρίς
@@ -48,8 +46,8 @@ import Card from "../../components/Bootstrap/Card.astro";
               </td>
 
               <td>
-                <div class="mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
-                  <h2> Ο στόχος μας </h2>
+                <div class="mx-16 my-8 text-lg font-normal bg-violet-700 px-4 py-3 rounded-2xl max-w-4xl">
+                  <h2 class= "font-semibold text-center text-3xl"> Ο στόχος μας </h2>
                   <br/>
                   Ο στόχος του Simplified Coding είναι να παρέχει
                   μαθήματα προγραμματισμού εντελώς δωρεάν για όλους.
@@ -65,7 +63,7 @@ import Card from "../../components/Bootstrap/Card.astro";
                   έκτος από τις δωρεές που λαμβάνουμε. Θέλουμε το
                   Simplified Coding να διαδοθεί στην Ελληνική
                   κοινότητα και να μπορέσουμε να διαδώσουμε τον
-                  προγραμματισμό σε όλους.<br/>
+                  προγραμματισμό σε όλους.<br/><br/>
                 </div>
               </td>
 
@@ -74,31 +72,33 @@ import Card from "../../components/Bootstrap/Card.astro";
             <tr>
 
               <td>
-                <div class="mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
+                <div class="mx-16 my-8 max-w-xl text-lg font-normal bg-violet-700 px-4 py-3 rounded-2xl">
+                  <h2 class= "font-semibold text-center text-3xl"> Τα στατιστικά μας </h2>
+                  <br/>
                   Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
                   την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
                   <div class="font-semibold text-2xl">
                     <br/><i class="fa-solid fa-code-commit fa-2x"></i>
-                    Total commits: <br/><br/> <div id="counter">100</div> 
+                    Total commits: <br/><br/> <div class="text-6xl font-extrabold">100</div> 
                     <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
-                    Braches created: <br/><br/> <div id="counter">100</div>
+                    Braches created: <br/><br/> <div class="text-6xl font-extrabold">100</div>
                     <br/> <i class="fa-brands fa-github fa-2x"></i>
-                    Issues opened: <br/><br/> <div id="counter">100</div>
+                    Issues opened: <br/><br/> <div class="text-6xl font-extrabold">100</div>
                     <br/> <i class="fa-brands fa-github fa-2x"></i>
-                    Issues closed: <br/><br/> <div id="counter">100</div>
+                    Issues closed: <br/><br/> <div class="text-6xl font-extrabold">100</div>
                   </div>
                   <br/>
                 </div>
               </td>
 
-              <td>
-                <div class="mx-12 my-6 max-md text-lg font-normal bg-violet-700 max-w-3xl">
+              <td class="bg-violet-700 px-4">
+                <div class="mx-16 my-8 mb-32 max-md text-lg font-normal bg-violet-700 max-w-2xl">
                   Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργείθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
                   υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργείες. Όλες τις πληρόφορίες για αυτό το timeline αντλήθηκαν από την
                   σελίδα του Github: <a href="https://github.com/simplified-coding/simplified-coding/network"> Network Graph</a>. Σε αυτό το timeline μπορείς να ανακλύψεις την εξέλιξη της ιστοσελίδας
                   μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:
                   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                  <div class="timeline">
+                  <div class="absolute max-w-3xl overflow-y-scroll max-h-timeline-height mt-920px">
                     <div id="v-rule"></div>
                     
                     <div class="container left">
@@ -168,136 +168,10 @@ import Card from "../../components/Bootstrap/Card.astro";
 
           </tbody>
         </table>
-
-          <div class="mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
-            <br/>
-              Το Simplified Coding είναι μια ιστοσελίδα εκμάθησης
-              προγραμματισμού στα Ελληνικά, εντελώς δωρεάν, χωρίς
-              διαφημίσεις ή συνδρομές. Η ιστοσελίδα μας γεννήθηκε
-              τον Σεπτέμβριο 2022, στην Επανομή Θεσσαλονίκης, όπου
-              οι ιδρυτές μας, Οδυσσέας και Νίκος, ήθελαν να
-              δημιουργήσουν μια ιστοσελίδα για την εκμάθηση
-              προγραμματισμού. Πλέον η ομάδα μας αποτελείται από
-              τον Οδυσσέα, Νίκο και Μάριο, μαθητές της
-              δευτεροβάθμιας εκπαίδευσης στα Ελληνικά σχολεία.
-              Στις 2 Μαΐου 2023, το Simplified Coding άρχισε να
-              υποστηρίζετε (Fiscally Sponsored) από το Hack Club
-              Bank, ένα έργο του The Hack Foundation (γνωστού και
-              ως Hack Club), ενός μη κερδοσκοπικού οργανισμού
-              501(c)(3) στις Η.Π.Α. (EIN: 81-2908499).<br/><br/>
-          </div>
-
-          <div class="mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
-            Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
-            την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
-            <div class="font-semibold text-2xl">
-              <br/><i class="fa-solid fa-code-commit fa-2x"></i>
-              Total commits: <br/><br/> <div id="counter">100</div> 
-              <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
-              Braches created: <br/><br/> <div id="counter">100</div>
-              <br/> <i class="fa-brands fa-github fa-2x"></i>
-              Issues opened: <br/><br/> <div id="counter">100</div>
-              <br/> <i class="fa-brands fa-github fa-2x"></i>
-              Issues closed: <br/><br/> <div id="counter">100</div>
-            </div>
-            <br/>
-          </div>
-
-          <div class="mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
-            <h2> Ο στόχος μας </h2>
-            <br/>
-            Ο στόχος του Simplified Coding είναι να παρέχει
-            μαθήματα προγραμματισμού εντελώς δωρεάν για όλους.
-            Αυτό γιατί πιστεύουμε ότι ο προγραμματισμός είναι
-            μία από τις πιο σημαντικές δεξιότητες που μπορεί
-            κάποιος να αναπτύξει, ανεξαρτήτως του τομέα στον
-            οποίο θέλει να εργαστεί/εργάζεται. Το πρόβλημα είναι
-            πως Ελληνικό Διαδίκτυο, υπάρχουν ελάχιστες πηγές
-            εκμάθησης κώδικα και οι περισσότερες από αυτές
-            περιέχουν διαφημίσεις ή δεν είναι εντελώς δωρεάν.
-            Γι’ αυτό το Simplified Coding θα είναι πάντα δωρεάν
-            και δεν θα έχει κανενός είδους διαφημίσεις ή κέρδος
-            έκτος από τις δωρεές που λαμβάνουμε. Θέλουμε το
-            Simplified Coding να διαδοθεί στην Ελληνική
-            κοινότητα και να μπορέσουμε να διαδώσουμε τον
-            προγραμματισμό σε όλους.<br/>
-          </div>
-
-          <div class="mx-12 my-6 max-md text-lg font-normal bg-violet-700 max-w-3xl">
-            Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργείθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
-            υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργείες. Όλες τις πληρόφορίες για αυτό το timeline αντλήθηκαν από την
-            σελίδα του Github: <a href="https://github.com/simplified-coding/simplified-coding/network"> Network Graph</a>. Σε αυτό το timeline μπορείς να ανακλύψεις την εξέλιξη της ιστοσελίδας
-            μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <div class="timeline">
-              <div id="v-rule"></div>
-              
-              <div class="container left">
-                <div class="content">
-                    <h2> 10 Σεπτεμβρίου 2022 </h2>
-                    <p> H δημιουργεία του repository της ιστοσελίδας μας στο GitHub. </p>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h2> 30 Σεπτεμβρίου 2022 </h2>
-                  <p> Δημιουργεία  των πρώτων 3ων μαθημάτων για την αρχική σειρά μαθημάτων Python. Τα μαθήματα βρίσκοντας στην πρώιμη μορφή τους ως παρουσιάσεις και όχι όπως ειναι σήμερα σε μορφή αρχείου.</p>
-                </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                  <h2> 29 Δεκεμβρίου 2022 </h2>
-                  <p> Λίγο πριν το τέλος τις χρονιάς, είχαμε ολοκληρώσει την δημιουργεία μαθημάτων για την σειρά της Python, είχαμε προσθέσει quizzes σε καθε μάθημα αλλά και είχαμε διωρθώσει τα περισσότερα λάθη και bugs στην ιστοσελίδα μας.</p>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h2> 12 Ιανουαρίου 2023</h2>
-                  <p> Η νέα χρονιά για εμάς ξεκίνησε με την προσθήκη μίας κάρτας για δωρεές. Τώρα πιά μπορείτε να βρείτε την σελίδα των δωρεών εδώ. </p>
-                </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                  <h2> Μάιος 2023 </h2>
-                  <p> Αυτόν τον μήνα έγιναν πολλές αλλαγές. Αρχικά αλλάξαμε το Licence και δημιουργήσαμε το security policy της ιστοσελίδας μας. Ακόμα διορθώσαμε πολλές λάθη από μαθήματα, σελίδες και κάρτες που δημιουργήσαμε την περίοδο Φεβρουαρίου-Μαΐου. Τέλος αρχίσαμε να πειραματιζόμαστε και στον νέο τρόπο παρουσίασης των μαθημάτων (Αρχεία Markdown αντί παρουσιάσεων). </p>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h2> Ιούνιος 2023 </h2>
-                  <p> Οι αλλαγές στην ομάδα του Simplified Coding φέρνουν αλλαγές και στο ίδιο το Simplified Coding. Μέσα σε έναν μήνα έγιναν τόσες αλλαγές που να μην μπορούν να αναφερθούν όλες εδώ. Η βασικότερη αλλαγή είναι η προσθήκη ενός editor μέσα στα μαθήματα python και HTML που δίνει την δυνατότητα στον χρήστη να μην χρειάζτεαι να κατεβασει τίποτα στον υπολογιστή. Ακόμα κατά αυτό τον μήνα αλλάξαμε την σειράς μαθημάτων HTML αλλά και η μετατροπή τους σε Markdown αρχεία. Τέλος φτιάξαμε μία σελίδα όπου ο χρήστης βλέπει όλα τα μαθήματα πιο οργανωμένα, την οποία αλλαγή ακολούθησε η αλλαγή στην CSS όλης της ιστοσελίδας. </p>
-                </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                  <h2> Ιούλιο 2023 </h2>
-                  <p> Το καλοκαίρι συνεχίζει οπότε και εμείς συνεχίζουμε με τις αλλαγές στην ιστοσελίδα μας. Αν και όλα συνέβαιναν σε ξεχωριστό branch και η ιστοσελίδα δεν είχε καμία διαφορά οι αλλαγές ήταν καθημερινές. Αρχικά προσθέσαμε σειρές μαθημάτων CSS JavaScript αλλά και Arduino. Μέσα στον ίδιο μήνα επίσης κάναμε polishing αλλά και διόρθωση γραμματικών και ορθογραφικών στα μαθήματα αλλά και σε όλη την ιστοσελίδα. Μία ακόμα μικρή αλλαγή που κάναμε ήταν η προσθήκη περιγραφών στα μαθήματα και η δημιουργεία Navbar. </p>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h2> Αυγουστος 2023</h2>
-                  <p> Πλησιάζοντας στα γεννέθλια του Simplified Coding αλλά και στο τέλος του καλοκαιριού, βάζαμε τις τελικές προσθήκες στην ιστοσελίδα για το καλοκαίρι. Στην αρχές του μήνα κάναμε polishing στις σειρές των μαθημάτων που έτραχαν εκείνη την περίοδο (Javascript & Arduino). Ακόμα προσθέσαμε την news page στην οποία βρήσκονταν η νεα δυνατότητα που είχαν οι χρήστες να λαμβάνουν μηνιαίο newsletter με τις αλλαγές και να νεα της ιστοσελίδας μας. Αμέσως μετά ήρθαν οι αλλγές και στην ιστοσελίδα. Στις 8 Αυγούστου όλες αυτές οι αλλαγές μηνών εμφανίστικαν στην ιστοσελίδα. Μετά από ένα σύντομο διάλειμμα 2 εβδομάδων αρχίσαμε να δουλέυουμε σε νέες αλλαγές ξεκινόντας από την χρήση astro σε όλη την ιστοσελίδας μας.  </p>
-                </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                  <h2> Ιούλιο 2023 </h2>
-                  <p>  </p>
-                </div>
-              </div>
-              <div class="container right">
-                <div class="content">
-                  <h2>2007</h2>
-                  <p>  </p>
-                </div>
-              </div>
-            </div>
     </div>
   </div>
   <div class="pl-0 font-bold text-6xl"></div>
   <style>
-    
     #value {
       padding-left: 0px;
       font-size: 64px;
@@ -307,16 +181,13 @@ import Card from "../../components/Bootstrap/Card.astro";
       font-size: 28px;
       font-weight: 700;
     }
-    #counter{
-      font-size: 64px;
-      font-weight: 800;
-    }
+
     .timeline {
       position: absolute;
       max-width: 730px;
       overflow-y: scroll;
       max-height: 750px;
-      margin-top: -40.5vw;
+      margin-top: -47.5vw;
       margin-left: -1vw;
       font-size: 14px;
       color: rgb(255, 249, 241);
@@ -384,7 +255,7 @@ import Card from "../../components/Bootstrap/Card.astro";
     .right {
       padding-left: 100px;
       padding-right: 10px;
-      left: 20%;
+      left: 41.15%;
       width: 410px;
     }
     #v-rule {
@@ -396,19 +267,6 @@ import Card from "../../components/Bootstrap/Card.astro";
     }
   </style>
 
-
-
-  <script>
-    let counts = setInterval(updated);
-        let upto = 0;
-        function updated() {
-            let count = document.getElementById("counter");
-            count.innerHTML = ++upto;
-            if (upto === 100) {
-                clearInterval(counts);
-            }
-        }
-  </script>
   <!-- Spacing for footer -->
   <br/>
   <br/>

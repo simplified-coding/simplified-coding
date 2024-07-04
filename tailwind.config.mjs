@@ -13,6 +13,12 @@ export default {
 				"sc-background": "#4B2265",
 				"sc-roadmap": "#A46AC9",
 				"sc-navbar": "#9fA1A4"
+			},
+			maxHeight: {
+				'timeline-height': '47rem',
+			  },
+			margin: {
+				'920px': '-720px',
 			}
 		},
 	},
