@@ -21,8 +21,7 @@ SPDX-License-Identifier: GPL-3.0-only
 -->
 <Layout>
   <div
-    class="d-flex justify-content-center p-4"
-    style="color: white"
+    class="flex justify-center p-4 text-sc-white"
     data-bs-theme="dark"
   >
     <div>
@@ -34,21 +33,16 @@ SPDX-License-Identifier: GPL-3.0-only
         <div>
           <div>
             <Language data={course} button_visible={false}>
+              <br>
+
+              <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="bg-blue-600 h-2.5 rounded-full" id="progress-bar"></div>
+              </div>
+
               <div
-                class="progress"
-                role="progressbar"
-                aria-label="Example with label"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
+                class="progress-bar progress-bar-striped progress-bar-animated w-[0] flex" id="progress-bar-text"   
               >
-                <div
-                  class="progress-bar progress-bar-striped progress-bar-animated"
-                  style="width: 0"
-                  id="progress-bar"
-                >
-                  0% - 0/0 Completed
-                </div>
+                0% - 0/0 Completed
               </div>
             </Language>
           </div>
@@ -57,7 +51,7 @@ SPDX-License-Identifier: GPL-3.0-only
       <br/>
       <div>
         {
-          lessons.map((lesson) => <LessonBar lesson={lesson} course={course}/>)
+          lessons.map((lesson: any) => <LessonBar lesson={lesson} course={course}/>)
         }
       </div>
     </div>
@@ -67,6 +61,7 @@ SPDX-License-Identifier: GPL-3.0-only
 
 <script data-lesson-length={lessons.length}>
   let progressBar = document.getElementById("progress-bar");
+  const progressBarText = document.getElementById("progress-bar-text");
   const lessonLength = parseInt(
     document.currentScript.getAttribute("data-lesson-length")
   );
@@ -78,7 +73,7 @@ SPDX-License-Identifier: GPL-3.0-only
     100;
 
   progressBar.style.width = percentage + "%";
-  progressBar.innerText = `${Math.round(percentage)}% - ${
+  progressBarText.innerText = `${Math.round(percentage)}% - ${
     JSON.parse(localStorage.getItem(currentCourse)).length
   }/${lessonLength} Completed`;
 
