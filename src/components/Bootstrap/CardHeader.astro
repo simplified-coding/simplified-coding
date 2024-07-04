@@ -16,21 +16,26 @@ const {
 } = Astro.props;
 ---
 
-<div class="card" style={card_style} id={card_id}>
-  <div class="card-header card-bold" id={`${card_id}-header`}>{card_header}</div>
-  <div class="card-body" id={`${card_id}-body`}>
-    <h5 class="card-title card-bold" id={`${card_id}-title`}>
+<div class="rounded-lg bg-sc-card-bg text-sc-white border border-sc-card-bg-light px-8 py-4" style={card_style} id={card_id}>
+  <div class="font-semibold text-2xl border-b mb-4 border-sc-card-bg-light bg-sc-card-header" id={`${card_id}-header`}>{card_header}</div>
+  <div class="bg-sc-card-bg mb-2" id={`${card_id}-body`}>
+    <h5 class="text-sc-white text-xl" id={`${card_id}-title`}>
       <slot name="pre-title"/>
       {card_title}
     </h5>
-    <p class="card-text">
+
+    <p class="text-sc-white bg-sc-card-bg">
       <slot/>
     </p>
+  
+    <br>
+
     <a
       href={card_button_href}
-      class="btn btn-primary"
+      class="bg-indigo-800 hover:bg-indigo-600 text-sc-white px-4 py-2 rounded"
       hidden={!card_button_visible}>{card_button_text}</a
     >
+
     <slot name="btns"/>
   </div>
 </div>

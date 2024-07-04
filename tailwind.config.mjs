@@ -12,7 +12,11 @@ export default {
 				"sc-purple-light": "#737fD5",
 				"sc-background": "#4B2265",
 				"sc-roadmap": "#A46AC9",
-				"sc-navbar": "#9fA1A4"
+				"sc-navbar": "#9fA1A4",
+				"sc-card-bg-light": "#434549",
+				"sc-card-header": "#252A2E", 
+				"sc-card-bg": "#212529",
+				"sc-white": "#AEB5BD"
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
