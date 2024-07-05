@@ -7,6 +7,8 @@ SPDX-License-Identifier: CC0-1.0
 # This is the Simplified Coding website!
 [![REUSE status](https://api.reuse.software/badge/github.com/simplified-coding/simplified-coding)](https://api.reuse.software/info/github.com/simplified-coding/simplified-coding)
 
+![This website runs on green hosting - verified by thegreenwebfoundation.org](https://app.greenweb.org/api/v3/greencheckimage/simplifiedcoding.org?nocache=true)
+
 Welcome! Here you'll find all the files for our website. Feel free to play around and make Simplified Coding yours!
 
 ## Where can I find the lessons?
