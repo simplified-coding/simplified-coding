@@ -1,0 +1,13 @@
+---
+let { lesson_description, lesson_link, lesson_title } = Astro.props
+---
+
+<div class="bg-amber-500">
+    <h2> {lesson_title} </h2>
+    <p> {lesson_description} </p>
+    <a href={lesson_link}> <button> Μάθε τώρα {lesson_title}</button> </a>
+</div>
+
+<style>
+
+</style>

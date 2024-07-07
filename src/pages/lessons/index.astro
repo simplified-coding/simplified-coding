@@ -6,11 +6,7 @@ SPDX-License-Identifier: GPL-3.0-only
 
 ---
 import Layout from "../../layouts/Layout.astro";
-
-import {getEntry} from "astro:content";
-import Language from "../../components/Languages/Language.astro";
-
-const courses = (await getEntry('lessons', 'courses')).data.courses;
+import LanguageElement from "../../components/Languages/LanguageElement.astro";
 ---
 
 <Layout>
@@ -20,10 +16,7 @@ const courses = (await getEntry('lessons', 'courses')).data.courses;
       <h1 class="text-center text-sc-white text-3xl underline font-bold">Μαθήματα</h1>
       <h2 class="text-center text-sc-white text-xl"> Εδω μπορείτε να δείτε τον κατάλογο των μαθημάτων που μπορείτε να κάνετε στην ιστοσελίδα μας. </h2>
     </div>
-    {courses.map((c: any) =>
-      <div class="m-5">
-        <Language data={c}></Language>
-      </div>)}
+    <LanguageElement lesson_link="/src/pages/lessons/html/lesson_1.mdx" lesson_title="HTML" lesson_description="Blah blah blahaj"> </LanguageElement>
   </div>
   <br/>
 </Layout>
