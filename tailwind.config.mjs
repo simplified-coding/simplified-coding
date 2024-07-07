@@ -21,6 +21,11 @@ export default {
 				"navbar-icons": "#f0ffff",
 				"light-orange": "#f9b86a",
 				"light-yellow": "#f9d56a",
+				"lessons_title": "#252a2e",
+				"lessons_desc": "#212529",
+				"lessons_text": "#adb5bd",
+				"button": "#0d6efd",
+				"button_hover": "#0b5ed7",
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
