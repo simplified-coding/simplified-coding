@@ -12,11 +12,15 @@ export default {
 				"sc-purple-light": "#737fD5",
 				"sc-background": "#4B2265",
 				"sc-roadmap": "#A46AC9",
-				"sc-navbar": "#9fA1A4",
+				"sc-navbar": "#2B3035",
 				"sc-card-bg-light": "#434549",
 				"sc-card-header": "#252A2E", 
 				"sc-card-bg": "#212529",
-				"sc-white": "#AEB5BD"
+				"sc-white": "#AEB5BD",
+				"navbar-text": "#faebd7",
+				"navbar-icons": "#f0ffff",
+				"light-orange": "#f9b86a",
+				"light-yellow": "#f9d56a",
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
