@@ -1,13 +1,23 @@
 ---
-let { lesson_description, lesson_link, lesson_title, icon, button_text, rating } = Astro.props
-const difficulty = Math.min(Math.max(rating, 0), 5);
+let { lesson_description, lesson_link, lesson_title, icon, button_text, lesson_time, lesson_difficulty, prior_knowledge } = Astro.props
+
+const difficulty = Math.min(Math.max(lesson_difficulty, 0), 5);
 const unfilled_stars = 5 - difficulty;
+
+const need_prior_knowledge = prior_knowledge && prior_knowledge.length > 0;
 ---
 
 <div class="bg-lessons_desc mt-12 rounded-lg p-4 m-4">
     <h2 class="bg-lessons_title text-lessons_text font-semibold text-xl pl-5 py-2 rounded-lg"> 
-        {lesson_title} 
-        <div class="inline-block float-end px-16"> Δυσκολία:     
+        {lesson_title}
+
+        <div class="float-end px-6"> Χρόνος μαθήματος:  
+            <div class="inline-block">
+                {lesson_time} Ώρες
+            </div>
+        </div>
+
+        <div class="float-end px-6"> Δυσκολία:     
             <div class="inline-block">
                 <span class="text-yellow-500">
                     {Array.from({ length: difficulty }, (_, i) => (
@@ -21,13 +31,28 @@ const unfilled_stars = 5 - difficulty;
                 </span>
             </div>
         </div>
+        <div class=" float-end inline-block px-6">
+            {need_prior_knowledge ? (
+                <div class="float-end px-16"> Προηγούμενη γνώση:
+                    <div class="inline-block">
+                        {prior_knowledge}
+                    </div>
+                </div>
+            ) : (
+                <div class="float-end px-16"> Δεν χρειάζεται προηγούμενη γνώση
+                </div>
+            )}
+        </div>
     </h2>
+    
     <h2 class="bg-lessons_desc text-lessons_text font-bold text-2xl py-2 pl-20"> 
         <i class={icon}></i> {lesson_title} 
     </h2>
+
     <p class="bg-lessons_desc text-lessons_text font-semibold text-base max-w-5xl pl-20 inline-block"> 
         {lesson_description} 
     </p>
+
     <a href={lesson_link}> 
         <button type="button" class="bg-button my-2 py-2 mx-3 px-3 rounded-xl inline-block justify-center hover:bg-button_hover"> 
             Μάθε {button_text} 
