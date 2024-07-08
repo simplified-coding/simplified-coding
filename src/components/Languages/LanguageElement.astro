@@ -1,14 +1,36 @@
 ---
-let { lesson_description, lesson_link, lesson_title, icon } = Astro.props
+let { lesson_description, lesson_link, lesson_title, icon, button_text, rating } = Astro.props
+const difficulty = Math.min(Math.max(rating, 0), 5);
+const unfilled_stars = 5 - difficulty;
 ---
 
 <div class="bg-lessons_desc mt-12 rounded-lg p-4 m-4">
-    <h2 class="bg-lessons_title text-lessons_text font-semibold text-xl pl-5 py-2 rounded-lg"> {lesson_title} </h2>
-    <h2 class="bg-lessons_desc text-lessons_text font-bold text-2xl py-2 pl-20"> <i class={icon} ></i> {lesson_title} </h2>
-    <p class="bg-lessons_desc text-lessons_text font-semibold text-base max-w-5xl pl-20 inline-block"> {lesson_description} </p>
-    <a href={lesson_link}> <button type="button" class="bg-button my-2 py-2 mx-3 px-3 rounded-xl inline-block justify-center hover:bg-button_hover"> Μάθε τώρα {lesson_title} </button> </a>
+    <h2 class="bg-lessons_title text-lessons_text font-semibold text-xl pl-5 py-2 rounded-lg"> 
+        {lesson_title} 
+        <div class="inline-block float-end px-16"> Δυσκολία:     
+            <div class="inline-block">
+                <span class="text-yellow-500">
+                    {Array.from({ length: difficulty }, (_, i) => (
+                        <i class="fa-solid fa-star" key={i}></i>
+                    ))}
+                </span>
+                <span class="text-yellow-800">
+                    {Array.from({ length: unfilled_stars }, (_, i) => (
+                        <i class="fa-regular fa-star" key={difficulty + i}></i>
+                    ))}
+                </span>
+            </div>
+        </div>
+    </h2>
+    <h2 class="bg-lessons_desc text-lessons_text font-bold text-2xl py-2 pl-20"> 
+        <i class={icon}></i> {lesson_title} 
+    </h2>
+    <p class="bg-lessons_desc text-lessons_text font-semibold text-base max-w-5xl pl-20 inline-block"> 
+        {lesson_description} 
+    </p>
+    <a href={lesson_link}> 
+        <button type="button" class="bg-button my-2 py-2 mx-3 px-3 rounded-xl inline-block justify-center hover:bg-button_hover"> 
+            Μάθε {button_text} 
+        </button> 
+    </a>
 </div>
-
-<style>
-
-</style>
