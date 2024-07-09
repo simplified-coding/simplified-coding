@@ -5,6 +5,9 @@ const difficulty = Math.min(Math.max(lesson_difficulty, 0), 5);
 const unfilled_stars = 5 - difficulty;
 
 const need_prior_knowledge = prior_knowledge && prior_knowledge.length > 0;
+
+const cyrcle_colors = ["text-green-500", "text-lime-500", "text-yellow-500", "text-orange-500", "text-red-500"];
+const cyrcle_color_filling = cyrcle_colors[difficulty - 1];
 ---
 
 <div class="bg-lessons_desc mt-6 rounded-lg p-4 m-4">
@@ -19,14 +22,14 @@ const need_prior_knowledge = prior_knowledge && prior_knowledge.length > 0;
 
         <div class="float-end pr-10"> Δυσκολία:     
             <div class="inline-block">
-                <span class="text-yellow-500">
+                <span class={cyrcle_color_filling}>
                     {Array.from({ length: difficulty }, (_, i) => (
-                        <i class="fa-solid fa-star" key={i}></i>
+                        <i class="fa-solid fa-circle ml-1" key={i}></i> 
                     ))}
                 </span>
-                <span class="text-yellow-800">
+                <span class="text-gray-300 -ml-1.5">
                     {Array.from({ length: unfilled_stars }, (_, i) => (
-                        <i class="fa-regular fa-star" key={difficulty + i}></i>
+                        <i class="fa-regular fa-circle ml-1" key={difficulty + i}></i> 
                     ))}
                 </span>
             </div>
