@@ -30,6 +30,9 @@ export default {
 			maxHeight: {
 				'timeline-height': '47rem',
 			  },
+			width: {
+				'780px': '36.25rem',
+				},
 			margin: {
 				'920px': '-720px',
 			}

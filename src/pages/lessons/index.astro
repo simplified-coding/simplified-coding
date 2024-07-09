@@ -7,6 +7,7 @@ SPDX-License-Identifier: GPL-3.0-only
 ---
 import Layout from "../../layouts/Layout.astro";
 import LanguageElement from "../../components/Languages/LanguageElement.astro";
+import DropdownElement from "./DropdownElement.astro";
 ---
 
 <Layout>
@@ -16,6 +17,25 @@ import LanguageElement from "../../components/Languages/LanguageElement.astro";
       <h1 class="text-center text-sc-white text-3xl underline font-bold"> Μαθήματα </h1>
       <h2 class="text-center text-sc-white text-xl"> Εδω μπορείτε να δείτε τον κατάλογο των μαθημάτων που μπορείτε να κάνετε στην ιστοσελίδα μας. </h2>
     </div>
+
+      <div class="relative inline-block group">
+        <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-48 ml-4 py-4 font-semibold text-2xl cursor-pointer"> Μαθήματα </button>
+        <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10 ml-7 rounded-md hidden group-hover:block">
+
+          <DropdownElement lesson=" Βασικές Έννοιες Υπολογιστών " icon=" fa-solid fa-computer "> </DropdownElement>
+          <DropdownElement lesson=" Βασικές Έννοιες Προγραμματισμού " icon=" fa-solid fa-code "> </DropdownElement>
+          <DropdownElement lesson=" Προγράμματα Επεξεργασίας Κώδικα " icon=" fa-solid fa-laptop-code "> </DropdownElement>
+          <DropdownElement lesson=" HTML " icon="  "> </DropdownElement>
+          <DropdownElement lesson=" CSS " icon="  "> </DropdownElement>
+          <DropdownElement lesson=" Javascript " icon="  "> </DropdownElement>
+          <DropdownElement lesson=" Python " icon="  "> </DropdownElement>
+          <DropdownElement lesson=" C++ " icon="  "> </DropdownElement>
+          <DropdownElement lesson=" Arduino " icon="  "> </DropdownElement>
+          <DropdownElement lesson=" Git & Github " icon="  "> </DropdownElement>
+        
+        </div>
+      </div>
+
     <LanguageElement 
       lesson_link=" /lessons/view/" 
       lesson_title="Βασικές Έννοιες Υπολογιστών" 
