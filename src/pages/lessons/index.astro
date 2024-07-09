@@ -18,23 +18,79 @@ import DropdownElement from "./DropdownElement.astro";
       <h2 class="text-center text-sc-white text-xl"> Εδω μπορείτε να δείτε τον κατάλογο των μαθημάτων που μπορείτε να κάνετε στην ιστοσελίδα μας. </h2>
     </div>
 
+    <div class="pt-6 pb-2">
       <div class="relative inline-block group">
-        <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-48 ml-4 py-4 font-semibold text-2xl cursor-pointer"> Μαθήματα </button>
-        <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10 ml-7 rounded-md hidden group-hover:block">
+        <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-48 ml-4 py-4 font-semibold text-2xl cursor-pointer"> Μαθήματα <i class="fa-solid fa-caret-down"></i> </button>
+          <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10 ml-7 rounded-md hidden group-hover:block">
 
-          <DropdownElement lesson=" Βασικές Έννοιες Υπολογιστών " icon=" fa-solid fa-computer "> </DropdownElement>
-          <DropdownElement lesson=" Βασικές Έννοιες Προγραμματισμού " icon=" fa-solid fa-code "> </DropdownElement>
-          <DropdownElement lesson=" Προγράμματα Επεξεργασίας Κώδικα " icon=" fa-solid fa-laptop-code "> </DropdownElement>
-          <DropdownElement lesson=" HTML " icon="  "> </DropdownElement>
-          <DropdownElement lesson=" CSS " icon="  "> </DropdownElement>
-          <DropdownElement lesson=" Javascript " icon="  "> </DropdownElement>
-          <DropdownElement lesson=" Python " icon="  "> </DropdownElement>
-          <DropdownElement lesson=" C++ " icon="  "> </DropdownElement>
-          <DropdownElement lesson=" Arduino " icon="  "> </DropdownElement>
-          <DropdownElement lesson=" Git & Github " icon="  "> </DropdownElement>
-        
-        </div>
+            <DropdownElement lesson=" Βασικές Έννοιες Υπολογιστών " icon=" fa-solid fa-computer "> </DropdownElement>
+            <DropdownElement lesson=" Βασικές Έννοιες Προγραμματισμού " icon=" fa-solid fa-code "> </DropdownElement>
+            <DropdownElement lesson=" Προγράμματα Επεξεργασίας Κώδικα " icon=" fa-solid fa-laptop-code "> </DropdownElement>
+            <DropdownElement lesson=" HTML " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" CSS " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" Javascript " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" Python " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" C++ " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" Arduino " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" Git & Github " icon="  "> </DropdownElement>
+          
+          </div>
       </div>
+
+      <div class="inline-block">
+        <input type="text" min="2" max="32" name="search" placeholder=" Αναζήτηση μαθήματος.." class="h-12 w-780px ml-4 rounded-md bg-slate-200 text-xl text-violet-800 font-semibold pl-0.5" >
+      </div>
+
+      <div class="inline-block">
+        <button type="submit"> <i class="fa fa-search bg-slate-300 inline-block rounded-md scroll pt-5 pb-3 px-4 hover:text-white hover:bg-slate-400"> </i> </button>
+      </div>
+
+      <div class="inline-block -mb-6 ml-2">
+        <table>
+          <tr>
+            <td class="px-2 py-1 ">
+              <input type="radio" name="level" value="begginer" class="h-6 w-6 rounded-lg ml-3 accent-zinc-700">
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+            </td>
+
+            <td class="pr-2 pl-1 py-1 "> 
+              <div class="relative inline-block group">
+                <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-52 py-3 font-semibold text-xl cursor-pointer"> Χρόνος μαθήματος <i class="fa-solid fa-caret-down"></i> </button>
+                  <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10  rounded-md hidden group-hover:block">
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> 1-3 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> 4-6 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> 7-9 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> Πάνω από 10 Ώρες </a>
+                  </div>
+              </div>
+            </td>
+
+            <td class="px-2 py-1 "> 
+              <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px-2 py-1 ">
+              <input type="radio" name="level" value="advanced" class="h-6 w-6 rounded-lg ml-3 accent-zinc-700">
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Προχωρημένος </label><br>
+            </td>
+
+            <td class="px-2 py-1 "> 
+              <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+            </td>
+
+            <td class="px-2 py-1 "> 
+              <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
 
     <LanguageElement 
       lesson_link=" /lessons/view/" 
