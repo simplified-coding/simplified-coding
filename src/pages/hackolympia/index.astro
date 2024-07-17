@@ -10,60 +10,72 @@ import Card from "../../components/Bootstrap/Card.astro";
 ---
 
 <Layout>
-  <div id="doc-body">
-    <div>
-      <br/>
 
-      <div class="d-flex justify-content-center" style="color: white">
-        <img src="/public/icons/hackolympia.png" width="100px" id="hackolympia_banner">
-        <h1 id="hackolympia_title"> Hackolympia: Διαδυκτιακά μαθήματα προγραμματισμού </h1>
-      </div>
+  <div class="absolute mt-3 ml-60% h-11">
 
-      <br/>
-      <br/>
+    <iframe src="https://discord.com/widget?id=1129386549348417577&theme=dark" width="500" height="450" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  
+  </div>
+  <div id=buttons class="absolute ml-50% mt-41.15%">
+      <a href="https://forms.gle/bxqAkT82DTodP8Hx8" target="_blank"> 
+        <button id="button"> Εγγράψου τώρα στο hackolympia </button> 
+      </a>  Ή  
+  
+      <a href="https://hackolympia.club/" target="_blank"> 
+        <button id="button"> Επισκέψου την ιστοσελίδα του hackolympia </button> 
+      </a>
+  </div>
 
-      <div class="p-2 d-flex justify-content-center" data-bs-theme="dark">
-        <div class="row">
-          <div class="col-5">
-            <Card
-              card_title="Συνδεθείτε στον discord server μας:"
-              card_link_visible={false}
-            >
-                <br>
-                <iframe src="https://discord.com/widget?id=1109766105603510275&theme=dark" width="450" height="500px" allowtransparency="false" frameborder="0" <iframe src="https://discord.com/widget?id=1109766105603510275&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                <br><br>
-                Μπες στον discord server μας για να μαθαίνεις οτιδήπωτε νέο συμβαίνει στο hackolympia, νέα μαθήματα, προγράμματα 
-                αλλά και για να συμμετέχεις στις συζητήσεις μαζί μας και να μας δίνεις ιδέες για νέα μαθήματα που θα μπορούσαμε 
-                να κάνουμε.
-            </Card>
+  <table>
+
+    <tr>
+        <td>  
+          <div style="color: white" id="title">
+            <img src="/public/icons/hackolympia.png" width="100px" id="hackolympia_banner">
+            <h1 id="hackolympia_title"> Hackolympia: Διαδυκτιακά μαθήματα προγραμματισμού </h1>
           </div>
+        </td>
+    </tr>
 
-          <div class="col-7">
-            <Card
-              card_title="Τι είναι το hackolympia?"
-              card_link_visible={false}
-            >
-            <br>
-            <i class="fa-solid fa-question fa-2x"></i> 
-            Το hackolympia είναι μία ομάδα μαθητών από όλη την Ελλάδα οι οποίοι ασχολούνται με τον προγραμματισμό.
-            Κάθε εβδομάδα συναντιόμαστε μέσω του discord server μας για να μάθουμε για μία νέα γλώσσα προγραμμτισμού ή 
-            και κάτι διαφορετικό (όπως 3D designing, Arduino, git&github)και να φτιάξουμε project.
-            <br><br>
-            <i class="fa-solid fa-clock fa-2x"></i>
+    <tr>
+        <td>
+          <p>
+            Μπες στον discord server μας για να μαθαίνεις οτιδήπωτε νέο συμβαίνει στο hackolympia, νέα μαθήματα, προγράμματα αλλά 
+            και για να συμμετέχεις στις συζητήσεις μαζί μας και να μας δίνεις ιδέες για νέα μαθήματα που θα μπορούσαμε να κάνουμε.
+          </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+          <i class="fa-solid fa-question fa-2x"></i> 
+          Το hackolympia είναι μία ομάδα μαθητών από όλη την Ελλάδα οι οποίοι ασχολούνται με τον προγραμματισμό.
+          Κάθε εβδομάδα συναντιόμαστε μέσω του discord server μας για να μάθουμε για μία νέα γλώσσα προγραμμτισμού ή 
+          και κάτι διαφορετικό (όπως 3D designing, Arduino, git&github)και να φτιάξουμε project.
+          <br><br>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+          <i class="fa-solid fa-clock fa-2x"></i>
+          <p>
             Από τον Σεπτέμβριο μέχρι και τον Απρίλιο, σχεδόν κάθε εβδομάδα συναντιόμαστε μέσω κλήσης σε ώρα που έχουμε 
             συμφωνήσει σαν κοινότητα. Μπορεί να αλλάξει το πρόγραμμα εν μέσω της χρονιάς λόγο αιτήματος της κοινότητας
             ή λόγω κάποιας άλλης ανάγκης. <br> 
             *Αν και η hackolympia θα λειτουργήσει για την χρονιά 2024-2025 πιθανότατα τον
             Απρίλιο του 2025 θα σταματήσουν αυτά τα μαθήματα (όπως το simplified coding φυσικά και θα λειτουργεί κανονικά).
-            <br><br>
-            <i class="fa-solid fa-graduation-cap fa-2x"></i>
-            Στα περισσότερα μαθήματα δεν χρειάζεται προηγούμενη γνώση πάνω στο αντικειμενο που ασχολούμαστε, σε διαφορετική
-            περίπτωση θα ενημερώνεστε μέσω e-mail. Τα περισσότερα μαθήματα θα προέρχονται από μαθήματα της ιστοσελίδας του 
-            Simplified Coding όμως τι περισσότερες φορές θα μιλάμε και για πράγματα που τα μαθήματα παραλείπουν αλλά και σε 
-            τυχόν ερωτήσεις.
-            <br>
-            <div id="buttons"><a href="https://forms.gle/bxqAkT82DTodP8Hx8" target="_blank"> <button id="button"> Εγγράψου τώρα στο hackolympia </button> </a>  Ή  <a href="https://hackolympia.club/" target="_blank"> <button id="button"> Επισκέψου την ιστοσελίδα του hackolympia </button> </a></div>
-            </Card>
+          </p>
+          <br><br>
+        </td>
+    </tr>
+  </table>
+
+
+
+
+
+
             <style>
                 #hackolympia_banner {
                     margin-left: 20px;
@@ -85,6 +97,13 @@ import Card from "../../components/Bootstrap/Card.astro";
                     color: rgb(60, 60, 60);
                     background-color: rgb(110, 153, 214);
                     border-radius: 7px;
+                }
+                td {
+                  max-width: 760px;
+                  background-color: darkgoldenrod;
+                }
+                #title{
+                  display: ;
                 }
             </style>
           </div>
