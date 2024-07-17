@@ -23,22 +23,22 @@ import DropdownElement from "./DropdownElement.astro";
         <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-48 ml-4 py-4 font-semibold text-2xl cursor-pointer"> Μαθήματα <i class="fa-solid fa-caret-down"></i> </button>
           <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10 ml-7 rounded-md hidden group-hover:block">
 
-            <DropdownElement lesson=" Βασικές Έννοιες Υπολογιστών " icon=" fa-solid fa-computer "> </DropdownElement>
-            <DropdownElement lesson=" Βασικές Έννοιες Προγραμματισμού " icon=" fa-solid fa-code "> </DropdownElement>
-            <DropdownElement lesson=" Προγράμματα Επεξεργασίας Κώδικα " icon=" fa-solid fa-laptop-code "> </DropdownElement>
-            <DropdownElement lesson=" HTML " icon="  "> </DropdownElement>
-            <DropdownElement lesson=" CSS " icon="  "> </DropdownElement>
-            <DropdownElement lesson=" Javascript " icon="  "> </DropdownElement>
-            <DropdownElement lesson=" Python " icon="  "> </DropdownElement>
-            <DropdownElement lesson=" C++ " icon="  "> </DropdownElement>
-            <DropdownElement lesson=" Arduino " icon="  "> </DropdownElement>
-            <DropdownElement lesson=" Git & Github " icon="  "> </DropdownElement>
+            <DropdownElement lesson=" Βασικές Έννοιες Υπολογιστών "     icon=" fa-solid fa-computer ">        </DropdownElement>
+            <DropdownElement lesson=" Βασικές Έννοιες Προγραμματισμού " icon=" fa-solid fa-code ">            </DropdownElement>
+            <DropdownElement lesson=" Προγράμματα Επεξεργασίας Κώδικα " icon=" fa-solid fa-laptop-code ">     </DropdownElement>
+            <DropdownElement lesson=" HTML "                            icon=" fa-brands fa-html5 ">          </DropdownElement>
+            <DropdownElement lesson=" CSS "                             icon=" fa-brands fa-css3-alt  ">      </DropdownElement>
+            <DropdownElement lesson=" Javascript "                      icon=" fa-brands fa-square-js ">      </DropdownElement>
+            <DropdownElement lesson=" Python "                          icon=" fa-brands fa-python ">         </DropdownElement>
+            <DropdownElement lesson=" C++ "                             icon=" fa-solid fa-c ">               </DropdownElement>
+            <DropdownElement lesson=" Arduino "                         icon=" fa-solid fa-microchip ">       </DropdownElement>
+            <DropdownElement lesson=" Git & Github "                    icon=" fa-solid fa-code-merge ">      </DropdownElement>
           
           </div>
       </div>
 
       <div class="inline-block">
-        <input type="text" min="2" max="32" name="search" placeholder=" Αναζήτηση μαθήματος.." class="h-12 w-780px ml-4 rounded-md bg-slate-200 text-xl text-violet-800 font-semibold pl-0.5" >
+        <input type="text" min="2" max="32" name="search" placeholder=" Αναζήτηση μαθήματος.." class="h-12 w-540px ml-4 rounded-md bg-slate-200 text-xl text-violet-800 font-semibold pl-0.5" >
       </div>
 
       <div class="inline-block">
@@ -57,17 +57,17 @@ import DropdownElement from "./DropdownElement.astro";
               <div class="relative inline-block group">
                 <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-52 py-3 font-semibold text-xl cursor-pointer"> Χρόνος μαθήματος <i class="fa-solid fa-caret-down"></i> </button>
                   <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10  rounded-md hidden group-hover:block">
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> 1-3 Ώρες </a>
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> 4-6 Ώρες </a>
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> 7-9 Ώρες </a>
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-slate-200 rounded-md text-xl font-semibold font-sans w-52"> Πάνω από 10 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-100 rounded-md text-xl font-semibold font-sans w-52"> 1-3 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-200 rounded-md text-xl font-semibold font-sans w-52"> 4-6 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-300 rounded-md text-xl font-semibold font-sans w-52"> 7-9 Ώρες </a>
+                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-400 rounded-md text-xl font-semibold font-sans w-52"> Πάνω από 10 Ώρες </a>
                   </div>
               </div>
             </td>
 
             <td class="px-2 py-1 "> 
               <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Ρομποτική </label><br>
             </td>
           </tr>
 
@@ -79,12 +79,12 @@ import DropdownElement from "./DropdownElement.astro";
 
             <td class="px-2 py-1 "> 
               <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Προγραμματισμός </label><br>
             </td>
 
             <td class="px-2 py-1 "> 
               <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
+              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Ιστοσελίδες </label><br>
             </td>
           </tr>
         </table>
@@ -186,7 +186,7 @@ import DropdownElement from "./DropdownElement.astro";
       lesson_link="/src/pages/lessons/html/lesson_1.mdx" 
       lesson_title="Git & GitHub" 
       lesson_description="Το Git είναι ένα σύστημα διαχείρισης εκδόσεων που χρησιμοποιείται για την αποθήκευση και την διαχείριση των αρχείων ενός έργου. Το GitHub είναι μια πλατφόρμα στην οποία μπορείς να αποθηκεύσεις τα αρχεία σου και να τα μοιραστείς με άλλους. Σε αυτά τα μαθήματα θα μάθεις τι είναι το Git και το GitHub και πως να τα χρησιμοποιήσεις."
-      icon="fa-solid fa-code-merge"
+      icon=" fa-solid fa-code-merge"
       lesson_difficulty="2"
       lesson_time="4"
       prior_knowledge="">

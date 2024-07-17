@@ -15,25 +15,34 @@ import Card from "../../components/Bootstrap/Card.astro";
       <br/>
 
       <div class="d-flex justify-content-center" style="color: white">
-        <img src="/public/icons/hackolympia.png" width="100px" class="">
+        <img src="/public/icons/hackolympia.png" width="100px" id="hackolympia_banner">
         <h1 id="hackolympia_title"> Hackolympia: Διαδυκτιακά μαθήματα προγραμματισμού </h1>
       </div>
 
       <br/>
       <br/>
 
-      <div class="p-2 d-flex justify-content-center">
-        <div class="">
-          <div class="">
+      <div class="p-2 d-flex justify-content-center" data-bs-theme="dark">
+        <div class="row">
+          <div class="col-5">
+            <Card
+              card_title="Συνδεθείτε στον discord server μας:"
+              card_link_visible={false}
+            >
                 <br>
-                <iframe src="https://discord.com/widget?id=1109766105603510275&theme=dark" width="550" height="300px" allowtransparency="false" frameborder="0" <iframe src="https://discord.com/widget?id=1109766105603510275&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <iframe src="https://discord.com/widget?id=1109766105603510275&theme=dark" width="450" height="500px" allowtransparency="false" frameborder="0" <iframe src="https://discord.com/widget?id=1109766105603510275&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 <br><br>
                 Μπες στον discord server μας για να μαθαίνεις οτιδήπωτε νέο συμβαίνει στο hackolympia, νέα μαθήματα, προγράμματα 
                 αλλά και για να συμμετέχεις στις συζητήσεις μαζί μας και να μας δίνεις ιδέες για νέα μαθήματα που θα μπορούσαμε 
                 να κάνουμε.
+            </Card>
           </div>
 
-          <div class="">
+          <div class="col-7">
+            <Card
+              card_title="Τι είναι το hackolympia?"
+              card_link_visible={false}
+            >
             <br>
             <i class="fa-solid fa-question fa-2x"></i> 
             Το hackolympia είναι μία ομάδα μαθητών από όλη την Ελλάδα οι οποίοι ασχολούνται με τον προγραμματισμό.
@@ -53,7 +62,8 @@ import Card from "../../components/Bootstrap/Card.astro";
             Simplified Coding όμως τι περισσότερες φορές θα μιλάμε και για πράγματα που τα μαθήματα παραλείπουν αλλά και σε 
             τυχόν ερωτήσεις.
             <br>
-            <div><a href="https://forms.gle/bxqAkT82DTodP8Hx8" target="_blank"> <button> Εγγράψου τώρα στο hackolympia </button> </a>  Ή  <a href="https://hackolympia.club/" target="_blank"> <button> Επισκέψου την ιστοσελίδα του hackolympia </button> </a></div>
+            <div id="buttons"><a href="https://forms.gle/bxqAkT82DTodP8Hx8" target="_blank"> <button id="button"> Εγγράψου τώρα στο hackolympia </button> </a>  Ή  <a href="https://hackolympia.club/" target="_blank"> <button id="button"> Επισκέψου την ιστοσελίδα του hackolympia </button> </a></div>
+            </Card>
             <style>
                 #hackolympia_banner {
                     margin-left: 20px;

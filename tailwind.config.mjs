@@ -38,7 +38,8 @@ export default {
 				'timeline-width': '87rem',
 			  },
 			width: {
-				'780px': '36.25rem',
+				'500px': '500px',
+				'540px': '540px',
 				'410px': '410px',
 				'60%': '60%',
 				},
