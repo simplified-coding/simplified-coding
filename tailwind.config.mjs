@@ -43,7 +43,7 @@ export default {
 				'60%': '60%',
 				},
 			height: {
-				'v-rule': '300rem',
+				'v-rule': '390rem',
 			},
 			margin: {
 				'920px': '-720px',
@@ -52,6 +52,7 @@ export default {
 				'v-rule': '0.5rem',
 			},
 			spacing: {
+				'328px': '328px',
 				'17px': '17px',
 				'50%': '50%',
 				'90px': '90px',
