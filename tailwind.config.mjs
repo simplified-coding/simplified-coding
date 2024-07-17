@@ -27,6 +27,9 @@ export default {
 				"button": "#0d6efd",
 				"button_hover": "#0b5ed7",
 				"timeline-content": "#663399",
+				"timeline-content-future": "#8157ab",
+				"timeline-dots": "#4f2886",
+				"timeline-dots-border": "#4378c8",
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
@@ -36,10 +39,11 @@ export default {
 			  },
 			width: {
 				'780px': '36.25rem',
+				'410px': '410px',
 				'60%': '60%',
 				},
 			height: {
-				'v-rule': '220rem',
+				'v-rule': '300rem',
 			},
 			margin: {
 				'920px': '-720px',
@@ -48,7 +52,11 @@ export default {
 				'v-rule': '0.5rem',
 			},
 			spacing: {
+				'17px': '17px',
 				'50%': '50%',
+				'90px': '90px',
+				'100px': '100px',
+				'41.15%': '41.15%',
 			},
 		},
 	},
