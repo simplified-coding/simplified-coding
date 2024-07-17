@@ -26,6 +26,7 @@ export default {
 				"lessons_text": "#adb5bd",
 				"button": "#0d6efd",
 				"button_hover": "#0b5ed7",
+				"timeline-content": "#663399",
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
@@ -35,10 +36,20 @@ export default {
 			  },
 			width: {
 				'780px': '36.25rem',
+				'60%': '60%',
 				},
+			height: {
+				'v-rule': '220rem',
+			},
 			margin: {
 				'920px': '-720px',
-			}
+			},
+			borderWidth: {
+				'v-rule': '0.5rem',
+			},
+			spacing: {
+				'50%': '50%',
+			},
 		},
 	},
 	plugins: [],
