@@ -6,17 +6,16 @@ SPDX-License-Identifier: GPL-3.0-only
 
 ---
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Bootstrap/Card.astro";
 ---
 
 <Layout>
 
   <div class="absolute mt-3 ml-60% h-11">
 
-    <iframe src="https://discord.com/widget?id=1129386549348417577&theme=dark" width="500" height="450" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <iframe src="https://discord.com/widget?id=1129386549348417577&theme=dark" width="500" height="450" class="mt-6"></iframe>
   
   </div>
-  <div id=buttons class="absolute ml-50% mt-41.15%">
+  <div id=buttons class="absolute ml-50% mt-35% font-semibold text-sm">
       <a href="https://forms.gle/bxqAkT82DTodP8Hx8" target="_blank"> 
         <button id="button"> Εγγράψου τώρα στο hackolympia </button> 
       </a>  Ή  
@@ -26,28 +25,25 @@ import Card from "../../components/Bootstrap/Card.astro";
       </a>
   </div>
 
-  <table>
+  <table class="ml-4">
 
     <tr>
-        <td>  
-          <div style="color: white" id="title">
-            <img src="/public/icons/hackolympia.png" width="100px" id="hackolympia_banner">
-            <h1 id="hackolympia_title"> Hackolympia: Διαδυκτιακά μαθήματα προγραμματισμού </h1>
-          </div>
+        <td>
+            <img  class="inline-block my-3" src="/public/icons/hackolympia.png" width="60px">
+            <h1   class="inline-block ml-1 my-3 font-bold text-2xl"> Hackolympia: Διαδυκτιακά μαθήματα προγραμματισμού </h1>
         </td>
     </tr>
 
     <tr>
-        <td>
-          <p>
+        <td class="bg-sc-card-bg-light w-730px pl-10 py-4 text-zinc-300 my-10 border-4 border-zinc-200">
+          <i class="fa-brands fa-discord fa-2x"></i>
             Μπες στον discord server μας για να μαθαίνεις οτιδήπωτε νέο συμβαίνει στο hackolympia, νέα μαθήματα, προγράμματα αλλά 
             και για να συμμετέχεις στις συζητήσεις μαζί μας και να μας δίνεις ιδέες για νέα μαθήματα που θα μπορούσαμε να κάνουμε.
-          </p>
         </td>
     </tr>
 
-    <tr>
-        <td>
+    <tr class="pt-20 bg-amber-600 ">
+        <td class="bg-sc-card-bg-light w-730px pl-10 py-4 text-zinc-300 border-4 border-zinc-200">
           <i class="fa-solid fa-question fa-2x"></i> 
           Το hackolympia είναι μία ομάδα μαθητών από όλη την Ελλάδα οι οποίοι ασχολούνται με τον προγραμματισμό.
           Κάθε εβδομάδα συναντιόμαστε μέσω του discord server μας για να μάθουμε για μία νέα γλώσσα προγραμμτισμού ή 
@@ -57,22 +53,20 @@ import Card from "../../components/Bootstrap/Card.astro";
     </tr>
 
     <tr>
-        <td>
+        <td class="bg-sc-card-bg-light w-730px pl-10 py-4 text-zinc-300 border-4 border-zinc-200">
           <i class="fa-solid fa-clock fa-2x"></i>
-          <p>
             Από τον Σεπτέμβριο μέχρι και τον Απρίλιο, σχεδόν κάθε εβδομάδα συναντιόμαστε μέσω κλήσης σε ώρα που έχουμε 
             συμφωνήσει σαν κοινότητα. Μπορεί να αλλάξει το πρόγραμμα εν μέσω της χρονιάς λόγο αιτήματος της κοινότητας
-            ή λόγω κάποιας άλλης ανάγκης. <br> 
+            ή λόγω κάποιας άλλης ανάγκης. <br>
+
             *Αν και η hackolympia θα λειτουργήσει για την χρονιά 2024-2025 πιθανότατα τον
             Απρίλιο του 2025 θα σταματήσουν αυτά τα μαθήματα (όπως το simplified coding φυσικά και θα λειτουργεί κανονικά).
-          </p>
           <br><br>
         </td>
     </tr>
   </table>
 
-
-
+<br>
 
 
 
@@ -85,32 +79,28 @@ import Card from "../../components/Bootstrap/Card.astro";
                     margin-left: 15px;
                 }
                 #buttons {
-                    padding-left: 45px;
-                    font-size: 20px
+                  position: absolute;
+                  width: 600px;
+                  font-size: 20px
                 }
                 #button {
                     color: rgb(45, 45, 45);
                     background-color: rgb(83, 120, 176);
                     border-radius: 7px;
+                    padding: 5px;
                 }
                 #button:hover {
                     color: rgb(60, 60, 60);
                     background-color: rgb(110, 153, 214);
                     border-radius: 7px;
                 }
-                td {
-                  max-width: 760px;
-                  background-color: darkgoldenrod;
-                }
                 #title{
                   display: ;
                 }
+                tr{
+                  margin-top: 100px;
+                }
             </style>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Spacing for footer -->
   <br/>
