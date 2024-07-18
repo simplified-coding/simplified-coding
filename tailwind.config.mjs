@@ -32,6 +32,7 @@ export default {
 				"timeline-content-future": "#8157ab",
 				"timeline-dots": "#4f2886",
 				"timeline-dots-border": "#4378c8",
+				"donations_titles": "#483d8b",
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
@@ -62,6 +63,7 @@ export default {
 			spacing: {
 
 				'17px': '17px',
+				'75px': '75px',
 				'90px': '90px',
 				'100px': '100px',
 				'328px': '328px',
