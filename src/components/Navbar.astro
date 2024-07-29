@@ -54,7 +54,7 @@ SPDX-License-Identifier: GPL-3.0-only
           <a class="nav-link" aria-current="page" href="/news">
             <i class="fa-regular fa-newspaper"></i>
             <p style="display:inline-block;" >
-              Newsletter
+              News
             </p>
           </a>
         </li>
@@ -63,7 +63,7 @@ SPDX-License-Identifier: GPL-3.0-only
           <a class="nav-link" aria-current="page" href="/about">
             <i class="fa-regular fa-circle-info"></i>
             <p style="display:inline-block;" >
-              Σχετικά για εμάς
+              About us
             </p>
           </a>
         </li>
@@ -88,21 +88,45 @@ SPDX-License-Identifier: GPL-3.0-only
 
       </ul>
       <style>
-        .nav-item {
-          margin-left: 1.6rem;
-          margin-right: 1.6rem;
-          margin-top: 10px;
-          font-size: 22px;
-          font-weight: 600;
-          border-radius: 10px;
-        }
-        .nav-item:hover {
-          background-color: gray;
-          opacity: .8;
-          background-size: 3vw;
-          border-radius: 15px;
-          transition: all 0.5s ease-in;
-        }
+  a {
+    text-decoration: none;
+    color: antiquewhite;
+  }
+  img {
+    margin-top: -9px;
+    margin-bottom: -25px;
+  }
+  .nav-link{
+      margin: 20px;
+      margin-top: 0px;
+      margin-bottom: -10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 28px;
+      font-weight: 700;
+      opacity: .75;
+      position: relative;
+      color: azure;
+  }
+ .nav-link:hover {
+      opacity: 1;
+      color: azure;
+  }  
+  .nav-link::before {
+  transition: 500ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: antiquewhite;
+  width: 0%;
+  bottom: 30px;
+}
+
+.nav-link:hover::before {
+  width: 92%;
+}
       </style>
     </div>
   </div>

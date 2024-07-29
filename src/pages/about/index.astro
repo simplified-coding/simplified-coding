@@ -1,297 +1,316 @@
 <!--
 SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
-
 SPDX-License-Identifier: GPL-3.0-only
 -->
-
 ---
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Bootstrap/Card.astro";
 ---
 
 <Layout>
   <div id="doc-body">
     <div>
       <br/>
-
       <div class="d-flex justify-content-center" style="color: white">
         <h1>Σχετικά με εμάς</h1>
       </div>
-
       <br/>
       <br/>
 
-      <div class="p-2 d-flex justify-content-center" data-bs-theme="dark">
-        <div class="row">
-          <div class="col-12">
-            <Card
-              card_title="Ποιοί είμαστε"
-              card_link_visible={false}
-            ><br/>
-              Το Simplified Coding είναι μια ιστοσελίδα εκμάθησης
-              προγραμματισμού στα Ελληνικά, εντελώς δωρεάν, χωρίς
-              διαφημίσεις ή συνδρομές. Η ιστοσελίδα μας γεννήθηκε
-              τον Σεπτέμβριο 2022, στην Επανομή Θεσσαλονίκης, όπου
-              οι ιδρυτές μας, Οδυσσέας και Νίκος, ήθελαν να
-              δημιουργήσουν μια ιστοσελίδα για την εκμάθηση
-              προγραμματισμού. Πλέον η ομάδα μας αποτελείται από
-              τον Οδυσσέα, Νίκο και Μάριο, μαθητές της
-              δευτεροβάθμιας εκπαίδευσης στα Ελληνικά σχολεία.
-              Στις 2 Μαΐου 2023, το Simplified Coding άρχισε να
-              υποστηρίζετε (Fiscally Sponsored) από το Hack Club
-              Bank, ένα έργο του The Hack Foundation (γνωστού και
-              ως Hack Club), ενός μη κερδοσκοπικού οργανισμού
-              501(c)(3) στις Η.Π.Α. (EIN: 81-2908499).<br/><br/>
-            </Card>
-          </div>
+<table>
 
-          <div class="col-12">
-            <Card
-              card_title="Τα στατιστικά μας:"
-              card_link_visible={false}
-            >
-            Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
-            την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
-            <div id="statistics">
-              <br/><i class="fa-solid fa-code-commit fa-2x"></i>
-              Total commits: <div id="counter">100</div> 
-              <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
-              Braches created: <div id="counter">100</div>
-              <br/> <i class="fa-brands fa-github fa-2x"></i>
-              Issues opened: <div id="counter">100</div>
-              <br/> <i class="fa-brands fa-github fa-2x"></i>
-              Issues closed: <div id="counter">100</div>
-            </div>
-            <br/>
-            </Card>
-          </div>
+  <tbody>
+
+    <tr>
+
+      <td>
+        <div class="card mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
+          <h2 class="card_title"> Ποιοί είμαστε; </h2>
+          <br/>
+            Το Simplified Coding είναι μια ιστοσελίδα εκμάθησης
+            προγραμματισμού στα Ελληνικά, εντελώς δωρεάν, χωρίς
+            διαφημίσεις ή συνδρομές. Η ιστοσελίδα μας γεννήθηκε
+            τον Σεπτέμβριο 2022, στην Επανομή Θεσσαλονίκης, όπου
+            οι ιδρυτές μας, Οδυσσέας και Νίκος, ήθελαν να
+            δημιουργήσουν μια ιστοσελίδα για την εκμάθηση
+            προγραμματισμού. Πλέον η ομάδα μας αποτελείται από
+            τον Οδυσσέα, Νίκο και Μάριο, μαθητές της
+            δευτεροβάθμιας εκπαίδευσης στα Ελληνικά σχολεία.
+            Στις 2 Μαΐου 2023, το Simplified Coding άρχισε να
+            υποστηρίζετε (Fiscally Sponsored) από το Hack Club
+            Bank, ένα έργο του The Hack Foundation (γνωστού και
+            ως Hack Club), ενός μη κερδοσκοπικού οργανισμού
+            501(c)(3) στις Η.Π.Α. (EIN: 81-2908499).<br/><br/>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <Card
-              card_title="Ο στόχος μας"
-              card_link_visible={false}
-            ><br/>
-            Ο στόχος του Simplified Coding είναι να παρέχει
-            μαθήματα προγραμματισμού εντελώς δωρεάν για όλους.
-            Αυτό γιατί πιστεύουμε ότι ο προγραμματισμός είναι
-            μία από τις πιο σημαντικές δεξιότητες που μπορεί
-            κάποιος να αναπτύξει, ανεξαρτήτως του τομέα στον
-            οποίο θέλει να εργαστεί/εργάζεται. Το πρόβλημα είναι
-            πως Ελληνικό Διαδίκτυο, υπάρχουν ελάχιστες πηγές
-            εκμάθησης κώδικα και οι περισσότερες από αυτές
-            περιέχουν διαφημίσεις ή δεν είναι εντελώς δωρεάν.
-            Γι’ αυτό το Simplified Coding θα είναι πάντα δωρεάν
-            και δεν θα έχει κανενός είδους διαφημίσεις ή κέρδος
-            έκτος από τις δωρεές που λαμβάνουμε. Θέλουμε το
-            Simplified Coding να διαδοθεί στην Ελληνική
-            κοινότητα και να μπορέσουμε να διαδώσουμε τον
-            προγραμματισμό σε όλους.<br/>
-            </Card>
-          </div>
+      </td>
 
-          <div class="col-12">
-            <Card
-              card_title="Χρονογραμμή"
-              card_link_visible={false}
-            >
-            Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργείθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
-            υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργείες. Όλες τις πληρόφορίες για αυτό το timeline αντλήθηκαν από την
-            σελίδα του Github: <a href="https://github.com/simplified-coding/simplified-coding/network"> Network Graph</a>. Σε αυτό το timeline μπορείς να ανακλύψεις την εξέλιξη της ιστοσελίδας
-            μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            <div class="timeline">
-              <div id="v-rule"></div>
-              <div class="container left">
-                  <div class="content">
-                      <h2> 10 Σεπτεμβρίου 2022 </h2>
-                      <p> H δημιουργεία του repository της ιστοσελίδας μας στο GitHub. </p>
-                  </div>
+      <td>
+        <div class="card mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
+          <h2 class="card_title"> Ο στόχος μας </h2>
+          <br/>
+          Ο στόχος του Simplified Coding είναι να παρέχει
+          μαθήματα προγραμματισμού εντελώς δωρεάν για όλους.
+          Αυτό γιατί πιστεύουμε ότι ο προγραμματισμός είναι
+          μία από τις πιο σημαντικές δεξιότητες που μπορεί
+          κάποιος να αναπτύξει, ανεξαρτήτως του τομέα στον
+          οποίο θέλει να εργαστεί/εργάζεται. Το πρόβλημα είναι
+          πως Ελληνικό Διαδίκτυο, υπάρχουν ελάχιστες πηγές
+          εκμάθησης κώδικα και οι περισσότερες από αυτές
+          περιέχουν διαφημίσεις ή δεν είναι εντελώς δωρεάν.
+          Γι’ αυτό το Simplified Coding θα είναι πάντα δωρεάν
+          και δεν θα έχει κανενός είδους διαφημίσεις ή κέρδος
+          έκτος από τις δωρεές που λαμβάνουμε. Θέλουμε το
+          Simplified Coding να διαδοθεί στην Ελληνική
+          κοινότητα και να μπορέσουμε να διαδώσουμε τον
+          προγραμματισμό σε όλους.<br/><br>
+        </div>
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>
+        <div class="card mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
+          <h2 class="card_title"> Τα στατιστικά μας </h2>
+          <br/>
+          Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
+          την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
+          <div class="font-semibold text-2xl">
+            <br/><i class="fa-solid fa-code-commit fa-2x"></i>
+            Total commits: <br/><br/> <div id="counter">100</div> 
+            <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
+            Braches created: <br/><br/> <div id="counter">100</div>
+            <br/> <i class="fa-brands fa-github fa-2x"></i>
+            Issues opened: <br/><br/> <div id="counter">100</div>
+            <br/> <i class="fa-brands fa-github fa-2x"></i>
+            Issues closed: <br/><br/> <div id="counter">100</div>
+          </div>
+          <br/>
+        </div>
+      </td>
+
+      <td>
+        <div class="card timeline_card my-6 max-md text-lg font-normal bg-violet-700 max-w-3xl">
+          <h2 class="card_title"> Η χρονογραμμή μας </h2>
+          <br/>
+          Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργείθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
+          υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργείες. Όλες τις πληρόφορίες για αυτό το timeline αντλήθηκαν από την
+          σελίδα του Github: Network Graph. Σε αυτό το timeline μπορείς να ανακλύψεις την εξέλιξη της ιστοσελίδας
+          μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <div class="timeline">
+            <div id="v-rule"></div>
+
+            <div class="container left">
+              <div class="content">
+                  <h2> 10 Σεπτεμβρίου 2022 </h2>
+                  <p> H δημιουργεία του repository της ιστοσελίδας μας στο GitHub. </p>
               </div>
-              <div class="container right">
-                  <div class="content">
-                      <h2> 30 Σεπτεμβρίου 2022 </h2>
-                      <p> Δημιουργεία  των πρώτων 3ων μαθημάτων για την αρχική σειρά μαθημάτων Python. Τα μαθήματα βρίσκοντας στην πρώιμη μορφή τους ως παρουσιάσεις και όχι όπως ειναι σήμερα σε μορφή αρχείου.</p>
-                  </div>
-              </div>
-              <div class="container left">
-                  <div class="content">
-                      <h2> 29 Δεκεμβρίου 2022 </h2>
-                      <p> Λίγο πριν το τέλος τις χρονιάς, είχαμε ολοκληρώσει την δημιουργεία μαθημάτων για την σειρά της Python, είχαμε προσθέσει quizzes σε καθε μάθημα αλλά και είχαμε διωρθώσει τα περισσότερα λάθη και bugs στην ιστοσελίδα μας.</p>
-                  </div>
-              </div>
-              <div class="container right">
-                  <div class="content">
-                    <h2> 12 Ιανουαρίου 2023</h2>
-                    <p> Η νέα χρονιά για εμάς ξεκίνησε με την προσθήκη μίας κάρτας για δωρεές. Τώρα πιά μπορείτε να βρείτε την σελίδα των δωρεών εδώ. </p>
-                  </div>
-              </div>
-              <div class="container left">
-                <div class="content">
-                    <h2> Μάιος 2023 </h2>
-                    <p> Αυτόν τον μήνα έγιναν πολλές αλλαγές. Αρχικά αλλάξαμε το Licence και δημιουργήσαμε το security policy της ιστοσελίδας μας. Ακόμα διορθώσαμε πολλές λάθη από μαθήματα, σελίδες και κάρτες που δημιουργήσαμε την περίοδο Φεβρουαρίου-Μαΐου. Τέλος αρχίσαμε να πειραματιζόμαστε και στον νέο τρόπο παρουσίασης των μαθημάτων (Αρχεία Markdown αντί παρουσιάσεων). </p>
-                </div>
             </div>
             <div class="container right">
-                <div class="content">
-                  <h2> Ιούνιος 2023 </h2>
-                  <p> Οι αλλαγές στην ομάδα του Simplified Coding φέρνουν αλλαγές και στο ίδιο το Simplified Coding. Μέσα σε έναν μήνα έγιναν τόσες αλλαγές που να μην μπορούν να αναφερθούν όλες εδώ. Η βασικότερη αλλαγή είναι η προσθήκη ενός editor μέσα στα μαθήματα python και HTML που δίνει την δυνατότητα στον χρήστη να μην χρειάζτεαι να κατεβασει τίποτα στον υπολογιστή. Ακόμα κατά αυτό τον μήνα αλλάξαμε την σειράς μαθημάτων HTML αλλά και η μετατροπή τους σε Markdown αρχεία. Τέλος φτιάξαμε μία σελίδα όπου ο χρήστης βλέπει όλα τα μαθήματα πιο οργανωμένα, την οποία αλλαγή ακολούθησε η αλλαγή στην CSS όλης της ιστοσελίδας. </p>
-                </div>
+              <div class="content">
+                <h2> 30 Σεπτεμβρίου 2022 </h2>
+                <p> Δημιουργεία  των πρώτων 3ων μαθημάτων για την αρχική σειρά μαθημάτων Python. Τα μαθήματα βρίσκοντας στην πρώιμη μορφή τους ως παρουσιάσεις και όχι όπως ειναι σήμερα σε μορφή αρχείου.</p>
+              </div>
             </div>
             <div class="container left">
               <div class="content">
-                  <h2> Ιούλιο 2023 </h2>
-                  <p> Το καλοκαίρι συνεχίζει οπότε και εμείς συνεχίζουμε με τις αλλαγές στην ιστοσελίδα μας. Αν και όλα συνέβαιναν σε ξεχωριστό branch και η ιστοσελίδα δεν είχε καμία διαφορά οι αλλαγές ήταν καθημερινές. Αρχικά προσθέσαμε σειρές μαθημάτων CSS JavaScript αλλά και Arduino. Μέσα στον ίδιο μήνα επίσης κάναμε polishing αλλά και διόρθωση γραμματικών και ορθογραφικών στα μαθήματα αλλά και σε όλη την ιστοσελίδα. Μία ακόμα μικρή αλλαγή που κάναμε ήταν η προσθήκη περιγραφών στα μαθήματα και η δημιουργεία Navbar. </p>
+                <h2> 29 Δεκεμβρίου 2022 </h2>
+                <p> Λίγο πριν το τέλος τις χρονιάς, είχαμε ολοκληρώσει την δημιουργεία μαθημάτων για την σειρά της Python, είχαμε προσθέσει quizzes σε καθε μάθημα αλλά και είχαμε διωρθώσει τα περισσότερα λάθη και bugs στην ιστοσελίδα μας.</p>
               </div>
-          </div>
-          <div class="container right">
+            </div>
+            <div class="container right">
+              <div class="content">
+                <h2> 12 Ιανουαρίου 2023</h2>
+                <p> Η νέα χρονιά για εμάς ξεκίνησε με την προσθήκη μίας κάρτας για δωρεές. Τώρα πιά μπορείτε να βρείτε την σελίδα των δωρεών εδώ. </p>
+              </div>
+            </div>
+            <div class="container left">
+              <div class="content">
+                <h2> Μάιος 2023 </h2>
+                <p> Αυτόν τον μήνα έγιναν πολλές αλλαγές. Αρχικά αλλάξαμε το Licence και δημιουργήσαμε το security policy της ιστοσελίδας μας. Ακόμα διορθώσαμε πολλές λάθη από μαθήματα, σελίδες και κάρτες που δημιουργήσαμε την περίοδο Φεβρουαρίου-Μαΐου. Τέλος αρχίσαμε να πειραματιζόμαστε και στον νέο τρόπο παρουσίασης των μαθημάτων (Αρχεία Markdown αντί παρουσιάσεων). </p>
+              </div>
+            </div>
+            <div class="container right">
+              <div class="content">
+                <h2> Ιούνιος 2023 </h2>
+                <p> Οι αλλαγές στην ομάδα του Simplified Coding φέρνουν αλλαγές και στο ίδιο το Simplified Coding. Μέσα σε έναν μήνα έγιναν τόσες αλλαγές που να μην μπορούν να αναφερθούν όλες εδώ. Η βασικότερη αλλαγή είναι η προσθήκη ενός editor μέσα στα μαθήματα python και HTML που δίνει την δυνατότητα στον χρήστη να μην χρειάζτεαι να κατεβασει τίποτα στον υπολογιστή. Ακόμα κατά αυτό τον μήνα αλλάξαμε την σειράς μαθημάτων HTML αλλά και η μετατροπή τους σε Markdown αρχεία. Τέλος φτιάξαμε μία σελίδα όπου ο χρήστης βλέπει όλα τα μαθήματα πιο οργανωμένα, την οποία αλλαγή ακολούθησε η αλλαγή στην CSS όλης της ιστοσελίδας. </p>
+              </div>
+            </div>
+            <div class="container left">
+              <div class="content">
+                <h2> Ιούλιο 2023 </h2>
+                <p> Το καλοκαίρι συνεχίζει οπότε και εμείς συνεχίζουμε με τις αλλαγές στην ιστοσελίδα μας. Αν και όλα συνέβαιναν σε ξεχωριστό branch και η ιστοσελίδα δεν είχε καμία διαφορά οι αλλαγές ήταν καθημερινές. Αρχικά προσθέσαμε σειρές μαθημάτων CSS JavaScript αλλά και Arduino. Μέσα στον ίδιο μήνα επίσης κάναμε polishing αλλά και διόρθωση γραμματικών και ορθογραφικών στα μαθήματα αλλά και σε όλη την ιστοσελίδα. Μία ακόμα μικρή αλλαγή που κάναμε ήταν η προσθήκη περιγραφών στα μαθήματα και η δημιουργεία Navbar. </p>
+              </div>
+            </div>
+            <div class="container right">
               <div class="content">
                 <h2> Αυγουστος 2023</h2>
                 <p> Πλησιάζοντας στα γεννέθλια του Simplified Coding αλλά και στο τέλος του καλοκαιριού, βάζαμε τις τελικές προσθήκες στην ιστοσελίδα για το καλοκαίρι. Στην αρχές του μήνα κάναμε polishing στις σειρές των μαθημάτων που έτραχαν εκείνη την περίοδο (Javascript & Arduino). Ακόμα προσθέσαμε την news page στην οποία βρήσκονταν η νεα δυνατότητα που είχαν οι χρήστες να λαμβάνουν μηνιαίο newsletter με τις αλλαγές και να νεα της ιστοσελίδας μας. Αμέσως μετά ήρθαν οι αλλγές και στην ιστοσελίδα. Στις 8 Αυγούστου όλες αυτές οι αλλαγές μηνών εμφανίστικαν στην ιστοσελίδα. Μετά από ένα σύντομο διάλειμμα 2 εβδομάδων αρχίσαμε να δουλέυουμε σε νέες αλλαγές ξεκινόντας από την χρήση astro σε όλη την ιστοσελίδας μας.  </p>
               </div>
-          </div>
-          <div class="container left">
-            <div class="content">
-              <h2> Ιούλιο 2023 </h2>
-              <p>  </p>
+            </div>
+            <div class="container left">
+              <div class="content">
+                <h2> Ιούλιο 2023 </h2>
+                <p>  </p>
+              </div>
+            </div>
+            <div class="container right">
+              <div class="content">
+                <h2>2007</h2>
+                <p>  </p>
+              </div>
             </div>
           </div>
-          <div class="container right">
-            <div class="content">
-              <h2>2007</h2>
-              <p>  </p>
-            </div>
-          </div>
-          </div>
-            <br/>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <style>
-    .col-12 {
-      margin-left: 50px;
-      margin-right: 50px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-      max-width: 750px;
-      font-size: 18px;
-      font-weight: 400;
-    }
-    #value {
-      padding-left: 0px;
-      font-size: 64px;
-      font-weight: 700;
-    }
-    #statistics {
-      font-size: 28px;
-      font-weight: 700;
-    }
-    #counter{
-      font-size: 64px;
-      font-weight: 800;
-    }
-    .timeline {
-      position: absolute;
-      max-width: 730px;
-      overflow-y: scroll;
-      max-height: 750px;
-      margin-top: -40.5vw;
-      margin-left: -1vw;
-      font-size: 14px;
-      color: rgb(255, 249, 241);
-    }
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
-    .container {
-      padding: 10px;
-      position: relative;
-      width: 60%;
-    }
-
-    .container::after {
-      content: '';
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      right: -25px;
-      background-color: rgb(79, 40, 134);
-      border: 4px solid #4378c8;
-      top: 15px;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .right::after {
-      right: 331px;
-    }
-
-    /* The actual content */
-    .content {
-      padding: 20px 10px;
-      background-color: rgb(102, 51, 153);
-      position: relative;
-      border-radius: 7px;
-    }
-    .content h2{
-      font-size: 27px;
-      font-weight: 600;
-    }
-
-    @media screen and (max-width: 100px) {
-    /* Place the timelime to the left */
-      .timeline::after {
-        left: 30px;
-      }
-    } 
-
-      .container {
-        width: 60%;
-      }
-
-    .container::before {
-      left: 0px;
-      border: medium solid white;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
-    }
-    .left {
-      left: -180px;
-      padding-left: 90px;
-      margin-left: 100px;
-      padding-right: 30px;
-    }
-    .right {
-      padding-left: 100px;
-      padding-right: 10px;
-      left: 20%;
-      width: 410px;
-    }
-    #v-rule {
-      border-left: 6px solid rgb(79, 39, 135);
-      height: 3400px;
-      position:absolute;
-      left: 50%;
-      width: 340px;
-    }
-  </style>
+<style>
+  .card_title{
+    margin-top: 5px;
+  } 
 
 
+  .card {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #212529;
+    color: #ADB5AF;
+  }
 
-  <script>
-    let counts = setInterval(updated);
-        let upto = 0;
-        function updated() {
-            let count = document.getElementById("counter");
-            count.innerHTML = ++upto;
-            if (upto === 100) {
-                clearInterval(counts);
-            }
+  .timeline_card {
+    width: 750px;
+  }
+
+  #value {
+    padding-left: 0px;
+    font-size: 64px;
+    font-weight: 700;
+  }
+  #statistics {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  #counter{
+    font-size: 64px;
+    font-weight: 800;
+  }
+  .content{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  
+  .timeline {
+    position: absolute;
+    overflow-y: scroll;
+    max-width: 700px;
+    max-height: 640px;
+    width: 700px;
+
+    margin-top: 10vw;
+
+    font-size: 14px;
+    color: rgb(255, 249, 241);
+  }
+
+  .timeline::-webkit-scrollbar-track{
+    background-color: bisque;
+  }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
         }
-  </script>
-  <!-- Spacing for footer -->
-  <br/>
-  <br/>
-</Layout>
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .scroll-container::-webkit-scrollbar-button {
+            display: none;
+        }
+
+
+  .container {
+  padding: 8px;
+  position: relative;
+  }
+
+  .container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -30px;
+  background-color: rgb(79, 40, 134);
+  border: 4px solid #4378c8;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+  }
+
+  .right::after {
+  right: 308px;
+  }
+
+  /* The actual content */
+  .content {
+  padding: 10px 10px;
+  background-color: rgb(102, 51, 153);
+  position: relative;
+  border-radius: 7px;
+  }
+  .content h2{
+  font-size: 27px;
+  font-weight: 600;
+  }
+
+  @media screen and (max-width: 100px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 30px;
+  }
+  } 
+
+  .container {
+  width: 60%;
+  }
+
+  .container::before {
+  left: 0px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+  .left {
+  padding-left: 90px;
+  padding-right: 10px;
+  margin-left: 100px;
+
+  left: -180px;
+  width: 380px;
+  }
+  .right {
+  padding-left: 100px;
+  padding-right: 10px;
+
+  left: 19.4%;
+  width: 395px;
+  }
+  #v-rule {
+  border-left: 6px solid rgb(79, 39, 135);
+  height: 3400px;
+  position:absolute;
+  left: 48%;
+  width: 340px;
+  }
+</style>
+
+<!-- Spacing for footer -->
+<br/>
+<br/>
