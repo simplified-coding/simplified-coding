@@ -4,6 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only
 -->
 ---
 import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Bootstrap/Card.astro";
 ---
 
 <Layout>
@@ -11,10 +12,33 @@ import Layout from "../../layouts/Layout.astro";
     <div>
       <br/>
       <div class="d-flex justify-content-center" style="color: white">
-        <h1>Σχετικά με εμάς</h1>
+        <h1> Σχετικά με εμάς </h1>
       </div>
       <br/>
       <br/>
+
+      <div class="counter" id="counter">0</div>
+
+      <script>
+
+          function animateCounter(element, start, end, duration) {
+              let current = start;
+              let increment = (end - start) / (duration / 20); 
+              let interval = setInterval(() => {
+                  current += increment;
+                  element.innerText = Math.floor(current);
+                  
+                  if (current >= end) {
+                      element.innerText = end; 
+                      clearInterval(interval); 
+                  }
+              }, 20);
+          }
+
+
+
+      </script>
+
 
 <table>
 
@@ -61,7 +85,7 @@ import Layout from "../../layouts/Layout.astro";
           έκτος από τις δωρεές που λαμβάνουμε. Θέλουμε το
           Simplified Coding να διαδοθεί στην Ελληνική
           κοινότητα και να μπορέσουμε να διαδώσουμε τον
-          προγραμματισμό σε όλους.<br/><br>
+          προγραμματισμό σε όλους.<br/><br><br>
         </div>
       </td>
 
@@ -70,20 +94,20 @@ import Layout from "../../layouts/Layout.astro";
     <tr>
 
       <td>
-        <div class="card mx-12 my-6 max-w-xl text-lg font-normal bg-violet-700 px-3">
+        <div class="card max-w-xl px-3">
           <h2 class="card_title"> Τα στατιστικά μας </h2>
           <br/>
           Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
           την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
-          <div class="font-semibold text-2xl">
+          <div class="statistics font-semibold text-2xl">
             <br/><i class="fa-solid fa-code-commit fa-2x"></i>
-            Total commits: <br/><br/> <div id="counter">100</div> 
+            Total commits: <br/><br/> <div id="counter"> 534 </div><br>
             <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
-            Braches created: <br/><br/> <div id="counter">100</div>
+            Active braches: <br/><br/> <div id="counter"> 5 </div><br>
             <br/> <i class="fa-brands fa-github fa-2x"></i>
-            Issues opened: <br/><br/> <div id="counter">100</div>
+            Issues opened: <br/><br/> <div id="counter"> 85 </div><br>
             <br/> <i class="fa-brands fa-github fa-2x"></i>
-            Issues closed: <br/><br/> <div id="counter">100</div>
+            Issues closed: <br/><br/> <div id="counter"> 66 </div><br><br>
           </div>
           <br/>
         </div>
@@ -91,13 +115,14 @@ import Layout from "../../layouts/Layout.astro";
 
       <td>
         <div class="card timeline_card my-6 max-md text-lg font-normal bg-violet-700 max-w-3xl">
+          <div class="timeline_card">
           <h2 class="card_title"> Η χρονογραμμή μας </h2>
           <br/>
           Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργείθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
           υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργείες. Όλες τις πληρόφορίες για αυτό το timeline αντλήθηκαν από την
           σελίδα του Github: Network Graph. Σε αυτό το timeline μπορείς να ανακλύψεις την εξέλιξη της ιστοσελίδας
-          μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:</div>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <div class="timeline">
             <div id="v-rule"></div>
 
@@ -139,7 +164,7 @@ import Layout from "../../layouts/Layout.astro";
             </div>
             <div class="container left">
               <div class="content">
-                <h2> Ιούλιο 2023 </h2>
+                <h2> Ιούλιος 2023 </h2>
                 <p> Το καλοκαίρι συνεχίζει οπότε και εμείς συνεχίζουμε με τις αλλαγές στην ιστοσελίδα μας. Αν και όλα συνέβαιναν σε ξεχωριστό branch και η ιστοσελίδα δεν είχε καμία διαφορά οι αλλαγές ήταν καθημερινές. Αρχικά προσθέσαμε σειρές μαθημάτων CSS JavaScript αλλά και Arduino. Μέσα στον ίδιο μήνα επίσης κάναμε polishing αλλά και διόρθωση γραμματικών και ορθογραφικών στα μαθήματα αλλά και σε όλη την ιστοσελίδα. Μία ακόμα μικρή αλλαγή που κάναμε ήταν η προσθήκη περιγραφών στα μαθήματα και η δημιουργεία Navbar. </p>
               </div>
             </div>
@@ -151,14 +176,32 @@ import Layout from "../../layouts/Layout.astro";
             </div>
             <div class="container left">
               <div class="content">
-                <h2> Ιούλιο 2023 </h2>
-                <p>  </p>
+                <h2> Φθινόπωρο 2023 </h2>
+                <p> Δυστυχώς και προλάβαμε να φτιάξουμε μία επετιακή version του Simplified Coding αλλά χρησιμοποιήσαμε αυτόν τον χρόνο για να σκεφτούμε νέες ιδέες, αλλά και να τις υλοποιήσουμε.  Όπως πάντα αρχίσμαμε και αυτή την περίοδο με την διώρθωση γραμματικών και συντακτικών λαθών όπως και λάθη μέσα στον κώδικα πολλών σελίδων. Αμέσως μετά άρχισε η ανάπτυξη μία ακόμα βοηθητική για αρχαριους σειρά μαθημάτων...αυτή του Git & Github. </p>
               </div>
             </div>
             <div class="container right">
               <div class="content">
-                <h2>2007</h2>
-                <p>  </p>
+                <h2> Ιανουάριος-Μάιος 2024 </h2>
+                <p> Νέο έτος, νέες αλλαγές (και μάλιστα πολλές). Αρχικά προσθέσαμε ένα νέο progress bar στα μαθήματα ωστε να ειναι ευκολότερο για όλους να κρατάνε μια σειρά στο πως κάνουν τα μαθήματα. Ακόμα προσθέσαμε ένα roadmap για όποιον δεν θέλει να μάθει κάτι συγκεκριμένο αλλά θέλει να τα μάθει όλα με μια λογική (και με αυξανόμενης δυσκολίας) σειρά. Επίπλέον, προσθέσαμε ένα ακόμα μάθημα (την C++) για να διευκολίνουμε την εκμάθηση της σειράς Arduino. Τέλος, προσθέσαμε και ακόμα 2 μαθήματα html για να έχουμε μια πιο ολοκληρωμένη σειρά. </p>
+              </div>
+            </div>
+            <div class="container left">
+              <div class="content">
+                <h2> Ιούνιος-Ιούλιος 2024 </h2>
+                <p> Άλλο ένα καλοκαίρι άρα και άλλη μια περίοδος παραγωγικότητας και αλλαγών. Το καλοκαίρι μας βρήκε με πάνω από 20 issues στα οποία ακόμα εργαζόμαστε επάνω. Αρχίσαμε με την ανανέωση των μαθημάτων HTML. Παράλληλα δουλεύουμε σε πολλές νέες σελίδες (Hackolympia & Donations σελίδες) αλλά και την ανανέωση όλων των σελίδων (σελίδα μαθημάτων, about us σελίδα και την σελίδα των News) αλλά και διάφορων στοιχείων (navbar & footer). Τέλος, αρχίσαμε ένα μεγάλο έργω μετάφασης της σελίδας από bootstrap σε tailwind για μια καλύτερη εμπειρία του χρήστη αλλά και ευκολία στην δημιουργία της ιστοσελίδας γιατην γρηγορότερη ανάπτυξή της. </p>
+              </div>
+            </div>
+            <div class="container right">
+              <div class="content future">
+                <h2> Αυγουστος 2024 </h2>
+                <p> Για το καλοκαίρι θα αφιερώσουμε χρόνο μας να τελειοποιήσουμε τα issues που έχουμε ανοίξει για μια καλύτερη εμπειρία των χρηστών το συντομότερο δυνατόν. Ακόμα, θα προσθέσουμε νέες σειρές advanced μαθημάτων σε HTML και Pythoon. (Και ίσως μία εορταστική εβδομάδα για τα 2α γεννέθλια του Simplified Coding, no spoilers) </p>
+              </div>
+            </div>
+            <div class="container left">
+              <div class="content future">
+                <h2> Σεπτέμβριος-Δεκέμβριος 2024 </h2>
+                <p> Η χρονιά μας θα θέλαμε να κλείσει έχοντας κλείσει σχεδόν όλα τα issues και έχοντας προσθέσει 5-6 ακόμα σειρές μαθημάτων. Επιπλέον θα έχουμε νέες δυνατότητες στην ιστοσελίδα και νέα projects σε κάθε μάθημα. Τέλος, κύριο μέλημά μας είναι η ομαλή λειτουργεία της ιστοσελίδας χωρίς bugs και λάθη σε κώδικα ή μαθήματα. </p>
               </div>
             </div>
           </div>
@@ -169,8 +212,9 @@ import Layout from "../../layouts/Layout.astro";
 
 
 <style>
+
   .card_title{
-    margin-top: 5px;
+    margin-top: 20px;
   } 
 
 
@@ -179,12 +223,19 @@ import Layout from "../../layouts/Layout.astro";
     margin-right: 3rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem; 
+    font-weight: 400; 
+
     background-color: #212529;
     color: #ADB5AF;
   }
 
   .timeline_card {
-    width: 750px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   #value {
@@ -192,7 +243,7 @@ import Layout from "../../layouts/Layout.astro";
     font-size: 64px;
     font-weight: 700;
   }
-  #statistics {
+  .statistics {
     font-size: 28px;
     font-weight: 700;
   }
@@ -210,31 +261,14 @@ import Layout from "../../layouts/Layout.astro";
     position: absolute;
     overflow-y: scroll;
     max-width: 700px;
-    max-height: 640px;
+    max-height: 700px;
     width: 700px;
 
-    margin-top: 10vw;
+    margin-top: 20vw;
 
     font-size: 14px;
     color: rgb(255, 249, 241);
   }
-
-  .timeline::-webkit-scrollbar-track{
-    background-color: bisque;
-  }
-
-        .scroll-container::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-
-        .scroll-container::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        .scroll-container::-webkit-scrollbar-button {
-            display: none;
-        }
-
 
   .container {
   padding: 8px;
@@ -246,7 +280,7 @@ import Layout from "../../layouts/Layout.astro";
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -30px;
+  right: -28px;
   background-color: rgb(79, 40, 134);
   border: 4px solid #4378c8;
   top: 15px;
@@ -255,7 +289,7 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   .right::after {
-  right: 308px;
+  right: 326px;
   }
 
   /* The actual content */
@@ -265,6 +299,10 @@ import Layout from "../../layouts/Layout.astro";
   position: relative;
   border-radius: 7px;
   }
+  .future {
+  background-color: rgb(118, 59, 178);
+  }
+
   .content h2{
   font-size: 27px;
   font-weight: 600;
@@ -290,21 +328,22 @@ import Layout from "../../layouts/Layout.astro";
   .left {
   padding-left: 90px;
   padding-right: 10px;
-  margin-left: 100px;
+  margin-left: 95px;
 
   left: -180px;
-  width: 380px;
+  width: 400px;
   }
   .right {
   padding-left: 100px;
   padding-right: 10px;
 
-  left: 19.4%;
-  width: 395px;
+  left: 18.6%;
+  width: 400px;
   }
+  
   #v-rule {
   border-left: 6px solid rgb(79, 39, 135);
-  height: 3400px;
+  height: 5200px;
   position:absolute;
   left: 48%;
   width: 340px;
