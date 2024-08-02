@@ -17,16 +17,12 @@ import Card from "../../components/Bootstrap/Card.astro";
       <br/>
       <br/>
 
-      <div class="counter" id="counter">0</div>
-      <div class="counter" id="counter2">0</div>
-
       <script>
         //If anyone (Odysseus/Marios) dislike comments just delete them. It's my first hard js projcts and I want to write some comments because...many variables
 
-        //The main function which do the most things here
           function animateCounter(element, start, end, duration) {        // element = targeted div, start = starting number (usually 0), end = number that we want it to count to, duration = the time that we want to do it (I made it to be customazable because there is a big diff in the values of the numbers that want to print)
               let current = start;                                        // Make a local (I think that's how it works. It may be useless but...) variable to use in this function only
-              let increment = (end - start) / (duration / 20);            // Not that simple calculations for my first time (it took 20 mins)
+              let increment = (end - start) / (duration / 20);            // Not that simple calculations for begginers (it took 20 mins)
               let interval = setInterval(() => {
                   current += increment;                                   // Yes, an easy one, we do a ++ here. This is the 1st arguments for the setInterval. This is the time bettewn the executions of this function.
                   element.innerText = Math.floor(current);                // Here I print the number (the 2nd argument)
@@ -39,25 +35,35 @@ import Card from "../../components/Bootstrap/Card.astro";
           }
 
 
-          function isElementInViewport(element) {                         // In this function we check if the user have loaded 
-            let rect = element.getBoundingClientRect();                   // Checks the position (and the size) of the element
-            return rect.top < window.innerHeight && rect.bottom > 0;      // Checks if it is loaded by compering the distanse of the element from top of the widnow with the window's height and also checks if the element is over the bottom (inside the screen). (if it doesn't work I want use stackoverflow again)
+          function isElementInViewport(element) {                               // In this function we check if the user have loaded 
+            let rect = element.getBoundingClientRect();                         // Checks the position (and the size) of the element
+            return rect.top < window.innerHeight && rect.bottom > 0;            // Checks if it is loaded by compering the distanse of the element from top of the widnow with the window's height and also checks if the element is over the bottom (inside the screen). (if it doesn't work I want use stackoverflow again)
           }
 
 
-          let counterElement = document.getElementById("counter");        // Sets as our targeted element the element with id="counter"
-          let hasAnimated = false;                                        // States that the animation hasn't already happened
+          //The main function which do the most things here
+          function animation(target, start, end, duration) {
+
+            let counterElement = document.getElementById(target);            // Sets as our targeted element the element with id="counter"
+            let hasAnimated = false;                                            // States that the animation hasn't already happened
 
 
-          window.addEventListener("scroll", function() {                  // Scroll is the way that the event listener gets triggered and the function that will be executted every time that the "scroll" argument is true
-            if (isElementInViewport(counterElement) && !hasAnimated) {    // Checks if the element is loaded and haven't been animated before
-                animateCounter(counterElement, 0, 50, 2000);              // Call the function in order to animate things
-                hasAnimated = true;                                       // Sets the hasAnimated variable to true so it doesn't get reanimated unlit it gets unloaded
-            } else if (!isElementInViewport(counterElement) && hasAnimated) { // If the element is out of the screen we flag it as "Not Animated"
-                hasAnimated = false;                                      // Reset animation flag if out of view
-            }
-          });
-          
+            window.addEventListener("scroll", function() {                      // Scroll is the way that the event listener gets triggered and the function that will be executted every time that the "scroll" argument is true
+              if (isElementInViewport(counterElement) && !hasAnimated) {        // Checks if the element is loaded and haven't been animated before
+                  animateCounter(counterElement, start, end, duration);         // Call the function in order to animate things
+                  hasAnimated = true;                                           // Sets the hasAnimated variable to true so it doesn't get reanimated unlit it gets unloaded
+              } else if (!isElementInViewport(counterElement) && hasAnimated) { // If the element is out of the screen we flag it as "Not Animated"
+                  hasAnimated = false;                                          // Reset animation flag if out of view
+              }
+            });
+
+          }
+
+          animation("counter1", 0, 66, 2000);
+          animation("counter2", 0, 85, 3000);
+          animation("counter3", 0, 714, 4000);
+          animation("counter4", 0, 67, 3000);  
+
       </script>
 
 
@@ -121,14 +127,19 @@ import Card from "../../components/Bootstrap/Card.astro";
           Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
           την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
           <div class="statistics font-semibold text-2xl">
+
             <br/><i class="fa-solid fa-code-commit fa-2x"></i>
-            Total commits: <br/><br/> <div id="counter"> 534 </div><br>
+            Issues closed: <br/><br/> <div id="counter1"> 0 </div><br>
+
+            <br/> <i class="fa-brands fa-github fa-2x"></i>
+            Issues opened: <br/><br/> <div id="counter2"> 0 </div><br>
+
+            <br/> <i class="fa-brands fa-github fa-2x"></i>
+            Commits done: <br/><br/> <div id="counter3"> 0 </div><br>
+
             <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
-            Active braches: <br/><br/> <div id="counter"> 5 </div><br>
-            <br/> <i class="fa-brands fa-github fa-2x"></i>
-            Issues opened: <br/><br/> <div id="counter"> 85 </div><br>
-            <br/> <i class="fa-brands fa-github fa-2x"></i>
-            Issues closed: <br/><br/> <div id="counter"> 66 </div><br><br>
+            Lines of code written: <br/><br/> <div style="display: inline-block" id="counter"> > </div> <div id="counter4" style="display: inline-block"> 0 </div> <div style="display: inline-block" id="counter"> .000 </div> <br><br>
+
           </div>
           <br/>
         </div>
@@ -246,7 +257,7 @@ import Card from "../../components/Bootstrap/Card.astro";
     margin-bottom: 1rem;
     font-size: 1.125rem;
     line-height: 1.75rem; 
-    font-weight: 400; 
+    font-weight: 400;
 
     background-color: #212529;
     color: #ADB5AF;
@@ -268,7 +279,7 @@ import Card from "../../components/Bootstrap/Card.astro";
     font-size: 28px;
     font-weight: 700;
   }
-  #counter{
+  #counter, #counter1, #counter2, #counter3, #counter4{
     font-size: 64px;
     font-weight: 800;
   }
