@@ -33,6 +33,8 @@ export default {
 				"timeline-dots": "#4f2886",
 				"timeline-dots-border": "#4378c8",
 				"donations_titles": "#483d8b",
+				"blanched_almond": "#ffebcd",
+				"light_blue": "#aed9e0"
 			},
 			maxHeight: {
 				'timeline-height': '47rem',
@@ -45,6 +47,7 @@ export default {
 				'410px': '410px',
 				'500px': '500px',
 				'540px': '540px',
+				'650px': '650px',
 				'730px': '730px',
 				'750px': '850px',
 
@@ -53,6 +56,7 @@ export default {
 				},
 			height: {
 				'v-rule': '400rem',
+				'700px': '700px'
 			},
 			margin: {
 				'920px': '-720px',
@@ -63,6 +67,7 @@ export default {
 			spacing: {
 
 				'17px': '17px',
+				'50px': '50px',
 				'75px': '75px',
 				'90px': '90px',
 				'100px': '100px',
