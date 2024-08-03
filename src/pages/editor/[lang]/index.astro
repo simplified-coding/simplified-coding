@@ -11,8 +11,8 @@ import Layout from "../../../layouts/Layout.astro";
 <Layout>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js" defer
   ></script>
-  <div class="parentEditor">
-    <div class="guide">
+  <div class="flex h-80vh w-full border border-solid border-black">
+    <div class="grow resize-x overflow-auto w-55% text-white bg-bluish-gray border-2 border-solid border-black">
       <iframe
         src={`/lessons/${
           Astro.params.lang
@@ -21,7 +21,7 @@ import Layout from "../../../layouts/Layout.astro";
         height="100%"
         id="if"></iframe>
     </div>
-    <div class="editor" id="editor">
+    <div class="grow-[3] h-auto w-full resize-x overflow-auto" id="editor">
       <div id="loading-py" hidden>
         <div class="spinner-border text-info" role="status">
           <span class="visually-hidden">Loading...</span>
@@ -29,7 +29,7 @@ import Layout from "../../../layouts/Layout.astro";
         <h1 class="text-info">Φόρτωση Python... (Μπορεί να πάρει λίγη ώρα)</h1>
       </div>
     </div>
-    <div class="console" data-bs-theme="dark">
+    <div class="grow w-30% resize-x overflow-auto bg-bluish-gray" data-bs-theme="dark">
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <button class="nav-link active" id="console-btn"
@@ -53,12 +53,8 @@ import Layout from "../../../layouts/Layout.astro";
       <div id="console-div" style="width:100%; height:100%">
         <code id="console-code"></code>
       </div>
-      <div
-        id="preview-div"
-        style="width:100%; height:100%; color:white"
-        hidden
-      >
-        <iframe width="100%" height="100%" id="preview-if"></iframe>
+      <div id="preview-div" class="w-100% h-100% text-white" hidden>
+        <iframe class="w-100% h-100%" id="preview-if"></iframe>
       </div>
     </div>
   </div>
@@ -271,42 +267,3 @@ import Layout from "../../../layouts/Layout.astro";
 
   addLesson()
 </script>
-
-<style>
-    .parentEditor {
-        display: flex;
-        height: 80vh;
-        width: 100%;
-        border: 1px solid #000;
-    }
-
-    .guide {
-        flex-grow: 1;
-        resize: horizontal;
-        overflow: auto;
-        border: 2px solid #000;
-        width: 55%;
-
-        color: white;
-        background-color: #282f36;
-    }
-
-    .editor {
-        flex-grow: 3;
-        height: auto;
-        width: 100%;
-
-        resize: horizontal;
-        overflow: auto;
-    }
-
-    .console {
-        flex-grow: 1;
-        width: 30%;
-
-        resize: horizontal;
-        overflow: auto;
-
-        background-color: #282f36;
-    }
-</style>
