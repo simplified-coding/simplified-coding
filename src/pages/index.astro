@@ -1,11 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RoadMap from "../assets/RoadMap.svg";
-import { getEntry } from "astro:content";
-
-const courses = (await getEntry("lessons", "courses")).data.courses.map(
-    (c) => c.slug
-);
 ---
 
 <!--
@@ -61,7 +56,7 @@ SPDX-License-Identifier: GPL-3.0-only
                 mouseWheelZoomEnabled: false,
             });
 
-            window.meta();
+            window.onSVGLoad();
         };
 
         window.onload = () => {
@@ -69,16 +64,17 @@ SPDX-License-Identifier: GPL-3.0-only
         };
     </script>
 
-    <script data-courses={JSON.stringify(courses)} id="svg">
+    <script data-courses={JSON.stringify({})} id="svg">
         function goToCourse(course) {
             window.location.pathname = `/lessons/view/${course}`;
         }
 
-        window.meta = () => {
-            JSON.parse(
-                document.getElementById("svg").getAttribute("data-courses")
-            ).forEach((c) => {
-                console.log(c);
+        window.onSVGLoad = async () => {
+            const courses = await fetch("https://pb.simplifiedcoding.org/api/collections/sc_courses/records")
+                .then((data) => data.json())
+                .then((data) => data.items.map(v => v.slug))
+
+            courses.forEach((c) => {
                 document
                     .getElementById("svg-roadmap")
                     .contentDocument.children[0].getElementById(
