@@ -1,0 +1,5 @@
+version = 1
+SPDX-PackageName = "Simplified Coding"
+SPDX-PackageSupplier = "The Simplified Coding Team <main@simplifiedcoding.org>"
+SPDX-PackageDownloadLocation = "simplifiedcoding.org"
+annotations = []
