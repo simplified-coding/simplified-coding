@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 name: Update CODEOWNERS
 on:
   workflow_dispatch:
