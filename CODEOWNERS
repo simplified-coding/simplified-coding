@@ -1,6 +1,7 @@
 *                   @simplified-coding/simplified-coding-team
 *.license           @simplified-coding/licensing-team
 LICENSE             @simplified-coding/licensing-team
+LICENSES/*          @simplified-coding/licensing-team
 
 package.json        @simplified-coding/config-team
 package-lock.json   @simplified-coding/config-team
