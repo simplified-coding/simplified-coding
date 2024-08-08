@@ -1,0 +1,11 @@
+*                   @simplified-coding/simplified-coding-team
+*.license           @simplified-coding/licensing-team
+LICENSE             @simplified-coding/licensing-team
+
+package.json        @simplified-coding/config-team
+package-lock.json   @simplified-coding/config-team
+README.md           @simplified-coding/config-team
+tsconfig.json       @simplified-coding/config-team
+.gitignore          @simplified-coding/config-team
+.gitpod.yml         @simplified-coding/config-team
+astro.config.mjs    @simplified-coding/config-team
