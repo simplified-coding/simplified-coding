@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { getEntry } from "astro:content";
+import { getCourseLessons } from "./api";
 
 export const refreshLessons = async () => {
   let data: any = [];
@@ -42,13 +42,14 @@ export const removeLesson = (course: string, lesson: string) => {
     localStorage.setItem(course, JSON.stringify(data))
   }
 }
+
 export const checkCompletion = async () => {
   const course = location.pathname.split('/')[2]
   const trackingCompleted: any = JSON.parse(localStorage.getItem("completed") || "[]")
   const trackingLessons: [] = JSON.parse(localStorage.getItem(course) || "[]")
-  const courseData: any = (await getEntry("lessons", course))
+  const courseData: any = await getCourseLessons(course)
 
-  if (trackingLessons.length === courseData?.data.data.length) {
+  if (trackingLessons.length === courseData.length) {
     if (trackingCompleted.indexOf(course) === -1) {
       trackingCompleted.push(course)
     }
