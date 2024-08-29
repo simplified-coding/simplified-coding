@@ -4,46 +4,84 @@ SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.o
 SPDX-License-Identifier: GPL-3.0-only
 -->
 
+---
+---
 
-<nav >
-  <ul class="navbar">
-    <li>
-      <a href="/" aria-label="Simplified Coding"><img src="/Brand/cover.png" alt="Logo" width="240px"/></a>
-    </li>
-    <li class="nav-link">
-      <i class= "fa-regular fa-house" ></i>
-      <a href= "/"> <slot>Αρχική</slot> </a>
-    </li>
-    <li class="nav-link">
-      <i class= "fa-regular fa-book" ></i>
-      <a href= "/lessons"> <slot>Μαθήματα</slot> </a>
-    </li>
-    <li class="nav-link">
-      <i class= "fa-regular fa-newspaper" ></i>
-      <a href= "/news"> <slot>News</slot> </a>
-    </li>
-    <li class="nav-link">
-      <i class= "fa-regular fa-circle-info" ></i>
-      <a href= "/about"> <slot>About us</slot> </a>
-    </li>
-    <li class="nav-link">
-      <i class= "fa-solid fa-hand-holding-heart" ></i>
-      <a href= "/donations"> <slot>Δωρεές</slot> </a>
-    </li>
-    <li class="nav-link">
-      <i class= "fa-solid fa-chalkboard-user" ></i>
-      <a href= "/hackolympia"> <slot>HackΟlympia</slot> </a>
-    </li>
-  </ul>
-</nav>
-<style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" aria-label="Simplified Coding">
+      <img
+        src="/cover.png"
+        alt="Logo"
+        width="218.75"
+        height="90"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">
+            <i class="fa-regular fa-house"></i>
+            <p style="display:inline-block;" >
+              Αρχική
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/lessons">
+            <i class="fa-regular fa-book"></i>
+            <p style="display:inline-block;" >
+              Μαθήματα
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/news">
+            <i class="fa-regular fa-newspaper"></i>
+            <p style="display:inline-block;" >
+              News
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/about">
+            <i class="fa-regular fa-circle-info"></i>
+            <p style="display:inline-block;" >
+              About us
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/donations  ">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <p style="display:inline-block;" >
+              Δωρεά
+            </p>
+          </a>
+        </li>
+
+      </ul>
+      <style>
   a {
     text-decoration: none;
     color: antiquewhite;
-  }
-  img {
-    margin-top: -9px;
-    margin-bottom: -25px;
   }
   .nav-link{
       margin: 20px;
@@ -61,7 +99,7 @@ SPDX-License-Identifier: GPL-3.0-only
   }
  .nav-link:hover {
       opacity: 1;
-      color: azure
+      color: azure;
   }  
   .nav-link::before {
   transition: 500ms;
@@ -70,10 +108,13 @@ SPDX-License-Identifier: GPL-3.0-only
   position: absolute;
   background-color: antiquewhite;
   width: 0%;
-  bottom: 10px;
+  bottom: 30px;
 }
 
 .nav-link:hover::before {
-  width: 100%;
+  width: 92%;
 }
-</style>
+      </style>
+    </div>
+  </div>
+</nav>
