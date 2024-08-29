@@ -1,83 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RoadMap from "../assets/RoadMap.svg";
+import { getEntry } from "astro:content";
+
+const courses = (await getEntry("lessons", "courses")).data.courses.map(
+    (c) => c.slug
+);
+---
+
 <!--
 SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
 
 SPDX-License-Identifier: GPL-3.0-only
 -->
+<Layout>
+    <br />
+    <div class="d-flex justify-content-center" style="color: white">
+        <div>
+            <h1>Simplified Coding</h1>
+        </div>
+    </div>
+    <div
+        class="d-flex justify-content-center"
+        style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px"
+    >
+        <div>
+            <p>
+                Καλωσορίσατε στο Simplified Coding. Εαν δεν ξέρετε με πιο μάθημα
+                θέλετε να ξεκινήσετε, μπορείτε να ακολουθήσετε τον χάρτη μας που
+                θα σας βοηθήσει να επιλέξετε το κατάλληλο μάθημα για εσάς.
+                Μπορείτε επιπλέον να διαλέξετε μια από τις τρείς κατευθύνσεις
+                που προσφέρουμε, αφού ολοκληρώσετε τα βασικά μας μαθήματα.
+            </p>
+        </div>
+    </div>
+    <br />
+    <div id="doc-body"></div>
+    <div id="doc-body-mobile"></div>
+    <div class="d-flex justify-content-center">
+        <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
+            <object
+                id="svg-roadmap"
+                type="image/svg+xml"
+                style="width: inherit; height: inherit; border:1px solid black; "
+                data={RoadMap}
+                aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding, μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε"
+            ></object>
+        </div>
+    </div>
+    <br />
+    <br />
 
----
-import Layout from "../../layouts/Layout.astro";
----
+    <script>
+        import svgPanZoom from "svg-pan-zoom";
 
-<Layout>  
+        const installZoom = () => {
+            svgPanZoom("#svg-roadmap", {
+                zoomEnabled: true,
+                controlIconsEnabled: true,
+                mouseWheelZoomEnabled: false,
+            });
 
-    <table>
-        <tr>
-            <td class="title"> Κάντε μια δωρεά στο Simplified Coding </td>
-            <td rowspan="5" class="table-item">  </td>
-        </tr>
-        <tr>
-            <td class="table-item">
-                <h2> Σχετικά με εμάς; </h2>
-                <p> Το Simplified Coding είναι μια Ελληνική ιστοσελίδα που προσφέρει δωρεάν μαθήματα 
-                    πληροφορικής. Είναι μια μη-κερδοσκοπική οργάνωση και χρηματοδοτείται μόνο με δωρεές.</p>
-            </td>
-        </tr>
-        <tr>
-            <td class="table-item">
-                <h2> Γιατί να κάνω δωρεά; </h2>
-                <p> Αν μπορείτε και αποφασίσετε ότι θέλετε να μας κάνετε μια δωρεά, θα υποστηρίξετε τη δωρεάν ποιοτική εκπαίδευση αλλά και την καλύτερη και ταχύτερη ανάπτυξη της ιστοσελίδας. </p>
-            </td>
-        </tr>
-        <tr>
-            <td class="table-item">
-                <h2> Πού θα αξιοποιηθεί η δωρεά μου; </h2>
-                <p> Αν κάνετε μια δωρεά, η ομάδα μας θα χρησιμοποιήσει τα χρήματά σας σε υλικό για την 
-                    ανάπτυξη    μαθημάτων, συντήρηση της ιστοσελίδας και διαφημίσεις σε κοινωνικά δίκτυα. </p>
-            </td>
-        </tr>
-    </table>
+            window.meta();
+        };
 
-    <iframe src="https://hcb.hackclub.com/donations/start/simplified-coding"></iframe> 
+        window.onload = () => {
+            setTimeout(installZoom, 2500);
+        };
+    </script>
 
-    <style>
-        .table-item{
-            background-color:;
-            width: 50vw;
-            font-weight: 500;
-            color: blanchedalmond;
-            padding-left: 100px;
+    <script data-courses={JSON.stringify(courses)} id="svg">
+        function goToCourse(course) {
+            window.location.pathname = `/lessons/view/${course}`;
         }
-        .title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #B7BCD7;
-            padding-left: 100px;
-        }
-        td { 
-            padding: 20px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #AED9E0;
-        }
-        iframe{
-            float: right;
-            margin-top: -93vh;
-            margin-right: 40px;
-            border-radius: 10px;
-            height: 700px;
-            width: 650px;
-        }
-        .info-item {
-            font-size: 15px;
-            padding-bottom: 20px;
-        }
-    </style>
-  <!-- Spacing for footer -->
-  <br/>
-  <br/>
+
+        window.meta = () => {
+            JSON.parse(
+                document.getElementById("svg").getAttribute("data-courses")
+            ).forEach((c) => {
+                console.log(c);
+                document
+                    .getElementById("svg-roadmap")
+                    .contentDocument.children[0].getElementById(
+                        `svg-${c}-completed`
+                    ).style = "display: none";
+
+                document
+                    .getElementById("svg-roadmap")
+                    .contentDocument.children[0].getElementById(
+                        `svg-${c}`
+                    ).onclick = () => goToCourse(c);
+                document
+                    .getElementById("svg-roadmap")
+                    .contentDocument.children[0].getElementById(
+                        `svg-${c}-text`
+                    ).onclick = () => goToCourse(c);
+            });
+        };
+    </script>
 </Layout>
