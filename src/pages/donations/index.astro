@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import RoadMap from "../assets/RoadMap.svg";
+import RoadMap from "../../assets/RoadMap.svg";
 import { getEntry } from "astro:content";
 
 const courses = (await getEntry("lessons", "courses")).data.courses.map(
