@@ -1,11 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RoadMap from "../assets/RoadMap.svg";
-import { getEntry } from "astro:content";
-
-const courses = (await getEntry("lessons", "courses")).data.courses.map(
-    (c) => c.slug
-);
 ---
 
 <!--
@@ -21,8 +16,8 @@ SPDX-License-Identifier: GPL-3.0-only
         </div>
     </div>
     <div
-        class="d-flex justify-content-center"
-        style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px"
+      class="d-flex justify-content-center"
+      style="color: white; padding-left: 50px; padding-right: 50px; font-size: 24px"
     >
         <div>
             <p>
@@ -40,11 +35,11 @@ SPDX-License-Identifier: GPL-3.0-only
     <div class="d-flex justify-content-center">
         <div style="background-color: #A46AC9; width: 60vw; height: 80vh">
             <object
-                id="svg-roadmap"
-                type="image/svg+xml"
-                style="width: inherit; height: inherit; border:1px solid black; "
-                data={RoadMap}
-                aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding, μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε"
+              id="svg-roadmap"
+              type="image/svg+xml"
+              style="width: inherit; height: inherit; border:1px solid black; "
+              data={RoadMap}
+              aria-label="Εάν δεν μπορείτε να έχετε πρόσβαση στον χάρτη του Simplified Coding, μπορείτε να μπείτε στον κατάλογο μαθημάτων μας και να επιλέξετε το μάθημα που θέλετε να ακολουθήσετε"
             ></object>
         </div>
     </div>
@@ -61,7 +56,7 @@ SPDX-License-Identifier: GPL-3.0-only
                 mouseWheelZoomEnabled: false,
             });
 
-            window.meta();
+            window.onSVGLoad();
         };
 
         window.onload = () => {
@@ -69,32 +64,33 @@ SPDX-License-Identifier: GPL-3.0-only
         };
     </script>
 
-    <script data-courses={JSON.stringify(courses)} id="svg">
+    <script data-courses={JSON.stringify({})} id="svg">
         function goToCourse(course) {
             window.location.pathname = `/lessons/view/${course}`;
         }
 
-        window.meta = () => {
-            JSON.parse(
-                document.getElementById("svg").getAttribute("data-courses")
-            ).forEach((c) => {
-                console.log(c);
+        window.onSVGLoad = async () => {
+            const courses = await fetch("https://pb.simplifiedcoding.org/api/collections/sc_courses/records")
+              .then((data) => data.json())
+              .then((data) => data.items.map(v => v.slug))
+
+            courses.forEach((c) => {
                 document
-                    .getElementById("svg-roadmap")
-                    .contentDocument.children[0].getElementById(
-                        `svg-${c}-completed`
-                    ).style = "display: none";
+                  .getElementById("svg-roadmap")
+                  .contentDocument.children[0].getElementById(
+                  `svg-${c}-completed`
+                ).style = "display: none";
 
                 document
-                    .getElementById("svg-roadmap")
-                    .contentDocument.children[0].getElementById(
-                        `svg-${c}`
-                    ).onclick = () => goToCourse(c);
+                  .getElementById("svg-roadmap")
+                  .contentDocument.children[0].getElementById(
+                  `svg-${c}`
+                ).onclick = () => goToCourse(c);
                 document
-                    .getElementById("svg-roadmap")
-                    .contentDocument.children[0].getElementById(
-                        `svg-${c}-text`
-                    ).onclick = () => goToCourse(c);
+                  .getElementById("svg-roadmap")
+                  .contentDocument.children[0].getElementById(
+                  `svg-${c}-text`
+                ).onclick = () => goToCourse(c);
             });
         };
     </script>
