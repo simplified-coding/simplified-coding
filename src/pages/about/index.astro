@@ -4,7 +4,6 @@ SPDX-License-Identifier: GPL-3.0-only
 -->
 ---
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Bootstrap/Card.astro";
 ---
 
 <Layout>
@@ -18,16 +17,16 @@ import Card from "../../components/Bootstrap/Card.astro";
       <br/>
 
       <script>
-        //If anyone (Odysseus/Marios) dislike comments just delete them. It's my first hard js projcts and I want to write some comments because...many variables
+        //If anyone (Odysseus/Marios) dislike comments just delete them. It's my first hard js projects and I want to write some comments because...many variables
 
-          function animateCounter(element, start, end, duration) {        // element = targeted div, start = starting number (usually 0), end = number that we want it to count to, duration = the time that we want to do it (I made it to be customazable because there is a big diff in the values of the numbers that want to print)
+          function animateCounter(element, start, end, duration) {        // element = targeted div, start = starting number (usually 0), end = number that we want it to count to, duration = the time that we want to do it (I made it to be customizable because there is a big diff in the values of the numbers that want to print)
               let current = start;                                        // Make a local (I think that's how it works. It may be useless but...) variable to use in this function only
-              let increment = (end - start) / (duration / 20);            // Not that simple calculations for begginers (it took 20 mins)
+              let increment = (end - start) / (duration / 20);            // Not that simple calculations for beginners (it took 20 mins)
               let interval = setInterval(() => {
-                  current += increment;                                   // Yes, an easy one, we do a ++ here. This is the 1st arguments for the setInterval. This is the time bettewn the executions of this function.
+                  current += increment;                                   // Yes, an easy one, we do a ++ here. This is the 1st arguments for the setInterval. This is the time between the executions of this function.
                   element.innerText = Math.floor(current);                // Here I print the number (the 2nd argument)
                   
-                  if (current >= end) {                                   // Checks if it reaches the targeted number (confession: I can remember what this do but I just want to have acomment in each line)
+                  if (current >= end) {                                   // Checks if it reaches the targeted number (confession: I can remember what this does, but I just want to have a comment in each line)
                       element.innerText = end;                            // Set the element to the target number
                       clearInterval(interval);                            // Stops everything when it reaches the desired number
                   }
@@ -37,7 +36,7 @@ import Card from "../../components/Bootstrap/Card.astro";
 
           function isElementInViewport(element) {                               // In this function we check if the user have loaded 
             let rect = element.getBoundingClientRect();                         // Checks the position (and the size) of the element
-            return rect.top < window.innerHeight && rect.bottom > 0;            // Checks if it is loaded by compering the distanse of the element from top of the widnow with the window's height and also checks if the element is over the bottom (inside the screen). (if it doesn't work I want use stackoverflow again)
+            return rect.top < window.innerHeight && rect.bottom > 0;            // Checks if it is loaded by comparing the distance of the element from top of the window with the window's height and also checks if the element is over the bottom (inside the screen). (if it doesn't work I want use stackoverflow again)
           }
 
 
@@ -48,7 +47,7 @@ import Card from "../../components/Bootstrap/Card.astro";
             let hasAnimated = false;                                            // States that the animation hasn't already happened
 
 
-            window.addEventListener("scroll", function() {                      // Scroll is the way that the event listener gets triggered and the function that will be executted every time that the "scroll" argument is true
+            window.addEventListener("scroll", function() {                      // Scroll is the way that the event listener gets triggered and the function that will be executed every time that the "scroll" argument is true
               if (isElementInViewport(counterElement) && !hasAnimated) {        // Checks if the element is loaded and haven't been animated before
                   animateCounter(counterElement, start, end, duration);         // Call the function in order to animate things
                   hasAnimated = true;                                           // Sets the hasAnimated variable to true so it doesn't get reanimated unlit it gets unloaded
@@ -125,20 +124,20 @@ import Card from "../../components/Bootstrap/Card.astro";
           <h2 class="card_title"> Τα στατιστικά μας </h2>
           <br/>
           Η ομάδα μας έχει αφιερώσει πολλές ώρες στην ανάπτυξη αυτής της ιστοσελίδας της οποίας τα στατιστικά βρίσκονται και πηγάζουν από
-          την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριώτερα στατιστικά για την ιστοσελίδα μας:
+          την πλατφόρμα του GitHub. Παρακάτω θα βρείτε μερικά από τα κυριότερα στατιστικά για την ιστοσελίδα μας:
           <div class="statistics font-semibold text-2xl">
 
-            <br/><i class="fa-solid fa-code-commit fa-2x"></i>
-            Issues closed: <br/><br/> <div id="counter1"> 0 </div><br>
+            <br/><i class="fa-solid fa-check fa-2x"></i>
+            Κλειστά αιτήματα (Closed GitHub Issues): <br/><br/> <div id="counter1"> 0 </div><br>
 
-            <br/> <i class="fa-brands fa-github fa-2x"></i>
-            Issues opened: <br/><br/> <div id="counter2"> 0 </div><br>
+            <br/> <i class="fa-solid fa-circle-exclamation fa-2x"></i>
+            Συνολικά αιτήματα (GitHub Issues): <br/><br/> <div id="counter2"> 0 </div><br>
 
-            <br/> <i class="fa-brands fa-github fa-2x"></i>
-            Commits done: <br/><br/> <div id="counter3"> 0 </div><br>
+            <br/> <i class="fa-solid fa-code-commit fa-2x"></i>
+            Ενημερώσεις (Commits): <br/><br/> <div id="counter3"> 0 </div><br>
 
             <br/> <i class="fa-solid fa-code-branch fa-2x"></i>
-            Lines of code written: <br/><br/> <div style="display: inline-block" id="counter"> > </div> <div id="counter4" style="display: inline-block"> 0 </div> <div style="display: inline-block" id="counter"> .000 </div> <br><br>
+            Γραμμές κώδικα που γράψαμε: <br/><br/> <div style="display: inline-block" id="counter"> > </div> <div id="counter4" style="display: inline-block"> 0 </div> <div style="display: inline-block" id="counter"> .000 </div> <br><br>
 
           </div>
           <br/>
@@ -150,10 +149,10 @@ import Card from "../../components/Bootstrap/Card.astro";
           <div class="timeline_card">
           <h2 class="card_title"> Η χρονογραμμή μας </h2>
           <br/>
-          Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργείθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
-          υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργείες. Όλες τις πληρόφορίες για αυτό το timeline αντλήθηκαν από την
-          σελίδα του Github: Network Graph. Σε αυτό το timeline μπορείς να ανακλύψεις την εξέλιξη της ιστοσελίδας
-          μας από την αρχή μέρχι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:</div>
+          Όπως προαναφέραμε στο "Ποιοί είμαστε" η ιστοσελίδα δημιουργήθηκε τον Σεπτέμβριο του 2022. Από τότε, στην ιστοσελίδα μας
+          υπήρξαν πολλές διαφορές αλλά και πολλές νέες λειτουργίες. Όλες τις πληροφορίες για αυτό το timeline αντλήθηκαν από την
+          σελίδα του Github: Network Graph. Σε αυτό το timeline μπορείς να ανακαλύψεις την εξέλιξη της ιστοσελίδας
+          μας από την αρχή μέχρι και σήμερα αλλά και μελλοντικές αλλαγές που θέλουμε να κάνουμε στο Simplified Coding:</div>
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <div class="timeline">
             <div id="v-rule"></div>
@@ -161,19 +160,19 @@ import Card from "../../components/Bootstrap/Card.astro";
             <div class="container left">
               <div class="content">
                   <h2> 10 Σεπτεμβρίου 2022 </h2>
-                  <p> H δημιουργεία του repository της ιστοσελίδας μας στο GitHub. </p>
+                  <p> H δημιουργία του repository της ιστοσελίδας μας στο GitHub. </p>
               </div>
             </div>
             <div class="container right">
               <div class="content">
                 <h2> 30 Σεπτεμβρίου 2022 </h2>
-                <p> Δημιουργεία  των πρώτων 3ων μαθημάτων για την αρχική σειρά μαθημάτων Python. Τα μαθήματα βρίσκοντας στην πρώιμη μορφή τους ως παρουσιάσεις και όχι όπως ειναι σήμερα σε μορφή αρχείου.</p>
+                <p> Δημιουργία  των πρώτων 3ων μαθημάτων για την αρχική σειρά μαθημάτων Python. Τα μαθήματα βρίσκοντας στην πρώιμη μορφή τους ως παρουσιάσεις και όχι όπως είναι σήμερα σε μορφή αρχείου.</p>
               </div>
             </div>
             <div class="container left">
               <div class="content">
                 <h2> 29 Δεκεμβρίου 2022 </h2>
-                <p> Λίγο πριν το τέλος τις χρονιάς, είχαμε ολοκληρώσει την δημιουργεία μαθημάτων για την σειρά της Python, είχαμε προσθέσει quizzes σε καθε μάθημα αλλά και είχαμε διωρθώσει τα περισσότερα λάθη και bugs στην ιστοσελίδα μας.</p>
+                <p> Λίγο πριν το τέλος τις χρονιάς, είχαμε ολοκληρώσει την δημιουργία μαθημάτων για την σειρά της Python, είχαμε προσθέσει quizzes σε κάθε μάθημα αλλά και είχαμε διορθώσει τα περισσότερα λάθη και bugs στην ιστοσελίδα μας.</p>
               </div>
             </div>
             <div class="container right">
@@ -191,52 +190,53 @@ import Card from "../../components/Bootstrap/Card.astro";
             <div class="container right">
               <div class="content">
                 <h2> Ιούνιος 2023 </h2>
-                <p> Οι αλλαγές στην ομάδα του Simplified Coding φέρνουν αλλαγές και στο ίδιο το Simplified Coding. Μέσα σε έναν μήνα έγιναν τόσες αλλαγές που να μην μπορούν να αναφερθούν όλες εδώ. Η βασικότερη αλλαγή είναι η προσθήκη ενός editor μέσα στα μαθήματα python και HTML που δίνει την δυνατότητα στον χρήστη να μην χρειάζτεαι να κατεβασει τίποτα στον υπολογιστή. Ακόμα κατά αυτό τον μήνα αλλάξαμε την σειράς μαθημάτων HTML αλλά και η μετατροπή τους σε Markdown αρχεία. Τέλος φτιάξαμε μία σελίδα όπου ο χρήστης βλέπει όλα τα μαθήματα πιο οργανωμένα, την οποία αλλαγή ακολούθησε η αλλαγή στην CSS όλης της ιστοσελίδας. </p>
+                <p> Οι αλλαγές στην ομάδα του Simplified Coding φέρνουν αλλαγές και στο ίδιο το Simplified Coding. Μέσα σε έναν μήνα έγιναν τόσες αλλαγές που να μην μπορούν να αναφερθούν όλες εδώ. Η βασικότερη αλλαγή είναι η προσθήκη ενός editor μέσα στα μαθήματα python και HTML που δίνει την δυνατότητα στον χρήστη να μην χρειάζεται να κατεβάσει τίποτα στον υπολογιστή. Ακόμα κατά αυτό τον μήνα αλλάξαμε την σειράς μαθημάτων HTML αλλά και η μετατροπή τους σε Markdown αρχεία. Τέλος φτιάξαμε μία σελίδα όπου ο χρήστης βλέπει όλα τα μαθήματα πιο οργανωμένα, την οποία αλλαγή ακολούθησε η αλλαγή στην CSS όλης της ιστοσελίδας. </p>
               </div>
             </div>
             <div class="container left">
               <div class="content">
                 <h2> Ιούλιος 2023 </h2>
-                <p> Το καλοκαίρι συνεχίζει οπότε και εμείς συνεχίζουμε με τις αλλαγές στην ιστοσελίδα μας. Αν και όλα συνέβαιναν σε ξεχωριστό branch και η ιστοσελίδα δεν είχε καμία διαφορά οι αλλαγές ήταν καθημερινές. Αρχικά προσθέσαμε σειρές μαθημάτων CSS JavaScript αλλά και Arduino. Μέσα στον ίδιο μήνα επίσης κάναμε polishing αλλά και διόρθωση γραμματικών και ορθογραφικών στα μαθήματα αλλά και σε όλη την ιστοσελίδα. Μία ακόμα μικρή αλλαγή που κάναμε ήταν η προσθήκη περιγραφών στα μαθήματα και η δημιουργεία Navbar. </p>
+                <p> Το καλοκαίρι συνεχίζει οπότε και εμείς συνεχίζουμε με τις αλλαγές στην ιστοσελίδα μας. Αν και όλα συνέβαιναν σε ξεχωριστό branch και η ιστοσελίδα δεν είχε καμία διαφορά οι αλλαγές ήταν καθημερινές. Αρχικά προσθέσαμε σειρές μαθημάτων CSS JavaScript αλλά και Arduino. Μέσα στον ίδιο μήνα επίσης κάναμε polishing αλλά και διόρθωση γραμματικών και ορθογραφικών στα μαθήματα αλλά και σε όλη την ιστοσελίδα. Μία ακόμα μικρή αλλαγή που κάναμε ήταν η προσθήκη περιγραφών στα μαθήματα και η δημιουργία Navbar. </p>
               </div>
             </div>
             <div class="container right">
               <div class="content">
-                <h2> Αυγουστος 2023</h2>
-                <p> Πλησιάζοντας στα γεννέθλια του Simplified Coding αλλά και στο τέλος του καλοκαιριού, βάζαμε τις τελικές προσθήκες στην ιστοσελίδα για το καλοκαίρι. Στην αρχές του μήνα κάναμε polishing στις σειρές των μαθημάτων που έτραχαν εκείνη την περίοδο (Javascript & Arduino). Ακόμα προσθέσαμε την news page στην οποία βρήσκονταν η νεα δυνατότητα που είχαν οι χρήστες να λαμβάνουν μηνιαίο newsletter με τις αλλαγές και να νεα της ιστοσελίδας μας. Αμέσως μετά ήρθαν οι αλλγές και στην ιστοσελίδα. Στις 8 Αυγούστου όλες αυτές οι αλλαγές μηνών εμφανίστικαν στην ιστοσελίδα. Μετά από ένα σύντομο διάλειμμα 2 εβδομάδων αρχίσαμε να δουλέυουμε σε νέες αλλαγές ξεκινόντας από την χρήση astro σε όλη την ιστοσελίδας μας.  </p>
+                <h2> Αύγουστος 2023</h2>
+                <p> Πλησιάζοντας στα γενέθλια του Simplified Coding αλλά και στο τέλος του καλοκαιριού, βάζαμε τις τελικές προσθήκες στην ιστοσελίδα για το καλοκαίρι. Στην αρχές του μήνα κάναμε polishing στις σειρές των μαθημάτων που έτρεχαν εκείνη την περίοδο (Javascript & Arduino). Ακόμα προσθέσαμε την news page στην οποία βρίσκονταν η νεα δυνατότητα που είχαν οι χρήστες να λαμβάνουν μηνιαίο newsletter με τις αλλαγές και να νεα της ιστοσελίδας μας. Αμέσως μετά ήρθαν οι αλλαγές και στην ιστοσελίδα. Στις 8 Αυγούστου όλες αυτές οι αλλαγές μηνών εμφανίστηκαν στην ιστοσελίδα. Μετά από ένα σύντομο διάλειμμα 2 εβδομάδων αρχίσαμε να δουλεύουμε σε νέες αλλαγές ξεκινώντας από την χρήση astro σε όλη την ιστοσελίδας μας.  </p>
               </div>
             </div>
             <div class="container left">
               <div class="content">
                 <h2> Φθινόπωρο 2023 </h2>
-                <p> Δυστυχώς και προλάβαμε να φτιάξουμε μία επετιακή version του Simplified Coding αλλά χρησιμοποιήσαμε αυτόν τον χρόνο για να σκεφτούμε νέες ιδέες, αλλά και να τις υλοποιήσουμε.  Όπως πάντα αρχίσμαμε και αυτή την περίοδο με την διώρθωση γραμματικών και συντακτικών λαθών όπως και λάθη μέσα στον κώδικα πολλών σελίδων. Αμέσως μετά άρχισε η ανάπτυξη μία ακόμα βοηθητική για αρχαριους σειρά μαθημάτων...αυτή του Git & Github. </p>
+                <p> Δυστυχώς και προλάβαμε να φτιάξουμε μία επετειακή version του Simplified Coding αλλά χρησιμοποιήσαμε αυτόν τον χρόνο για να σκεφτούμε νέες ιδέες, αλλά και να τις υλοποιήσουμε.  Όπως πάντα αρχίσαμε και αυτή την περίοδο με την διόρθωση γραμματικών και συντακτικών λαθών όπως και λάθη μέσα στον κώδικα πολλών σελίδων. Αμέσως μετά άρχισε η ανάπτυξη μία ακόμα βοηθητική για αρχάριους σειρά μαθημάτων...αυτή του Git & Github. </p>
               </div>
             </div>
             <div class="container right">
               <div class="content">
                 <h2> Ιανουάριος-Μάιος 2024 </h2>
-                <p> Νέο έτος, νέες αλλαγές (και μάλιστα πολλές). Αρχικά προσθέσαμε ένα νέο progress bar στα μαθήματα ωστε να ειναι ευκολότερο για όλους να κρατάνε μια σειρά στο πως κάνουν τα μαθήματα. Ακόμα προσθέσαμε ένα roadmap για όποιον δεν θέλει να μάθει κάτι συγκεκριμένο αλλά θέλει να τα μάθει όλα με μια λογική (και με αυξανόμενης δυσκολίας) σειρά. Επίπλέον, προσθέσαμε ένα ακόμα μάθημα (την C++) για να διευκολίνουμε την εκμάθηση της σειράς Arduino. Τέλος, προσθέσαμε και ακόμα 2 μαθήματα html για να έχουμε μια πιο ολοκληρωμένη σειρά. </p>
+                <p> Νέο έτος, νέες αλλαγές (και μάλιστα πολλές). Αρχικά προσθέσαμε ένα νέο progress bar στα μαθήματα ώστε να είναι ευκολότερο για όλους να κρατάνε μια σειρά στο πως κάνουν τα μαθήματα. Ακόμα προσθέσαμε ένα roadmap για όποιον δεν θέλει να μάθει κάτι συγκεκριμένο αλλά θέλει να τα μάθει όλα με μια λογική (και με αυξανόμενης δυσκολίας) σειρά. Επιπλέον, προσθέσαμε ένα ακόμα μάθημα (την C++) για να διευκολύνουμε την εκμάθηση της σειράς Arduino. Τέλος, προσθέσαμε και ακόμα 2 μαθήματα html για να έχουμε μια πιο ολοκληρωμένη σειρά. </p>
               </div>
             </div>
             <div class="container left">
               <div class="content">
                 <h2> Ιούνιος-Ιούλιος 2024 </h2>
-                <p> Άλλο ένα καλοκαίρι άρα και άλλη μια περίοδος παραγωγικότητας και αλλαγών. Το καλοκαίρι μας βρήκε με πάνω από 20 issues στα οποία ακόμα εργαζόμαστε επάνω. Αρχίσαμε με την ανανέωση των μαθημάτων HTML. Παράλληλα δουλεύουμε σε πολλές νέες σελίδες (Hackolympia & Donations σελίδες) αλλά και την ανανέωση όλων των σελίδων (σελίδα μαθημάτων, about us σελίδα και την σελίδα των News) αλλά και διάφορων στοιχείων (navbar & footer). Τέλος, αρχίσαμε ένα μεγάλο έργω μετάφασης της σελίδας από bootstrap σε tailwind για μια καλύτερη εμπειρία του χρήστη αλλά και ευκολία στην δημιουργία της ιστοσελίδας γιατην γρηγορότερη ανάπτυξή της. </p>
+                <p> Άλλο ένα καλοκαίρι άρα και άλλη μια περίοδος παραγωγικότητας και αλλαγών. Το καλοκαίρι μας βρήκε με πάνω από 20 issues στα οποία ακόμα εργαζόμαστε επάνω. Αρχίσαμε με την ανανέωση των μαθημάτων HTML. Παράλληλα δουλεύουμε στην καινούργια σελίδα για δωρεές αλλά και την ανανέωση όλων των σελίδων (σελίδα μαθημάτων, about us σελίδα και την σελίδα των News) αλλά και διάφορων στοιχείων (navbar & footer). Τέλος, αρχίσαμε ένα μεγάλο έργω μετάφρασης της σελίδας από bootstrap σε tailwind για μια καλύτερη εμπειρία του χρήστη αλλά και ευκολία στην δημιουργία της ιστοσελίδας για την γρηγορότερη ανάπτυξή της. </p>
               </div>
             </div>
             <div class="container right">
               <div class="content future">
-                <h2> Αυγουστος 2024 </h2>
-                <p> Για το καλοκαίρι θα αφιερώσουμε χρόνο μας να τελειοποιήσουμε τα issues που έχουμε ανοίξει για μια καλύτερη εμπειρία των χρηστών το συντομότερο δυνατόν. Ακόμα, θα προσθέσουμε νέες σειρές advanced μαθημάτων σε HTML και Pythoon. (Και ίσως μία εορταστική εβδομάδα για τα 2α γεννέθλια του Simplified Coding, no spoilers) </p>
+                <h2> Αύγουστος 2024 </h2>
+                <p> Για το καλοκαίρι θα αφιερώσουμε χρόνο μας να τελειοποιήσουμε τα issues που έχουμε ανοίξει για μια καλύτερη εμπειρία των χρηστών το συντομότερο δυνατόν. Ακόμα, θα προσθέσουμε νέες σειρές advanced μαθημάτων σε HTML και Python. (Και ίσως μία εορταστική εβδομάδα για τα 2α γενέθλιά του Simplified Coding, no spoilers) </p>
               </div>
             </div>
             <div class="container left">
               <div class="content future">
                 <h2> Σεπτέμβριος-Δεκέμβριος 2024 </h2>
-                <p> Η χρονιά μας θα θέλαμε να κλείσει έχοντας κλείσει σχεδόν όλα τα issues και έχοντας προσθέσει 5-6 ακόμα σειρές μαθημάτων. Επιπλέον θα έχουμε νέες δυνατότητες στην ιστοσελίδα και νέα projects σε κάθε μάθημα. Τέλος, κύριο μέλημά μας είναι η ομαλή λειτουργεία της ιστοσελίδας χωρίς bugs και λάθη σε κώδικα ή μαθήματα. </p>
+                <p> Η χρονιά μας θα θέλαμε να κλείσει έχοντας κλείσει σχεδόν όλα τα issues και έχοντας προσθέσει 5-6 ακόμα σειρές μαθημάτων. Επιπλέον θα έχουμε νέες δυνατότητες στην ιστοσελίδα και νέα projects σε κάθε μάθημα. Τέλος, κύριο μέλημά μας είναι η ομαλή λειτουργία της ιστοσελίδας χωρίς bugs και λάθη σε κώδικα ή μαθήματα. </p>
               </div>
             </div>
           </div>
+        </div>
       </td>
     </tr>
   </tbody>
@@ -251,10 +251,7 @@ import Card from "../../components/Bootstrap/Card.astro";
 
 
   .card {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 3rem;
     font-size: 1.125rem;
     line-height: 1.75rem; 
     font-weight: 400;
@@ -271,7 +268,7 @@ import Card from "../../components/Bootstrap/Card.astro";
   }
 
   #value {
-    padding-left: 0px;
+    padding-left: 0;
     font-size: 64px;
     font-weight: 700;
   }
@@ -341,7 +338,7 @@ import Card from "../../components/Bootstrap/Card.astro";
   }
 
   @media screen and (max-width: 100px) {
-  /* Place the timelime to the left */
+  /* Place the timeline to the left */
   .timeline::after {
   left: 30px;
   }
@@ -352,8 +349,7 @@ import Card from "../../components/Bootstrap/Card.astro";
   }
 
   .container::before {
-  left: 0px;
-  border: medium solid white;
+  left: 0;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
   }
