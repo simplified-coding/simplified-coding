@@ -18,6 +18,7 @@ SPDX-License-Identifier: GPL-3.0-only
 
       <script>
 
+        // Animations
           function animateCounter(element, start, end, duration) {        // element = targeted div, start = starting number (usually 0), end = number that we want it to count to, duration = the time that we want to do it (I made it to be customizable because there is a big diff in the values of the numbers that want to print)
               let current = start;                                        // Make a local (I think that's how it works. It may be useless but...) variable to use in this function only
               let increment = (end - start) / (duration / 20);            // Not that simple calculations for beginners (it took 20 mins)
@@ -56,6 +57,8 @@ SPDX-License-Identifier: GPL-3.0-only
             });
 
           }
+
+          // API request to get the data from the GitHub API
 
           animation("counter1", 0, 68, 3000);
           animation("counter2", 0, 17, 3000);
@@ -304,19 +307,23 @@ SPDX-License-Identifier: GPL-3.0-only
     padding-right: 5px;
   }
 
-  
+
   .timeline {
-    position: absolute;
-    overflow-y: scroll;
-    max-width: 700px;
-    max-height: 700px;
-    width: 700px;
-
-    margin-top: 20vw;
-
-    font-size: 14px;
-    color: rgb(255, 249, 241);
+      position: relative;
+      overflow-y: auto;
+      width: 100%;
+      max-height: none;
+      margin-top: 20vw;
   }
+
+  #v-rule {
+      border-left: 6px solid rgb(79, 39, 135);
+      height: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
 
   .container {
   padding: 8px;
@@ -387,14 +394,7 @@ SPDX-License-Identifier: GPL-3.0-only
   left: 18.6%;
   width: 400px;
   }
-  
-  #v-rule {
-  border-left: 6px solid rgb(79, 39, 135);
-  height: 5200px;
-  position:absolute;
-  left: 48%;
-  width: 340px;
-  }
+
 </style>
 
 <!-- Spacing for footer -->
