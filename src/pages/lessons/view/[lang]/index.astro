@@ -4,9 +4,13 @@ import Language from "../../../../components/Languages/Language.astro";
 import LessonBar from "../../../../components/LessonBar.astro";
 import { getCourseLessons } from "../../../../lib/api";
 
-const course = (await fetch("https://pb.simplifiedcoding.org/api/collections/sc_courses/records")
-  .then((data) => data.json())
-  .then((data) => data.items.filter((v: any) => v.slug == Astro.params.lang)))[0];
+const course = (
+  await fetch(
+    "https://pb.simplifiedcoding.org/api/collections/sc_courses/records"
+  )
+    .then((data) => data.json())
+    .then((data) => data.items.filter((v: any) => v.slug == Astro.params.lang))
+)[0];
 
 const lessons = await getCourseLessons(Astro.params.lang || "js");
 ---
@@ -75,9 +79,9 @@ SPDX-License-Identifier: GPL-3.0-only
     JSON.parse(localStorage.getItem(currentCourse)).length
   }/${lessonLength} Completed`;
 
-  JSON.parse(localStorage.getItem(currentCourse)).forEach((course) => {
-    document.getElementById(`${course}-status`).innerHTML =
-      document.getElementById(`${course}-status`).innerHTML += "✅";
+  JSON.parse(localStorage.getItem(currentCourse)).forEach((lesson) => {
+    document.getElementById(`${lesson}-status`).innerHTML =
+      document.getElementById(`${lesson}-status`).innerHTML += "✅";
   });
 </script>
 
@@ -87,6 +91,7 @@ SPDX-License-Identifier: GPL-3.0-only
   const elements = document.getElementsByClassName(
     "undo-completed-lesson"
   ) as HTMLCollectionOf<HTMLButtonElement>;
+
   for (let i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", () => {
       removeLesson(elements[i].dataset.course, elements[i].dataset.lesson);
