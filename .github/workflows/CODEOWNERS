@@ -2,9 +2,5 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-/discord.xml
+reuse.yml           @simplified-coding/licensing-team
+codeowners.yml      @simplified-coding/config-team
