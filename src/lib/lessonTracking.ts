@@ -5,13 +5,13 @@
 import { getCourseLessons } from "./api";
 
 export const refreshLessons = async () => {
-  let data: any = [];
+  let courses: any = [];
 
   await fetch("https://pb.simplifiedcoding.org/api/collections/sc_courses/records")
     .then((data) => data.json())
-    .then((data) => data.items.map(v => data.push(v.slug)))
+    .then((data) => data.items.forEach(v => courses.push(v.slug)))
 
-  localStorage.setItem("lessons", JSON.stringify(data))
+  localStorage.setItem("lessons", JSON.stringify(courses))
 }
 
 export const addLesson = async () => {
@@ -30,6 +30,8 @@ export const addLesson = async () => {
   } else {
     localStorage.setItem(course, JSON.stringify([lesson]))
   }
+
+  await refreshLessons()
   await checkCompletion()
 }
 
@@ -48,6 +50,7 @@ export const checkCompletion = async () => {
   const trackingCompleted: any = JSON.parse(localStorage.getItem("completed") || "[]")
   const trackingLessons: [] = JSON.parse(localStorage.getItem(course) || "[]")
   const courseData: any = await getCourseLessons(course)
+  console.log(courseData)
 
   if (trackingLessons.length === courseData.length) {
     if (trackingCompleted.indexOf(course) === -1) {

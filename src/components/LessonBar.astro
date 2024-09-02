@@ -1,13 +1,15 @@
 ---
-import {removeLesson} from "../lib/lessonTracking";
+import { removeLesson } from "../lib/lessonTracking";
 interface Props {
   lesson: {
-    slug: string, title: string, description: string
+    slug: string;
+    title: string;
+    description: string;
   };
-  course: {viewOnly: boolean, slug: string}
+  course: { viewOnly: boolean; slug: string };
 }
 
-const {lesson, course} = Astro.props
+const { lesson, course } = Astro.props;
 ---
 
 <!--
@@ -15,48 +17,43 @@ SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.o
 
 SPDX-License-Identifier: GPL-3.0-only
 -->
-
 <div id="doc-body" class="card">
   <div class="card-body d-flex justify-content-evenly">
     <div class="card border-0" style="width: 22vw;">
-      <h1
-        style="text-align: center;"
-        id={`${lesson.slug}-status`}
-      >
-        Μάθημα {lesson.slug.split("_")[1]}
+      <h1 style="text-align: center;" id={`${lesson.index}-status`}>
+        Μάθημα {lesson.index}
       </h1>
       <h3 style="text-align: center;">
         {lesson.title}
       </h3>
     </div>
 
-    <div
-      class="card border-0 my-4 "
-      style="width: 24vw; text-align: center; "
-    >
+    <div class="card border-0 my-4" style="width: 24vw; text-align: center; ">
       <p>{lesson.description}</p>
     </div>
 
     <div>
       <button
-        onclick={`window.open("/view/${Astro.params.lang}?lesson=${lesson.slug}", "_self")`}
+        onclick={`window.open("/view/${Astro.params.lang}?lesson=${lesson.index}", "_self")`}
         class="btn btn-primary my-4"
       >
         Άρχισε (χωρίς τον editor)
       </button>
       <button
-        onclick={`window.open("/editor/${Astro.params.lang}?lesson=${lesson.slug}", "_self")`}
+        onclick={`window.open("/editor/${Astro.params.lang}?lesson=${lesson.index}", "_self")`}
         class="btn btn-secondary my-4"
         disabled={course.viewOnly == true}
       >
         Άρχισε (με τον editor)
       </button>
 
-      <button class="btn btn-info my-4" disabled>
-        Aσκησεις
-      </button>
+      <button class="btn btn-info my-4" disabled> Aσκησεις</button>
 
-      <button class="btn btn-danger my-4 undo-completed-lesson" data-lesson={lesson.slug} data-course={course.slug}>
+      <button
+        class="btn btn-danger my-4 undo-completed-lesson"
+        data-lesson={lesson.slug}
+        data-course={course.slug}
+      >
         Αναίρεση Ολοκλήρωσης Μαθήματος
       </button>
     </div>
