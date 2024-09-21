@@ -9,3 +9,19 @@ export const getCourseLessons = async (slug: string): Promise<any> => {
     return await fetch(`${endpointSCDMS}/lessons/${slug}`)
         .then((data) => data.json())
 }
+
+export const getCourse = async (course: string): Promise<any> => {
+    return await fetch(`${endpointPB}/api/collections/sc_courses/records?filter=(slug='${course}')&&draft=false`)
+        .then((data => data.json))
+        .then((data: any) => data.items[0])
+}
+
+export const getCourses = async (): Promise<any> => {
+    return await fetch(`${endpointPB}/api/collections/sc_courses/records`)
+        .then((data) => data.json())
+}
+
+export const getRawLesson = async (course: string, lesson: number): Promise<any> => {
+    return await fetch(`${endpointSCDMS}/lessons/${course}/${lesson}?raw=true`)
+        .then((data) => data.text())
+}
