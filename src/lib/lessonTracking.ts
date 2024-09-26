@@ -2,14 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-only
 
-import { getCourseLessons } from "./api";
+import { getCourseLessons, getCourses } from "./api";
 
 export const refreshLessons = async () => {
   let courses: any = [];
 
-  await fetch("https://pb.simplifiedcoding.org/api/collections/sc_courses/records")
-    .then((data) => data.json())
-    .then((data) => data.items.forEach(v => courses.push(v.slug)))
+  await getCourses().then((data) => data.items.forEach(v => courses.push(v.slug)))
 
   localStorage.setItem("lessons", JSON.stringify(courses))
 }

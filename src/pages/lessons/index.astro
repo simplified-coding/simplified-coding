@@ -1,10 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Language from "../../components/Languages/Language.astro";
+import { getCourses } from "../../lib/api";
 
-const courses = await fetch("https://pb.simplifiedcoding.org/api/collections/sc_courses/records")
-                .then((data) => data.json())
-                .then((data) => data.items)
+const courses = await getCourses().then((data) => data.items)
 ---
 
 <!--

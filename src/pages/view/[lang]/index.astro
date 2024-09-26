@@ -52,6 +52,7 @@ SPDX-License-Identifier: GPL-3.0-only
     import markdown from "remark-parse";
     import docx from "remark-docx";
     import { stripHtml } from "string-strip-html";
+import { getRawLesson } from "../../../lib/api";
 
     const printBTN = document.getElementById("print");
     const saveBTN = document.getElementById("save");
@@ -97,9 +98,7 @@ SPDX-License-Identifier: GPL-3.0-only
         const course = location.pathname.split("/")[2];
         const lesson = new URLSearchParams(location.search).get("lesson");
         const proc = unified().use(markdown).use(docx, { output: "blob" });
-        const text = await fetch(
-            `https://raw.githubusercontent.com/simplified-coding/simplified-coding/main/src/pages/lessons/${course}/${lesson}.mdx`
-        ).then((d) => d.text());
+        const text = await getRawLesson(course, Number(lesson))
 
         const doc = await proc.process(stripHtml(text).result);
         const a = document.createElement("a");
