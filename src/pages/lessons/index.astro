@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Language from "../../components/Languages/Language.astro";
 import { getCourses } from "../../lib/api";
 
-const courses = await getCourses().then((data) => data.items)
+const courses = await getCourses();
 ---
 
 <!--
@@ -11,23 +11,28 @@ SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.o
 
 SPDX-License-Identifier: GPL-3.0-only
 -->
-
 <Layout>
-  <br/>
+  <br />
   <div class="m-3" data-bs-theme="dark">
     <div class="d-flex justify-content-center align-items-center">
-      <h1 class="text" style="text-align: center;"> Εδω μπορείτε να δείτε τον κατάλογο των μαθημάτων που <br> μπορείτε να κάνετε στην ιστοσελίδα μας. </h1>
+      <h1 class="text" style="text-align: center;">
+        Εδω μπορείτε να δείτε τον κατάλογο των μαθημάτων που <br /> μπορείτε να κάνετε
+        στην ιστοσελίδα μας.
+      </h1>
     </div>
-    {courses.map(c =>
-      <div class="m-5">
-        <Language data={c}></Language>
-      </div>)}
+    {
+      courses.map((c) => (
+        <div class="m-5">
+          <Language data={c} />
+        </div>
+      ))
+    }
   </div>
-  <br/>
+  <br />
 </Layout>
 
 <style>
-    .text {
-        color: white;
-    }
+  .text {
+    color: white;
+  }
 </style>
