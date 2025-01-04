@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+
 import { getHtmlLessonLink } from "../../../lib/api";
 
 const lesson = getHtmlLessonLink(
@@ -76,6 +77,8 @@ SPDX-License-Identifier: GPL-3.0-only
         }
         `;
     iframe.contentDocument?.body.appendChild(style);
+
+    window.umami.track(`Editor Language: ${language} (Lesson ${lesson})`);
   };
 
   // Pyodide
@@ -83,6 +86,7 @@ SPDX-License-Identifier: GPL-3.0-only
 
   // URL
   const language = location.pathname.split("/")[2];
+  const lesson = new URLSearchParams(location.search).get("lesson");
 
   // Load Pyodide
   const loadPython = document.getElementById("loading-py");
@@ -222,6 +226,8 @@ SPDX-License-Identifier: GPL-3.0-only
 
   // On run
   runButton?.addEventListener("click", async () => {
+    window.umami.track("Editor Run");
+
     // If editor is in js language
     if (language == "js") {
       // Clear Function
