@@ -1,5 +1,11 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import { getHtmlLessonLink } from "../../../lib/api";
+
+const lesson = getHtmlLessonLink(
+  Astro.params.lang!,
+  Number(Astro.url.searchParams.get("lesson"))
+);
 ---
 
 <!--
@@ -35,14 +41,8 @@ SPDX-License-Identifier: GPL-3.0-only
           </h1>
         </div>
         <div class="d-flex justify-content-center">
-          <div style="background-color: #282f36; width: 60vw; height: 100vh">
-            <iframe
-              src={`/lessons/${
-                Astro.params.lang
-              }/lesson_${Astro.url.searchParams.get("lesson")}`}
-              width="100%"
-              height="100%"
-              id="if"></iframe>
+          <div style="background-color: #ffffff; width: 60vw; height: 100vh">
+            <iframe width="100%" height="100%" id="if" src={lesson}></iframe>
           </div>
         </div>
       </div>
@@ -82,8 +82,8 @@ SPDX-License-Identifier: GPL-3.0-only
   printBTN?.addEventListener("click", () => {
     const course = location.pathname.split("/")[2];
     const lesson = new URLSearchParams(location.search).get("lesson");
-
     window.umami.track(`Triggered Print of ${course}/${lesson}`);
+    
     const iframe = document.getElementById("if") as HTMLIFrameElement;
     iframe.contentWindow?.print();
   });
@@ -91,9 +91,8 @@ SPDX-License-Identifier: GPL-3.0-only
   saveBTN?.addEventListener("click", () => {
     const course = location.pathname.split("/")[2];
     const lesson = new URLSearchParams(location.search).get("lesson");
-
     window.umami.track(`Triggered Markdown Save of ${course}/${lesson}`);
-
+        
     const a = document.createElement("a");
     a.download = `${course}-${lesson}.md`;
     a.href = window.URL.createObjectURL(
@@ -114,7 +113,7 @@ SPDX-License-Identifier: GPL-3.0-only
     const lesson = new URLSearchParams(location.search).get("lesson");
     const proc = unified().use(markdown).use(docx, { output: "blob" });
     const text = await getRawLesson(course, Number(lesson));
-
+        
     window.umami.track(`Triggered DOCX Save of ${course}/${lesson}`);
 
     const doc = await proc.process(stripHtml(text).result);

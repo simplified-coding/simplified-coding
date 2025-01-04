@@ -1,5 +1,12 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+
+import { getHtmlLessonLink } from "../../../lib/api";
+
+const lesson = getHtmlLessonLink(
+  Astro.params.lang!,
+  Number(Astro.url.searchParams.get("lesson"))
+);
 ---
 
 <!--
@@ -12,13 +19,7 @@ SPDX-License-Identifier: GPL-3.0-only
   ></script>
   <div class="parentEditor">
     <div class="guide">
-      <iframe
-        src={`/lessons/${Astro.params.lang}/lesson_${Astro.url.searchParams.get(
-          "lesson"
-        )}`}
-        width="100%"
-        height="100%"
-        id="if"></iframe>
+      <iframe src={lesson} width="100%" height="100%" id="if"></iframe>
     </div>
     <div class="editor" id="editor">
       <div id="loading-py" hidden>
@@ -43,7 +44,11 @@ SPDX-License-Identifier: GPL-3.0-only
       <div id="console-div" style="width:100%; height:100%">
         <code id="console-code"></code>
       </div>
-      <div id="preview-div" style="width:100%; height:100%; color:white" hidden>
+      <div
+        id="preview-div"
+        style="width:100%; height:100%; background-color: #ffffff"
+        hidden
+      >
         <iframe width="100%" height="100%" id="preview-if"></iframe>
       </div>
     </div>
@@ -281,7 +286,7 @@ SPDX-License-Identifier: GPL-3.0-only
     width: 55%;
 
     color: white;
-    background-color: #282f36;
+    background-color: #ffffff;
   }
 
   .editor {
