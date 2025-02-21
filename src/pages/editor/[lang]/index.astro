@@ -1,53 +1,44 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+import { getHtmlLessonLink } from "../../../lib/api";
+
+const lesson = getHtmlLessonLink(
+  Astro.params.lang!,
+  Number(Astro.url.searchParams.get("lesson"))
+);
+---
+
 <!--
 SPDX-FileCopyrightText: 2024 The Simplified Coding Team <main@simplifiedcoding.org>
 
 SPDX-License-Identifier: GPL-3.0-only
 -->
-
----
-import Layout from "../../../layouts/Layout.astro";
----
-
 <Layout>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.23.3/full/pyodide.js" defer
   ></script>
   <div class="parentEditor">
     <div class="guide">
-      <iframe
-        src={`/lessons/${
-          Astro.params.lang
-        }/lesson_${Astro.url.searchParams.get("lesson")}`}
-        width="100%"
-        height="100%"
-        id="if"></iframe>
+      <iframe src={lesson} width="100%" height="100%" id="if"></iframe>
     </div>
     <div class="editor" id="editor">
       <div id="loading-py" hidden>
         <div class="spinner-border text-info" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
-        <h1 class="text-info"> Φόρτωση Python... (Μπορεί να πάρει λίγη ώρα) </h1>
+        <h1 class="text-info">Φόρτωση Python... (Μπορεί να πάρει λίγη ώρα)</h1>
       </div>
     </div>
     <div class="console" data-bs-theme="dark">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <button class="nav-link active" id="console-btn"
-          >Κονσόλα
-          </button
-          >
+          <button class="nav-link active" id="console-btn">Κονσόλα</button>
         </li>
         <li class="nav-item">
-          <button class="nav-link" id="preview-btn"
-          >Προεσκόπιση
-          </button
-          >
+          <button class="nav-link" id="preview-btn">Προεσκόπιση</button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-success m-1" id="run-btn"
-          >Τρέξε!
-          </button
-          >
+          <button class="btn btn-success m-1" id="run-btn">Τρέξε!</button>
         </li>
       </ul>
       <div id="console-div" style="width:100%; height:100%">
@@ -55,7 +46,7 @@ import Layout from "../../../layouts/Layout.astro";
       </div>
       <div
         id="preview-div"
-        style="width:100%; height:100%; color:white"
+        style="width:100%; height:100%; background-color: #ffffff"
         hidden
       >
         <iframe width="100%" height="100%" id="preview-if"></iframe>
@@ -65,16 +56,16 @@ import Layout from "../../../layouts/Layout.astro";
 </Layout>
 
 <script>
-  import {basicSetup} from "codemirror";
-  import {javascript} from "@codemirror/lang-javascript";
-  import {python} from "@codemirror/lang-python";
-  import {html} from "@codemirror/lang-html";
-  import {loadPyodide} from "pyodide";
+  import { basicSetup } from "codemirror";
+  import { javascript } from "@codemirror/lang-javascript";
+  import { python } from "@codemirror/lang-python";
+  import { html } from "@codemirror/lang-html";
+  import { loadPyodide } from "pyodide";
 
-  import {keymap, EditorView} from "@codemirror/view";
-  import {indentWithTab} from "@codemirror/commands";
-  import {oneDark} from "@codemirror/theme-one-dark";
-  import {addLesson} from "../../../lib/lessonTracking";
+  import { keymap, EditorView } from "@codemirror/view";
+  import { indentWithTab } from "@codemirror/commands";
+  import { oneDark } from "@codemirror/theme-one-dark";
+  import { addLesson } from "../../../lib/lessonTracking";
 
   // Set IFrame Style
   window.onload = () => {
@@ -86,6 +77,8 @@ import Layout from "../../../layouts/Layout.astro";
         }
         `;
     iframe.contentDocument?.body.appendChild(style);
+
+    window.umami.track(`Editor Language: ${language} (Lesson ${lesson})`);
   };
 
   // Pyodide
@@ -93,12 +86,15 @@ import Layout from "../../../layouts/Layout.astro";
 
   // URL
   const language = location.pathname.split("/")[2];
+  const lesson = new URLSearchParams(location.search).get("lesson");
 
   // Load Pyodide
   const loadPython = document.getElementById("loading-py");
   if (loadPython && language == "python") {
     loadPython.hidden = false;
-    py = await loadPyodide({indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/"});
+    py = await loadPyodide({
+      indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/",
+    });
     loadPython.hidden = true;
   }
 
@@ -230,6 +226,8 @@ import Layout from "../../../layouts/Layout.astro";
 
   // On run
   runButton?.addEventListener("click", async () => {
+    window.umami.track("Editor Run");
+
     // If editor is in js language
     if (language == "js") {
       // Clear Function
@@ -269,44 +267,44 @@ import Layout from "../../../layouts/Layout.astro";
     }
   });
 
-  addLesson()
+  addLesson();
 </script>
 
 <style>
-    .parentEditor {
-        display: flex;
-        height: 80vh;
-        width: 100%;
-        border: 1px solid #000;
-    }
+  .parentEditor {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    border: 1px solid #000;
+  }
 
-    .guide {
-        flex-grow: 1;
-        resize: horizontal;
-        overflow: auto;
-        border: 2px solid #000;
-        width: 55%;
+  .guide {
+    flex-grow: 1;
+    resize: horizontal;
+    overflow: auto;
+    border: 2px solid #000;
+    width: 55%;
 
-        color: white;
-        background-color: #282f36;
-    }
+    color: white;
+    background-color: #ffffff;
+  }
 
-    .editor {
-        flex-grow: 3;
-        height: auto;
-        width: 100%;
+  .editor {
+    flex-grow: 3;
+    height: auto;
+    width: 100%;
 
-        resize: horizontal;
-        overflow: auto;
-    }
+    resize: horizontal;
+    overflow: auto;
+  }
 
-    .console {
-        flex-grow: 1;
-        width: 30%;
+  .console {
+    flex-grow: 1;
+    width: 30%;
 
-        resize: horizontal;
-        overflow: auto;
+    resize: horizontal;
+    overflow: auto;
 
-        background-color: #282f36;
-    }
+    background-color: #282f36;
+  }
 </style>
