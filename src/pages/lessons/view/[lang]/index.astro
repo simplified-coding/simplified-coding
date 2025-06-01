@@ -2,7 +2,7 @@
 import Layout from "../../../../layouts/Layout.astro";
 import CardHeader from "../../../../components/Bootstrap/CardHeader.astro";
 import {getEntry} from "astro:content";
-import Language from "../../../../components/Languages/LanguageElement.astro";
+import Language from "../../../../components/Languages/LanguageInfo.astro";
 import LessonBar from "../../../../components/LessonBar.astro";
 
 // @ts-expect-error
@@ -26,34 +26,35 @@ SPDX-License-Identifier: GPL-3.0-only
   >
     <div>
       <div>
-        <h1>
-          Μαθήματα {course.language}
-          <i class={`${course.icon}`}></i>
-        </h1>
-        <div>
-          <div>
-            <Language data={course} button_visible={false}>
-              <br>
+        <Language 
+        lesson_title = {course.language}
+        icon = {`${course.icon}`}
+        lesson_time = {course.time}
+        lesson_difficulty = {course.difficulty}
+        prior_knowledge = {course.prior_knowledge}
+        progress = 
+        >
+          <br>
 
-              <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="bg-blue-600 h-2.5 rounded-full" id="progress-bar"></div>
-              </div>
-
-              <div
-                class="progress-bar progress-bar-striped progress-bar-animated w-[0] flex" id="progress-bar-text"   
-              >
-                0% - 0/0 Completed
-              </div>
-            </Language>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-blue-600 h-2.5 rounded-full" id="progress-bar"></div>
           </div>
-        </div>
+
+          <div
+            class="progress-bar progress-bar-striped progress-bar-animated w-[0] flex" id="progress-bar-text"   
+          >
+            0% - 0/0 Completed
+          </div>
+        </Language>
       </div>
       <br/>
+
       <div>
         {
           lessons.map((lesson: any) => <LessonBar lesson={lesson} course={course}/>)
         }
       </div>
+
     </div>
   </div>
 

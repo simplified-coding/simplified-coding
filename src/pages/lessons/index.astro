@@ -7,93 +7,19 @@ SPDX-License-Identifier: GPL-3.0-only
 ---
 import Layout from "../../layouts/Layout.astro";
 import LanguageElement from "../../components/Languages/LanguageElement.astro";
-import DropdownElement from "./DropdownElement.astro";
 ---
 
 <Layout>
   <br/>
   <div class="m-3" data-bs-theme="dark">
+    
     <div>
       <h1 class="text-center text-sc-white text-3xl underline font-bold"> Μαθήματα </h1>
       <h2 class="text-center text-sc-white text-xl"> Εδω μπορείτε να δείτε τον κατάλογο των μαθημάτων που μπορείτε να κάνετε στην ιστοσελίδα μας. </h2>
     </div>
 
-    <div class="pt-6 pb-2">
-      <div class="relative inline-block group">
-        <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-48 ml-4 py-4 font-semibold text-2xl cursor-pointer"> Μαθήματα <i class="fa-solid fa-caret-down"></i> </button>
-          <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10 ml-7 rounded-md hidden group-hover:block">
-
-            <DropdownElement lesson=" Βασικές Έννοιες Υπολογιστών "     icon=" fa-solid fa-computer ">        </DropdownElement>
-            <DropdownElement lesson=" Βασικές Έννοιες Προγραμματισμού " icon=" fa-solid fa-code ">            </DropdownElement>
-            <DropdownElement lesson=" Προγράμματα Επεξεργασίας Κώδικα " icon=" fa-solid fa-laptop-code ">     </DropdownElement>
-            <DropdownElement lesson=" HTML "                            icon=" fa-brands fa-html5 ">          </DropdownElement>
-            <DropdownElement lesson=" CSS "                             icon=" fa-brands fa-css3-alt  ">      </DropdownElement>
-            <DropdownElement lesson=" Javascript "                      icon=" fa-brands fa-square-js ">      </DropdownElement>
-            <DropdownElement lesson=" Python "                          icon=" fa-brands fa-python ">         </DropdownElement>
-            <DropdownElement lesson=" C++ "                             icon=" fa-solid fa-c ">               </DropdownElement>
-            <DropdownElement lesson=" Arduino "                         icon=" fa-solid fa-microchip ">       </DropdownElement>
-            <DropdownElement lesson=" Git & Github "                    icon=" fa-solid fa-code-merge ">      </DropdownElement>
-          
-          </div>
-      </div>
-
-      <div class="inline-block">
-        <input type="text" min="2" max="32" name="search" placeholder=" Αναζήτηση μαθήματος.." class="h-12 w-540px ml-4 rounded-md bg-slate-200 text-xl text-violet-800 font-semibold pl-0.5" >
-      </div>
-
-      <div class="inline-block">
-        <button type="submit"> <i class="fa fa-search bg-slate-300 inline-block rounded-md scroll pt-5 pb-3 px-4 hover:text-white hover:bg-slate-400"> </i> </button>
-      </div>
-
-      <div class="inline-block -mb-6 ml-2">
-        <table>
-          <tr>
-            <td class="px-2 py-1 ">
-              <input type="radio" name="level" value="begginer" class="h-6 w-6 rounded-lg ml-3 accent-zinc-700">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Αρχάριος </label><br>
-            </td>
-
-            <td class="pr-2 pl-1 py-1 "> 
-              <div class="relative inline-block group">
-                <button class="bg-sc-card-bg text-slate-300 hover:bg-sc-card-bg-light hover:text-slate-100 rounded-lg w-52 py-3 font-semibold text-xl cursor-pointer"> Χρόνος μαθήματος <i class="fa-solid fa-caret-down"></i> </button>
-                  <div class="absolute bg-slate-400 min-w-40 shadow-slate-800 z-10  rounded-md hidden group-hover:block">
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-100 rounded-md text-xl font-semibold font-sans w-52"> 1-3 Ώρες </a>
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-200 rounded-md text-xl font-semibold font-sans w-52"> 4-6 Ώρες </a>
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-300 rounded-md text-xl font-semibold font-sans w-52"> 7-9 Ώρες </a>
-                    <a href="#" class="text-black px-3 py-2 no-underline block hover:bg-zinc-400 rounded-md text-xl font-semibold font-sans w-52"> Πάνω από 10 Ώρες </a>
-                  </div>
-              </div>
-            </td>
-
-            <td class="px-2 py-1 "> 
-              <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Ρομποτική </label><br>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="px-2 py-1 ">
-              <input type="radio" name="level" value="advanced" class="h-6 w-6 rounded-lg ml-3 accent-zinc-700">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Προχωρημένος </label><br>
-            </td>
-
-            <td class="px-2 py-1 "> 
-              <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Προγραμματισμός </label><br>
-            </td>
-
-            <td class="px-2 py-1 "> 
-              <input type="checkbox" value="begginer" class="h-6 w-6 rounded-lg ml-3">
-              <label for="begginer" class="text-xl font-bold -mt-2 bg m-2 text-emerald-400"> Ιστοσελίδες </label><br>
-            </td>
-          </tr>
-        </table>
-      </div>
-      
-    </div>
-
     <LanguageElement 
-      lesson_link=" /lessons/view/" 
+      lesson_link="/lessons/view/computer_basics"
       lesson_title="Βασικές Έννοιες Υπολογιστών" 
       lesson_description="Πριν να μάθεις προγραμματισμό, πρέπει να γνωρίσεις καλύτερα τον υπολογιστή σου και βασικές έννοιες γύρο από αυτόν. Σε αυτή την σειρά μαθημάτων θα μάθεις για τα λειτοργικά συστήματα, την ασφάλεια που χρειάζεται να προσφαίρεις στον υπολογιστή σου, το ιντερνετ αλλά και πολλά ακόμα."
       icon="fa-solid fa-computer"
@@ -103,7 +29,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/programming_basics" 
       lesson_title="Βασικές Έννοιες Προγραμματισμού" 
       lesson_description="Ας γνωρίσουμε καλύτερα μερικές βασικές έννοιες που θα χρειαστούν στον προγραμματισμού. Οι γλώσσες προγραμματισμού έχουν πολλές διαφορές αλλά και πολλές ομοιότητες. Ολοκληρώνοντας τα μαθήμτα θα μάθες τα βασικά στοιχεία που αποτελούν μια γλώσσα προγραμματισμού και πως μπορείς να τα χρεισημοποιήσεις σε κάθε γλώσσα."
       icon="fa-solid fa-code"
@@ -113,7 +39,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/code_editors" 
       lesson_title="Προγράμματα Επεξεργασίας Κώδικα" 
       lesson_description="Για να προγραμματίσεις χρειάζεσαι ένα πρόγραμμα επεξεργασίας κώδικα. Ας δούμε τι είναι και πια είναι τα πιο δημοφιλή."
       icon="fa-solid fa-laptop-code"
@@ -123,7 +49,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/html" 
       lesson_title="HTML" 
       lesson_description="Η HTML είναι μια γλώσσα ανάπτυξης ιστοσελίδων στην οποία δημιουργείς το βασικό “σκελετό” μίας ιστοσελίδας. Με αυτή εισάγεις μόνο κείμενο, πίνακες και λίστες. Για οποιαδήποτε μορφοποίηση θέλεις να εφαρμόσεις χρειάζεται την CSS."
       icon="fa-brands fa-html5"
@@ -133,7 +59,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/css" 
       lesson_title="CSS" 
       lesson_description="Η CSS είναι μια γλώσσα υπολογιστή που ανήκει στην κατηγορία των γλωσσών σχεδιασμού και χρησιμοποιείται για τον έλεγχο της εμφάνισης ενός html εγγράφου. Με την CSS ελέγχουμε το πως θα εμφανίζονται τα όσα έχουμε ορίσει στην HTML, έχοντας την δυνατότητα να αλλάξουμε μέγεθος, χρώμα, φωτεινότητα, περίγραμμα, κ.α."
       icon="fa-brands fa-css3-alt"
@@ -143,7 +69,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/js" 
       lesson_title="Javascript" 
       lesson_description="Η JS είναι μια γλώσσα προγραμματισμού για δημιουργία ιστοσελίδων η οποία 'συνεργάζεται' με την HTML και την CSS για ένα πολύ όμορφο αποτέλεσμα. Με την Javascript σου δίνετε η δυνατότητα να κάνεις την ιστοσελίδα σου διαδραστική, με πολλαπλές λειτουργίες και εφαρμογές."
       icon="fa-brands fa-square-js"
@@ -153,7 +79,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/python" 
       lesson_title="Python" 
       lesson_description="Η Python είναι μια γλώσσα προγραμματισμού που είναι φιλική για αρχάριους! Σε αυτά τα μαθήματα θα γνωρίσετε μερικές βασικές έννοιες του προγραμματισμού όπως οι μεταβλητές, οι πράξεις, οι λίστες, κ.α. Αυτά τα μαθήματα ενδείκνυνται για αρχάριους προγραμματιστές και ως μία εισαγωγή στον προγραμματισμό."
       icon="fa-brands fa-python"
@@ -163,7 +89,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/cpp" 
       lesson_title="C++" 
       lesson_description="Η C++ είναι μια γλώσσα προγραμματισμού για προχωρημένους! Σε αυτά τα μαθήματα θα γνωρίσετε μερικές βασικές έννοιες του προγραμματισμού όπως οι μεταβλητές, οι πράξεις, οι λίστες, κ.α. στην C++ Αυτά τα μαθήματα ενδείκνυνται για προγραμματιστές που γνωρίζουν τα βασικά και θέλουν κάτι πιο προχωριμένο."
       icon="fa-solid fa-c"
@@ -173,7 +99,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="  " 
+      lesson_link="/lessons/view/arduino" 
       lesson_title="Arcuino" 
       lesson_description="Η Arduino είναι μια εταιρία που κατασκευάζει μικροελεγτές όπως το Arduino Uno, και την γλώσσα προγραμματισμού Arduino, η οποία χρησιμοποιείτε για να προγραμματίσουμε έναν μικροελεγκτή. Τα μαθήματα Arduino προορίζονται για άτομα που θέλουν να εξελίξουν τις γνώσεις τους και στον τομέα του Hardware αλλά και στου Software. Τα arduino συνδυάζουν αυτά τα δύο πεδία και παράλληλα είναι πολύ φιλικά προς τους αρχάριους. Στο τέλος αυτής της σειράς θα ξέρεις να ελέγχεις με αυτό αισθητήρες, LEDs, μηχανές , κ.α."
       icon="fa-solid fa-microchip"
@@ -183,7 +109,7 @@ import DropdownElement from "./DropdownElement.astro";
     </LanguageElement>
 
     <LanguageElement 
-      lesson_link="/src/pages/lessons/html/lesson_1.mdx" 
+      lesson_link="/lessons/view/git_github" 
       lesson_title="Git & GitHub" 
       lesson_description="Το Git είναι ένα σύστημα διαχείρισης εκδόσεων που χρησιμοποιείται για την αποθήκευση και την διαχείριση των αρχείων ενός έργου. Το GitHub είναι μια πλατφόρμα στην οποία μπορείς να αποθηκεύσεις τα αρχεία σου και να τα μοιραστείς με άλλους. Σε αυτά τα μαθήματα θα μάθεις τι είναι το Git και το GitHub και πως να τα χρησιμοποιήσεις."
       icon=" fa-solid fa-code-merge"

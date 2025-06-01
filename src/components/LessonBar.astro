@@ -17,10 +17,11 @@ SPDX-License-Identifier: GPL-3.0-only
 -->
 
 <div id="doc-body">
-  <div class="flex justify-evenly">
-    <div class="border-none w-[22vw]">
+  <div class="flex justify-evenly items-center m-4 p-2 bg-sc-card-bg rounded-lg">
+
+    <div class="border-none w-[18vw]">
       <h1
-        class="text-center text-2xl font-semibold underline"
+        class="text-center text-2xl font-semibold underline py-1"
         id={`${lesson.slug}-status`}
       >
         Μάθημα {lesson.slug.split("_")[1]}
@@ -32,33 +33,40 @@ SPDX-License-Identifier: GPL-3.0-only
     </div>
 
     <div
-      class="border-none my-4 w-[24vw] text-center px-2"
+      class="border-none my-4 w-[20vw] text-center px-2"
     >
       <p>{lesson.description}</p>
     </div>
 
-    <div>
+    <div class="flex flex-row items-center">
+
       <button
         onclick={`window.open("/view/${Astro.params.lang}?lesson=${lesson.slug}", "_self")`}
-        class="my-4 bg-indigo-800 hover:bg-indigo-600 text-sc-white px-4 py-2 rounded"
+        class="mx-1.5 my-2 px-4 py-2 bg-indigo-800 hover:bg-indigo-600 text-sc-white rounded"
       >
-        Άρχισε (χωρίς τον editor)
-      </button>
-      <button
-        onclick={`window.open("/editor/${Astro.params.lang}?lesson=${lesson.slug}", "_self")`}
-        class="my-4 bg-indigo-800 hover:bg-indigo-600 text-sc-white px-4 py-2 rounded"
-        disabled={course.viewOnly == true}
-      >
-        Άρχισε (με τον editor)
+        Άρχισε <br> (χωρίς τον editor)
       </button>
 
-      <button class="my-4 bg-gray-800 hover:bg-gray-600 disabled:bg-gray-900 text-sc-white px-4 py-2 rounded" disabled>
+      <button
+        onclick={`window.open("/editor/${Astro.params.lang}?lesson=${lesson.slug}", "_self")`}
+        class="mx-1.5 my-2 px-4 py-2 bg-indigo-800 hover:bg-indigo-600 text-sc-white rounded"
+        disabled={course.viewOnly == true}
+      >
+        Άρχισε <br> (με τον editor)
+      </button>
+
+      <button 
+        class="mx-1.5 my-2 px-4 py-2 bg-gray-800 hover:bg-gray-600 disabled:bg-gray-900 text-sc-white rounded" disabled
+        >
         Aσκησεις
       </button>
 
-      <button class="my-4 undo-completed-lesson bg-red-800 hover:bg-red-600 text-sc-white px-4 py-2 rounded" data-lesson={lesson.slug} data-course={course.slug}>
-        Αναίρεση Ολοκλήρωσης Μαθήματος
+      <button 
+        class="mx-1.5 my-2 px-4 py-2 max-w-[20vw] undo-completed-lesson bg-red-800 hover:bg-red-600 text-sc-white rounded" data-lesson={lesson.slug} data-course={course.slug}
+      >
+        Αναίρεση Ολοκλήρωσης <br> Μαθήματος
       </button>
+
     </div>
   </div>
 </div>

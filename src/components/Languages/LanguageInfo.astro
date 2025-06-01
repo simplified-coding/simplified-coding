@@ -5,7 +5,7 @@ SPDX-License-Identifier: GPL-3.0-only
 -->
 
 ---
-let { lesson_description, lesson_link, lesson_title, icon, lesson_time, lesson_difficulty, prior_knowledge } = Astro.props
+let {lesson_title, icon, lesson_time, lesson_difficulty, prior_knowledge, progress } = Astro.props
 
 const difficulty = Math.min(Math.max(lesson_difficulty, 0), 5);
 const unfilled_stars = 5 - difficulty;
@@ -16,9 +16,9 @@ const cyrcle_colors = ["text-green-500", "text-lime-500", "text-yellow-500", "te
 const cyrcle_color_filling = cyrcle_colors[difficulty - 1];
 ---
 
-<div class="bg-lessons_desc mt-6 rounded-lg p-4 m-4">
-    <h2 class="bg-lessons_title text-lessons_text font-semibold text-xl pl-5 py-2 rounded-lg"> 
-        {lesson_title}
+<div class="flex flex-col justify-evenly bg-lessons_desc rounded-lg p-4 m-4">
+    <h2 class="flex flex-row items-center justify-between bg-lessons_title text-lessons_text font-semibold text-xl pl-5 py-2 rounded-lg"> 
+        <div> <i class={icon}></i> {lesson_title} </div>
         
         <div class="float-end pr-10"> Χρόνος μαθήματος:  
             <div class="inline-block">
@@ -54,22 +54,26 @@ const cyrcle_color_filling = cyrcle_colors[difficulty - 1];
         </div>
 
     </h2>
-    <br>
-    <div>
-        <a href={lesson_link} class="float-right"> 
-            <button type="button" class="bg-button hover:bg-button_hover text-gray-800 hover:text-gray-300 my-3 py-3 mx-4 px-4 rounded-xl inline-block justify-center text-2xl font-bold"> 
-                Μάθημα 
-            </button> 
-        </a>  
-    </div>
-    <div class="inline-block">
-        <h2 class="bg-lessons_desc text-lessons_text font-bold text-2xl p-1.5 pl-[2vw]"> 
-            <i class={icon}></i> {lesson_title} 
-        </h2>
 
-        <p class="bg-lessons_desc text-lessons_text font-semibold text-base max-w-5xl p-1.5 pl-[2vw] inline-block text-justify"> 
-            {lesson_description} 
-        </p>
-    </div>   
-    
+    <progress id= "progress" value= {progress} max="100" class="w-full rounded-[100px] bg-gray-700 mt-4">
+    </progress>
+
 </div>
+
+<style>
+    .progress{
+        border-radius: 10px;
+    }
+  
+    progress::-webkit-progress-bar {
+        border-radius: 10px;
+    }
+  
+    progress::-webkit-progress-value {
+        border-radius: 10px;
+    }
+  
+    progress::-moz-progress-bar {
+        border-radius: 10px;
+    }
+</style>
