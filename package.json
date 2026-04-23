@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.7",
-    "@astrojs/vercel": "^8.2.9",
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/vercel": "^10.0.5",
     "@codemirror/commands": "^6.2.4",
     "@codemirror/lang-css": "^6.2.0",
     "@codemirror/lang-html": "^6.4.4",
@@ -20,7 +20,7 @@
     "@codemirror/state": "^6.2.1",
     "@codemirror/theme-one-dark": "^6.1.2",
     "@codemirror/view": "^6.13.2",
-    "astro": "^5.18.1",
+    "astro": "^6.1.9",
     "codemirror": "^6.0.1",
     "katex": "^0.16.21",
     "pyodide": "^0.23.4",
