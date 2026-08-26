@@ -1,0 +1,10 @@
+{
+  "members": {
+    "roles": []
+  },
+  "admins": {
+    "roles": [
+      "_admin"
+    ]
+  }
+}

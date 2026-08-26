@@ -1,0 +1,5 @@
+{
+  "_id": "_design/readonly",
+  "language": "javascript",
+  "validate_doc_update": "function (newDoc, oldDoc, userCtx, secObj) { var isAdmin = userCtx.roles.indexOf('_admin') !== -1; var isEditor = userCtx.roles.indexOf('editor') !== -1; var isSiteadmin = userCtx.roles.indexOf('siteadmin') !== -1; if (!isAdmin && !isEditor && !isSiteadmin) { throw({forbidden: 'Only admins, site admins, editors may modify courses.'}); } }"
+}

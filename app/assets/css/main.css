@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+    --no-header: calc(100vh - var(--ui-header-height));
+
+    --color-primary: #5493C9;
+    --color-secondary: #A4C6D8;
+    --color-success: #83AD9C;
+    --color-info: #59DCDA;
+    --color-neutral: #FEF4EC;
+    --color-error: #B11B27;
+}
