@@ -1,4 +1,73 @@
-import {readdir, readFile, glob} from "fs/promises"
+// MIGRATION BEGIN
+type Roles = [string] | [];
+
+type Security = {
+    members: {
+        roles: Roles;
+    },
+    admins: {
+        roles: Roles;
+    }
+}
+
+type Document = object;
+
+type Documents = {
+    [name: string]: Document;
+};
+
+type Migrations = {
+    [name: string]: {
+        security: Security;
+        docs: Documents;
+    }
+};
+
+const securityPublic: Security = {
+    members: {
+        roles: []
+    },
+    admins: {
+        roles: [
+            "_admin"
+        ]
+    }
+};
+
+const securityAdmin: Security = {
+    members: {
+        roles: ["_admin"]
+    },
+    admins: {
+        roles: ["_admin"]
+    }
+}
+
+const documentReadonlyUsers: Document = {
+    "_id": "_design/readonly",
+    "language": "javascript",
+    "validate_doc_update": "function (newDoc, oldDoc, userCtx, secObj) { var isAdmin = userCtx.roles.indexOf('_admin') !== -1; var isEditor = userCtx.roles.indexOf('editor') !== -1; var isSiteadmin = userCtx.roles.indexOf('siteadmin') !== -1; if (!isAdmin && !isEditor && !isSiteadmin) { throw({forbidden: 'Only admins, site admins, editors may modify courses.'}); } }"
+};
+
+const migrations: Migrations = {
+    "sc-courses": {
+        security: securityPublic,
+        docs: {
+            "_design/readonly": documentReadonlyUsers
+        }
+    },
+    "sc-lessons": {
+        security: securityPublic,
+        docs: {
+            "_design/readonly": documentReadonlyUsers
+        }
+    },
+    "sc-users": {
+        security: securityAdmin,
+        docs: {}
+    }
+}
+// MIGRATION END
 
 /**
  * Gets the CouchDB migration remote
@@ -128,26 +197,21 @@ export default defineNitroPlugin(async () => {
     /**
      * Migration root directory
      */
-    const root = "couchdb"
-
-    const databases = await readdir(root)
+    const databases = Object.keys(migrations)
     for (const database of databases) {
         if (!await hasDatabase(database))
             await newDatabase(database)
 
-        const localSecurityPolicy = JSON.parse(await readFile(`${root}/${database}/_security.json`, "utf8"))
+        const localSecurityPolicy = migrations[database]!.security;
         const remoteSecurityPolicy = await getDatabaseSecurity(database) as object
 
         if (!equal(localSecurityPolicy, remoteSecurityPolicy))
             await setDatabaseSecurity(database, localSecurityPolicy)
 
-        let docs = await Array.fromAsync(glob(`${root}/${database}/docs/**/*.json`))
-        docs = docs.map(d => d.replace(`${root}/${database}/docs/`, "").replace(".json",""))
-
+        let docs = Object.keys(migrations[database]!.docs)
 
         for (const docName of docs) {
-            let localDocument = JSON.parse(await readFile(`${root}/${database}/docs/${docName}.json`, "utf8"))
-
+            let localDocument = migrations[database]!.docs[docName]!;
 
             if (await hasDatabaseDoc(database, docName)) {
                 let remoteDocument = await getDatabaseDoc(database, docName)
