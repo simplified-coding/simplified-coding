@@ -1,13 +1,12 @@
-import {createAvatar} from "@dicebear/core";
-import {identicon} from "@dicebear/collection";
+import { Avatar, Style } from '@dicebear/core';
+import definition from '@dicebear/styles/identicon.json' with { type: 'json' };
 
-export default function(): string {
-    const { session, loggedIn } = useUserSession();
+export default function (): string {
+  const { session, loggedIn } = useUserSession();
 
-    if (!loggedIn)
-        throw new Error("User not logged in");
+  if (!loggedIn)
+    throw new Error("User not logged in");
 
-    return createAvatar(identicon, {
-        seed: session.value!.user!.identifier
-    }).toDataUri()
+  const style = new Style(definition);
+  return new Avatar(style, { "seed": session.value!.user!.identifier }).toDataUri();
 };

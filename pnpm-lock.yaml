@@ -4,6 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@dicebear/styles':
+      specifier: ^10.5.0
+      version: 10.5.0
+
 importers:
 
   .:
@@ -14,6 +20,9 @@ importers:
       '@dicebear/core':
         specifier: ^10.6.1
         version: 10.6.1
+      '@dicebear/styles':
+        specifier: 'catalog:'
+        version: 10.5.0
       '@libsql/client':
         specifier: ^0.17.4
         version: 0.17.4
@@ -452,6 +461,9 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@dicebear/core': ^9.0.0
+
+  '@dicebear/styles@10.5.0':
+    resolution: {integrity: sha512-CV5rBIe/wECQua/jct3oJCN7aNNMb7H1TUFQr5x0DWMI+82KZDeLOgw50OzEjDIW0qGHfwvfz9tRh61ZEyardA==}
 
   '@dicebear/thumbs@9.4.2':
     resolution: {integrity: sha512-ccWvDBqbkWS5uzHbsg5L6uML6vBfX7jT3J3jHCQksvz8haHItxTK02w+6e1UavZUsvza4lG5X/XY3eji3siJ4Q==}
@@ -6082,6 +6094,8 @@ snapshots:
   '@dicebear/shapes@9.4.2(@dicebear/core@10.6.1)':
     dependencies:
       '@dicebear/core': 10.6.1
+
+  '@dicebear/styles@10.5.0': {}
 
   '@dicebear/thumbs@9.4.2(@dicebear/core@10.6.1)':
     dependencies:

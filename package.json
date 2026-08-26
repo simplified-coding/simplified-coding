@@ -12,6 +12,7 @@
   "dependencies": {
     "@dicebear/collection": "^9.4.2",
     "@dicebear/core": "^10.6.1",
+    "@dicebear/styles": "catalog:",
     "@libsql/client": "^0.17.4",
     "@nuxt/a11y": "1.0.0-alpha.1",
     "@nuxt/image": "2.1.0",

@@ -6,4 +6,6 @@ allowBuilds:
   leveldown: true
   sharp: false
   vue-demi: false
+catalog:
+  '@dicebear/styles': ^10.5.0
 minimumReleaseAge: 10080
