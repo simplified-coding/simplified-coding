@@ -40,5 +40,6 @@ export default defineNuxtConfig({
   },
   ui: {
     colorMode: false
-  }
+  },
+  nitro: {prerender: {autoSubfolderIndex: false}}
 })
