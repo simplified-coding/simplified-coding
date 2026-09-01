@@ -69,6 +69,10 @@ const migrations: Migrations = {
 }
 // MIGRATION END
 
+function isEnabled() {
+  return useRuntimeConfig().couchdb.migration.enabled;
+}
+
 /**
  * Gets the CouchDB migration remote
  */
@@ -194,6 +198,8 @@ function equal(a: object, b: object) {
  * CouchDB simple migration plugin
  */
 export default defineNitroPlugin(async () => {
+    if (!isEnabled()) return;
+
     /**
      * Migration root directory
      */

@@ -15,7 +15,8 @@ export default defineNuxtConfig({
       migration: {
         remote: 'http://127.0.0.1:5984/',
         username: 'admin',
-        password: 'admin'
+        password: 'admin',
+        enabled: false
       },
       remote: {
         admin: 'http://admin:admin@127.0.0.1:5984/',
@@ -41,5 +42,5 @@ export default defineNuxtConfig({
   ui: {
     colorMode: false
   },
-  nitro: {prerender: {autoSubfolderIndex: false}}
+  nitro: { prerender: { autoSubfolderIndex: false } }
 })
